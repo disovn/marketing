@@ -138,7 +138,7 @@ jobs:
   deploy-to-server:
     needs: [prepare, build]
     if: always() && !cancelled() && needs.build.result == 'success' && github.ref_name == 'release'
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner }}
     steps:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
