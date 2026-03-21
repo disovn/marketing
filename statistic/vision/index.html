@@ -1424,6 +1424,55 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
 }
+
+/* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .vision-subtitle [data-lang="en"],
+html[lang="en"] .vision-text [data-lang="en"],
+html[lang="en"] .timeline-desc [data-lang="en"],
+html[lang="en"] .vision-content [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1451,14 +1500,15 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
   <div class="nav-inner">
     <a href="../" class="nav-logo"><span class="logo-mark">D</span> Diso</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../">Trang chủ</a></li>
-      <li><a href="../#solution">Giải pháp</a></li>
-      <li><a href="../#features">Tính năng</a></li>
-      <li><a href="../#proof">Khách hàng</a></li>
-      <li><a href="../comparison/">So sánh</a></li>
+      <li><a href="../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../case-studies/">Case Studies</a></li>
-      <li><a href="../vision/">Tầm nhìn</a></li>
-      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">Đặt lịch demo</a></li>
+      <li><a href="../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
+      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a></li>
     </ul>
     <button class="nav-mobile-btn" id="navToggle" aria-label="Toggle navigation">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -1472,21 +1522,21 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="hero-vision">
   <div class="container">
     <div class="breadcrumb reveal">
-      <a href="../">Trang chủ</a>
+      <a href="../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span class="breadcrumb-sep">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
-      <span>Tầm nhìn</span>
+      <span><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></span>
     </div>
 
     <div class="reveal reveal-delay-1">
-      <span class="section-label">Build xong, bạn được gì?</span>
+      <span class="section-label"><span data-lang="vi">Build xong, bạn được gì?</span><span data-lang="en">What Do You Own After Building?</span></span>
     </div>
 
-    <h1 class="reveal reveal-delay-2">Đừng mua phần mềm<br>Hãy xây tài sản</h1>
+    <h1 class="reveal reveal-delay-2"><span data-lang="vi">Đừng mua phần mềm<br>Hãy xây tài sản</span><span data-lang="en">Don't Buy Software<br>Build Assets</span></h1>
 
     <p class="hero-tagline reveal reveal-delay-3">
-      Từ "gian hàng trên sàn" đến nền tảng ecom<br>doanh thu <strong style="color: var(--primary);">1.000 tỷ</strong>
+      <span data-lang="vi">Từ "gian hàng trên sàn" đến nền tảng ecom<br>doanh thu <strong style="color: var(--primary);">1.000 tỷ</strong></span><span data-lang="en">From "marketplace seller" to your own ecommerce platform<br>generating <strong style="color: var(--primary);">100B+ VND</strong> in revenue</span>
     </p>
 
     <div class="hero-quote reveal reveal-delay-4">
@@ -1496,7 +1546,7 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
         </svg>
       </div>
-      <p>Shopee, TikTok Shop là kênh bán hàng. <strong>Diso giúp bạn xây nền tảng kinh doanh</strong> — tài sản thuộc về bạn mãi mãi. Khi sàn tăng phí, đổi thuật toán, hay đóng cửa, nền tảng của bạn vẫn tiếp tục vận hành.</p>
+      <p><span data-lang="vi">Shopee, TikTok Shop là kênh bán hàng. <strong>Diso giúp bạn xây nền tảng kinh doanh</strong> — tài sản thuộc về bạn mãi mãi. Khi sàn tăng phí, đổi thuật toán, hay đóng cửa, nền tảng của bạn vẫn tiếp tục vận hành.</span><span data-lang="en">Shopee and TikTok Shop are sales channels. <strong>Diso helps you build a commerce platform</strong> — assets that belong to you forever. When marketplaces raise fees, change algorithms, or shut down, your platform keeps running.</span></p>
     </div>
   </div>
 </section>
@@ -1507,9 +1557,9 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="compare-section" id="compare">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Sự thật không được nói</span>
-      <h2>Bán hàng vs. Xây nền tảng</h2>
-      <p class="section-subtitle">Sau 3 năm, kết quả của hai con đường khác nhau hoàn toàn.</p>
+      <span class="section-label"><span data-lang="vi">Sự thật không được nói</span><span data-lang="en">The Truth No One Tells You</span></span>
+      <h2><span data-lang="vi">Bán hàng vs. Xây nền tảng</span><span data-lang="en">Selling vs. Building a Platform</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Sau 3 năm, kết quả của hai con đường khác nhau hoàn toàn.</span><span data-lang="en">After 3 years, the outcomes of these two paths are worlds apart.</span></p>
     </div>
 
     <div class="compare-table-wrap reveal reveal-delay-2">
@@ -1519,28 +1569,28 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <th></th>
             <th class="col-san">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;margin-right:8px;vertical-align:middle"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-              Bán hàng trên sàn
+              <span data-lang="vi">Bán hàng trên sàn</span><span data-lang="en">Selling on Marketplaces</span>
             </th>
             <th class="col-diso">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;margin-right:8px;vertical-align:middle"><polyline points="20 6 9 17 4 12"/></svg>
-              Xây nền tảng riêng với Diso
+              <span data-lang="vi">Xây nền tảng riêng với Diso</span><span data-lang="en">Build Your Own Platform with Diso</span>
               <span class="col-badge">Recommended</span>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Doanh thu</td>
+            <td><span data-lang="vi">Doanh thu</span><span data-lang="en">Revenue</span></td>
             <td class="col-san">
               <div class="bad-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                Phụ thuộc hoàn toàn vào thuật toán sàn, cạnh tranh giá liên tục, margin ngày càng mỏng
+                <span data-lang="vi">Phụ thuộc hoàn toàn vào thuật toán sàn, cạnh tranh giá liên tục, margin ngày càng mỏng</span><span data-lang="en">Fully dependent on marketplace algorithms, constant price wars, shrinking margins</span>
               </div>
             </td>
             <td class="col-diso">
               <div class="good-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                30–50% doanh thu từ kênh riêng sau 12 tháng — không trả phí sàn, margin cao hơn 15–25%
+                <span data-lang="vi">30–50% doanh thu từ kênh riêng sau 12 tháng — không trả phí sàn, margin cao hơn 15–25%</span><span data-lang="en">30–50% of revenue from your own channel within 12 months — no marketplace fees, 15–25% higher margins</span>
               </div>
             </td>
           </tr>
@@ -1549,58 +1599,58 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <td class="col-san">
               <div class="bad-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                Sàn giữ toàn bộ data khách hàng. Bạn không biết ai đã mua, không liên lạc lại được
+                <span data-lang="vi">Sàn giữ toàn bộ data khách hàng. Bạn không biết ai đã mua, không liên lạc lại được</span><span data-lang="en">The marketplace owns all customer data. You don't know who bought, and you can't contact them again</span>
               </div>
             </td>
             <td class="col-diso">
               <div class="good-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                Sở hữu 100% database: SĐT, email, hành vi mua, lịch sử đơn hàng — tài sản thuộc về bạn
+                <span data-lang="vi">Sở hữu 100% database: SĐT, email, hành vi mua, lịch sử đơn hàng — tài sản thuộc về bạn</span><span data-lang="en">Own 100% of the database: phone, email, purchase behavior, order history — assets that belong to you</span>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Khách cũ</td>
+            <td><span data-lang="vi">Khách cũ</span><span data-lang="en">Returning Customers</span></td>
             <td class="col-san">
               <div class="bad-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                Mỗi lần bán lại phải chạy ads mới. Không có kênh remarketing trực tiếp
+                <span data-lang="vi">Mỗi lần bán lại phải chạy ads mới. Không có kênh remarketing trực tiếp</span><span data-lang="en">Every resale requires new ads spend. No direct remarketing channel available</span>
               </div>
             </td>
             <td class="col-diso">
               <div class="good-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                CRM tích hợp: gửi campaign đến 50K khách cũ, tỷ lệ tái mua 20–35%, chi phí gần bằng 0
+                <span data-lang="vi">CRM tích hợp: gửi campaign đến 50K khách cũ, tỷ lệ tái mua 20–35%, chi phí gần bằng 0</span><span data-lang="en">Integrated CRM: send campaigns to 50K past customers, 20–35% repurchase rate, near-zero cost</span>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Quyền kiểm soát</td>
+            <td><span data-lang="vi">Quyền kiểm soát</span><span data-lang="en">Control</span></td>
             <td class="col-san">
               <div class="bad-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                Sàn có thể tắt shop, đổi chính sách, tăng phí bất kỳ lúc nào — bạn không có lựa chọn
+                <span data-lang="vi">Sàn có thể tắt shop, đổi chính sách, tăng phí bất kỳ lúc nào — bạn không có lựa chọn</span><span data-lang="en">Marketplaces can shut your shop, change policies, or raise fees anytime — you have no choice</span>
               </div>
             </td>
             <td class="col-diso">
               <div class="good-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                Toàn quyền kiểm soát: giá, chính sách, trải nghiệm khách hàng, thương hiệu — vĩnh viễn
+                <span data-lang="vi">Toàn quyền kiểm soát: giá, chính sách, trải nghiệm khách hàng, thương hiệu — vĩnh viễn</span><span data-lang="en">Full control: pricing, policies, customer experience, brand — forever</span>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Chi phí</td>
+            <td><span data-lang="vi">Chi phí</span><span data-lang="en">Cost</span></td>
             <td class="col-san">
               <div class="bad-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                Phí sàn 3–12% + ads + flash sale discount + logistics phí phụ. Tổng thường &gt;20%/đơn
+                <span data-lang="vi">Phí sàn 3–12% + ads + flash sale discount + logistics phí phụ. Tổng thường &gt;20%/đơn</span><span data-lang="en">Marketplace fees 3–12% + ads + flash sale discounts + extra logistics fees. Total often &gt;20% per order</span>
               </div>
             </td>
             <td class="col-diso">
               <div class="good-point">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                Phí cố định Diso + hoa hồng affiliate (trả khi có đơn). Không ads, không flash sale bắt buộc
+                <span data-lang="vi">Phí cố định Diso + hoa hồng affiliate (trả khi có đơn). Không ads, không flash sale bắt buộc</span><span data-lang="en">Fixed Diso fee + affiliate commission (pay only on confirmed orders). No ads, no mandatory flash sales</span>
               </div>
             </td>
           </tr>
@@ -1616,9 +1666,9 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="timeline-section" id="roadmap">
   <div class="container">
     <div class="timeline-intro text-center reveal">
-      <span class="section-label">Lộ trình 3 năm</span>
-      <h2>Từ ngày đầu đến nền tảng 1.000 tỷ</h2>
-      <p class="section-subtitle">Mỗi giai đoạn xây một tầng — tầng nọ chống đỡ tầng kia. Sau 3 năm, bạn có một cỗ máy kinh doanh không thể bị copy.</p>
+      <span class="section-label"><span data-lang="vi">Lộ trình 3 năm</span><span data-lang="en">3-Year Roadmap</span></span>
+      <h2><span data-lang="vi">Từ ngày đầu đến nền tảng 1.000 tỷ</span><span data-lang="en">From Day One to a 100B+ VND Platform</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Mỗi giai đoạn xây một tầng — tầng nọ chống đỡ tầng kia. Sau 3 năm, bạn có một cỗ máy kinh doanh không thể bị copy.</span><span data-lang="en">Each phase builds a layer — each layer supports the next. After 3 years, you have a business machine that cannot be replicated.</span></p>
     </div>
 
     <div class="timeline">
@@ -1630,31 +1680,31 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
         <div class="timeline-card">
-          <div class="timeline-phase-label" style="color: var(--secondary);">Giai đoạn 1</div>
-          <h3>Tháng 1–3: Xây nền móng</h3>
-          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;">Thiết lập toàn bộ hạ tầng kỹ thuật. Website chạy, thanh toán thông, vận chuyển kết nối — ready cho đơn hàng đầu tiên.</p>
+          <div class="timeline-phase-label" style="color: var(--secondary);"><span data-lang="vi">Giai đoạn 1</span><span data-lang="en">Phase 1</span></div>
+          <h3><span data-lang="vi">Tháng 1–3: Xây nền móng</span><span data-lang="en">Months 1–3: Laying the Foundation</span></h3>
+          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;"><span data-lang="vi">Thiết lập toàn bộ hạ tầng kỹ thuật. Website chạy, thanh toán thông, vận chuyển kết nối — ready cho đơn hàng đầu tiên.</span><span data-lang="en">Set up the full technical infrastructure. Website live, payments integrated, shipping connected — ready for the first order.</span></p>
           <div class="timeline-deliverables">
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Website thương mại điện tử riêng, domain cá nhân
+              <span data-lang="vi">Website thương mại điện tử riêng, domain cá nhân</span><span data-lang="en">Your own e-commerce website with a custom domain</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Tích hợp thanh toán (VNPAY, Momo, chuyển khoản)
+              <span data-lang="vi">Tích hợp thanh toán (VNPAY, Momo, chuyển khoản)</span><span data-lang="en">Payment integration (VNPAY, Momo, bank transfer)</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Kết nối vận chuyển tự động (GHN, GHTK, J&T)
+              <span data-lang="vi">Kết nối vận chuyển tự động (GHN, GHTK, J&T)</span><span data-lang="en">Automated shipping integration (GHN, GHTK, J&T)</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Database khách hàng đầu tiên từ đơn hàng thực
+              <span data-lang="vi">Database khách hàng đầu tiên từ đơn hàng thực</span><span data-lang="en">First customer database entries from real orders</span>
             </div>
           </div>
           <div class="timeline-metrics">
             <span class="metric-chip blue">Website live</span>
-            <span class="metric-chip blue">Thanh toán tự động</span>
-            <span class="metric-chip blue">Database bắt đầu tích lũy</span>
+            <span class="metric-chip blue"><span data-lang="vi">Thanh toán tự động</span><span data-lang="en">Automated Payments</span></span>
+            <span class="metric-chip blue"><span data-lang="vi">Database bắt đầu tích lũy</span><span data-lang="en">Database Accumulating</span></span>
           </div>
         </div>
       </div>
@@ -1665,31 +1715,31 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="timeline-card">
-          <div class="timeline-phase-label" style="color: var(--green);">Giai đoạn 2</div>
-          <h3>Tháng 3–6: Kích hoạt đội quân</h3>
-          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;">Tuyển dụng và activate lực lượng bán hàng. Đối soát tự động — không cần kế toán thủ công.</p>
+          <div class="timeline-phase-label" style="color: var(--green);"><span data-lang="vi">Giai đoạn 2</span><span data-lang="en">Phase 2</span></div>
+          <h3><span data-lang="vi">Tháng 3–6: Kích hoạt đội quân</span><span data-lang="en">Months 3–6: Activating Your Sales Force</span></h3>
+          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;"><span data-lang="vi">Tuyển dụng và activate lực lượng bán hàng. Đối soát tự động — không cần kế toán thủ công.</span><span data-lang="en">Recruit and activate your sales force. Automated reconciliation — no manual accounting needed.</span></p>
           <div class="timeline-deliverables">
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              50–100 affiliate hoạt động, có link tracking riêng
+              <span data-lang="vi">50–100 affiliate hoạt động, có link tracking riêng</span><span data-lang="en">50–100 active affiliates with individual tracking links</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              20–50 reseller đặt hàng số lượng, giá sỉ
+              <span data-lang="vi">20–50 reseller đặt hàng số lượng, giá sỉ</span><span data-lang="en">20–50 resellers placing bulk orders at wholesale prices</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Đối soát hoa hồng tự động cuối tháng, zero thủ công
+              <span data-lang="vi">Đối soát hoa hồng tự động cuối tháng, zero thủ công</span><span data-lang="en">Automated monthly commission reconciliation, zero manual work</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Dashboard real-time: doanh số theo từng người bán
+              <span data-lang="vi">Dashboard real-time: doanh số theo từng người bán</span><span data-lang="en">Real-time dashboard: revenue breakdown per seller</span>
             </div>
           </div>
           <div class="timeline-metrics">
             <span class="metric-chip green">50–100 affiliate</span>
             <span class="metric-chip green">20–50 reseller</span>
-            <span class="metric-chip green">Đối soát 100% tự động</span>
+            <span class="metric-chip green"><span data-lang="vi">Đối soát 100% tự động</span><span data-lang="en">100% Automated Reconciliation</span></span>
           </div>
         </div>
       </div>
@@ -1700,31 +1750,31 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <div class="timeline-card">
-          <div class="timeline-phase-label" style="color: var(--orange);">Giai đoạn 3</div>
-          <h3>Tháng 6–12: Vòng lặp tăng trưởng</h3>
-          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;">Cỗ máy bán hàng tự vận hành. Doanh thu từ kênh riêng tăng tốc — không cần tăng chi phí ads.</p>
+          <div class="timeline-phase-label" style="color: var(--orange);"><span data-lang="vi">Giai đoạn 3</span><span data-lang="en">Phase 3</span></div>
+          <h3><span data-lang="vi">Tháng 6–12: Vòng lặp tăng trưởng</span><span data-lang="en">Months 6–12: The Growth Loop</span></h3>
+          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;"><span data-lang="vi">Cỗ máy bán hàng tự vận hành. Doanh thu từ kênh riêng tăng tốc — không cần tăng chi phí ads.</span><span data-lang="en">The sales machine runs itself. Revenue from your own channel accelerates — without increasing ad spend.</span></p>
           <div class="timeline-deliverables">
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              200–500 affiliate + reseller hoạt động song song
+              <span data-lang="vi">200–500 affiliate + reseller hoạt động song song</span><span data-lang="en">200–500 affiliates + resellers operating in parallel</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Chương trình đại sứ thương hiệu: top performer
+              <span data-lang="vi">Chương trình đại sứ thương hiệu: top performer</span><span data-lang="en">Brand ambassador program: top performers rewarded</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              CRM 10.000+ khách hàng, chiến dịch tái mua hàng tuần
+              <span data-lang="vi">CRM 10.000+ khách hàng, chiến dịch tái mua hàng tuần</span><span data-lang="en">CRM with 10,000+ customers, weekly repurchase campaigns</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              30–50% doanh thu đến từ kênh riêng, không phụ thuộc sàn
+              <span data-lang="vi">30–50% doanh thu đến từ kênh riêng, không phụ thuộc sàn</span><span data-lang="en">30–50% of revenue from your own channel, independent of marketplaces</span>
             </div>
           </div>
           <div class="timeline-metrics">
-            <span class="metric-chip orange">200–500 người bán</span>
-            <span class="metric-chip orange">CRM 10K+ khách</span>
-            <span class="metric-chip orange">30–50% kênh riêng</span>
+            <span class="metric-chip orange"><span data-lang="vi">200–500 người bán</span><span data-lang="en">200–500 Sellers</span></span>
+            <span class="metric-chip orange"><span data-lang="vi">CRM 10K+ khách</span><span data-lang="en">CRM 10K+ Customers</span></span>
+            <span class="metric-chip orange"><span data-lang="vi">30–50% kênh riêng</span><span data-lang="en">30–50% Own Channel</span></span>
           </div>
         </div>
       </div>
@@ -1735,31 +1785,31 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <div class="timeline-card">
-          <div class="timeline-phase-label" style="color: var(--accent);">Giai đoạn 4</div>
-          <h3>Năm 2–3: Nền tảng vững chắc</h3>
-          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;">Không còn là "seller". Bạn là chủ một nền tảng thương mại điện tử — tài sản định giá hàng chục tỷ.</p>
+          <div class="timeline-phase-label" style="color: var(--accent);"><span data-lang="vi">Giai đoạn 4</span><span data-lang="en">Phase 4</span></div>
+          <h3><span data-lang="vi">Năm 2–3: Nền tảng vững chắc</span><span data-lang="en">Year 2–3: A Solid Platform</span></h3>
+          <p style="font-size:15px;color:var(--text-muted);margin:12px 0 0;"><span data-lang="vi">Không còn là "seller". Bạn là chủ một nền tảng thương mại điện tử — tài sản định giá hàng chục tỷ.</span><span data-lang="en">No longer a "seller." You own an e-commerce platform — assets valued in the billions.</span></p>
           <div class="timeline-deliverables">
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              1.000+ người bán hàng: affiliate, reseller, đại sứ
+              <span data-lang="vi">1.000+ người bán hàng: affiliate, reseller, đại sứ</span><span data-lang="en">1,000+ sellers: affiliates, resellers, ambassadors</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              50.000–100.000 database khách hàng sở hữu 100%
+              <span data-lang="vi">50.000–100.000 database khách hàng sở hữu 100%</span><span data-lang="en">50,000–100,000 customer database, 100% owned</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              50–70% doanh thu từ kênh riêng, thương hiệu độc lập
+              <span data-lang="vi">50–70% doanh thu từ kênh riêng, thương hiệu độc lập</span><span data-lang="en">50–70% of revenue from your own channel, independent brand</span>
             </div>
             <div class="timeline-deliverable">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              SEO tích lũy, traffic organic, content ecosystem tồn tại lâu dài
+              <span data-lang="vi">SEO tích lũy, traffic organic, content ecosystem tồn tại lâu dài</span><span data-lang="en">Accumulated SEO, organic traffic, long-lasting content ecosystem</span>
             </div>
           </div>
           <div class="timeline-metrics">
-            <span class="metric-chip red">1.000+ người bán</span>
+            <span class="metric-chip red"><span data-lang="vi">1.000+ người bán</span><span data-lang="en">1,000+ Sellers</span></span>
             <span class="metric-chip red">50–100K database</span>
-            <span class="metric-chip red">50–70% kênh riêng</span>
+            <span class="metric-chip red"><span data-lang="vi">50–70% kênh riêng</span><span data-lang="en">50–70% Own Channel</span></span>
           </div>
         </div>
       </div>
@@ -1774,61 +1824,61 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="assets-section" id="assets">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Kết quả sau 3 năm</span>
-      <h2>5 tài sản bạn thực sự sở hữu</h2>
-      <p class="section-subtitle">Không phải tính năng phần mềm — đây là những tài sản thật, định giá được, không ai lấy đi được.</p>
+      <span class="section-label"><span data-lang="vi">Kết quả sau 3 năm</span><span data-lang="en">What You Own After 3 Years</span></span>
+      <h2><span data-lang="vi">5 tài sản bạn thực sự sở hữu</span><span data-lang="en">5 Assets You Truly Own</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Không phải tính năng phần mềm — đây là những tài sản thật, định giá được, không ai lấy đi được.</span><span data-lang="en">Not software features — these are real, measurable assets that no one can take away.</span></p>
     </div>
 
     <div class="assets-grid">
 
       <div class="asset-card reveal reveal-delay-1">
-        <div class="asset-number">Tài sản 01</div>
+        <div class="asset-number"><span data-lang="vi">Tài sản 01</span><span data-lang="en">Asset 01</span></div>
         <div class="asset-icon blue">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
         </div>
-        <h3>Database khách hàng</h3>
-        <p>Mỗi đơn hàng là một bản ghi: SĐT, email, địa chỉ, lịch sử mua, hành vi. Sau 3 năm bạn có 50–100K khách hàng thật — không ai lấy đi được.</p>
-        <div class="asset-roi">10K khách × 20% tái mua × 500K = 1 tỷ/năm miễn phí</div>
+        <h3><span data-lang="vi">Database khách hàng</span><span data-lang="en">Customer Database</span></h3>
+        <p><span data-lang="vi">Mỗi đơn hàng là một bản ghi: SĐT, email, địa chỉ, lịch sử mua, hành vi. Sau 3 năm bạn có 50–100K khách hàng thật — không ai lấy đi được.</span><span data-lang="en">Every order is a record: phone, email, address, purchase history, behavior. After 3 years you own 50–100K real customers — no one can take that away.</span></p>
+        <div class="asset-roi"><span data-lang="vi">10K khách × 20% tái mua × 500K = 1 tỷ/năm miễn phí</span><span data-lang="en">10K customers × 20% repurchase × 500K = 1B VND/year free</span></div>
       </div>
 
       <div class="asset-card reveal reveal-delay-2">
-        <div class="asset-number">Tài sản 02</div>
+        <div class="asset-number"><span data-lang="vi">Tài sản 02</span><span data-lang="en">Asset 02</span></div>
         <div class="asset-icon green">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>Đội quân 1.000 người bán hàng</h3>
-        <p>Ba lớp: Affiliate (tiếp thị liên kết), Reseller (đặt hàng sỉ), Đại sứ (influencer gắn bó). Không lương cứng — chỉ trả khi có đơn thực.</p>
-        <div class="asset-roi">1.000 người × 1 đơn/tháng = 1.000 đơn thêm mỗi tháng</div>
+        <h3><span data-lang="vi">Đội quân 1.000 người bán hàng</span><span data-lang="en">An Army of 1,000 Sellers</span></h3>
+        <p><span data-lang="vi">Ba lớp: Affiliate (tiếp thị liên kết), Reseller (đặt hàng sỉ), Đại sứ (influencer gắn bó). Không lương cứng — chỉ trả khi có đơn thực.</span><span data-lang="en">Three tiers: Affiliate (referral marketing), Reseller (bulk orders), Ambassador (committed influencers). No fixed salaries — only pay on real orders.</span></p>
+        <div class="asset-roi"><span data-lang="vi">1.000 người × 1 đơn/tháng = 1.000 đơn thêm mỗi tháng</span><span data-lang="en">1,000 sellers × 1 order/month = 1,000 extra orders every month</span></div>
       </div>
 
       <div class="asset-card reveal reveal-delay-3">
-        <div class="asset-number">Tài sản 03</div>
+        <div class="asset-number"><span data-lang="vi">Tài sản 03</span><span data-lang="en">Asset 03</span></div>
         <div class="asset-icon orange">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <h3>Thương hiệu riêng</h3>
-        <p>Domain, SEO tích lũy theo tháng, traffic organic không tốn tiền. Thương hiệu trên sàn = thương hiệu của sàn. Thương hiệu trên website riêng = tài sản của bạn.</p>
-        <div class="asset-roi">SEO tích lũy 3 năm = traffic organic không giới hạn</div>
+        <h3><span data-lang="vi">Thương hiệu riêng</span><span data-lang="en">Your Own Brand</span></h3>
+        <p><span data-lang="vi">Domain, SEO tích lũy theo tháng, traffic organic không tốn tiền. Thương hiệu trên sàn = thương hiệu của sàn. Thương hiệu trên website riêng = tài sản của bạn.</span><span data-lang="en">Domain, SEO compounding monthly, free organic traffic. Brand on a marketplace = the marketplace's brand. Brand on your own website = your asset.</span></p>
+        <div class="asset-roi"><span data-lang="vi">SEO tích lũy 3 năm = traffic organic không giới hạn</span><span data-lang="en">3 years of accumulated SEO = unlimited organic traffic</span></div>
       </div>
 
       <div class="asset-card reveal reveal-delay-4">
-        <div class="asset-number">Tài sản 04</div>
+        <div class="asset-number"><span data-lang="vi">Tài sản 04</span><span data-lang="en">Asset 04</span></div>
         <div class="asset-icon purple">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
         </div>
         <h3>Content marketing ecosystem</h3>
-        <p>Hàng trăm bài đăng trên 7 nền tảng — từ affiliate, reseller, đại sứ. Content tồn tại mãi, tiếp tục kéo traffic và đơn hàng dù bạn ngủ.</p>
-        <div class="asset-roi">500 creator × 2 bài/tháng = 1.000 nội dung mỗi tháng</div>
+        <p><span data-lang="vi">Hàng trăm bài đăng trên 7 nền tảng — từ affiliate, reseller, đại sứ. Content tồn tại mãi, tiếp tục kéo traffic và đơn hàng dù bạn ngủ.</span><span data-lang="en">Hundreds of posts across 7 platforms — from affiliates, resellers, and ambassadors. Content lives forever, continuously driving traffic and orders while you sleep.</span></p>
+        <div class="asset-roi"><span data-lang="vi">500 creator × 2 bài/tháng = 1.000 nội dung mỗi tháng</span><span data-lang="en">500 creators × 2 posts/month = 1,000 pieces of content every month</span></div>
       </div>
 
       <div class="asset-card reveal reveal-delay-5">
-        <div class="asset-number">Tài sản 05</div>
+        <div class="asset-number"><span data-lang="vi">Tài sản 05</span><span data-lang="en">Asset 05</span></div>
         <div class="asset-icon teal">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>Độc lập khỏi nền tảng</h3>
-        <p>Sàn tăng phí? Thuật toán đổi? Chính sách thay? Không ảnh hưởng. Kênh riêng của bạn vận hành độc lập — đây mới là tài sản thực sự.</p>
-        <div class="asset-roi">Zero dependency = zero risk từ quyết định của bên thứ ba</div>
+        <h3><span data-lang="vi">Độc lập khỏi nền tảng</span><span data-lang="en">Platform Independence</span></h3>
+        <p><span data-lang="vi">Sàn tăng phí? Thuật toán đổi? Chính sách thay? Không ảnh hưởng. Kênh riêng của bạn vận hành độc lập — đây mới là tài sản thực sự.</span><span data-lang="en">Marketplace raises fees? Algorithm changes? Policy updates? Doesn't matter. Your own channel operates independently — this is what a real asset looks like.</span></p>
+        <div class="asset-roi"><span data-lang="vi">Zero dependency = zero risk từ quyết định của bên thứ ba</span><span data-lang="en">Zero dependency = zero risk from third-party decisions</span></div>
       </div>
 
     </div>
@@ -1841,9 +1891,9 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="risk-section" id="risk">
   <div class="container">
     <div class="reveal">
-      <span class="section-label" style="color: var(--orange);">Cảnh báo thực tế</span>
-      <div class="risk-headline">Bán trên sàn = xây nhà trên đất thuê</div>
-      <div class="risk-subhead">3 sự kiện thật đã xảy ra — và sẽ xảy ra lại</div>
+      <span class="section-label" style="color: var(--orange);"><span data-lang="vi">Cảnh báo thực tế</span><span data-lang="en">Reality Check</span></span>
+      <div class="risk-headline"><span data-lang="vi">Bán trên sàn = xây nhà trên đất thuê</span><span data-lang="en">Selling on Marketplaces = Building on Rented Land</span></div>
+      <div class="risk-subhead"><span data-lang="vi">3 sự kiện thật đã xảy ra — và sẽ xảy ra lại</span><span data-lang="en">3 real events that happened — and will happen again</span></div>
     </div>
 
     <div class="risk-events reveal reveal-delay-1">
@@ -1852,8 +1902,8 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
         <div class="risk-event-year">2024</div>
-        <h4>Shopee tăng phí — 7.000+ seller rời nền tảng</h4>
-        <p>Khi Shopee điều chỉnh cơ cấu phí, hàng nghìn seller bị kẹt: không có kênh nào khác, không có data khách hàng, không có lựa chọn nào để chuyển sang.</p>
+        <h4><span data-lang="vi">Shopee tăng phí — 7.000+ seller rời nền tảng</span><span data-lang="en">Shopee raised fees — 7,000+ sellers left the platform</span></h4>
+        <p><span data-lang="vi">Khi Shopee điều chỉnh cơ cấu phí, hàng nghìn seller bị kẹt: không có kênh nào khác, không có data khách hàng, không có lựa chọn nào để chuyển sang.</span><span data-lang="en">When Shopee restructured its fee model, thousands of sellers were stuck: no alternative channels, no customer data, no options to migrate.</span></p>
       </div>
 
       <div class="risk-event">
@@ -1861,24 +1911,25 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
         <div class="risk-event-year">2023–2024</div>
-        <h4>TikTok đổi thuật toán — 50–70% traffic bốc hơi</h4>
-        <p>Một quyết định nội bộ của TikTok có thể xóa sạch toàn bộ organic reach. Seller không warning, không đền bù, không có cách lấy lại traffic đã mất.</p>
+        <h4><span data-lang="vi">TikTok đổi thuật toán — 50–70% traffic bốc hơi</span><span data-lang="en">TikTok changed its algorithm — 50–70% of traffic vanished</span></h4>
+        <p><span data-lang="vi">Một quyết định nội bộ của TikTok có thể xóa sạch toàn bộ organic reach. Seller không warning, không đền bù, không có cách lấy lại traffic đã mất.</span><span data-lang="en">A single internal TikTok decision can wipe out all organic reach. No warning, no compensation, no way to recover the lost traffic.</span></p>
       </div>
 
       <div class="risk-event">
         <div class="risk-event-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
-        <div class="risk-event-year">Chính sách hiện tại</div>
-        <h4>Sàn giữ data khách hàng — 3 năm bán = 0 data</h4>
-        <p>Theo điều khoản của các sàn TMĐT lớn: data khách hàng thuộc về sàn. Bạn có thể bán 3 năm, 10.000 đơn hàng — và không sở hữu một số điện thoại nào.</p>
+        <div class="risk-event-year"><span data-lang="vi">Chính sách hiện tại</span><span data-lang="en">Current Policy</span></div>
+        <h4><span data-lang="vi">Sàn giữ data khách hàng — 3 năm bán = 0 data</span><span data-lang="en">Marketplaces own customer data — 3 years of selling = 0 data</span></h4>
+        <p><span data-lang="vi">Theo điều khoản của các sàn TMĐT lớn: data khách hàng thuộc về sàn. Bạn có thể bán 3 năm, 10.000 đơn hàng — và không sở hữu một số điện thoại nào.</span><span data-lang="en">Under the terms of major e-commerce platforms: customer data belongs to the platform. You can sell for 3 years, 10,000 orders — and own zero phone numbers.</span></p>
       </div>
     </div>
 
     <div class="risk-conclusion reveal reveal-delay-2">
       <p>
-        <strong>Mỗi ngày không xây nền tảng riêng</strong> = mỗi ngày đang <strong style="color: #FBBF24;">mất khách hàng</strong> vào tay sàn.<br>
-        Họ đang dùng dữ liệu từ đơn hàng của bạn để bán sản phẩm cho đối thủ của bạn.
+        <span data-lang="vi"><strong>Mỗi ngày không xây nền tảng riêng</strong> = mỗi ngày đang <strong style="color: #FBBF24;">mất khách hàng</strong> vào tay sàn.<br>
+        Họ đang dùng dữ liệu từ đơn hàng của bạn để bán sản phẩm cho đối thủ của bạn.</span><span data-lang="en"><strong>Every day without your own platform</strong> = every day <strong style="color: #FBBF24;">losing customers</strong> to marketplaces.<br>
+        They are using data from your orders to sell products to your competitors.</span>
       </p>
     </div>
   </div>
@@ -1890,9 +1941,9 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="case-section" id="cases">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Bằng chứng thực tế</span>
-      <h2>Những người đã làm được</h2>
-      <p class="section-subtitle">Không phải lý thuyết. Những con số này đến từ doanh nghiệp đã xây nền tảng riêng thành công.</p>
+      <span class="section-label"><span data-lang="vi">Bằng chứng thực tế</span><span data-lang="en">Real-World Proof</span></span>
+      <h2><span data-lang="vi">Những người đã làm được</span><span data-lang="en">Brands That Did It</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Không phải lý thuyết. Những con số này đến từ doanh nghiệp đã xây nền tảng riêng thành công.</span><span data-lang="en">Not theory. These numbers come from businesses that successfully built their own platforms.</span></p>
     </div>
 
     <div class="case-grid">
@@ -1900,27 +1951,27 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
       <div class="case-card reveal reveal-delay-1">
         <div class="case-flag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Việt Nam
+          <span data-lang="vi">Việt Nam</span><span data-lang="en">Vietnam</span>
         </div>
         <h3>Coolmate</h3>
-        <div class="case-stat-big">139 tỷ</div>
-        <div class="case-stat-label">Doanh thu VND — D2C thuần túy</div>
+        <div class="case-stat-big"><span data-lang="vi">139 tỷ</span><span data-lang="en">139B VND</span></div>
+        <div class="case-stat-label"><span data-lang="vi">Doanh thu VND — D2C thuần túy</span><span data-lang="en">Revenue — Pure D2C Model</span></div>
         <div class="case-highlights">
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Tăng trưởng 3.5x Year-over-Year
+            <span data-lang="vi">Tăng trưởng 3.5x Year-over-Year</span><span data-lang="en">3.5x Year-over-Year growth</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Website riêng là kênh bán hàng chính
+            <span data-lang="vi">Website riêng là kênh bán hàng chính</span><span data-lang="en">Own website is the primary sales channel</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Database khách hàng sở hữu 100%
+            <span data-lang="vi">Database khách hàng sở hữu 100%</span><span data-lang="en">100% customer database ownership</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Không phụ thuộc vào sàn TMĐT
+            <span data-lang="vi">Không phụ thuộc vào sàn TMĐT</span><span data-lang="en">No dependency on e-commerce marketplaces</span>
           </div>
         </div>
         <span class="case-model">D2C Model</span>
@@ -1929,27 +1980,27 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
       <div class="case-card reveal reveal-delay-2">
         <div class="case-flag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Vương quốc Anh
+          <span data-lang="vi">Vương quốc Anh</span><span data-lang="en">United Kingdom</span>
         </div>
         <h3>Gymshark</h3>
         <div class="case-stat-big">£1B+</div>
-        <div class="case-stat-label">Định giá — từ $500K vốn ban đầu</div>
+        <div class="case-stat-label"><span data-lang="vi">Định giá — từ $500K vốn ban đầu</span><span data-lang="en">Valuation — from $500K initial capital</span></div>
         <div class="case-highlights">
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            ROI 6.6x trên influencer marketing
+            <span data-lang="vi">ROI 6.6x trên influencer marketing</span><span data-lang="en">6.6x ROI on influencer marketing</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            100% D2C — không bán qua bên thứ ba
+            <span data-lang="vi">100% D2C — không bán qua bên thứ ba</span><span data-lang="en">100% D2C — no third-party sales</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Ambassador program là động lực tăng trưởng chính
+            <span data-lang="vi">Ambassador program là động lực tăng trưởng chính</span><span data-lang="en">Ambassador program as the primary growth driver</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Brand định giá hàng tỷ pound độc lập
+            <span data-lang="vi">Brand định giá hàng tỷ pound độc lập</span><span data-lang="en">Brand independently valued at billions of pounds</span>
           </div>
         </div>
         <span class="case-model">D2C + Ambassador</span>
@@ -1958,27 +2009,27 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
       <div class="case-card reveal reveal-delay-3">
         <div class="case-flag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Ấn Độ
+          <span data-lang="vi">Ấn Độ</span><span data-lang="en">India</span>
         </div>
         <h3>Meesho</h3>
         <div class="case-stat-big">$600M</div>
-        <div class="case-stat-label">Định giá IPO — từ mô hình reseller</div>
+        <div class="case-stat-label"><span data-lang="vi">Định giá IPO — từ mô hình reseller</span><span data-lang="en">IPO Valuation — built on the reseller model</span></div>
         <div class="case-highlights">
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            187 triệu người dùng toàn cầu
+            <span data-lang="vi">187 triệu người dùng toàn cầu</span><span data-lang="en">187 million global users</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            13+ triệu reseller bán hàng kiếm thu nhập
+            <span data-lang="vi">13+ triệu reseller bán hàng kiếm thu nhập</span><span data-lang="en">13+ million resellers earning income by selling</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Mô hình: reseller chia sẻ, platform giao hàng
+            <span data-lang="vi">Mô hình: reseller chia sẻ, platform giao hàng</span><span data-lang="en">Model: resellers share, platform fulfills</span>
           </div>
           <div class="case-highlight">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Zero quảng cáo — 100% word-of-mouth qua reseller
+            <span data-lang="vi">Zero quảng cáo — 100% word-of-mouth qua reseller</span><span data-lang="en">Zero ad spend — 100% word-of-mouth through resellers</span>
           </div>
         </div>
         <span class="case-model">Reseller Model</span>
@@ -1988,7 +2039,7 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 
     <div class="text-center reveal">
       <a href="../case-studies/" class="case-cta-link">
-        Xem đầy đủ case studies và phân tích chi tiết
+        <span data-lang="vi">Xem đầy đủ case studies và phân tích chi tiết</span><span data-lang="en">View full case studies and detailed analysis</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -2001,9 +2052,9 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
 <section class="decision-section" id="decision">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Bảng quyết định</span>
-      <h2>Nhìn về đích — không phải về hôm nay</h2>
-      <p class="section-subtitle">Đây là câu hỏi bạn sẽ tự hỏi sau 3 năm. Câu trả lời phụ thuộc vào quyết định bạn đưa ra ngay hôm nay.</p>
+      <span class="section-label"><span data-lang="vi">Bảng quyết định</span><span data-lang="en">Decision Matrix</span></span>
+      <h2><span data-lang="vi">Nhìn về đích — không phải về hôm nay</span><span data-lang="en">Look at the Destination — Not Just Today</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Đây là câu hỏi bạn sẽ tự hỏi sau 3 năm. Câu trả lời phụ thuộc vào quyết định bạn đưa ra ngay hôm nay.</span><span data-lang="en">These are the questions you'll ask yourself in 3 years. The answers depend on the decision you make right now.</span></p>
     </div>
 
     <div class="decision-table-wrap reveal reveal-delay-2">
@@ -2011,40 +2062,40 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
         <thead>
           <tr>
             <th></th>
-            <th class="col-san">Bán trên Sàn</th>
-            <th class="col-diso">Xây nền tảng riêng</th>
+            <th class="col-san"><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Selling on Marketplaces</span></th>
+            <th class="col-diso"><span data-lang="vi">Xây nền tảng riêng</span><span data-lang="en">Build Your Own Platform</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Chi phí / đơn</td>
-            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> 15–25% phí + logistics phụ</span></td>
-            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 5–10% hoa hồng affiliate (trả khi có đơn)</span></td>
+            <td><span data-lang="vi">Chi phí / đơn</span><span data-lang="en">Cost per Order</span></td>
+            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <span data-lang="vi">15–25% phí + logistics phụ</span><span data-lang="en">15–25% fees + extra logistics</span></span></td>
+            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-lang="vi">5–10% hoa hồng affiliate (trả khi có đơn)</span><span data-lang="en">5–10% affiliate commission (pay on confirmed orders only)</span></span></td>
           </tr>
           <tr>
-            <td>Tỷ lệ tái mua</td>
-            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> 5–8% (phụ thuộc thuật toán sàn)</span></td>
-            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 20–35% (CRM remarketing trực tiếp)</span></td>
+            <td><span data-lang="vi">Tỷ lệ tái mua</span><span data-lang="en">Repurchase Rate</span></td>
+            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <span data-lang="vi">5–8% (phụ thuộc thuật toán sàn)</span><span data-lang="en">5–8% (dependent on marketplace algorithm)</span></span></td>
+            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-lang="vi">20–35% (CRM remarketing trực tiếp)</span><span data-lang="en">20–35% (direct CRM remarketing)</span></span></td>
           </tr>
           <tr>
-            <td>Giá trị brand</td>
-            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Thấp — bị lẫn với hàng ngàn shop khác</span></td>
-            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Cao — domain, SEO, identity riêng biệt</span></td>
+            <td><span data-lang="vi">Giá trị brand</span><span data-lang="en">Brand Value</span></td>
+            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <span data-lang="vi">Thấp — bị lẫn với hàng ngàn shop khác</span><span data-lang="en">Low — lost among thousands of other shops</span></span></td>
+            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-lang="vi">Cao — domain, SEO, identity riêng biệt</span><span data-lang="en">High — domain, SEO, distinct brand identity</span></span></td>
           </tr>
           <tr>
-            <td>Data sau 3 năm</td>
-            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> 0 — sàn giữ toàn bộ</span></td>
-            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 50–100K khách hàng sở hữu 100%</span></td>
+            <td><span data-lang="vi">Data sau 3 năm</span><span data-lang="en">Data After 3 Years</span></td>
+            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <span data-lang="vi">0 — sàn giữ toàn bộ</span><span data-lang="en">0 — marketplace keeps everything</span></span></td>
+            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-lang="vi">50–100K khách hàng sở hữu 100%</span><span data-lang="en">50–100K customers, 100% owned</span></span></td>
           </tr>
           <tr>
-            <td>Rủi ro</td>
-            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Cao — phụ thuộc vào 1-2 platform</span></td>
-            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Thấp — đa kênh, không phụ thuộc bên thứ ba</span></td>
+            <td><span data-lang="vi">Rủi ro</span><span data-lang="en">Risk</span></td>
+            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <span data-lang="vi">Cao — phụ thuộc vào 1-2 platform</span><span data-lang="en">High — dependent on 1–2 platforms</span></span></td>
+            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-lang="vi">Thấp — đa kênh, không phụ thuộc bên thứ ba</span><span data-lang="en">Low — multi-channel, no third-party dependency</span></span></td>
           </tr>
           <tr>
-            <td>Định giá exit</td>
-            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Thấp — không có tài sản kỹ thuật số</span></td>
-            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Cao — brand, database, kênh bán = tài sản định giá được</span></td>
+            <td><span data-lang="vi">Định giá exit</span><span data-lang="en">Exit Valuation</span></td>
+            <td class="col-san"><span class="val-bad"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <span data-lang="vi">Thấp — không có tài sản kỹ thuật số</span><span data-lang="en">Low — no digital assets to show</span></span></td>
+            <td class="col-diso"><span class="val-good"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-lang="vi">Cao — brand, database, kênh bán = tài sản định giá được</span><span data-lang="en">High — brand, database, sales channels = measurable assets</span></span></td>
           </tr>
         </tbody>
       </table>
@@ -2059,12 +2110,14 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
   <div class="container">
     <div class="vision-inner">
 
-      <div class="vision-eyebrow reveal">Tầm nhìn 3 năm</div>
+      <div class="vision-eyebrow reveal"><span data-lang="vi">Tầm nhìn 3 năm</span><span data-lang="en">The 3-Year Vision</span></div>
 
       <div class="vision-quote-large reveal reveal-delay-1">
-        "Sau 2–3 năm với Diso, bạn không còn là<br>
+        <span data-lang="vi">"Sau 2–3 năm với Diso, bạn không còn là<br>
         <em>'seller trên sàn'</em>. Bạn là chủ một<br>
-        nền tảng thương mại điện tử."
+        nền tảng thương mại điện tử."</span><span data-lang="en">"After 2–3 years with Diso, you're no longer<br>
+        a <em>'marketplace seller'</em>. You own<br>
+        an e-commerce platform."</span>
       </div>
 
       <div class="vision-bullets reveal reveal-delay-2">
@@ -2074,7 +2127,7 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="vision-bullet-text">
-            <strong>Website riêng</strong> với thương hiệu, domain, SEO tích lũy — tài sản kỹ thuật số không thể bị tắt bởi bất kỳ sàn nào
+            <span data-lang="vi"><strong>Website riêng</strong> với thương hiệu, domain, SEO tích lũy — tài sản kỹ thuật số không thể bị tắt bởi bất kỳ sàn nào</span><span data-lang="en"><strong>Your own website</strong> with brand identity, domain, and accumulated SEO — a digital asset no marketplace can shut down</span>
           </div>
         </div>
 
@@ -2083,7 +2136,7 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="vision-bullet-text">
-            <strong>1.000+ người bán hàng</strong>: affiliate, reseller, đại sứ — không lương cứng, chỉ trả khi có đơn thực
+            <span data-lang="vi"><strong>1.000+ người bán hàng</strong>: affiliate, reseller, đại sứ — không lương cứng, chỉ trả khi có đơn thực</span><span data-lang="en"><strong>1,000+ people selling for you</strong>: affiliates, resellers, ambassadors — no fixed salaries, only pay on real orders</span>
           </div>
         </div>
 
@@ -2092,7 +2145,7 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
           </div>
           <div class="vision-bullet-text">
-            <strong>50K+ database khách hàng</strong> thực sở hữu 100%: SĐT, email, hành vi mua — không ai lấy đi được
+            <span data-lang="vi"><strong>50K+ database khách hàng</strong> thực sở hữu 100%: SĐT, email, hành vi mua — không ai lấy đi được</span><span data-lang="en"><strong>Database of 50,000+ customers</strong>, 100% owned: phone, email, purchase behavior — a million-dollar asset, free remarketing forever</span>
           </div>
         </div>
 
@@ -2101,7 +2154,7 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
           </div>
           <div class="vision-bullet-text">
-            <strong>Content ecosystem trên 7 nền tảng</strong> — hàng trăm bài đăng từ đội quân người bán, traffic organic không giới hạn
+            <span data-lang="vi"><strong>Content ecosystem trên 7 nền tảng</strong> — hàng trăm bài đăng từ đội quân người bán, traffic organic không giới hạn</span><span data-lang="en"><strong>Content ecosystem across 7 platforms</strong> — hundreds of posts from your seller army, unlimited organic traffic</span>
           </div>
         </div>
 
@@ -2110,15 +2163,16 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="vision-bullet-text">
-            <strong>Độc lập hoàn toàn</strong> — sàn tăng phí, đổi thuật toán, hay đóng cửa: nền tảng của bạn không bị ảnh hưởng
+            <span data-lang="vi"><strong>Độc lập hoàn toàn</strong> — sàn tăng phí, đổi thuật toán, hay đóng cửa: nền tảng của bạn không bị ảnh hưởng</span><span data-lang="en"><strong>Completely independent</strong> — marketplaces raise fees, change algorithms, or shut down: your platform is unaffected</span>
           </div>
         </div>
 
       </div>
 
       <div class="vision-tagline reveal reveal-delay-3">
-        Đó không phải phần mềm.<br>
-        Đó là <em>tài sản.</em>
+        <span data-lang="vi">Đó không phải phần mềm.<br>
+        Đó là <em>tài sản.</em></span><span data-lang="en">It's not software.<br>
+        It's an <em>asset.</em></span>
       </div>
 
     </div>
@@ -2132,27 +2186,27 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
   <div class="cta-glow"></div>
   <div class="container">
     <div class="cta-inner reveal">
-      <span class="section-label" style="color: rgba(255,255,255,0.5);">Bắt đầu xây tài sản</span>
-      <h2>Đặt lịch demo — Xem nền tảng hoạt động trong 30 phút</h2>
-      <p>Xem thực tế toàn bộ hệ thống: affiliate, reseller, CRM, dashboard — với dữ liệu giả lập từ ngành của bạn.</p>
+      <span class="section-label" style="color: rgba(255,255,255,0.5);"><span data-lang="vi">Bắt đầu xây tài sản</span><span data-lang="en">Start Building Your Assets</span></span>
+      <h2><span data-lang="vi">Đặt lịch demo — Xem nền tảng hoạt động trong 30 phút</span><span data-lang="en">Book a Demo — See the Platform in Action in 30 Minutes</span></h2>
+      <p><span data-lang="vi">Xem thực tế toàn bộ hệ thống: affiliate, reseller, CRM, dashboard — với dữ liệu giả lập từ ngành của bạn.</span><span data-lang="en">See the full system live: affiliate, reseller, CRM, dashboard — with simulated data from your industry.</span></p>
 
       <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Đặt lịch demo ngay
+        <span data-lang="vi">Đặt lịch demo ngay</span><span data-lang="en">Book a Free Demo</span>
       </a>
 
       <div class="cta-trust">
         <div class="cta-trust-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Miễn phí, không ràng buộc
+          <span data-lang="vi">Miễn phí, không ràng buộc</span><span data-lang="en">Free, no commitment</span>
         </div>
         <div class="cta-trust-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Demo với data ngành của bạn
+          <span data-lang="vi">Demo với data ngành của bạn</span><span data-lang="en">Demo with your industry data</span>
         </div>
         <div class="cta-trust-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Tư vấn lộ trình 3 năm 1-1
+          <span data-lang="vi">Tư vấn lộ trình 3 năm 1-1</span><span data-lang="en">1-on-1 3-year roadmap consultation</span>
         </div>
       </div>
     </div>
@@ -2171,10 +2225,10 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
       </a>
 
       <div class="footer-links">
-        <a href="../">Trang chủ</a>
-        <a href="../comparison/">So sánh</a>
+        <a href="../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
+        <a href="../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a>
         <a href="../case-studies/">Case Studies</a>
-        <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow">Đặt lịch demo</a>
+        <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a>
       </div>
 
       <p class="footer-copy">&copy; 2024 Diso Commerce Suite. All rights reserved.</p>
@@ -2214,6 +2268,19 @@ h3 { font-size: clamp(20px, 2.5vw, 26px); }
       navLinks.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Language toggle
+  var langToggle = document.getElementById('langToggle');
+  var htmlEl = document.documentElement;
+  var savedLang = localStorage.getItem('diso-lang') || 'vi';
+  if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+  langToggle.addEventListener('click', function() {
+    var current = htmlEl.getAttribute('lang') || 'vi';
+    var next = current === 'vi' ? 'en' : 'vi';
+    htmlEl.setAttribute('lang', next);
+    localStorage.setItem('diso-lang', next);
   });
 
   // ---- SMOOTH SCROLL FOR ANCHOR LINKS ----

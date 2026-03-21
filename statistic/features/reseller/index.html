@@ -1373,6 +1373,55 @@ blockquote.pullquote {
   .hero-meta { flex-direction: column; align-items: flex-start; }
   .case-study { padding: 28px 24px; }
 }
+
+/* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .pillar-tagline [data-lang="en"],
+html[lang="en"] .pillar-key-message [data-lang="en"],
+html[lang="en"] .feature-detail-text [data-lang="en"],
+html[lang="en"] .feature-desc [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1402,16 +1451,17 @@ blockquote.pullquote {
       Diso
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../../">Trang chủ</a></li>
-      <li><a href="../../#solution">Giải pháp</a></li>
-      <li><a href="../../#features">Tính năng</a></li>
-      <li><a href="../../#proof">Khách hàng</a></li>
-      <li><a href="../../comparison/">So sánh</a></li>
+      <li><a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../../case-studies/">Case Studies</a></li>
-      <li><a href="../../vision/">Tầm nhìn</a></li>
+      <li><a href="../../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
       <li>
         <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">
-          Đặt lịch demo
+          <span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span>
         </a>
       </li>
     </ul>
@@ -1431,9 +1481,9 @@ blockquote.pullquote {
   </div>
   <div class="container text-center">
     <div class="breadcrumb">
-      <a href="../../">Trang chủ</a>
+      <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span>/</span>
-      <a href="../../#solution">Giải pháp</a>
+      <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
       <span>/</span>
       <span>Reseller Network</span>
     </div>
@@ -1441,13 +1491,13 @@ blockquote.pullquote {
     <div style="margin-top: 24px;">
       <div class="pillar-badge">
         <span class="pillar-badge-dot"></span>
-        Giải pháp 4 / 5
+        <span data-lang="vi">Giải pháp 4 / 5</span><span data-lang="en">Pillar 4 / 5</span>
       </div>
     </div>
 
     <h1>Reseller Network</h1>
     <p class="hero-subtitle">
-      1.000 người bán hàng cho bạn — bạn chỉ cần quản lý
+      <span data-lang="vi">1.000 người bán hàng cho bạn — bạn chỉ cần quản lý</span><span data-lang="en">1,000 people selling for you — you just manage</span>
     </p>
 
     <div class="hero-meta">
@@ -1455,19 +1505,19 @@ blockquote.pullquote {
         <span class="hero-tag-icon purple">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </span>
-        Không giới hạn reseller
+        <span data-lang="vi">Không giới hạn reseller</span><span data-lang="en">Unlimited resellers</span>
       </div>
       <div class="hero-tag">
         <span class="hero-tag-icon blue">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </span>
-        Storefront riêng mỗi người bán
+        <span data-lang="vi">Storefront riêng mỗi người bán</span><span data-lang="en">Personal storefront for each seller</span>
       </div>
       <div class="hero-tag">
         <span class="hero-tag-icon green">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </span>
-        Hoa hồng đa cấp tự động
+        <span data-lang="vi">Hoa hồng đa cấp tự động</span><span data-lang="en">Automated multi-tier commissions</span>
       </div>
     </div>
   </div>
@@ -1477,9 +1527,9 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Vấn đề hiện tại</span>
-      <h2 class="section-title">Mở rộng kênh bán — dễ nói, khó làm</h2>
-      <p class="section-subtitle">Doanh nghiệp muốn tăng trưởng qua mạng lưới người bán nhưng mọi con đường đều có rào cản lớn.</p>
+      <span class="section-label"><span data-lang="vi">Vấn đề hiện tại</span><span data-lang="en">Current Pain Points</span></span>
+      <h2 class="section-title"><span data-lang="vi">Mở rộng kênh bán — dễ nói, khó làm</span><span data-lang="en">Expanding sales channels — easier said than done</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Doanh nghiệp muốn tăng trưởng qua mạng lưới người bán nhưng mọi con đường đều có rào cản lớn.</span><span data-lang="en">Businesses want to grow through seller networks but every path has major barriers.</span></p>
     </div>
 
     <div class="pain-grid">
@@ -1489,8 +1539,8 @@ blockquote.pullquote {
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
         </div>
-        <h3>Tuyển sales tốn lương cứng</h3>
-        <p>Mỗi nhân viên sales là một khoản chi phí cố định mỗi tháng, bất kể hiệu suất ra sao. Doanh thu chưa đến mà lương đã phải trả — áp lực dòng tiền liên tục.</p>
+        <h3><span data-lang="vi">Tuyển sales tốn lương cứng</span><span data-lang="en">Hiring sales staff means fixed salary costs</span></h3>
+        <p><span data-lang="vi">Mỗi nhân viên sales là một khoản chi phí cố định mỗi tháng, bất kể hiệu suất ra sao. Doanh thu chưa đến mà lương đã phải trả — áp lực dòng tiền liên tục.</span><span data-lang="en">Every sales employee is a fixed monthly cost regardless of performance. Revenue hasn't arrived but salaries must be paid — constant cash flow pressure.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon-wrap">
@@ -1498,8 +1548,8 @@ blockquote.pullquote {
             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
           </svg>
         </div>
-        <h3>Mở đại lý khó kiểm soát</h3>
-        <p>Đại lý truyền thống tự định giá, bán phá giá, không báo cáo doanh số minh bạch. Thương hiệu mất kiểm soát thị trường và hình ảnh sản phẩm.</p>
+        <h3><span data-lang="vi">Mở đại lý khó kiểm soát</span><span data-lang="en">Traditional dealers are hard to control</span></h3>
+        <p><span data-lang="vi">Đại lý truyền thống tự định giá, bán phá giá, không báo cáo doanh số minh bạch. Thương hiệu mất kiểm soát thị trường và hình ảnh sản phẩm.</span><span data-lang="en">Traditional dealers set their own prices, undercut markets, and don't report sales transparently. Brands lose control of market pricing and product image.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon-wrap">
@@ -1507,41 +1557,41 @@ blockquote.pullquote {
             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
           </svg>
         </div>
-        <h3>Tự build mất 4–8 tháng</h3>
-        <p>Phát triển hệ thống reseller riêng cần đội ngũ kỹ thuật, thiết kế, bảo mật. Chi phí cao, thời gian dài, rủi ro kỹ thuật liên tục sau khi ra mắt.</p>
+        <h3><span data-lang="vi">Tự build mất 4–8 tháng</span><span data-lang="en">Building in-house takes 4–8 months</span></h3>
+        <p><span data-lang="vi">Phát triển hệ thống reseller riêng cần đội ngũ kỹ thuật, thiết kế, bảo mật. Chi phí cao, thời gian dài, rủi ro kỹ thuật liên tục sau khi ra mắt.</span><span data-lang="en">Building your own reseller system requires technical, design, and security teams. High cost, long timeline, continuous technical risks post-launch.</span></p>
       </div>
     </div>
 
     <!-- Mini comparison traditional vs Diso -->
     <div class="reveal">
       <div style="margin-bottom: 16px;">
-        <span class="section-label" style="margin-bottom: 0;">Mô hình truyền thống vs Diso</span>
+        <span class="section-label" style="margin-bottom: 0;"><span data-lang="vi">Mô hình truyền thống vs Diso</span><span data-lang="en">Traditional model vs Diso</span></span>
       </div>
       <div class="mini-comparison">
         <div class="mini-comparison-header">
-          <div class="mini-col-head">Tiêu chí</div>
-          <div class="mini-col-head">Phương pháp cũ</div>
+          <div class="mini-col-head"><span data-lang="vi">Tiêu chí</span><span data-lang="en">Criteria</span></div>
+          <div class="mini-col-head"><span data-lang="vi">Phương pháp cũ</span><span data-lang="en">Old method</span></div>
           <div class="mini-col-head diso">Diso Reseller Network</div>
         </div>
         <div class="mini-row">
-          <div class="mini-cell label">Chi phí khởi đầu</div>
-          <div class="mini-cell"><span class="bad">Cao — lương + vận hành</span></div>
-          <div class="mini-cell diso"><span class="good">0 đồng chi phí cố định</span></div>
+          <div class="mini-cell label"><span data-lang="vi">Chi phí khởi đầu</span><span data-lang="en">Startup cost</span></div>
+          <div class="mini-cell"><span class="bad"><span data-lang="vi">Cao — lương + vận hành</span><span data-lang="en">High — salary + operations</span></span></div>
+          <div class="mini-cell diso"><span class="good"><span data-lang="vi">0 đồng chi phí cố định</span><span data-lang="en">Zero fixed cost</span></span></div>
         </div>
         <div class="mini-row">
-          <div class="mini-cell label">Thời gian triển khai</div>
-          <div class="mini-cell"><span class="bad">4–8 tháng build hoặc tuyển dụng</span></div>
-          <div class="mini-cell diso"><span class="good">Hoạt động trong 1 tuần</span></div>
+          <div class="mini-cell label"><span data-lang="vi">Thời gian triển khai</span><span data-lang="en">Deployment time</span></div>
+          <div class="mini-cell"><span class="bad"><span data-lang="vi">4–8 tháng build hoặc tuyển dụng</span><span data-lang="en">4–8 months to build or hire</span></span></div>
+          <div class="mini-cell diso"><span class="good"><span data-lang="vi">Hoạt động trong 1 tuần</span><span data-lang="en">Operational within 1 week</span></span></div>
         </div>
         <div class="mini-row">
-          <div class="mini-cell label">Kiểm soát giá bán</div>
-          <div class="mini-cell"><span class="bad">Không kiểm soát được</span></div>
-          <div class="mini-cell diso"><span class="good">100% từ dashboard brand</span></div>
+          <div class="mini-cell label"><span data-lang="vi">Kiểm soát giá bán</span><span data-lang="en">Price control</span></div>
+          <div class="mini-cell"><span class="bad"><span data-lang="vi">Không kiểm soát được</span><span data-lang="en">No control</span></span></div>
+          <div class="mini-cell diso"><span class="good"><span data-lang="vi">100% từ dashboard brand</span><span data-lang="en">100% from brand dashboard</span></span></div>
         </div>
         <div class="mini-row">
-          <div class="mini-cell label">Minh bạch doanh số</div>
-          <div class="mini-cell"><span class="bad">Báo cáo thủ công, sai lệch</span></div>
-          <div class="mini-cell diso"><span class="good">Real-time, từng reseller</span></div>
+          <div class="mini-cell label"><span data-lang="vi">Minh bạch doanh số</span><span data-lang="en">Sales transparency</span></div>
+          <div class="mini-cell"><span class="bad"><span data-lang="vi">Báo cáo thủ công, sai lệch</span><span data-lang="en">Manual reports, inaccurate</span></span></div>
+          <div class="mini-cell diso"><span class="good"><span data-lang="vi">Real-time, từng reseller</span><span data-lang="en">Real-time, per reseller</span></span></div>
         </div>
       </div>
     </div>
@@ -1552,9 +1602,9 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Tính năng cốt lõi</span>
-      <h2 class="section-title">Mọi thứ để vận hành mạng lưới ngàn người bán</h2>
-      <p class="section-subtitle">Từ storefront cá nhân hoá đến gamification — Diso trang bị đầy đủ để reseller tự bán và tự phát triển.</p>
+      <span class="section-label"><span data-lang="vi">Tính năng cốt lõi</span><span data-lang="en">Core Features</span></span>
+      <h2 class="section-title"><span data-lang="vi">Mọi thứ để vận hành mạng lưới ngàn người bán</span><span data-lang="en">Everything to run a network of thousands of sellers</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Từ storefront cá nhân hoá đến gamification — Diso trang bị đầy đủ để reseller tự bán và tự phát triển.</span><span data-lang="en">From personalized storefronts to gamification — Diso equips resellers to sell and grow independently.</span></p>
     </div>
 
     <div class="features-grid">
@@ -1567,31 +1617,31 @@ blockquote.pullquote {
           </svg>
         </div>
         <h3>Reseller Storefront</h3>
-        <p>Mỗi reseller có một trang bán hàng riêng, được cá nhân hoá với tên, ảnh và link độc quyền.</p>
+        <p><span data-lang="vi">Mỗi reseller có một trang bán hàng riêng, được cá nhân hoá với tên, ảnh và link độc quyền.</span><span data-lang="en">Each reseller has their own sales page, personalized with name, photo, and exclusive link.</span></p>
         <div class="feature-bullets">
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            URL riêng cho từng reseller
+            <span data-lang="vi">URL riêng cho từng reseller</span><span data-lang="en">Unique URL for each reseller</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Tùy chỉnh ảnh bìa và avatar
+            <span data-lang="vi">Tùy chỉnh ảnh bìa và avatar</span><span data-lang="en">Customize cover photo and avatar</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Giỏ hàng và thanh toán tích hợp
+            <span data-lang="vi">Giỏ hàng và thanh toán tích hợp</span><span data-lang="en">Built-in cart and payment</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Brand kiểm soát danh mục sản phẩm
+            <span data-lang="vi">Brand kiểm soát danh mục sản phẩm</span><span data-lang="en">Brand controls product catalog</span>
           </div>
         </div>
       </div>
@@ -1603,32 +1653,32 @@ blockquote.pullquote {
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
         </div>
-        <h3>Quản lý đội ngũ</h3>
-        <p>Tổng quan toàn bộ mạng lưới reseller theo cấp bậc, hiệu suất và trạng thái hoạt động.</p>
+        <h3><span data-lang="vi">Quản lý đội ngũ</span><span data-lang="en">Team Management</span></h3>
+        <p><span data-lang="vi">Tổng quan toàn bộ mạng lưới reseller theo cấp bậc, hiệu suất và trạng thái hoạt động.</span><span data-lang="en">Full overview of the reseller network by tier, performance, and activity status.</span></p>
         <div class="feature-bullets">
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Cây phân cấp reseller trực quan
+            <span data-lang="vi">Cây phân cấp reseller trực quan</span><span data-lang="en">Visual reseller hierarchy tree</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Phê duyệt và vô hiệu hoá tài khoản
+            <span data-lang="vi">Phê duyệt và vô hiệu hoá tài khoản</span><span data-lang="en">Approve and deactivate accounts</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Phân quyền theo vai trò
+            <span data-lang="vi">Phân quyền theo vai trò</span><span data-lang="en">Role-based permissions</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Thông báo tự động khi có đơn hàng
+            <span data-lang="vi">Thông báo tự động khi có đơn hàng</span><span data-lang="en">Automatic notifications for new orders</span>
           </div>
         </div>
       </div>
@@ -1640,32 +1690,32 @@ blockquote.pullquote {
             <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
         </div>
-        <h3>Hoa hồng đa cấp</h3>
-        <p>Cài đặt hoa hồng linh hoạt theo sản phẩm, cấp bậc và hiệu suất — tính toán và chi trả tự động.</p>
+        <h3><span data-lang="vi">Hoa hồng đa cấp</span><span data-lang="en">Multi-tier Commissions</span></h3>
+        <p><span data-lang="vi">Cài đặt hoa hồng linh hoạt theo sản phẩm, cấp bậc và hiệu suất — tính toán và chi trả tự động.</span><span data-lang="en">Flexible commission settings by product, tier, and performance — calculated and paid automatically.</span></p>
         <div class="feature-bullets">
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Tối đa 3 cấp hoa hồng
+            <span data-lang="vi">Tối đa 3 cấp hoa hồng</span><span data-lang="en">Up to 3 commission tiers</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Hoa hồng theo % hoặc giá trị cố định
+            <span data-lang="vi">Hoa hồng theo % hoặc giá trị cố định</span><span data-lang="en">Commission by % or fixed value</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Lịch sử giao dịch minh bạch
+            <span data-lang="vi">Lịch sử giao dịch minh bạch</span><span data-lang="en">Transparent transaction history</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Rút tiền theo chu kỳ cài đặt trước
+            <span data-lang="vi">Rút tiền theo chu kỳ cài đặt trước</span><span data-lang="en">Withdrawals on preset schedule</span>
           </div>
         </div>
       </div>
@@ -1677,32 +1727,32 @@ blockquote.pullquote {
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
           </svg>
         </div>
-        <h3>Mã giới thiệu &amp; Referral</h3>
-        <p>Mỗi reseller có mã giới thiệu riêng để tuyển thêm reseller mới và nhận hoa hồng tầng trên.</p>
+        <h3><span data-lang="vi">Mã giới thiệu &amp; Referral</span><span data-lang="en">Referral Codes</span></h3>
+        <p><span data-lang="vi">Mỗi reseller có mã giới thiệu riêng để tuyển thêm reseller mới và nhận hoa hồng tầng trên.</span><span data-lang="en">Each reseller has their own referral code to recruit new resellers and earn upper-tier commissions.</span></p>
         <div class="feature-bullets">
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Mã giới thiệu tùy chỉnh
+            <span data-lang="vi">Mã giới thiệu tùy chỉnh</span><span data-lang="en">Custom referral codes</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Theo dõi nguồn đăng ký
+            <span data-lang="vi">Theo dõi nguồn đăng ký</span><span data-lang="en">Track registration sources</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Link chia sẻ cho từng sản phẩm
+            <span data-lang="vi">Link chia sẻ cho từng sản phẩm</span><span data-lang="en">Share links for each product</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Thưởng reseller khi mạng lưới mở rộng
+            <span data-lang="vi">Thưởng reseller khi mạng lưới mở rộng</span><span data-lang="en">Reward resellers as their network grows</span>
           </div>
         </div>
       </div>
@@ -1714,32 +1764,32 @@ blockquote.pullquote {
             <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
           </svg>
         </div>
-        <h3>Dashboard cho Reseller</h3>
-        <p>Giao diện đơn giản, thân thiện để reseller tự theo dõi hiệu suất, đơn hàng và thu nhập.</p>
+        <h3><span data-lang="vi">Dashboard cho Reseller</span><span data-lang="en">Reseller Dashboard</span></h3>
+        <p><span data-lang="vi">Giao diện đơn giản, thân thiện để reseller tự theo dõi hiệu suất, đơn hàng và thu nhập.</span><span data-lang="en">Simple, friendly interface for resellers to track performance, orders, and income.</span></p>
         <div class="feature-bullets">
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Tổng doanh thu và hoa hồng theo ngày
+            <span data-lang="vi">Tổng doanh thu và hoa hồng theo ngày</span><span data-lang="en">Total revenue and commissions by day</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Danh sách đơn hàng và trạng thái
+            <span data-lang="vi">Danh sách đơn hàng và trạng thái</span><span data-lang="en">Order list and status</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Thống kê mạng lưới cấp dưới
+            <span data-lang="vi">Thống kê mạng lưới cấp dưới</span><span data-lang="en">Downline network statistics</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Truy cập mobile, không cần cài app
+            <span data-lang="vi">Truy cập mobile, không cần cài app</span><span data-lang="en">Mobile access, no app install needed</span>
           </div>
         </div>
       </div>
@@ -1752,31 +1802,31 @@ blockquote.pullquote {
           </svg>
         </div>
         <h3>Gamification</h3>
-        <p>Hệ thống cấp bậc Bronze — Silver — Gold — Platinum tạo động lực để reseller liên tục nâng cao hiệu suất.</p>
+        <p><span data-lang="vi">Hệ thống cấp bậc Bronze — Silver — Gold — Platinum tạo động lực để reseller liên tục nâng cao hiệu suất.</span><span data-lang="en">Bronze — Silver — Gold — Platinum tier system motivates resellers to continuously improve performance.</span></p>
         <div class="feature-bullets">
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Bảng xếp hạng công khai theo tuần/tháng
+            <span data-lang="vi">Bảng xếp hạng công khai theo tuần/tháng</span><span data-lang="en">Public leaderboard by week/month</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Huy hiệu thành tích cá nhân
+            <span data-lang="vi">Huy hiệu thành tích cá nhân</span><span data-lang="en">Personal achievement badges</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Thưởng thêm khi đạt ngưỡng cấp bậc
+            <span data-lang="vi">Thưởng thêm khi đạt ngưỡng cấp bậc</span><span data-lang="en">Bonus rewards on tier milestone</span>
           </div>
           <div class="feature-bullet">
             <span class="bullet-dot">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </span>
-            Thông báo nâng hạng tự động
+            <span data-lang="vi">Thông báo nâng hạng tự động</span><span data-lang="en">Automatic tier-up notifications</span>
           </div>
         </div>
       </div>
@@ -1789,80 +1839,80 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">So sánh chi tiết</span>
-      <h2 class="section-title">Tự Build vs Bán trên Sàn vs Diso</h2>
-      <p class="section-subtitle">Đánh giá toàn diện ba lựa chọn phổ biến nhất khi doanh nghiệp muốn xây kênh phân phối.</p>
+      <span class="section-label"><span data-lang="vi">So sánh chi tiết</span><span data-lang="en">Detailed Comparison</span></span>
+      <h2 class="section-title"><span data-lang="vi">Tự Build vs Bán trên Sàn vs Diso</span><span data-lang="en">Build In-house vs Marketplace vs Diso</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Đánh giá toàn diện ba lựa chọn phổ biến nhất khi doanh nghiệp muốn xây kênh phân phối.</span><span data-lang="en">Comprehensive evaluation of the three most popular options when businesses want to build a distribution channel.</span></p>
     </div>
 
     <div class="table-wrap reveal">
       <table class="comp-table">
         <thead>
           <tr>
-            <th>Tiêu chí</th>
+            <th><span data-lang="vi">Tiêu chí</span><span data-lang="en">Criteria</span></th>
             <th>
-              Tự Build
-              <span class="col-label">Phát triển nội bộ</span>
+              <span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span>
+              <span class="col-label"><span data-lang="vi">Phát triển nội bộ</span><span data-lang="en">Internal development</span></span>
             </th>
             <th>
-              Bán trên Sàn
+              <span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplace</span>
               <span class="col-label">Shopee / Lazada / TikTok Shop</span>
             </th>
             <th class="col-diso">
               Diso Reseller Network
-              <span class="col-label">Giải pháp 4 / 5</span>
+              <span class="col-label"><span data-lang="vi">Giải pháp 4 / 5</span><span data-lang="en">Pillar 4 / 5</span></span>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Chi phí triển khai</td>
-            <td><span class="cross-icon">150 – 500 triệu đồng</span></td>
-            <td><span class="check-icon">0 — đăng ký miễn phí</span></td>
-            <td class="col-diso"><span class="check-icon">0 đồng phí cố định</span></td>
+            <td><span data-lang="vi">Chi phí triển khai</span><span data-lang="en">Deployment cost</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">150 – 500 triệu đồng</span><span data-lang="en">150–500M VND</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">0 — đăng ký miễn phí</span><span data-lang="en">0 — free to register</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">0 đồng phí cố định</span><span data-lang="en">Zero fixed fee</span></span></td>
           </tr>
           <tr>
-            <td>Thời gian ra mắt</td>
-            <td><span class="cross-icon">4 – 8 tháng</span></td>
-            <td><span class="check-icon">1 – 3 ngày</span></td>
-            <td class="col-diso"><span class="check-icon">Dưới 1 tuần</span></td>
+            <td><span data-lang="vi">Thời gian ra mắt</span><span data-lang="en">Time to launch</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">4 – 8 tháng</span><span data-lang="en">4–8 months</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">1 – 3 ngày</span><span data-lang="en">1–3 days</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Dưới 1 tuần</span><span data-lang="en">Under 1 week</span></span></td>
           </tr>
           <tr>
-            <td>Kiểm soát giá bán</td>
-            <td><span class="check-icon">Hoàn toàn kiểm soát</span></td>
-            <td><span class="cross-icon">Cạnh tranh giá, phá giá</span></td>
-            <td class="col-diso"><span class="check-icon">100% do brand quyết định</span></td>
+            <td><span data-lang="vi">Kiểm soát giá bán</span><span data-lang="en">Price control</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Hoàn toàn kiểm soát</span><span data-lang="en">Full control</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Cạnh tranh giá, phá giá</span><span data-lang="en">Price competition, undercutting</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">100% do brand quyết định</span><span data-lang="en">100% brand-controlled</span></span></td>
           </tr>
           <tr>
-            <td>Dữ liệu khách hàng</td>
-            <td><span class="check-icon">Sở hữu toàn bộ</span></td>
-            <td><span class="cross-icon">Sàn giữ, không chia sẻ</span></td>
-            <td class="col-diso"><span class="check-icon">Thuộc về thương hiệu</span></td>
+            <td><span data-lang="vi">Dữ liệu khách hàng</span><span data-lang="en">Customer data</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Sở hữu toàn bộ</span><span data-lang="en">Fully owned</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Sàn giữ, không chia sẻ</span><span data-lang="en">Marketplace keeps it, not shared</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Thuộc về thương hiệu</span><span data-lang="en">Belongs to the brand</span></span></td>
           </tr>
           <tr>
-            <td>Quản lý reseller</td>
-            <td><span class="neutral-icon">Cần tự xây dựng</span></td>
-            <td><span class="cross-icon">Không có tính năng này</span></td>
-            <td class="col-diso"><span class="check-icon">Có sẵn, đa cấp</span></td>
+            <td><span data-lang="vi">Quản lý reseller</span><span data-lang="en">Reseller management</span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Cần tự xây dựng</span><span data-lang="en">Must build yourself</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Không có tính năng này</span><span data-lang="en">Not available</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Có sẵn, đa cấp</span><span data-lang="en">Built-in, multi-tier</span></span></td>
           </tr>
           <tr>
-            <td>Hoa hồng tự động</td>
-            <td><span class="neutral-icon">Cần tự lập trình</span></td>
-            <td><span class="cross-icon">Không hỗ trợ</span></td>
-            <td class="col-diso"><span class="check-icon">Tự động theo cấu hình</span></td>
+            <td><span data-lang="vi">Hoa hồng tự động</span><span data-lang="en">Auto commissions</span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Cần tự lập trình</span><span data-lang="en">Must program yourself</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Không hỗ trợ</span><span data-lang="en">Not supported</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Tự động theo cấu hình</span><span data-lang="en">Automated per configuration</span></span></td>
           </tr>
           <tr>
-            <td>Chi phí giao dịch</td>
-            <td><span class="check-icon">Không phí sàn</span></td>
-            <td><span class="cross-icon">3 – 10% mỗi đơn hàng</span></td>
-            <td class="col-diso"><span class="check-icon">Không phí giao dịch ẩn</span></td>
+            <td><span data-lang="vi">Chi phí giao dịch</span><span data-lang="en">Transaction fees</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Không phí sàn</span><span data-lang="en">No marketplace fee</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">3 – 10% mỗi đơn hàng</span><span data-lang="en">3–10% per order</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Không phí giao dịch ẩn</span><span data-lang="en">No hidden transaction fees</span></span></td>
           </tr>
         </tbody>
         <tfoot>
           <tr class="row-summary">
-            <td>Kết luận</td>
-            <td>Phù hợp nếu có đội kỹ thuật lớn &amp; ngân sách cao</td>
-            <td>Tăng nhận diện nhưng không xây được kênh bền vững</td>
-            <td class="col-diso">Tốt nhất để xây mạng lưới phân phối riêng, bền vững</td>
+            <td><span data-lang="vi">Kết luận</span><span data-lang="en">Verdict</span></td>
+            <td><span data-lang="vi">Phù hợp nếu có đội kỹ thuật lớn &amp; ngân sách cao</span><span data-lang="en">Suitable with large tech team &amp; high budget</span></td>
+            <td><span data-lang="vi">Tăng nhận diện nhưng không xây được kênh bền vững</span><span data-lang="en">Boosts awareness but can't build a sustainable channel</span></td>
+            <td class="col-diso"><span data-lang="vi">Tốt nhất để xây mạng lưới phân phối riêng, bền vững</span><span data-lang="en">Best for building your own sustainable distribution network</span></td>
           </tr>
         </tfoot>
       </table>
@@ -1874,9 +1924,9 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Quy trình vận hành</span>
-      <h2 class="section-title">Từ 0 đến mạng lưới ngàn người bán</h2>
-      <p class="section-subtitle">Ba giai đoạn rõ ràng, có hỗ trợ từ Diso — doanh nghiệp chỉ tập trung vào sản phẩm và chiến lược.</p>
+      <span class="section-label"><span data-lang="vi">Quy trình vận hành</span><span data-lang="en">Operating Process</span></span>
+      <h2 class="section-title"><span data-lang="vi">Từ 0 đến mạng lưới ngàn người bán</span><span data-lang="en">From 0 to a network of thousands of sellers</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Ba giai đoạn rõ ràng, có hỗ trợ từ Diso — doanh nghiệp chỉ tập trung vào sản phẩm và chiến lược.</span><span data-lang="en">Three clear phases with Diso support — businesses only focus on product and strategy.</span></p>
     </div>
 
     <div style="position: relative;">
@@ -1888,33 +1938,33 @@ blockquote.pullquote {
         <!-- Phase 1 -->
         <div class="workflow-phase reveal reveal-delay-1">
           <div class="phase-number">1</div>
-          <div class="phase-tag">Giai đoạn 1</div>
-          <h3>Tuyển dụng Reseller</h3>
-          <p>Xây dựng chương trình và thu hút người bán đầu tiên thông qua kênh sẵn có của thương hiệu.</p>
+          <div class="phase-tag"><span data-lang="vi">Giai đoạn 1</span><span data-lang="en">Phase 1</span></div>
+          <h3><span data-lang="vi">Tuyển dụng Reseller</span><span data-lang="en">Reseller Recruitment</span></h3>
+          <p><span data-lang="vi">Xây dựng chương trình và thu hút người bán đầu tiên thông qua kênh sẵn có của thương hiệu.</span><span data-lang="en">Build the program and attract your first sellers through the brand's existing channels.</span></p>
           <div class="phase-steps">
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Cài đặt cấu trúc hoa hồng và cấp bậc
+              <span data-lang="vi">Cài đặt cấu trúc hoa hồng và cấp bậc</span><span data-lang="en">Set up commission structure and tiers</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Tạo trang đăng ký reseller có thương hiệu
+              <span data-lang="vi">Tạo trang đăng ký reseller có thương hiệu</span><span data-lang="en">Create branded reseller registration page</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Lan toả qua mạng xã hội và email list
+              <span data-lang="vi">Lan toả qua mạng xã hội và email list</span><span data-lang="en">Spread via social media and email list</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Phê duyệt và kích hoạt tài khoản
+              <span data-lang="vi">Phê duyệt và kích hoạt tài khoản</span><span data-lang="en">Approve and activate accounts</span>
             </div>
           </div>
         </div>
@@ -1922,33 +1972,33 @@ blockquote.pullquote {
         <!-- Phase 2 -->
         <div class="workflow-phase reveal reveal-delay-2">
           <div class="phase-number">2</div>
-          <div class="phase-tag">Giai đoạn 2</div>
-          <h3>Bán hàng &amp; Vận hành</h3>
-          <p>Reseller bán trên storefront riêng, đơn hàng tự động về hệ thống — brand xử lý vận chuyển.</p>
+          <div class="phase-tag"><span data-lang="vi">Giai đoạn 2</span><span data-lang="en">Phase 2</span></div>
+          <h3><span data-lang="vi">Bán hàng &amp; Vận hành</span><span data-lang="en">Sales &amp; Operations</span></h3>
+          <p><span data-lang="vi">Reseller bán trên storefront riêng, đơn hàng tự động về hệ thống — brand xử lý vận chuyển.</span><span data-lang="en">Resellers sell on their own storefront, orders automatically flow into the system — brand handles shipping.</span></p>
           <div class="phase-steps">
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Đơn hàng từ storefront reseller về backend
+              <span data-lang="vi">Đơn hàng từ storefront reseller về backend</span><span data-lang="en">Orders from reseller storefront to backend</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Hoa hồng tính tự động sau khi giao thành công
+              <span data-lang="vi">Hoa hồng tính tự động sau khi giao thành công</span><span data-lang="en">Commission auto-calculated after successful delivery</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Reseller theo dõi doanh số qua dashboard
+              <span data-lang="vi">Reseller theo dõi doanh số qua dashboard</span><span data-lang="en">Reseller tracks sales via dashboard</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Brand giám sát toàn mạng lưới real-time
+              <span data-lang="vi">Brand giám sát toàn mạng lưới real-time</span><span data-lang="en">Brand monitors the entire network real-time</span>
             </div>
           </div>
         </div>
@@ -1956,33 +2006,33 @@ blockquote.pullquote {
         <!-- Phase 3 -->
         <div class="workflow-phase reveal reveal-delay-3">
           <div class="phase-number">3</div>
-          <div class="phase-tag">Giai đoạn 3</div>
-          <h3>Phát triển mạng lưới</h3>
-          <p>Gamification và hoa hồng referral tạo vòng lặp tự phát triển — reseller tuyển thêm reseller.</p>
+          <div class="phase-tag"><span data-lang="vi">Giai đoạn 3</span><span data-lang="en">Phase 3</span></div>
+          <h3><span data-lang="vi">Phát triển mạng lưới</span><span data-lang="en">Network Growth</span></h3>
+          <p><span data-lang="vi">Gamification và hoa hồng referral tạo vòng lặp tự phát triển — reseller tuyển thêm reseller.</span><span data-lang="en">Gamification and referral commissions create a self-growth loop — resellers recruit more resellers.</span></p>
           <div class="phase-steps">
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Reseller chia sẻ mã mời, tuyển cấp dưới
+              <span data-lang="vi">Reseller chia sẻ mã mời, tuyển cấp dưới</span><span data-lang="en">Resellers share invite codes, recruit downlines</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Bảng xếp hạng kích thích thi đua
+              <span data-lang="vi">Bảng xếp hạng kích thích thi đua</span><span data-lang="en">Leaderboard drives healthy competition</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Nâng cấp Bronze → Platinum tự động
+              <span data-lang="vi">Nâng cấp Bronze → Platinum tự động</span><span data-lang="en">Auto upgrade Bronze → Platinum</span>
             </div>
             <div class="phase-step">
               <div class="phase-step-icon">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              Brand tối ưu cấu trúc hoa hồng theo dữ liệu
+              <span data-lang="vi">Brand tối ưu cấu trúc hoa hồng theo dữ liệu</span><span data-lang="en">Brand optimizes commission structure from data</span>
             </div>
           </div>
         </div>
@@ -1991,7 +2041,7 @@ blockquote.pullquote {
 
     <!-- Tier progression bar -->
     <div class="tier-track reveal" style="margin-top: 56px;">
-      <div class="tier-track-label">Hệ thống cấp bậc Reseller</div>
+      <div class="tier-track-label"><span data-lang="vi">Hệ thống cấp bậc Reseller</span><span data-lang="en">Reseller Tier System</span></div>
       <div class="tier-bar">
         <div class="tier-bar-seg bronze"></div>
         <div class="tier-bar-seg silver"></div>
@@ -2004,32 +2054,32 @@ blockquote.pullquote {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div class="tier-name">Bronze</div>
-          <div class="tier-threshold">0 – 50 đơn / tháng</div>
-          <div class="tier-perk">Hoa hồng cơ bản, truy cập storefront và mã mời</div>
+          <div class="tier-threshold"><span data-lang="vi">0 – 50 đơn / tháng</span><span data-lang="en">0 – 50 orders / month</span></div>
+          <div class="tier-perk"><span data-lang="vi">Hoa hồng cơ bản, truy cập storefront và mã mời</span><span data-lang="en">Basic commission, storefront access and invite code</span></div>
         </div>
         <div class="tier-card silver">
           <div class="tier-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div class="tier-name">Silver</div>
-          <div class="tier-threshold">51 – 200 đơn / tháng</div>
-          <div class="tier-perk">Hoa hồng tăng +2%, ưu tiên hỗ trợ và badge xác nhận</div>
+          <div class="tier-threshold"><span data-lang="vi">51 – 200 đơn / tháng</span><span data-lang="en">51 – 200 orders / month</span></div>
+          <div class="tier-perk"><span data-lang="vi">Hoa hồng tăng +2%, ưu tiên hỗ trợ và badge xác nhận</span><span data-lang="en">+2% commission, priority support and verified badge</span></div>
         </div>
         <div class="tier-card gold">
           <div class="tier-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div class="tier-name">Gold</div>
-          <div class="tier-threshold">201 – 500 đơn / tháng</div>
-          <div class="tier-perk">Hoa hồng tăng +5%, featured trên trang brand, ưu đãi độc quyền</div>
+          <div class="tier-threshold"><span data-lang="vi">201 – 500 đơn / tháng</span><span data-lang="en">201 – 500 orders / month</span></div>
+          <div class="tier-perk"><span data-lang="vi">Hoa hồng tăng +5%, featured trên trang brand, ưu đãi độc quyền</span><span data-lang="en">+5% commission, featured on brand page, exclusive perks</span></div>
         </div>
         <div class="tier-card platinum">
           <div class="tier-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div class="tier-name">Platinum</div>
-          <div class="tier-threshold">500+ đơn / tháng</div>
-          <div class="tier-perk">Hoa hồng cao nhất, account manager riêng, phân phối độc quyền vùng</div>
+          <div class="tier-threshold"><span data-lang="vi">500+ đơn / tháng</span><span data-lang="en">500+ orders / month</span></div>
+          <div class="tier-perk"><span data-lang="vi">Hoa hồng cao nhất, account manager riêng, phân phối độc quyền vùng</span><span data-lang="en">Highest commission, dedicated account manager, exclusive regional distribution</span></div>
         </div>
       </div>
     </div>
@@ -2040,43 +2090,43 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Tình huống thực tế</span>
-      <h2 class="section-title">Câu chuyện từ thực tế</h2>
-      <p class="section-subtitle">Xem cách một thương hiệu thực phẩm chức năng đã xây dựng và vận hành mạng lưới reseller với Diso.</p>
+      <span class="section-label"><span data-lang="vi">Tình huống thực tế</span><span data-lang="en">Real Use Case</span></span>
+      <h2 class="section-title"><span data-lang="vi">Câu chuyện từ thực tế</span><span data-lang="en">A Real Story</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Xem cách một thương hiệu thực phẩm chức năng đã xây dựng và vận hành mạng lưới reseller với Diso.</span><span data-lang="en">See how a functional food brand built and operated a reseller network with Diso.</span></p>
     </div>
 
     <div class="case-study reveal">
       <div class="case-study-tag">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Use Case — Thực phẩm chức năng
+        <span data-lang="vi">Use Case — Thực phẩm chức năng</span><span data-lang="en">Use Case — Functional Food</span>
       </div>
 
-      <h3>Brand thực phẩm chức năng — 200 reseller, 500 đơn mỗi ngày</h3>
+      <h3><span data-lang="vi">Brand thực phẩm chức năng — 200 reseller, 500 đơn mỗi ngày</span><span data-lang="en">Functional food brand — 200 resellers, 500 orders per day</span></h3>
       <p>
-        Một thương hiệu thực phẩm chức năng quy mô vừa, trước đây phụ thuộc hoàn toàn vào Shopee và đội nhân viên bán hàng 15 người. Chi phí nhân sự chiếm 30% doanh thu trong khi tăng trưởng đang chạm ngưỡng. Sau khi triển khai Diso Reseller Network trong 6 tuần, mạng lưới 200 reseller được kích hoạt với Storefront riêng, bảng xếp hạng tuần và hoa hồng 2 cấp.
+        <span data-lang="vi">Một thương hiệu thực phẩm chức năng quy mô vừa, trước đây phụ thuộc hoàn toàn vào Shopee và đội nhân viên bán hàng 15 người. Chi phí nhân sự chiếm 30% doanh thu trong khi tăng trưởng đang chạm ngưỡng. Sau khi triển khai Diso Reseller Network trong 6 tuần, mạng lưới 200 reseller được kích hoạt với Storefront riêng, bảng xếp hạng tuần và hoa hồng 2 cấp.</span><span data-lang="en">A mid-sized functional food brand, previously fully dependent on Shopee and a 15-person sales team. HR costs consumed 30% of revenue while growth was hitting a ceiling. After deploying Diso Reseller Network in 6 weeks, 200 resellers were activated with personal storefronts, weekly leaderboards, and 2-tier commissions.</span>
       </p>
 
       <div class="case-numbers">
         <div class="case-num">
           <div class="case-num-value">200</div>
-          <div class="case-num-label">Reseller hoạt động</div>
+          <div class="case-num-label"><span data-lang="vi">Reseller hoạt động</span><span data-lang="en">Active resellers</span></div>
         </div>
         <div class="case-num">
           <div class="case-num-value">500+</div>
-          <div class="case-num-label">Đơn hàng mỗi ngày</div>
+          <div class="case-num-label"><span data-lang="vi">Đơn hàng mỗi ngày</span><span data-lang="en">Orders per day</span></div>
         </div>
         <div class="case-num">
-          <div class="case-num-value">6 tuần</div>
-          <div class="case-num-label">Thời gian triển khai</div>
+          <div class="case-num-value"><span data-lang="vi">6 tuần</span><span data-lang="en">6 weeks</span></div>
+          <div class="case-num-label"><span data-lang="vi">Thời gian triển khai</span><span data-lang="en">Deployment time</span></div>
         </div>
       </div>
 
       <blockquote class="pullquote">
         <div class="pullquote-mark">"</div>
         <div class="pullquote-text">
-          Trước đây tôi phải gọi điện thủ công để thu tiền hoa hồng. Bây giờ hệ thống tự làm hết — tôi chỉ cần xem báo cáo mỗi sáng.
+          <span data-lang="vi">Trước đây tôi phải gọi điện thủ công để thu tiền hoa hồng. Bây giờ hệ thống tự làm hết — tôi chỉ cần xem báo cáo mỗi sáng.</span><span data-lang="en">Before, I had to manually call to collect commissions. Now the system does everything automatically — I just check the report every morning.</span>
         </div>
-        <span class="pullquote-author">— Giám đốc kinh doanh, thương hiệu thực phẩm chức năng miền Nam</span>
+        <span class="pullquote-author"><span data-lang="vi">— Giám đốc kinh doanh, thương hiệu thực phẩm chức năng miền Nam</span><span data-lang="en">— Sales Director, Southern functional food brand</span></span>
       </blockquote>
     </div>
   </div>
@@ -2086,30 +2136,30 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Con số nổi bật</span>
-      <h2 class="section-title">Những con số đáng nhớ</h2>
+      <span class="section-label"><span data-lang="vi">Con số nổi bật</span><span data-lang="en">Key Numbers</span></span>
+      <h2 class="section-title"><span data-lang="vi">Những con số đáng nhớ</span><span data-lang="en">Numbers worth remembering</span></h2>
     </div>
 
     <div class="stats-grid">
       <div class="stat-card reveal reveal-delay-1">
         <div class="stat-value">0 đồng</div>
-        <div class="stat-label">Chi phí cố định để bắt đầu</div>
-        <div class="stat-note">Không lương cứng, không chi phí vận hành ban đầu — chỉ trả theo kết quả thực tế.</div>
+        <div class="stat-label"><span data-lang="vi">Chi phí cố định để bắt đầu</span><span data-lang="en">Fixed cost to start</span></div>
+        <div class="stat-note"><span data-lang="vi">Không lương cứng, không chi phí vận hành ban đầu — chỉ trả theo kết quả thực tế.</span><span data-lang="en">No fixed salaries, no initial operating costs — only pay for actual results.</span></div>
       </div>
       <div class="stat-card reveal reveal-delay-2">
-        <div class="stat-value">4–8T</div>
-        <div class="stat-label">Thời gian tự build trung bình</div>
-        <div class="stat-note">Thời gian bạn tiết kiệm được khi chọn Diso thay vì xây hệ thống từ đầu.</div>
+        <div class="stat-value"><span data-lang="vi">4–8T</span><span data-lang="en">4–8Mo</span></div>
+        <div class="stat-label"><span data-lang="vi">Thời gian tự build trung bình</span><span data-lang="en">Average self-build time</span></div>
+        <div class="stat-note"><span data-lang="vi">Thời gian bạn tiết kiệm được khi chọn Diso thay vì xây hệ thống từ đầu.</span><span data-lang="en">Time you save by choosing Diso instead of building from scratch.</span></div>
       </div>
       <div class="stat-card reveal reveal-delay-3">
         <div class="stat-value">100%</div>
-        <div class="stat-label">Kiểm soát giá bán</div>
-        <div class="stat-note">Brand quyết định giá niêm yết — không reseller nào được bán phá giá ngoài hệ thống.</div>
+        <div class="stat-label"><span data-lang="vi">Kiểm soát giá bán</span><span data-lang="en">Price control</span></div>
+        <div class="stat-note"><span data-lang="vi">Brand quyết định giá niêm yết — không reseller nào được bán phá giá ngoài hệ thống.</span><span data-lang="en">Brand sets the listed price — no reseller can undercut outside the system.</span></div>
       </div>
       <div class="stat-card reveal reveal-delay-4">
         <div class="stat-value">&#8734;</div>
-        <div class="stat-label">Không giới hạn reseller</div>
-        <div class="stat-note">Không giới hạn số lượng người bán trong mạng lưới ở mọi gói dịch vụ.</div>
+        <div class="stat-label"><span data-lang="vi">Không giới hạn reseller</span><span data-lang="en">Unlimited resellers</span></div>
+        <div class="stat-note"><span data-lang="vi">Không giới hạn số lượng người bán trong mạng lưới ở mọi gói dịch vụ.</span><span data-lang="en">No limit on the number of sellers in your network across all service plans.</span></div>
       </div>
     </div>
   </div>
@@ -2119,9 +2169,9 @@ blockquote.pullquote {
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Hệ sinh thái Diso</span>
-      <h2 class="section-title">Reseller Network kết nối với toàn bộ nền tảng</h2>
-      <p class="section-subtitle">Mỗi giải pháp trong Diso được thiết kế để tích hợp liền mạch — tạo vòng lặp tăng trưởng khép kín.</p>
+      <span class="section-label"><span data-lang="vi">Hệ sinh thái Diso</span><span data-lang="en">Diso Ecosystem</span></span>
+      <h2 class="section-title"><span data-lang="vi">Reseller Network kết nối với toàn bộ nền tảng</span><span data-lang="en">Reseller Network connects with the entire platform</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Mỗi giải pháp trong Diso được thiết kế để tích hợp liền mạch — tạo vòng lặp tăng trưởng khép kín.</span><span data-lang="en">Every Diso solution is designed to integrate seamlessly — creating a closed growth loop.</span></p>
     </div>
 
     <div class="module-connections-layout reveal">
@@ -2132,8 +2182,8 @@ blockquote.pullquote {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <div class="module-node-text">
-            <h4>Website TMDT</h4>
-            <p>Storefront reseller chạy trên nền tảng website thương mại điện tử của Diso</p>
+            <h4><span data-lang="vi">Website TMDT</span><span data-lang="en">E-commerce Website</span></h4>
+            <p><span data-lang="vi">Storefront reseller chạy trên nền tảng website thương mại điện tử của Diso</span><span data-lang="en">Reseller storefront runs on Diso's e-commerce website platform</span></p>
           </div>
         </div>
         <div class="module-node">
@@ -2142,7 +2192,7 @@ blockquote.pullquote {
           </div>
           <div class="module-node-text">
             <h4>Affiliate</h4>
-            <p>Reseller có thể đồng thời là Affiliate — chia sẻ link theo dõi và nhận hoa hồng CPA</p>
+            <p><span data-lang="vi">Reseller có thể đồng thời là Affiliate — chia sẻ link theo dõi và nhận hoa hồng CPA</span><span data-lang="en">Resellers can simultaneously be Affiliates — share tracking links and earn CPA commissions</span></p>
           </div>
         </div>
       </div>
@@ -2153,7 +2203,7 @@ blockquote.pullquote {
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
-          <div class="module-center-label">Reseller<br>Network</div>
+          <div class="module-center-label"><span data-lang="vi">Reseller<br>Network</span><span data-lang="en">Reseller<br>Network</span></div>
         </div>
       </div>
 
@@ -2164,8 +2214,8 @@ blockquote.pullquote {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
           <div class="module-node-text">
-            <h4>Backend Vận hành</h4>
-            <p>Đơn hàng từ tất cả reseller hội tụ về một backend — quản lý kho, vận chuyển, kế toán</p>
+            <h4><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></h4>
+            <p><span data-lang="vi">Đơn hàng từ tất cả reseller hội tụ về một backend — quản lý kho, vận chuyển, kế toán</span><span data-lang="en">Orders from all resellers converge into one backend — warehouse, shipping, accounting management</span></p>
           </div>
         </div>
         <div class="module-node">
@@ -2173,8 +2223,8 @@ blockquote.pullquote {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
           <div class="module-node-text">
-            <h4>Đại sứ thương hiệu</h4>
-            <p>Reseller hiệu suất cao được nâng cấp thành Brand Ambassador, mở rộng tầm ảnh hưởng</p>
+            <h4><span data-lang="vi">Đại sứ thương hiệu</span><span data-lang="en">Brand Ambassador</span></h4>
+            <p><span data-lang="vi">Reseller hiệu suất cao được nâng cấp thành Brand Ambassador, mở rộng tầm ảnh hưởng</span><span data-lang="en">High-performing resellers are upgraded to Brand Ambassadors, expanding their reach</span></p>
           </div>
         </div>
       </div>
@@ -2186,19 +2236,19 @@ blockquote.pullquote {
 <section class="cta-section">
   <div class="cta-bg-gradient"></div>
   <div class="container">
-    <span class="section-label">Bắt đầu ngay hôm nay</span>
-    <h2>Sẵn sàng xây mạng lưới ngàn người bán?</h2>
-    <p>Demo 30 phút — chúng tôi sẽ chỉ bạn cách thiết lập Reseller Network từ đầu, phù hợp với mô hình kinh doanh của bạn.</p>
+    <span class="section-label"><span data-lang="vi">Bắt đầu ngay hôm nay</span><span data-lang="en">Get Started Today</span></span>
+    <h2><span data-lang="vi">Sẵn sàng xây mạng lưới ngàn người bán?</span><span data-lang="en">Ready to build a network of thousands of sellers?</span></h2>
+    <p><span data-lang="vi">Demo 30 phút — chúng tôi sẽ chỉ bạn cách thiết lập Reseller Network từ đầu, phù hợp với mô hình kinh doanh của bạn.</span><span data-lang="en">30-minute demo — we'll show you how to set up Reseller Network from scratch, tailored to your business model.</span></p>
     <div class="cta-buttons">
       <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-pillar btn-lg">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Demo miễn phí 30 phút
+        <span data-lang="vi">Demo miễn phí 30 phút</span><span data-lang="en">Book a Free Demo</span>
       </a>
       <a href="../../comparison/" class="btn btn-outline btn-lg">
-        So sánh đầy đủ các giải pháp
+        <span data-lang="vi">So sánh đầy đủ các giải pháp</span><span data-lang="en">Compare all solutions</span>
       </a>
     </div>
-    <p class="cta-note">Không cần thẻ tín dụng. Không cam kết dài hạn.</p>
+    <p class="cta-note"><span data-lang="vi">Không cần thẻ tín dụng. Không cam kết dài hạn.</span><span data-lang="en">No credit card required. No long-term commitment.</span></p>
   </div>
 </section>
 
@@ -2211,10 +2261,10 @@ blockquote.pullquote {
         Diso
       </a>
       <div class="footer-links">
-        <a href="../../">Trang chủ</a>
-        <a href="../../#solution">Giải pháp</a>
-        <a href="../../comparison/">So sánh</a>
-        <a href="../../#proof">Khách hàng</a>
+        <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
+        <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
+        <a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a>
+        <a href="../../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a>
       </div>
       <span class="footer-copy">© 2025 Diso. All rights reserved.</span>
     </div>
@@ -2259,6 +2309,19 @@ blockquote.pullquote {
     });
   });
 })();
+
+// Language toggle
+var langToggle = document.getElementById('langToggle');
+var htmlEl = document.documentElement;
+var savedLang = localStorage.getItem('diso-lang') || 'vi';
+if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+langToggle.addEventListener('click', function() {
+  var current = htmlEl.getAttribute('lang') || 'vi';
+  var next = current === 'vi' ? 'en' : 'vi';
+  htmlEl.setAttribute('lang', next);
+  localStorage.setItem('diso-lang', next);
+});
 
 // ========================================
 // REVEAL ANIMATIONS (Intersection Observer)

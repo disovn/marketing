@@ -1314,6 +1314,55 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 .reveal-delay-4 { transition-delay: 400ms; }
 
 /* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .pillar-tagline [data-lang="en"],
+html[lang="en"] .pillar-key-message [data-lang="en"],
+html[lang="en"] .feature-detail-text [data-lang="en"],
+html[lang="en"] .feature-desc [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 1024px) {
@@ -1383,16 +1432,17 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       Diso
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../../">Trang chủ</a></li>
-      <li><a href="../../#solution">Giải pháp</a></li>
-      <li><a href="../../#features">Tính năng</a></li>
-      <li><a href="../../#proof">Khách hàng</a></li>
-      <li><a href="../../comparison/">So sánh</a></li>
+      <li><a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../../case-studies/">Case Studies</a></li>
-      <li><a href="../../vision/">Tầm nhìn</a></li>
+      <li><a href="../../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
       <li>
         <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">
-          Đặt lịch demo
+          <span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span>
         </a>
       </li>
     </ul>
@@ -1414,20 +1464,20 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   </div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../">Trang chủ</a>
+      <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span class="breadcrumb-sep">›</span>
-      <a href="../../#solution">Giải pháp</a>
+      <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
       <span class="breadcrumb-sep">›</span>
       <span>Affiliate Marketing</span>
     </nav>
 
     <div class="pillar-badge">
       <span class="pillar-badge-dot"></span>
-      Giải pháp 2 / 5
+      <span data-lang="vi">Giải pháp 2 / 5</span><span data-lang="en">Pillar 2 / 5</span>
     </div>
 
     <h1>Affiliate Marketing</h1>
-    <p class="hero-subtitle">Kéo khách về website mà không tốn tiền quảng cáo</p>
+    <p class="hero-subtitle"><span data-lang="vi">Kéo khách về website mà không tốn tiền quảng cáo</span><span data-lang="en">Drive traffic without ad spend</span></p>
 
     <div class="hero-stats-row">
       <div class="hero-stat-item">
@@ -1436,7 +1486,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div class="hero-stat-text">
           <div class="hero-stat-num">300K+</div>
-          <div class="hero-stat-label">KOL/KOC tại Việt Nam</div>
+          <div class="hero-stat-label"><span data-lang="vi">KOL/KOC tại Việt Nam</span><span data-lang="en">KOL/KOC in Vietnam</span></div>
         </div>
       </div>
       <div class="hero-stat-item">
@@ -1445,7 +1495,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div class="hero-stat-text">
           <div class="hero-stat-num">~1 tỷ USD</div>
-          <div class="hero-stat-label">Quy mô thị trường 2024</div>
+          <div class="hero-stat-label"><span data-lang="vi">Quy mô thị trường 2024</span><span data-lang="en">Market size 2024</span></div>
         </div>
       </div>
       <div class="hero-stat-item">
@@ -1454,7 +1504,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div class="hero-stat-text">
           <div class="hero-stat-num">30x</div>
-          <div class="hero-stat-label">Tăng trưởng vs 2022</div>
+          <div class="hero-stat-label"><span data-lang="vi">Tăng trưởng vs 2022</span><span data-lang="en">Growth vs 2022</span></div>
         </div>
       </div>
     </div>
@@ -1467,9 +1517,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Vấn đề hiện tại</span>
-      <h2>Tại sao kênh quảng cáo truyền thống không còn hiệu quả?</h2>
-      <p class="section-subtitle">Doanh nghiệp đang đốt ngân sách mà không xây dựng được kênh bán hàng bền vững</p>
+      <span class="section-label"><span data-lang="vi">Vấn đề hiện tại</span><span data-lang="en">Current Challenges</span></span>
+      <h2><span data-lang="vi">Tại sao kênh quảng cáo truyền thống không còn hiệu quả?</span><span data-lang="en">Why traditional ad channels no longer work?</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Doanh nghiệp đang đốt ngân sách mà không xây dựng được kênh bán hàng bền vững</span><span data-lang="en">Businesses are burning budgets without building a sustainable sales channel</span></p>
     </div>
 
     <div class="pain-grid">
@@ -1477,43 +1527,43 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-        <h3>Chi phí CPC leo thang</h3>
-        <p>Chi phí quảng cáo CPC tăng <strong>30–50%/năm</strong> trên các nền tảng lớn. Biên lợi nhuận co hẹp, doanh nghiệp nhỏ và vừa ngày càng khó cạnh tranh bằng ngân sách.</p>
+        <h3><span data-lang="vi">Chi phí CPC leo thang</span><span data-lang="en">CPC costs keep rising</span></h3>
+        <p><span data-lang="vi">Chi phí quảng cáo CPC tăng <strong>30–50%/năm</strong> trên các nền tảng lớn. Biên lợi nhuận co hẹp, doanh nghiệp nhỏ và vừa ngày càng khó cạnh tranh bằng ngân sách.</span><span data-lang="en">CPC ad costs increase <strong>30–50% per year</strong> on major platforms. Margins shrink, making it harder for SMEs to compete on budget.</span></p>
       </div>
 
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
-        <h3>Không có kênh bền vững</h3>
-        <p>Phụ thuộc hoàn toàn vào quảng cáo trả phí. Khi tắt ngân sách, doanh thu về 0. Không có lực lượng affiliate tự phát triển và lan rộng theo thời gian.</p>
+        <h3><span data-lang="vi">Không có kênh bền vững</span><span data-lang="en">No sustainable channel</span></h3>
+        <p><span data-lang="vi">Phụ thuộc hoàn toàn vào quảng cáo trả phí. Khi tắt ngân sách, doanh thu về 0. Không có lực lượng affiliate tự phát triển và lan rộng theo thời gian.</span><span data-lang="en">Fully dependent on paid ads. Stop the budget, revenue drops to zero. No affiliate force that grows and spreads over time.</span></p>
       </div>
 
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3>Tự build mất 3–6 tháng</h3>
-        <p>Xây dựng hệ thống affiliate từ đầu yêu cầu đội ngũ kỹ thuật, tốn <strong>3–6 tháng</strong> phát triển và chi phí vận hành lớn. Nhiều tính năng chống gian lận thường bị bỏ qua.</p>
+        <h3><span data-lang="vi">Tự build mất 3–6 tháng</span><span data-lang="en">Building yourself takes 3–6 months</span></h3>
+        <p><span data-lang="vi">Xây dựng hệ thống affiliate từ đầu yêu cầu đội ngũ kỹ thuật, tốn <strong>3–6 tháng</strong> phát triển và chi phí vận hành lớn. Nhiều tính năng chống gian lận thường bị bỏ qua.</span><span data-lang="en">Building an affiliate system from scratch requires a tech team, takes <strong>3–6 months</strong> and large operating costs. Many fraud prevention features are often skipped.</span></p>
       </div>
     </div>
 
     <div class="market-stats reveal">
       <div class="market-stat">
         <div class="market-stat-num accent-yellow">700M–1B</div>
-        <div class="market-stat-label">USD quy mô thị trường<br>Affiliate Việt Nam 2024</div>
+        <div class="market-stat-label"><span data-lang="vi">USD quy mô thị trường<br>Affiliate Việt Nam 2024</span><span data-lang="en">USD Vietnam Affiliate<br>market size 2024</span></div>
       </div>
       <div class="market-stat">
         <div class="market-stat-num">300K+</div>
-        <div class="market-stat-label">KOL/KOC đang hoạt động<br>trên thị trường</div>
+        <div class="market-stat-label"><span data-lang="vi">KOL/KOC đang hoạt động<br>trên thị trường</span><span data-lang="en">KOL/KOC active<br>on the market</span></div>
       </div>
       <div class="market-stat">
         <div class="market-stat-num accent-yellow">30x</div>
-        <div class="market-stat-label">Tốc độ tăng trưởng<br>so với năm 2022</div>
+        <div class="market-stat-label"><span data-lang="vi">Tốc độ tăng trưởng<br>so với năm 2022</span><span data-lang="en">Growth rate<br>vs 2022</span></div>
       </div>
       <div class="market-stat">
         <div class="market-stat-num">Top 5</div>
-        <div class="market-stat-label">Thị trường Affiliate<br>lớn nhất Đông Nam Á</div>
+        <div class="market-stat-label"><span data-lang="vi">Thị trường Affiliate<br>lớn nhất Đông Nam Á</span><span data-lang="en">Largest Affiliate markets<br>in Southeast Asia</span></div>
       </div>
     </div>
   </div>
@@ -1525,9 +1575,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);" id="features">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Tính năng</span>
-      <h2>6 tính năng cốt lõi của Affiliate Marketing</h2>
-      <p class="section-subtitle">Toàn bộ công cụ cần thiết để xây dựng mạng lưới affiliate chuyên nghiệp ngay từ ngày đầu</p>
+      <span class="section-label"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></span>
+      <h2><span data-lang="vi">6 tính năng cốt lõi của Affiliate Marketing</span><span data-lang="en">6 core features of Affiliate Marketing</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Toàn bộ công cụ cần thiết để xây dựng mạng lưới affiliate chuyên nghiệp ngay từ ngày đầu</span><span data-lang="en">All the tools needed to build a professional affiliate network from day one</span></p>
     </div>
 
     <div class="features-grid">
@@ -1536,12 +1586,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
         </div>
-        <h3>Link Tracking</h3>
+        <h3><span data-lang="vi">Link Tracking</span><span data-lang="en">Accurate Tracking</span></h3>
         <ul class="feature-bullets">
-          <li>Tạo link tracking riêng cho từng affiliate</li>
-          <li>Theo dõi click, conversion, doanh thu real-time</li>
-          <li>Hỗ trợ UTM parameters và deep link</li>
-          <li>Dashboard phân tích chi tiết theo kênh</li>
+          <li><span data-lang="vi">Tạo link tracking riêng cho từng affiliate</span><span data-lang="en">Create unique tracking links per affiliate</span></li>
+          <li><span data-lang="vi">Theo dõi click, conversion, doanh thu real-time</span><span data-lang="en">Track clicks, conversions, revenue in real-time</span></li>
+          <li><span data-lang="vi">Hỗ trợ UTM parameters và deep link</span><span data-lang="en">UTM parameters and deep link support</span></li>
+          <li><span data-lang="vi">Dashboard phân tích chi tiết theo kênh</span><span data-lang="en">Detailed analytics dashboard by channel</span></li>
         </ul>
       </div>
 
@@ -1550,12 +1600,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
-        <h3>Hoa hồng linh hoạt</h3>
+        <h3><span data-lang="vi">Hoa hồng linh hoạt</span><span data-lang="en">Flexible Commissions</span></h3>
         <ul class="feature-bullets">
-          <li>Cấu hình % hoa hồng theo danh mục sản phẩm</li>
-          <li>Hoa hồng theo tầng (tier commission)</li>
-          <li>Bonus thưởng khi đạt mốc doanh số</li>
-          <li>Thanh toán tự động qua ngân hàng / ví điện tử</li>
+          <li><span data-lang="vi">Cấu hình % hoa hồng theo danh mục sản phẩm</span><span data-lang="en">Configure commission % by product category</span></li>
+          <li><span data-lang="vi">Hoa hồng theo tầng (tier commission)</span><span data-lang="en">Tiered commission structures</span></li>
+          <li><span data-lang="vi">Bonus thưởng khi đạt mốc doanh số</span><span data-lang="en">Bonus rewards when sales milestones are hit</span></li>
+          <li><span data-lang="vi">Thanh toán tự động qua ngân hàng / ví điện tử</span><span data-lang="en">Auto payment via bank / e-wallet</span></li>
         </ul>
       </div>
 
@@ -1564,12 +1614,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         </div>
-        <h3>Dashboard Affiliate</h3>
+        <h3><span data-lang="vi">Dashboard Affiliate</span><span data-lang="en">Affiliate Dashboard</span></h3>
         <ul class="feature-bullets">
-          <li>Portal riêng cho từng affiliate đăng nhập</li>
-          <li>Xem thu nhập, đơn hàng, lịch sử thanh toán</li>
-          <li>Tải tài liệu marketing (banner, nội dung mẫu)</li>
-          <li>Thông báo real-time khi có đơn mới</li>
+          <li><span data-lang="vi">Portal riêng cho từng affiliate đăng nhập</span><span data-lang="en">Dedicated portal for each affiliate</span></li>
+          <li><span data-lang="vi">Xem thu nhập, đơn hàng, lịch sử thanh toán</span><span data-lang="en">View earnings, orders, payment history</span></li>
+          <li><span data-lang="vi">Tải tài liệu marketing (banner, nội dung mẫu)</span><span data-lang="en">Download marketing materials (banners, templates)</span></li>
+          <li><span data-lang="vi">Thông báo real-time khi có đơn mới</span><span data-lang="en">Real-time notifications for new orders</span></li>
         </ul>
       </div>
 
@@ -1578,12 +1628,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <h3>Promotion Tools</h3>
+        <h3><span data-lang="vi">Promotion Tools</span><span data-lang="en">Promotion Tools</span></h3>
         <ul class="feature-bullets">
-          <li>Tạo mã giảm giá riêng cho từng affiliate</li>
-          <li>Chiến dịch flash sale với tracking riêng biệt</li>
-          <li>Landing page tùy chỉnh cho từng campaign</li>
-          <li>A/B testing banner và nội dung quảng cáo</li>
+          <li><span data-lang="vi">Tạo mã giảm giá riêng cho từng affiliate</span><span data-lang="en">Create exclusive discount codes per affiliate</span></li>
+          <li><span data-lang="vi">Chiến dịch flash sale với tracking riêng biệt</span><span data-lang="en">Flash sale campaigns with separate tracking</span></li>
+          <li><span data-lang="vi">Landing page tùy chỉnh cho từng campaign</span><span data-lang="en">Custom landing pages per campaign</span></li>
+          <li><span data-lang="vi">A/B testing banner và nội dung quảng cáo</span><span data-lang="en">A/B testing for banners and ad content</span></li>
         </ul>
       </div>
 
@@ -1592,12 +1642,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>Phân nhóm &amp; Targeting</h3>
+        <h3><span data-lang="vi">Phân nhóm &amp; Targeting</span><span data-lang="en">Auto Affiliate Recruitment</span></h3>
         <ul class="feature-bullets">
-          <li>Phân loại affiliate theo tier: Bronze, Silver, Gold</li>
-          <li>Gắn tag theo lĩnh vực, kênh, địa khu vực</li>
-          <li>Gửi offer và campaign theo nhóm mục tiêu</li>
-          <li>Quản lý onboarding và approval tự động</li>
+          <li><span data-lang="vi">Phân loại affiliate theo tier: Bronze, Silver, Gold</span><span data-lang="en">Classify affiliates by tier: Bronze, Silver, Gold</span></li>
+          <li><span data-lang="vi">Gắn tag theo lĩnh vực, kênh, địa khu vực</span><span data-lang="en">Tag by industry, channel, region</span></li>
+          <li><span data-lang="vi">Gửi offer và campaign theo nhóm mục tiêu</span><span data-lang="en">Send offers and campaigns by target group</span></li>
+          <li><span data-lang="vi">Quản lý onboarding và approval tự động</span><span data-lang="en">Automated onboarding and approval management</span></li>
         </ul>
       </div>
 
@@ -1606,12 +1656,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>Chống gian lận</h3>
+        <h3><span data-lang="vi">Chống gian lận</span><span data-lang="en">Anti-fraud</span></h3>
         <ul class="feature-bullets">
-          <li>Phát hiện click gian lận bằng AI tự động</li>
-          <li>Kiểm tra IP, device fingerprinting, cookie</li>
-          <li>Cảnh báo affiliate vi phạm chính sách</li>
-          <li>Báo cáo anomaly và hold payment tự động</li>
+          <li><span data-lang="vi">Phát hiện click gian lận bằng AI tự động</span><span data-lang="en">AI-powered automatic fraud click detection</span></li>
+          <li><span data-lang="vi">Kiểm tra IP, device fingerprinting, cookie</span><span data-lang="en">IP, device fingerprinting, cookie verification</span></li>
+          <li><span data-lang="vi">Cảnh báo affiliate vi phạm chính sách</span><span data-lang="en">Alert for affiliates violating policy</span></li>
+          <li><span data-lang="vi">Báo cáo anomaly và hold payment tự động</span><span data-lang="en">Anomaly reports and auto payment hold</span></li>
         </ul>
       </div>
     </div>
@@ -1624,74 +1674,74 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);" id="comparison">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">So sánh</span>
-      <h2>Tự build, Sàn TMĐT hay Diso?</h2>
-      <p class="section-subtitle">So sánh chi tiết 3 lựa chọn phổ biến để triển khai Affiliate Marketing</p>
+      <span class="section-label"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></span>
+      <h2><span data-lang="vi">Tự build, Sàn TMĐT hay Diso?</span><span data-lang="en">Build in-house, Marketplace, or Diso?</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">So sánh chi tiết 3 lựa chọn phổ biến để triển khai Affiliate Marketing</span><span data-lang="en">Detailed comparison of 3 popular options for deploying Affiliate Marketing</span></p>
     </div>
 
     <div class="table-wrap reveal">
       <table class="comp-table" role="table">
         <thead>
           <tr>
-            <th scope="col">Tiêu chí</th>
-            <th scope="col">Tự Build</th>
-            <th scope="col">Bán trên Sàn</th>
+            <th scope="col"><span data-lang="vi">Tiêu chí</span><span data-lang="en">Criteria</span></th>
+            <th scope="col"><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th>
+            <th scope="col"><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Marketplace</span></th>
             <th scope="col" class="col-diso">
               Diso
-              <span class="col-label">Khuyến nghị</span>
+              <span class="col-label"><span data-lang="vi">Khuyến nghị</span><span data-lang="en">Recommended</span></span>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Thời gian triển khai</td>
-            <td><span class="cross-icon">3–6 tháng dev</span></td>
-            <td><span class="neutral-icon">Phụ thuộc sàn</span></td>
-            <td class="col-diso"><span class="check-icon">1–3 ngày là xong</span></td>
+            <td><span data-lang="vi">Thời gian triển khai</span><span data-lang="en">Time to deploy</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">3–6 tháng dev</span><span data-lang="en">3–6 months dev</span></span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Phụ thuộc sàn</span><span data-lang="en">Depends on platform</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">1–3 ngày là xong</span><span data-lang="en">Done in 1–3 days</span></span></td>
           </tr>
           <tr>
-            <td>Chi phí khởi động</td>
-            <td><span class="cross-icon">100–500 triệu VNĐ</span></td>
-            <td><span class="check-icon">Thấp ban đầu</span></td>
-            <td class="col-diso"><span class="check-icon">0 đồng upfront</span></td>
+            <td><span data-lang="vi">Chi phí khởi động</span><span data-lang="en">Startup cost</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">100–500 triệu VNĐ</span><span data-lang="en">100–500M VND</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">Thấp ban đầu</span><span data-lang="en">Low upfront</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">0 đồng upfront</span><span data-lang="en">$0 upfront</span></span></td>
           </tr>
           <tr>
-            <td>Hoa hồng linh hoạt</td>
-            <td><span class="check-icon">Tùy chỉnh hoàn toàn</span></td>
-            <td><span class="cross-icon">Theo quy định sàn</span></td>
-            <td class="col-diso"><span class="check-icon">Linh hoạt toàn phần</span></td>
+            <td><span data-lang="vi">Hoa hồng linh hoạt</span><span data-lang="en">Flexible commissions</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Tùy chỉnh hoàn toàn</span><span data-lang="en">Fully customizable</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Theo quy định sàn</span><span data-lang="en">Platform rules apply</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Linh hoạt toàn phần</span><span data-lang="en">Fully flexible</span></span></td>
           </tr>
           <tr>
-            <td>Dữ liệu khách hàng</td>
-            <td><span class="check-icon">Sở hữu 100%</span></td>
-            <td><span class="cross-icon">Sàn giữ dữ liệu</span></td>
-            <td class="col-diso"><span class="check-icon">Bạn sở hữu 100%</span></td>
+            <td><span data-lang="vi">Dữ liệu khách hàng</span><span data-lang="en">Customer data</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Sở hữu 100%</span><span data-lang="en">100% owned</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Sàn giữ dữ liệu</span><span data-lang="en">Platform keeps data</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Bạn sở hữu 100%</span><span data-lang="en">You own 100%</span></span></td>
           </tr>
           <tr>
-            <td>Chống gian lận tích hợp</td>
-            <td><span class="cross-icon">Phải tự xây dựng</span></td>
-            <td><span class="neutral-icon">Có nhưng hạn chế</span></td>
-            <td class="col-diso"><span class="check-icon">AI chống gian lận sẵn</span></td>
+            <td><span data-lang="vi">Chống gian lận tích hợp</span><span data-lang="en">Built-in anti-fraud</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Phải tự xây dựng</span><span data-lang="en">Must build yourself</span></span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Có nhưng hạn chế</span><span data-lang="en">Available but limited</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">AI chống gian lận sẵn</span><span data-lang="en">AI fraud prevention built-in</span></span></td>
           </tr>
           <tr>
-            <td>Tích hợp hệ thống khác</td>
-            <td><span class="neutral-icon">Tùy năng lực team</span></td>
-            <td><span class="cross-icon">Hạn chế API</span></td>
-            <td class="col-diso"><span class="check-icon">Mở, REST API đầy đủ</span></td>
+            <td><span data-lang="vi">Tích hợp hệ thống khác</span><span data-lang="en">System integration</span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Tùy năng lực team</span><span data-lang="en">Depends on team</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Hạn chế API</span><span data-lang="en">Limited API</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Mở, REST API đầy đủ</span><span data-lang="en">Open, full REST API</span></span></td>
           </tr>
           <tr>
-            <td>Báo cáo &amp; Đối soát</td>
-            <td><span class="neutral-icon">Phải tự xây</span></td>
-            <td><span class="neutral-icon">Báo cáo cơ bản</span></td>
-            <td class="col-diso"><span class="check-icon">Tự động, real-time</span></td>
+            <td><span data-lang="vi">Báo cáo &amp; Đối soát</span><span data-lang="en">Reports &amp; Reconciliation</span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Phải tự xây</span><span data-lang="en">Must build yourself</span></span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Báo cáo cơ bản</span><span data-lang="en">Basic reports</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Tự động, real-time</span><span data-lang="en">Automated, real-time</span></span></td>
           </tr>
         </tbody>
         <tfoot>
           <tr class="row-summary">
-            <td>Đánh giá tổng thể</td>
-            <td>Tốt nhất về tùy biến, nhưng chậm và đắt</td>
-            <td>Đơn giản nhưng mất quyền kiểm soát</td>
-            <td class="col-diso">Tốt nhất cho doanh nghiệp tự chủ</td>
+            <td><span data-lang="vi">Đánh giá tổng thể</span><span data-lang="en">Overall verdict</span></td>
+            <td><span data-lang="vi">Tốt nhất về tùy biến, nhưng chậm và đắt</span><span data-lang="en">Best for customization, but slow and costly</span></td>
+            <td><span data-lang="vi">Đơn giản nhưng mất quyền kiểm soát</span><span data-lang="en">Simple but loses control</span></td>
+            <td class="col-diso"><span data-lang="vi">Tốt nhất cho doanh nghiệp tự chủ</span><span data-lang="en">Best for independent businesses</span></td>
           </tr>
         </tfoot>
       </table>
@@ -1705,65 +1755,65 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);" id="workflow">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Quy trình</span>
-      <h2>Triển khai affiliate chỉ trong 4 bước</h2>
-      <p class="section-subtitle">Từ tạo campaign đến đối soát hoa hồng, tất cả được tự động hóa trên một nền tảng</p>
+      <span class="section-label"><span data-lang="vi">Quy trình</span><span data-lang="en">Process</span></span>
+      <h2><span data-lang="vi">Triển khai affiliate chỉ trong 4 bước</span><span data-lang="en">Deploy affiliate in just 4 steps</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Từ tạo campaign đến đối soát hoa hồng, tất cả được tự động hóa trên một nền tảng</span><span data-lang="en">From campaign creation to commission reconciliation, all automated on one platform</span></p>
     </div>
 
     <div class="workflow-grid">
       <!-- Step 1 -->
       <div class="workflow-step reveal reveal-delay-1">
         <div class="step-circle">
-          <span class="step-number">Bước 1</span>
+          <span class="step-number"><span data-lang="vi">Bước 1</span><span data-lang="en">Step 1</span></span>
           <div class="step-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
           </div>
         </div>
         <div class="step-card">
-          <h4>Tạo Campaign</h4>
-          <p>Thiết lập chiến dịch: tên, thời gian, sản phẩm, mức hoa hồng và điều kiện tham gia chỉ trong vài phút.</p>
+          <h4><span data-lang="vi">Tạo Campaign</span><span data-lang="en">Create Campaign</span></h4>
+          <p><span data-lang="vi">Thiết lập chiến dịch: tên, thời gian, sản phẩm, mức hoa hồng và điều kiện tham gia chỉ trong vài phút.</span><span data-lang="en">Set up campaign: name, duration, products, commission rate and eligibility conditions in minutes.</span></p>
         </div>
       </div>
 
       <!-- Step 2 -->
       <div class="workflow-step reveal reveal-delay-2">
         <div class="step-circle">
-          <span class="step-number">Bước 2</span>
+          <span class="step-number"><span data-lang="vi">Bước 2</span><span data-lang="en">Step 2</span></span>
           <div class="step-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.5 5.5l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
           </div>
         </div>
         <div class="step-card">
-          <h4>Mời Affiliate</h4>
-          <p>Gửi lời mời qua link, email hoặc mã QR. Affiliate đăng ký, được duyệt và nhận link tracking tức thì.</p>
+          <h4><span data-lang="vi">Mời Affiliate</span><span data-lang="en">Invite Affiliates</span></h4>
+          <p><span data-lang="vi">Gửi lời mời qua link, email hoặc mã QR. Affiliate đăng ký, được duyệt và nhận link tracking tức thì.</span><span data-lang="en">Send invites via link, email or QR code. Affiliates register, get approved and receive tracking links instantly.</span></p>
         </div>
       </div>
 
       <!-- Step 3 -->
       <div class="workflow-step reveal reveal-delay-3">
         <div class="step-circle">
-          <span class="step-number">Bước 3</span>
+          <span class="step-number"><span data-lang="vi">Bước 3</span><span data-lang="en">Step 3</span></span>
           <div class="step-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </div>
         </div>
         <div class="step-card">
-          <h4>Bán hàng</h4>
-          <p>Affiliate quảng bá sản phẩm. Mỗi click và đơn hàng được ghi nhận tự động, real-time trên dashboard.</p>
+          <h4><span data-lang="vi">Bán hàng</span><span data-lang="en">Drive Sales</span></h4>
+          <p><span data-lang="vi">Affiliate quảng bá sản phẩm. Mỗi click và đơn hàng được ghi nhận tự động, real-time trên dashboard.</span><span data-lang="en">Affiliates promote products. Every click and order is recorded automatically in real-time on the dashboard.</span></p>
         </div>
       </div>
 
       <!-- Step 4 -->
       <div class="workflow-step reveal reveal-delay-4">
         <div class="step-circle">
-          <span class="step-number">Bước 4</span>
+          <span class="step-number"><span data-lang="vi">Bước 4</span><span data-lang="en">Step 4</span></span>
           <div class="step-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
         </div>
         <div class="step-card">
-          <h4>Đối soát &amp; Thanh toán</h4>
-          <p>Hệ thống tự đối soát hoa hồng cuối kỳ, lọc gian lận và thanh toán cho affiliate qua tài khoản ngân hàng.</p>
+          <h4><span data-lang="vi">Đối soát &amp; Thanh toán</span><span data-lang="en">Auto Reconciliation &amp; Payment</span></h4>
+          <p><span data-lang="vi">Hệ thống tự đối soát hoa hồng cuối kỳ, lọc gian lận và thanh toán cho affiliate qua tài khoản ngân hàng.</span><span data-lang="en">The system auto-reconciles commissions at period end, filters fraud, and pays affiliates via bank account.</span></p>
         </div>
       </div>
     </div>
@@ -1777,47 +1827,47 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="container">
     <div class="section-header text-center reveal">
       <span class="section-label">Case Study</span>
-      <h2>Thực tế triển khai</h2>
+      <h2><span data-lang="vi">Thực tế triển khai</span><span data-lang="en">Real-world deployment</span></h2>
     </div>
 
     <div class="usecase-card reveal">
       <div>
         <div class="usecase-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          Brand mỹ phẩm nội địa
+          <span data-lang="vi">Brand mỹ phẩm nội địa</span><span data-lang="en">Local cosmetics brand</span>
         </div>
 
-        <h3 style="font-size: 22px; margin-bottom: 16px;">Từ 0 lên 200 đơn/ngày nhờ mạng lưới 50 blogger</h3>
+        <h3 style="font-size: 22px; margin-bottom: 16px;"><span data-lang="vi">Từ 0 lên 200 đơn/ngày nhờ mạng lưới 50 blogger</span><span data-lang="en">From 0 to 200 orders/day through a network of 50 bloggers</span></h3>
 
         <blockquote>
-          "Trước đây chúng tôi chỉ dựa vào Facebook Ads, chi phí ngày càng đắt mà hiệu quả giảm. Sau khi triển khai Affiliate qua Diso, 50 beauty blogger bắt đầu giới thiệu sản phẩm tự nhiên — chúng tôi chỉ trả hoa hồng khi có đơn thực sự."
+          <span data-lang="vi">"Trước đây chúng tôi chỉ dựa vào Facebook Ads, chi phí ngày càng đắt mà hiệu quả giảm. Sau khi triển khai Affiliate qua Diso, 50 beauty blogger bắt đầu giới thiệu sản phẩm tự nhiên — chúng tôi chỉ trả hoa hồng khi có đơn thực sự."</span><span data-lang="en">"Before, we relied entirely on Facebook Ads — costs kept rising while effectiveness dropped. After deploying Affiliate through Diso, 50 beauty bloggers started promoting organically — we only pay commission when real orders come in."</span>
         </blockquote>
 
         <p class="usecase-context">
-          <strong>Bối cảnh:</strong> Brand mỹ phẩm thuần chay, đội ngũ 12 người, ngân sách marketing 30 triệu/tháng. Trước đây toàn bộ ngân sách đổ vào Facebook Ads với ROAS ngày càng giảm.
+          <strong><span data-lang="vi">Bối cảnh:</span><span data-lang="en">Context:</span></strong> <span data-lang="vi">Brand mỹ phẩm thuần chay, đội ngũ 12 người, ngân sách marketing 30 triệu/tháng. Trước đây toàn bộ ngân sách đổ vào Facebook Ads với ROAS ngày càng giảm.</span><span data-lang="en">Vegan cosmetics brand, team of 12, monthly marketing budget of 30M VND. Previously all budget went to Facebook Ads with declining ROAS.</span>
         </p>
         <br>
         <p class="usecase-context">
-          <strong>Giải pháp:</strong> Tạo chương trình affiliate với hoa hồng 12% cho beauty blogger, cung cấp sample sản phẩm và nội dung mẫu. Mỗi blogger có link tracking và dashboard riêng.
+          <strong><span data-lang="vi">Giải pháp:</span><span data-lang="en">Solution:</span></strong> <span data-lang="vi">Tạo chương trình affiliate với hoa hồng 12% cho beauty blogger, cung cấp sample sản phẩm và nội dung mẫu. Mỗi blogger có link tracking và dashboard riêng.</span><span data-lang="en">Created an affiliate program with 12% commission for beauty bloggers, provided product samples and content templates. Each blogger has their own tracking link and dashboard.</span>
         </p>
       </div>
 
       <div class="usecase-highlights">
         <div class="highlight-item">
           <div class="highlight-num">50</div>
-          <div class="highlight-label">Blogger tích cực trong tháng đầu</div>
+          <div class="highlight-label"><span data-lang="vi">Blogger tích cực trong tháng đầu</span><span data-lang="en">Active bloggers in first month</span></div>
         </div>
         <div class="highlight-item">
           <div class="highlight-num">200</div>
-          <div class="highlight-label">Đơn hàng mỗi ngày sau 60 ngày</div>
+          <div class="highlight-label"><span data-lang="vi">Đơn hàng mỗi ngày sau 60 ngày</span><span data-lang="en">Orders per day after 60 days</span></div>
         </div>
         <div class="highlight-item">
           <div class="highlight-num">0</div>
-          <div class="highlight-label">Chi phí upfront để khởi động</div>
+          <div class="highlight-label"><span data-lang="vi">Chi phí upfront để khởi động</span><span data-lang="en">Upfront cost to get started</span></div>
         </div>
         <div class="highlight-item">
           <div class="highlight-num">12%</div>
-          <div class="highlight-label">Hoa hồng trả khi có đơn thực</div>
+          <div class="highlight-label"><span data-lang="vi">Hoa hồng trả khi có đơn thực</span><span data-lang="en">Commission paid only when orders come in</span></div>
         </div>
       </div>
     </div>
@@ -1830,8 +1880,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Con số nổi bật</span>
-      <h2>Diso Affiliate Marketing bằng con số</h2>
+      <span class="section-label"><span data-lang="vi">Con số nổi bật</span><span data-lang="en">Key Numbers</span></span>
+      <h2><span data-lang="vi">Diso Affiliate Marketing bằng con số</span><span data-lang="en">Diso Affiliate Marketing by the numbers</span></h2>
     </div>
 
     <div class="numbers-grid">
@@ -1840,31 +1890,31 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="number-value">300K+</div>
-        <div class="number-desc">KOL/KOC tại Việt Nam bạn có thể tiếp cận</div>
+        <div class="number-desc"><span data-lang="vi">KOL/KOC tại Việt Nam bạn có thể tiếp cận</span><span data-lang="en">KOL/KOC in Vietnam you can reach</span></div>
       </div>
 
       <div class="number-card reveal reveal-delay-2">
         <div class="number-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
-        <div class="number-value">0 đồng</div>
-        <div class="number-desc">Chi phí upfront để bắt đầu, chỉ trả khi có đơn</div>
+        <div class="number-value"><span data-lang="vi">0 đồng</span><span data-lang="en">$0</span></div>
+        <div class="number-desc"><span data-lang="vi">Chi phí upfront để bắt đầu, chỉ trả khi có đơn</span><span data-lang="en">Upfront cost to start — pay only when orders come in</span></div>
       </div>
 
       <div class="number-card reveal reveal-delay-3">
         <div class="number-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="number-value">3–6 tháng</div>
-        <div class="number-desc">Tiết kiệm so với tự xây dựng hệ thống</div>
+        <div class="number-value"><span data-lang="vi">3–6 tháng</span><span data-lang="en">3–6 months</span></div>
+        <div class="number-desc"><span data-lang="vi">Tiết kiệm so với tự xây dựng hệ thống</span><span data-lang="en">Saved vs. building the system yourself</span></div>
       </div>
 
       <div class="number-card reveal reveal-delay-4">
         <div class="number-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         </div>
-        <div class="number-value">30 lần</div>
-        <div class="number-desc">Tăng trưởng thị trường affiliate từ 2022 đến nay</div>
+        <div class="number-value"><span data-lang="vi">30 lần</span><span data-lang="en">30x</span></div>
+        <div class="number-desc"><span data-lang="vi">Tăng trưởng thị trường affiliate từ 2022 đến nay</span><span data-lang="en">Affiliate market growth since 2022</span></div>
       </div>
     </div>
   </div>
@@ -1876,9 +1926,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);" id="connections">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Hệ sinh thái</span>
-      <h2>Affiliate kết nối với toàn bộ hệ thống Diso</h2>
-      <p class="section-subtitle">Affiliate không hoạt động độc lập — được tích hợp sâu với 4 giải pháp còn lại để tối ưu hiệu quả</p>
+      <span class="section-label"><span data-lang="vi">Hệ sinh thái</span><span data-lang="en">Ecosystem</span></span>
+      <h2><span data-lang="vi">Affiliate kết nối với toàn bộ hệ thống Diso</span><span data-lang="en">Affiliate connects with the entire Diso system</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Affiliate không hoạt động độc lập — được tích hợp sâu với 4 giải pháp còn lại để tối ưu hiệu quả</span><span data-lang="en">Affiliate doesn't work in isolation — deeply integrated with the other 4 solutions for maximum performance</span></p>
     </div>
 
     <div class="module-diagram reveal">
@@ -1889,8 +1939,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
           </div>
           <div class="module-node-text">
-            <h5>Website TMĐT</h5>
-            <p>Đích đến của traffic affiliate</p>
+            <h5><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></h5>
+            <p><span data-lang="vi">Đích đến của traffic affiliate</span><span data-lang="en">Destination for affiliate traffic</span></p>
           </div>
         </div>
 
@@ -1899,8 +1949,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
           <div class="module-node-text">
-            <h5>Backend Vận hành</h5>
-            <p>Xử lý đơn và đối soát hoa hồng</p>
+            <h5><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></h5>
+            <p><span data-lang="vi">Xử lý đơn và đối soát hoa hồng</span><span data-lang="en">Process orders and reconcile commissions</span></p>
           </div>
         </div>
       </div>
@@ -1911,7 +1961,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
         </div>
         <h4>Affiliate Marketing</h4>
-        <p>Giải pháp 2/5</p>
+        <p><span data-lang="vi">Giải pháp 2/5</span><span data-lang="en">Pillar 2/5</span></p>
       </div>
 
       <!-- Right connections -->
@@ -1922,7 +1972,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           </div>
           <div class="module-node-text">
             <h5>Reseller</h5>
-            <p>Affiliate nâng cao thành đại lý</p>
+            <p><span data-lang="vi">Affiliate nâng cao thành đại lý</span><span data-lang="en">Top affiliates become official resellers</span></p>
           </div>
         </div>
 
@@ -1931,8 +1981,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
           <div class="module-node-text">
-            <h5>Đại sứ Thương hiệu</h5>
-            <p>Top affiliate trở thành brand ambassador</p>
+            <h5><span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Brand Ambassador</span></h5>
+            <p><span data-lang="vi">Top affiliate trở thành brand ambassador</span><span data-lang="en">Top affiliates become brand ambassadors</span></p>
           </div>
         </div>
       </div>
@@ -1940,20 +1990,20 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 
     <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;" class="reveal">
       <div style="background: var(--bg-light); border-radius: var(--radius-md); padding: 20px; text-align: center;">
-        <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">Website TMĐT</div>
-        <div style="font-size: 12px; color: var(--text-muted);">Nhận traffic từ affiliate link, tracking conversion tự động</div>
+        <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;"><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></div>
+        <div style="font-size: 12px; color: var(--text-muted);"><span data-lang="vi">Nhận traffic từ affiliate link, tracking conversion tự động</span><span data-lang="en">Receives traffic from affiliate links, auto conversion tracking</span></div>
       </div>
       <div style="background: var(--bg-light); border-radius: var(--radius-md); padding: 20px; text-align: center;">
-        <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">Backend Vận hành</div>
-        <div style="font-size: 12px; color: var(--text-muted);">Xử lý đơn hàng từ affiliate, đối soát hoa hồng cuối kỳ</div>
+        <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;"><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></div>
+        <div style="font-size: 12px; color: var(--text-muted);"><span data-lang="vi">Xử lý đơn hàng từ affiliate, đối soát hoa hồng cuối kỳ</span><span data-lang="en">Processes affiliate orders, reconciles commissions at period end</span></div>
       </div>
       <div style="background: var(--bg-light); border-radius: var(--radius-md); padding: 20px; text-align: center;">
         <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">Reseller</div>
-        <div style="font-size: 12px; color: var(--text-muted);">Chuyển affiliate xuất sắc thành đại lý bán hàng chính thức</div>
+        <div style="font-size: 12px; color: var(--text-muted);"><span data-lang="vi">Chuyển affiliate xuất sắc thành đại lý bán hàng chính thức</span><span data-lang="en">Converts top affiliates into official resellers</span></div>
       </div>
       <div style="background: var(--bg-light); border-radius: var(--radius-md); padding: 20px; text-align: center;">
-        <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">Đại sứ Thương hiệu</div>
-        <div style="font-size: 12px; color: var(--text-muted);">Top affiliate có thể nâng cấp lên chương trình ambassador</div>
+        <div style="font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px;"><span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Brand Ambassador</span></div>
+        <div style="font-size: 12px; color: var(--text-muted);"><span data-lang="vi">Top affiliate có thể nâng cấp lên chương trình ambassador</span><span data-lang="en">Top affiliates can upgrade to the ambassador program</span></div>
       </div>
     </div>
   </div>
@@ -1966,27 +2016,27 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="cta-bg-shape cta-bg-shape-1"></div>
   <div class="cta-bg-shape cta-bg-shape-2"></div>
   <div class="container text-center">
-    <span class="section-label" style="color: rgba(255,255,255,0.6);">Bắt đầu ngay hôm nay</span>
-    <h2>Demo miễn phí 30 phút</h2>
-    <p>Xem thực tế hệ thống Affiliate Marketing của Diso hoạt động như thế nào với dữ liệu thực từ doanh nghiệp của bạn.</p>
+    <span class="section-label" style="color: rgba(255,255,255,0.6);"><span data-lang="vi">Bắt đầu ngay hôm nay</span><span data-lang="en">Get Started Today</span></span>
+    <h2><span data-lang="vi">Demo miễn phí 30 phút</span><span data-lang="en">Free 30-minute Demo</span></h2>
+    <p><span data-lang="vi">Xem thực tế hệ thống Affiliate Marketing của Diso hoạt động như thế nào với dữ liệu thực từ doanh nghiệp của bạn.</span><span data-lang="en">See how Diso's Affiliate Marketing system works in practice with real data from your business.</span></p>
 
     <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Đặt lịch demo ngay
+      <span data-lang="vi">Đặt lịch demo ngay</span><span data-lang="en">Book a Free Demo</span>
     </a>
 
     <div class="cta-trust">
       <div class="cta-trust-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Miễn phí, không ràng buộc
+        <span data-lang="vi">Miễn phí, không ràng buộc</span><span data-lang="en">Free, no commitment</span>
       </div>
       <div class="cta-trust-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Demo với dữ liệu thực của bạn
+        <span data-lang="vi">Demo với dữ liệu thực của bạn</span><span data-lang="en">Demo with your real data</span>
       </div>
       <div class="cta-trust-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Tư vấn chuyên sâu 1-1
+        <span data-lang="vi">Tư vấn chuyên sâu 1-1</span><span data-lang="en">In-depth 1-on-1 consultation</span>
       </div>
     </div>
   </div>
@@ -2004,9 +2054,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       </a>
 
       <div class="footer-links">
-        <a href="../../">Trang chủ</a>
-        <a href="../../comparison/">So sánh</a>
-        <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow">Đặt lịch demo</a>
+        <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
+        <a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a>
+        <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a>
       </div>
 
       <p class="footer-copy">&copy; 2024 Diso Commerce Suite. All rights reserved.</p>
@@ -2047,6 +2097,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       navLinks.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Language toggle
+  var langToggle = document.getElementById('langToggle');
+  var htmlEl = document.documentElement;
+  var savedLang = localStorage.getItem('diso-lang') || 'vi';
+  if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+  langToggle.addEventListener('click', function() {
+    var current = htmlEl.getAttribute('lang') || 'vi';
+    var next = current === 'vi' ? 'en' : 'vi';
+    htmlEl.setAttribute('lang', next);
+    localStorage.setItem('diso-lang', next);
   });
 
   // ---- SMOOTH SCROLL FOR ANCHOR LINKS ----

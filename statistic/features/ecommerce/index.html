@@ -1253,6 +1253,55 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 .reveal-delay-4 { transition-delay: 400ms; }
 
 /* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .pillar-tagline [data-lang="en"],
+html[lang="en"] .pillar-key-message [data-lang="en"],
+html[lang="en"] .feature-detail-text [data-lang="en"],
+html[lang="en"] .feature-desc [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 1024px) {
@@ -1318,16 +1367,17 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       Diso
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../../">Trang chủ</a></li>
-      <li><a href="../../#solution">Giải pháp</a></li>
-      <li><a href="../../#features">Tính năng</a></li>
-      <li><a href="../../#proof">Khách hàng</a></li>
-      <li><a href="../../comparison/">So sánh</a></li>
+      <li><a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../../case-studies/">Case Studies</a></li>
-      <li><a href="../../vision/">Tầm nhìn</a></li>
+      <li><a href="../../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
       <li>
         <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">
-          Đặt lịch demo
+          <span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span>
         </a>
       </li>
     </ul>
@@ -1349,20 +1399,20 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   </div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../">Trang chủ</a>
+      <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span class="breadcrumb-sep">›</span>
-      <a href="../../#solution">Giải pháp</a>
+      <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
       <span class="breadcrumb-sep">›</span>
-      <span>Website TMĐT</span>
+      <span><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></span>
     </nav>
 
     <div class="pillar-badge">
       <span class="pillar-badge-dot"></span>
-      Giải pháp 1 / 5
+      <span data-lang="vi">Giải pháp 1 / 5</span><span data-lang="en">Pillar 1 / 5</span>
     </div>
 
-    <h1>Website Thương mại Điện tử</h1>
-    <p class="hero-subtitle">Website bán hàng chuyên nghiệp — không cần biết code</p>
+    <h1><span data-lang="vi">Website Thương mại Điện tử</span><span data-lang="en">E-commerce Website</span></h1>
+    <p class="hero-subtitle"><span data-lang="vi">Website bán hàng chuyên nghiệp — không cần biết code</span><span data-lang="en">Professional e-commerce website — no coding required</span></p>
 
     <div class="hero-stats-row">
       <div class="hero-stat-item">
@@ -1370,8 +1420,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
         <div class="hero-stat-text">
-          <div class="hero-stat-num">2 tuần</div>
-          <div class="hero-stat-label">Thời gian triển khai</div>
+          <div class="hero-stat-num"><span data-lang="vi">2 tuần</span><span data-lang="en">2 weeks</span></div>
+          <div class="hero-stat-label"><span data-lang="vi">Thời gian triển khai</span><span data-lang="en">Deploy in 2 weeks</span></div>
         </div>
       </div>
       <div class="hero-stat-item">
@@ -1380,7 +1430,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div class="hero-stat-text">
           <div class="hero-stat-num">100%</div>
-          <div class="hero-stat-label">Sở hữu data khách hàng</div>
+          <div class="hero-stat-label"><span data-lang="vi">Sở hữu data khách hàng</span><span data-lang="en">Own your customer data</span></div>
         </div>
       </div>
       <div class="hero-stat-item">
@@ -1388,8 +1438,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="hero-stat-text">
-          <div class="hero-stat-num">0 đồng</div>
-          <div class="hero-stat-label">Phí giao dịch mỗi đơn</div>
+          <div class="hero-stat-num"><span data-lang="vi">0 đồng</span><span data-lang="en">$0</span></div>
+          <div class="hero-stat-label"><span data-lang="vi">Phí giao dịch mỗi đơn</span><span data-lang="en">Transaction fee per order</span></div>
         </div>
       </div>
     </div>
@@ -1402,9 +1452,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Vấn đề hiện tại</span>
-      <h2>Tại sao bán hàng trên sàn không đủ nữa?</h2>
-      <p class="section-subtitle">Doanh nghiệp đang phụ thuộc vào các nền tảng mà họ không kiểm soát được — và đang trả giá đắt cho điều đó</p>
+      <span class="section-label"><span data-lang="vi">Vấn đề hiện tại</span><span data-lang="en">Current Challenges</span></span>
+      <h2><span data-lang="vi">Tại sao bán hàng trên sàn không đủ nữa?</span><span data-lang="en">Why marketplaces are no longer enough?</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Doanh nghiệp đang phụ thuộc vào các nền tảng mà họ không kiểm soát được — và đang trả giá đắt cho điều đó</span><span data-lang="en">Businesses are dependent on platforms they don't control — and paying a heavy price for it</span></p>
     </div>
 
     <div class="pain-grid">
@@ -1412,51 +1462,51 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
-        <h3>Thuê dev website tốn 500 triệu — 2 tỷ</h3>
-        <p>Thuê đội phát triển riêng mất từ <strong>500 triệu đến 2 tỷ đồng</strong> và cần <strong>6–12 tháng</strong> để hoàn thiện. Phần lớn SME không có ngân sách và thời gian cho lộ trình này.</p>
+        <h3><span data-lang="vi">Thuê dev website tốn 500 triệu — 2 tỷ</span><span data-lang="en">Custom dev costs 500M — 2B VND</span></h3>
+        <p><span data-lang="vi">Thuê đội phát triển riêng mất từ <strong>500 triệu đến 2 tỷ đồng</strong> và cần <strong>6–12 tháng</strong> để hoàn thiện. Phần lớn SME không có ngân sách và thời gian cho lộ trình này.</span><span data-lang="en">Hiring a dedicated dev team costs <strong>500M to 2B VND</strong> and takes <strong>6–12 months</strong> to complete. Most SMEs don't have the budget or timeline for this.</span></p>
       </div>
 
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
-        <h3>Sàn thương mại thu phí 3–15% mỗi đơn</h3>
-        <p>Shopee, TikTok Shop, Lazada thu <strong>3–15% hoa hồng</strong> mỗi giao dịch. Đây là con số không đổi dù doanh nghiệp lớn hay nhỏ — và không bao giờ có dữ liệu khách hàng thực sự.</p>
+        <h3><span data-lang="vi">Sàn thương mại thu phí 3–15% mỗi đơn</span><span data-lang="en">Marketplaces charge 3–15% per order</span></h3>
+        <p><span data-lang="vi">Shopee, TikTok Shop, Lazada thu <strong>3–15% hoa hồng</strong> mỗi giao dịch. Đây là con số không đổi dù doanh nghiệp lớn hay nhỏ — và không bao giờ có dữ liệu khách hàng thực sự.</span><span data-lang="en">Shopee, TikTok Shop, Lazada charge <strong>3–15% commission</strong> per transaction. This applies regardless of business size — and you never get real customer data.</span></p>
       </div>
 
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         </div>
-        <h3>Quảng cáo đắt, không sở hữu kênh</h3>
-        <p>Chi phí quảng cáo trên sàn và mạng xã hội liên tục tăng. Khi dừng ngân sách, doanh thu về 0. Không có kênh bán hàng riêng đồng nghĩa với việc <strong>không xây dựng được tài sản lâu dài</strong>.</p>
+        <h3><span data-lang="vi">Quảng cáo đắt, không sở hữu kênh</span><span data-lang="en">Expensive ads, no owned channel</span></h3>
+        <p><span data-lang="vi">Chi phí quảng cáo trên sàn và mạng xã hội liên tục tăng. Khi dừng ngân sách, doanh thu về 0. Không có kênh bán hàng riêng đồng nghĩa với việc <strong>không xây dựng được tài sản lâu dài</strong>.</span><span data-lang="en">Ad costs on marketplaces and social media keep rising. Stop the budget, revenue drops to zero. No owned sales channel means <strong>no long-term asset is built</strong>.</span></p>
       </div>
 
       <div class="pain-card reveal reveal-delay-4">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
-        <h3>60%+ giao dịch đến từ mobile</h3>
-        <p>Hơn <strong>60% đơn hàng TMĐT</strong> tại Việt Nam được thực hiện trên điện thoại. Website không tối ưu mobile hoặc tải chậm trên 3G/4G đồng nghĩa với mất khách hàng ngay lập tức.</p>
+        <h3><span data-lang="vi">60%+ giao dịch đến từ mobile</span><span data-lang="en">60%+ transactions from mobile</span></h3>
+        <p><span data-lang="vi">Hơn <strong>60% đơn hàng TMĐT</strong> tại Việt Nam được thực hiện trên điện thoại. Website không tối ưu mobile hoặc tải chậm trên 3G/4G đồng nghĩa với mất khách hàng ngay lập tức.</span><span data-lang="en">Over <strong>60% of e-commerce orders</strong> in Vietnam are placed on mobile. A site not optimized for mobile or slow on 3G/4G means losing customers instantly.</span></p>
       </div>
     </div>
 
     <div class="market-stats reveal">
       <div class="market-stat">
         <div class="market-stat-num accent-yellow">~28 tỷ</div>
-        <div class="market-stat-label">USD quy mô thị trường<br>TMĐT Việt Nam 2025</div>
+        <div class="market-stat-label"><span data-lang="vi">USD quy mô thị trường<br>TMĐT Việt Nam 2025</span><span data-lang="en">USD Vietnam e-commerce<br>market size 2025</span></div>
       </div>
       <div class="market-stat">
         <div class="market-stat-num">97%</div>
-        <div class="market-stat-label">GMV tập trung tại<br>Shopee + TikTok Shop</div>
+        <div class="market-stat-label"><span data-lang="vi">GMV tập trung tại<br>Shopee + TikTok Shop</span><span data-lang="en">GMV concentrated at<br>Shopee + TikTok Shop</span></div>
       </div>
       <div class="market-stat">
         <div class="market-stat-num accent-yellow">3–15%</div>
-        <div class="market-stat-label">Phí hoa hồng thu mỗi đơn<br>trên các sàn lớn</div>
+        <div class="market-stat-label"><span data-lang="vi">Phí hoa hồng thu mỗi đơn<br>trên các sàn lớn</span><span data-lang="en">Commission fee per order<br>on major marketplaces</span></div>
       </div>
       <div class="market-stat">
         <div class="market-stat-num">60%+</div>
-        <div class="market-stat-label">Giao dịch thực hiện<br>trên thiết bị di động</div>
+        <div class="market-stat-label"><span data-lang="vi">Giao dịch thực hiện<br>trên thiết bị di động</span><span data-lang="en">Transactions completed<br>on mobile devices</span></div>
       </div>
     </div>
   </div>
@@ -1468,9 +1518,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Tính năng nổi bật</span>
-      <h2>Mọi thứ cần thiết để bán hàng online hiệu quả</h2>
-      <p class="section-subtitle">Từ quản lý sản phẩm đến tối ưu SEO — tất cả được tích hợp sẵn, không cần cài thêm plugin</p>
+      <span class="section-label"><span data-lang="vi">Tính năng nổi bật</span><span data-lang="en">Key Features</span></span>
+      <h2><span data-lang="vi">Mọi thứ cần thiết để bán hàng online hiệu quả</span><span data-lang="en">Everything you need to sell online effectively</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Từ quản lý sản phẩm đến tối ưu SEO — tất cả được tích hợp sẵn, không cần cài thêm plugin</span><span data-lang="en">From product management to SEO optimization — all built-in, no extra plugins needed</span></p>
     </div>
 
     <div class="features-grid">
@@ -1479,12 +1529,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <h3>Quản lý sản phẩm</h3>
+        <h3><span data-lang="vi">Quản lý sản phẩm</span><span data-lang="en">Product Management</span></h3>
         <ul class="feature-bullets">
-          <li>Hỗ trợ SKU, biến thể (màu sắc, kích thước, chất liệu)</li>
-          <li>Thiết lập giá bán, giá gốc, giá theo nhóm khách</li>
-          <li>Upload ảnh sản phẩm chất lượng cao, gallery đa ảnh</li>
-          <li>Phân danh mục, bộ lọc và tìm kiếm nhanh</li>
+          <li><span data-lang="vi">Hỗ trợ SKU, biến thể (màu sắc, kích thước, chất liệu)</span><span data-lang="en">SKU and variant support (color, size, material)</span></li>
+          <li><span data-lang="vi">Thiết lập giá bán, giá gốc, giá theo nhóm khách</span><span data-lang="en">Set retail, original, and customer-group prices</span></li>
+          <li><span data-lang="vi">Upload ảnh sản phẩm chất lượng cao, gallery đa ảnh</span><span data-lang="en">Upload high-quality product images, multi-image gallery</span></li>
+          <li><span data-lang="vi">Phân danh mục, bộ lọc và tìm kiếm nhanh</span><span data-lang="en">Categories, filters and fast search</span></li>
         </ul>
       </div>
 
@@ -1493,12 +1543,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         </div>
-        <h3>Giỏ hàng &amp; Thanh toán</h3>
+        <h3><span data-lang="vi">Giỏ hàng &amp; Thanh toán</span><span data-lang="en">Cart &amp; Payments</span></h3>
         <ul class="feature-bullets">
-          <li>Hỗ trợ COD và thanh toán online (chuyển khoản, ví điện tử)</li>
-          <li>Quy trình checkout tối ưu, ít bước nhất có thể</li>
-          <li>Lưu thông tin giao hàng cho lần mua tiếp theo</li>
-          <li>Xác nhận đơn hàng tự động qua SMS và email</li>
+          <li><span data-lang="vi">Hỗ trợ COD và thanh toán online (chuyển khoản, ví điện tử)</span><span data-lang="en">COD and online payments (bank transfer, e-wallets)</span></li>
+          <li><span data-lang="vi">Quy trình checkout tối ưu, ít bước nhất có thể</span><span data-lang="en">Optimized checkout flow with minimal steps</span></li>
+          <li><span data-lang="vi">Lưu thông tin giao hàng cho lần mua tiếp theo</span><span data-lang="en">Save delivery info for future purchases</span></li>
+          <li><span data-lang="vi">Xác nhận đơn hàng tự động qua SMS và email</span><span data-lang="en">Auto order confirmation via SMS and email</span></li>
         </ul>
       </div>
 
@@ -1507,12 +1557,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <h3>Giao diện White-label</h3>
+        <h3><span data-lang="vi">Giao diện White-label</span><span data-lang="en">White-label Design</span></h3>
         <ul class="feature-bullets">
-          <li>Domain riêng (yourshop.vn) — không logo Diso trên frontend</li>
-          <li>Upload logo, màu sắc, font chữ thương hiệu</li>
-          <li>Tùy chỉnh layout trang chủ, trang sản phẩm, trang thanh toán</li>
-          <li>Khách hàng chỉ thấy thương hiệu của bạn</li>
+          <li><span data-lang="vi">Domain riêng (yourshop.vn) — không logo Diso trên frontend</span><span data-lang="en">Custom domain (yourshop.vn) — no Diso logo on frontend</span></li>
+          <li><span data-lang="vi">Upload logo, màu sắc, font chữ thương hiệu</span><span data-lang="en">Upload your brand logo, colors, and fonts</span></li>
+          <li><span data-lang="vi">Tùy chỉnh layout trang chủ, trang sản phẩm, trang thanh toán</span><span data-lang="en">Customize homepage, product page, checkout layouts</span></li>
+          <li><span data-lang="vi">Khách hàng chỉ thấy thương hiệu của bạn</span><span data-lang="en">100% your brand — not a marketplace storefront</span></li>
         </ul>
       </div>
 
@@ -1521,12 +1571,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
-        <h3>Mã giảm giá &amp; Flash Sale</h3>
+        <h3><span data-lang="vi">Mã giảm giá &amp; Flash Sale</span><span data-lang="en">Discount Codes &amp; Flash Sale</span></h3>
         <ul class="feature-bullets">
-          <li>Voucher theo phần trăm hoặc số tiền cố định</li>
-          <li>Flash Sale với bộ đếm ngược thời gian thực</li>
-          <li>Voucher VIP dành riêng cho nhóm khách hàng thân thiết</li>
-          <li>Giới hạn số lượng sử dụng, ngày hết hạn linh hoạt</li>
+          <li><span data-lang="vi">Voucher theo phần trăm hoặc số tiền cố định</span><span data-lang="en">Percentage or fixed-amount vouchers</span></li>
+          <li><span data-lang="vi">Flash Sale với bộ đếm ngược thời gian thực</span><span data-lang="en">Flash Sale with real-time countdown</span></li>
+          <li><span data-lang="vi">Voucher VIP dành riêng cho nhóm khách hàng thân thiết</span><span data-lang="en">VIP vouchers for loyal customer segments</span></li>
+          <li><span data-lang="vi">Giới hạn số lượng sử dụng, ngày hết hạn linh hoạt</span><span data-lang="en">Usage limits and flexible expiry dates</span></li>
         </ul>
       </div>
 
@@ -1535,12 +1585,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
-        <h3>Tối ưu Mobile</h3>
+        <h3><span data-lang="vi">Tối ưu Mobile</span><span data-lang="en">Mobile Optimized</span></h3>
         <ul class="feature-bullets">
-          <li>Giao diện responsive, hoạt động mượt trên mọi kích thước màn hình</li>
-          <li>Tối ưu tốc độ tải trên mạng 3G/4G</li>
-          <li>Ảnh lazy-load, nén file tự động</li>
-          <li>Nút CTA và form checkout dễ chạm trên điện thoại</li>
+          <li><span data-lang="vi">Giao diện responsive, hoạt động mượt trên mọi kích thước màn hình</span><span data-lang="en">Responsive design, smooth on all screen sizes</span></li>
+          <li><span data-lang="vi">Tối ưu tốc độ tải trên mạng 3G/4G</span><span data-lang="en">Optimized loading speed on 3G/4G networks</span></li>
+          <li><span data-lang="vi">Ảnh lazy-load, nén file tự động</span><span data-lang="en">Lazy-load images, automatic file compression</span></li>
+          <li><span data-lang="vi">Nút CTA và form checkout dễ chạm trên điện thoại</span><span data-lang="en">Touch-friendly CTA buttons and checkout forms</span></li>
         </ul>
       </div>
 
@@ -1549,12 +1599,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feature-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
-        <h3>Chuẩn SEO</h3>
+        <h3><span data-lang="vi">Chuẩn SEO</span><span data-lang="en">SEO Ready</span></h3>
         <ul class="feature-bullets">
-          <li>URL thân thiện với từ khóa (/san-pham/ten-san-pham)</li>
-          <li>Meta title, meta description tùy chỉnh từng trang</li>
-          <li>Schema markup cho sản phẩm — hiển thị sao và giá trên Google</li>
-          <li>Sitemap XML tự động cập nhật khi thêm sản phẩm</li>
+          <li><span data-lang="vi">URL thân thiện với từ khóa (/san-pham/ten-san-pham)</span><span data-lang="en">Keyword-friendly URLs (/product/product-name)</span></li>
+          <li><span data-lang="vi">Meta title, meta description tùy chỉnh từng trang</span><span data-lang="en">Custom meta title and description per page</span></li>
+          <li><span data-lang="vi">Schema markup cho sản phẩm — hiển thị sao và giá trên Google</span><span data-lang="en">Product schema markup — shows stars and price on Google</span></li>
+          <li><span data-lang="vi">Sitemap XML tự động cập nhật khi thêm sản phẩm</span><span data-lang="en">XML sitemap auto-updates when products are added</span></li>
         </ul>
       </div>
     </div>
@@ -1567,78 +1617,78 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">So sánh lựa chọn</span>
-      <h2>Diso so với các lựa chọn khác</h2>
-      <p class="section-subtitle">Đừng để chi phí ẩn và sự phụ thuộc vào nền tảng cản trở sự tăng trưởng của bạn</p>
+      <span class="section-label"><span data-lang="vi">So sánh lựa chọn</span><span data-lang="en">Compare Options</span></span>
+      <h2><span data-lang="vi">Diso so với các lựa chọn khác</span><span data-lang="en">Diso vs. the alternatives</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Đừng để chi phí ẩn và sự phụ thuộc vào nền tảng cản trở sự tăng trưởng của bạn</span><span data-lang="en">Don't let hidden costs and platform dependency hold back your growth</span></p>
     </div>
 
     <div class="table-wrap reveal">
       <table class="comp-table">
         <thead>
           <tr>
-            <th>Tiêu chí</th>
+            <th><span data-lang="vi">Tiêu chí</span><span data-lang="en">Criteria</span></th>
             <th class="col-diso">
-              Diso Website TMĐT
-              <span class="col-label">Giải pháp được đề xuất</span>
+              <span data-lang="vi">Diso Website TMĐT</span><span data-lang="en">Diso E-commerce</span>
+              <span class="col-label"><span data-lang="vi">Giải pháp được đề xuất</span><span data-lang="en">Recommended solution</span></span>
             </th>
-            <th>Tự thuê dev</th>
+            <th><span data-lang="vi">Tự thuê dev</span><span data-lang="en">Custom Dev</span></th>
             <th>Shopee / TikTok Shop</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Chi phí ban đầu</td>
-            <td class="col-diso"><span class="check-icon">Gói cố định, rõ ràng</span></td>
-            <td><span class="cross-icon">500 triệu — 2 tỷ đồng</span></td>
-            <td><span class="check-icon">Miễn phí đăng ký</span></td>
+            <td><span data-lang="vi">Chi phí ban đầu</span><span data-lang="en">Upfront cost</span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Gói cố định, rõ ràng</span><span data-lang="en">Fixed, transparent pricing</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">500 triệu — 2 tỷ đồng</span><span data-lang="en">500M — 2B VND</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">Miễn phí đăng ký</span><span data-lang="en">Free to register</span></span></td>
           </tr>
           <tr>
-            <td>Thời gian ra mắt</td>
-            <td class="col-diso"><span class="check-icon">2 tuần</span></td>
-            <td><span class="cross-icon">6–12 tháng</span></td>
-            <td><span class="check-icon">Vài ngày</span></td>
+            <td><span data-lang="vi">Thời gian ra mắt</span><span data-lang="en">Time to launch</span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">2 tuần</span><span data-lang="en">2 weeks</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">6–12 tháng</span><span data-lang="en">6–12 months</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">Vài ngày</span><span data-lang="en">A few days</span></span></td>
           </tr>
           <tr>
-            <td>Domain riêng</td>
+            <td><span data-lang="vi">Domain riêng</span><span data-lang="en">Custom domain</span></td>
             <td class="col-diso"><span class="check-icon">yourshop.vn</span></td>
-            <td><span class="check-icon">Hoàn toàn tự chủ</span></td>
-            <td><span class="cross-icon">Không có</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Hoàn toàn tự chủ</span><span data-lang="en">Full control</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td>
           </tr>
           <tr>
-            <td>Thương hiệu</td>
+            <td><span data-lang="vi">Thương hiệu</span><span data-lang="en">Branding</span></td>
             <td class="col-diso"><span class="check-icon">100% white-label</span></td>
-            <td><span class="check-icon">Tự quyết định</span></td>
-            <td><span class="cross-icon">Logo sàn xuất hiện</span></td>
+            <td><span class="check-icon"><span data-lang="vi">Tự quyết định</span><span data-lang="en">Your choice</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Logo sàn xuất hiện</span><span data-lang="en">Marketplace logo shown</span></span></td>
           </tr>
           <tr>
-            <td>Sở hữu data khách</td>
-            <td class="col-diso"><span class="check-icon">100% thuộc về bạn</span></td>
-            <td><span class="check-icon">Hoàn toàn</span></td>
-            <td><span class="cross-icon">Sàn giữ, không chia sẻ</span></td>
+            <td><span data-lang="vi">Sở hữu data khách</span><span data-lang="en">Customer data ownership</span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">100% thuộc về bạn</span><span data-lang="en">100% yours</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">Hoàn toàn</span><span data-lang="en">Full ownership</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Sàn giữ, không chia sẻ</span><span data-lang="en">Platform keeps it, no sharing</span></span></td>
           </tr>
           <tr>
-            <td>Phí giao dịch</td>
-            <td class="col-diso"><span class="check-icon">0 đồng / đơn</span></td>
-            <td><span class="check-icon">Tùy cổng thanh toán</span></td>
-            <td><span class="cross-icon">3–15% mỗi đơn hàng</span></td>
+            <td><span data-lang="vi">Phí giao dịch</span><span data-lang="en">Transaction fee</span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">0 đồng / đơn</span><span data-lang="en">$0 / order</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">Tùy cổng thanh toán</span><span data-lang="en">Depends on gateway</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">3–15% mỗi đơn hàng</span><span data-lang="en">3–15% per order</span></span></td>
           </tr>
           <tr>
-            <td>SEO tự nhiên</td>
-            <td class="col-diso"><span class="check-icon">Chuẩn SEO kỹ thuật</span></td>
-            <td><span class="neutral-icon">Tuỳ team phát triển</span></td>
-            <td><span class="cross-icon">Rất hạn chế</span></td>
+            <td><span data-lang="vi">SEO tự nhiên</span><span data-lang="en">Organic SEO</span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Chuẩn SEO kỹ thuật</span><span data-lang="en">Technical SEO ready</span></span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Tuỳ team phát triển</span><span data-lang="en">Depends on dev team</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Rất hạn chế</span><span data-lang="en">Very limited</span></span></td>
           </tr>
           <tr>
-            <td>Tối ưu mobile</td>
+            <td><span data-lang="vi">Tối ưu mobile</span><span data-lang="en">Mobile optimization</span></td>
             <td class="col-diso"><span class="check-icon">Responsive + 3G/4G</span></td>
-            <td><span class="neutral-icon">Tuỳ team phát triển</span></td>
-            <td><span class="check-icon">App riêng của sàn</span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Tuỳ team phát triển</span><span data-lang="en">Depends on dev team</span></span></td>
+            <td><span class="check-icon"><span data-lang="vi">App riêng của sàn</span><span data-lang="en">Marketplace's own app</span></span></td>
           </tr>
           <tr>
-            <td>Mã giảm giá</td>
+            <td><span data-lang="vi">Mã giảm giá</span><span data-lang="en">Discount codes</span></td>
             <td class="col-diso"><span class="check-icon">Flash Sale + VIP voucher</span></td>
-            <td><span class="neutral-icon">Phải tự phát triển</span></td>
-            <td><span class="neutral-icon">Có nhưng theo luật sàn</span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Phải tự phát triển</span><span data-lang="en">Must build yourself</span></span></td>
+            <td><span class="neutral-icon"><span data-lang="vi">Có nhưng theo luật sàn</span><span data-lang="en">Available but platform rules apply</span></span></td>
           </tr>
         </tbody>
       </table>
@@ -1652,9 +1702,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Quy trình triển khai</span>
-      <h2>Ra mắt website bán hàng trong 2 tuần</h2>
-      <p class="section-subtitle">Đội ngũ Diso đồng hành cùng bạn từ bước đầu tiên đến khi website chạy thật sự</p>
+      <span class="section-label"><span data-lang="vi">Quy trình triển khai</span><span data-lang="en">Deployment Process</span></span>
+      <h2><span data-lang="vi">Ra mắt website bán hàng trong 2 tuần</span><span data-lang="en">Launch your store in 2 weeks</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Đội ngũ Diso đồng hành cùng bạn từ bước đầu tiên đến khi website chạy thật sự</span><span data-lang="en">The Diso team guides you from day one until your website is live</span></p>
     </div>
 
     <div class="workflow-phases">
@@ -1665,8 +1715,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <span class="phase-num-inner">1</span>
           </div>
           <div class="phase-meta">
-            <h3>Tuần 1 — Setup</h3>
-            <span class="phase-week">Ngày 1 đến ngày 7</span>
+            <h3><span data-lang="vi">Tuần 1 — Setup</span><span data-lang="en">Week 1 — Setup</span></h3>
+            <span class="phase-week"><span data-lang="vi">Ngày 1 đến ngày 7</span><span data-lang="en">Day 1 to day 7</span></span>
           </div>
         </div>
         <div class="phase-tasks">
@@ -1675,8 +1725,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Cấu hình domain &amp; hosting</div>
-              <div class="phase-task-desc">Kết nối domain của bạn, cài chứng chỉ SSL, thiết lập môi trường chạy ổn định</div>
+              <div class="phase-task-title"><span data-lang="vi">Cấu hình domain &amp; hosting</span><span data-lang="en">Domain &amp; hosting setup</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Kết nối domain của bạn, cài chứng chỉ SSL, thiết lập môi trường chạy ổn định</span><span data-lang="en">Connect your domain, install SSL, configure stable environment</span></div>
             </div>
           </div>
           <div class="phase-task">
@@ -1684,8 +1734,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Thiết kế giao diện white-label</div>
-              <div class="phase-task-desc">Áp dụng màu sắc, logo, font thương hiệu của bạn lên toàn bộ giao diện</div>
+              <div class="phase-task-title"><span data-lang="vi">Thiết kế giao diện white-label</span><span data-lang="en">White-label design setup</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Áp dụng màu sắc, logo, font thương hiệu của bạn lên toàn bộ giao diện</span><span data-lang="en">Apply your brand colors, logo, and fonts across the entire interface</span></div>
             </div>
           </div>
           <div class="phase-task">
@@ -1693,8 +1743,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Import sản phẩm &amp; danh mục</div>
-              <div class="phase-task-desc">Upload sản phẩm, thiết lập SKU, biến thể, giá và hình ảnh theo cấu trúc chuẩn</div>
+              <div class="phase-task-title"><span data-lang="vi">Import sản phẩm &amp; danh mục</span><span data-lang="en">Import products &amp; categories</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Upload sản phẩm, thiết lập SKU, biến thể, giá và hình ảnh theo cấu trúc chuẩn</span><span data-lang="en">Upload products, set up SKUs, variants, pricing and images to standard structure</span></div>
             </div>
           </div>
           <div class="phase-task">
@@ -1702,8 +1752,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Tích hợp cổng thanh toán</div>
-              <div class="phase-task-desc">Cài đặt COD, chuyển khoản ngân hàng và ví điện tử theo nhu cầu</div>
+              <div class="phase-task-title"><span data-lang="vi">Tích hợp cổng thanh toán</span><span data-lang="en">Payment gateway integration</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Cài đặt COD, chuyển khoản ngân hàng và ví điện tử theo nhu cầu</span><span data-lang="en">Configure COD, bank transfer and e-wallets as needed</span></div>
             </div>
           </div>
         </div>
@@ -1716,8 +1766,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <span class="phase-num-inner">2</span>
           </div>
           <div class="phase-meta">
-            <h3>Tuần 2 — Launch</h3>
-            <span class="phase-week">Ngày 8 đến ngày 14</span>
+            <h3><span data-lang="vi">Tuần 2 — Launch</span><span data-lang="en">Week 2 — Launch</span></h3>
+            <span class="phase-week"><span data-lang="vi">Ngày 8 đến ngày 14</span><span data-lang="en">Day 8 to day 14</span></span>
           </div>
         </div>
         <div class="phase-tasks">
@@ -1726,8 +1776,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Cài đặt SEO kỹ thuật</div>
-              <div class="phase-task-desc">Cấu hình URL thân thiện, meta tags, schema markup và sitemap XML</div>
+              <div class="phase-task-title"><span data-lang="vi">Cài đặt SEO kỹ thuật</span><span data-lang="en">Technical SEO setup</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Cấu hình URL thân thiện, meta tags, schema markup và sitemap XML</span><span data-lang="en">Configure friendly URLs, meta tags, schema markup and XML sitemap</span></div>
             </div>
           </div>
           <div class="phase-task">
@@ -1735,8 +1785,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Kiểm thử mobile &amp; tốc độ</div>
-              <div class="phase-task-desc">Test toàn bộ quy trình mua hàng trên di động, đảm bảo tải nhanh trên 3G/4G</div>
+              <div class="phase-task-title"><span data-lang="vi">Kiểm thử mobile &amp; tốc độ</span><span data-lang="en">Mobile &amp; speed testing</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Test toàn bộ quy trình mua hàng trên di động, đảm bảo tải nhanh trên 3G/4G</span><span data-lang="en">Test the full purchase flow on mobile, ensure fast loading on 3G/4G</span></div>
             </div>
           </div>
           <div class="phase-task">
@@ -1744,8 +1794,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Thiết lập mã giảm giá khai trương</div>
-              <div class="phase-task-desc">Tạo voucher và Flash Sale để thu hút đơn hàng đầu tiên ngay khi ra mắt</div>
+              <div class="phase-task-title"><span data-lang="vi">Thiết lập mã giảm giá khai trương</span><span data-lang="en">Launch discount setup</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Tạo voucher và Flash Sale để thu hút đơn hàng đầu tiên ngay khi ra mắt</span><span data-lang="en">Create vouchers and Flash Sale to attract first orders at launch</span></div>
             </div>
           </div>
           <div class="phase-task">
@@ -1753,8 +1803,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <div class="phase-task-text">
-              <div class="phase-task-title">Go-live và bàn giao</div>
-              <div class="phase-task-desc">Chạy thật, đào tạo team vận hành, bàn giao tài liệu hướng dẫn quản lý</div>
+              <div class="phase-task-title"><span data-lang="vi">Go-live và bàn giao</span><span data-lang="en">Go-live and handover</span></div>
+              <div class="phase-task-desc"><span data-lang="vi">Chạy thật, đào tạo team vận hành, bàn giao tài liệu hướng dẫn quản lý</span><span data-lang="en">Go live, train the operations team, hand over admin documentation</span></div>
             </div>
           </div>
         </div>
@@ -1769,8 +1819,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Những con số quan trọng</span>
-      <h2>Kết quả bạn có thể trông đợi</h2>
+      <span class="section-label"><span data-lang="vi">Những con số quan trọng</span><span data-lang="en">Key Numbers</span></span>
+      <h2><span data-lang="vi">Kết quả bạn có thể trông đợi</span><span data-lang="en">Results you can expect</span></h2>
     </div>
 
     <div class="numbers-grid">
@@ -1778,8 +1828,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="number-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
-        <div class="number-value">2 tuần</div>
-        <div class="number-desc">Từ ký hợp đồng đến website đang chạy thật sự</div>
+        <div class="number-value"><span data-lang="vi">2 tuần</span><span data-lang="en">2 weeks</span></div>
+        <div class="number-desc"><span data-lang="vi">Từ ký hợp đồng đến website đang chạy thật sự</span><span data-lang="en">From contract signing to a live website</span></div>
       </div>
 
       <div class="number-card reveal reveal-delay-2">
@@ -1787,15 +1837,15 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="number-value">100%</div>
-        <div class="number-desc">Dữ liệu khách hàng thuộc về bạn — không chia sẻ với bên nào</div>
+        <div class="number-desc"><span data-lang="vi">Dữ liệu khách hàng thuộc về bạn — không chia sẻ với bên nào</span><span data-lang="en">Customer data belongs to you — not shared with anyone</span></div>
       </div>
 
       <div class="number-card reveal reveal-delay-3">
         <div class="number-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="number-value">0 đồng</div>
-        <div class="number-desc">Phí hoa hồng trên mỗi đơn hàng — tiết kiệm 3–15% doanh thu</div>
+        <div class="number-value"><span data-lang="vi">0 đồng</span><span data-lang="en">$0</span></div>
+        <div class="number-desc"><span data-lang="vi">Phí hoa hồng trên mỗi đơn hàng — tiết kiệm 3–15% doanh thu</span><span data-lang="en">Commission fee per order — saving 3–15% of revenue</span></div>
       </div>
 
       <div class="number-card reveal reveal-delay-4">
@@ -1803,7 +1853,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <div class="number-value">60%+</div>
-        <div class="number-desc">Đơn hàng đến từ mobile — được tối ưu toàn diện từ đầu</div>
+        <div class="number-desc"><span data-lang="vi">Đơn hàng đến từ mobile — được tối ưu toàn diện từ đầu</span><span data-lang="en">Orders from mobile — fully optimized from the start</span></div>
       </div>
     </div>
   </div>
@@ -1815,9 +1865,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Hệ sinh thái giải pháp</span>
-      <h2>Website TMĐT kết nối với toàn bộ hệ thống</h2>
-      <p class="section-subtitle">Website bán hàng là nền tảng — các giải pháp khác tích hợp xung quanh để tạo cỗ máy tăng trưởng hoàn chỉnh</p>
+      <span class="section-label"><span data-lang="vi">Hệ sinh thái giải pháp</span><span data-lang="en">Solution Ecosystem</span></span>
+      <h2><span data-lang="vi">Website TMĐT kết nối với toàn bộ hệ thống</span><span data-lang="en">E-commerce website connects with the whole system</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Website bán hàng là nền tảng — các giải pháp khác tích hợp xung quanh để tạo cỗ máy tăng trưởng hoàn chỉnh</span><span data-lang="en">The e-commerce website is the foundation — other solutions integrate around it to create a complete growth engine</span></p>
     </div>
 
     <div class="solution-diagram reveal">
@@ -1827,8 +1877,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="solution-node-text">
-            <h5>Giải pháp Affiliate</h5>
-            <p>KOL/KOC dẫn traffic về website</p>
+            <h5><span data-lang="vi">Giải pháp Affiliate</span><span data-lang="en">Affiliate Solution</span></h5>
+            <p><span data-lang="vi">KOL/KOC dẫn traffic về website</span><span data-lang="en">KOL/KOC drives traffic to your website</span></p>
           </div>
         </div>
         <div class="solution-node node-2">
@@ -1836,8 +1886,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <div class="solution-node-text">
-            <h5>Giải pháp Backend Vận hành</h5>
-            <p>Quản lý đơn hàng, tồn kho</p>
+            <h5><span data-lang="vi">Giải pháp Backend Vận hành</span><span data-lang="en">Operations Backend</span></h5>
+            <p><span data-lang="vi">Quản lý đơn hàng, tồn kho</span><span data-lang="en">Order and inventory management</span></p>
           </div>
         </div>
       </div>
@@ -1846,8 +1896,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="solution-center-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         </div>
-        <h4>Website TMĐT</h4>
-        <p>Giải pháp 1 / 5</p>
+        <h4><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></h4>
+        <p><span data-lang="vi">Giải pháp 1 / 5</span><span data-lang="en">Pillar 1 / 5</span></p>
       </div>
 
       <div class="solution-connections-right">
@@ -1856,8 +1906,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0"/></svg>
           </div>
           <div class="solution-node-text">
-            <h5>Giải pháp Reseller</h5>
-            <p>Mạng lưới phân phối mở rộng</p>
+            <h5><span data-lang="vi">Giải pháp Reseller</span><span data-lang="en">Reseller Solution</span></h5>
+            <p><span data-lang="vi">Mạng lưới phân phối mở rộng</span><span data-lang="en">Expanding distribution network</span></p>
           </div>
         </div>
         <div class="solution-node node-4">
@@ -1865,8 +1915,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div class="solution-node-text">
-            <h5>Giải pháp Đại sứ</h5>
-            <p>Cộng đồng brand ambassador</p>
+            <h5><span data-lang="vi">Giải pháp Đại sứ</span><span data-lang="en">Ambassador Solution</span></h5>
+            <p><span data-lang="vi">Cộng đồng brand ambassador</span><span data-lang="en">Brand ambassador community</span></p>
           </div>
         </div>
       </div>
@@ -1881,24 +1931,24 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="cta-bg-shape cta-bg-shape-1"></div>
   <div class="cta-bg-shape cta-bg-shape-2"></div>
   <div class="container text-center">
-    <h2>Sẵn sàng có website bán hàng riêng?</h2>
-    <p>Đặt lịch demo miễn phí 30 phút — chúng tôi sẽ cho bạn thấy website thực tế với sản phẩm của bạn</p>
+    <h2><span data-lang="vi">Sẵn sàng có website bán hàng riêng?</span><span data-lang="en">Ready to have your own store?</span></h2>
+    <p><span data-lang="vi">Đặt lịch demo miễn phí 30 phút — chúng tôi sẽ cho bạn thấy website thực tế với sản phẩm của bạn</span><span data-lang="en">Book a free 30-minute demo — we'll show you a live website with your actual products</span></p>
     <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Đặt lịch demo miễn phí 30 phút
+      <span data-lang="vi">Đặt lịch demo miễn phí 30 phút</span><span data-lang="en">Book a Free Demo</span>
     </a>
     <div class="cta-trust">
       <div class="cta-trust-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Không cần chuẩn bị gì trước
+        <span data-lang="vi">Không cần chuẩn bị gì trước</span><span data-lang="en">No preparation needed</span>
       </div>
       <div class="cta-trust-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Không phí tư vấn
+        <span data-lang="vi">Không phí tư vấn</span><span data-lang="en">No consulting fee</span>
       </div>
       <div class="cta-trust-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        Triển khai thật trong 2 tuần
+        <span data-lang="vi">Triển khai thật trong 2 tuần</span><span data-lang="en">Live deployment in 2 weeks</span>
       </div>
     </div>
   </div>
@@ -1915,10 +1965,10 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         Diso
       </a>
       <div class="footer-links">
-        <a href="../../">Trang chủ</a>
-        <a href="../../#solution">Giải pháp</a>
-        <a href="../../comparison/">So sánh</a>
-        <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow">Đặt lịch demo</a>
+        <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
+        <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
+        <a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a>
+        <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a>
       </div>
       <p class="footer-copy">&copy; 2025 Diso. All rights reserved.</p>
     </div>
@@ -1963,6 +2013,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
     }
   });
 })();
+
+// Language toggle
+var langToggle = document.getElementById('langToggle');
+var htmlEl = document.documentElement;
+var savedLang = localStorage.getItem('diso-lang') || 'vi';
+if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+langToggle.addEventListener('click', function() {
+  var current = htmlEl.getAttribute('lang') || 'vi';
+  var next = current === 'vi' ? 'en' : 'vi';
+  htmlEl.setAttribute('lang', next);
+  localStorage.setItem('diso-lang', next);
+});
 
 /* ========================================
    REVEAL ANIMATIONS

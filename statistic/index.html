@@ -1465,6 +1465,60 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   .reveal { transition: opacity 0.3s ease; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .pillar-tagline [data-lang="en"],
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .hero-subtitle [data-lang="en"],
+html[lang="en"] .hero-tagline [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .vision-subtitle [data-lang="en"],
+html[lang="en"] .proof-stats [data-lang="en"],
+html[lang="en"] .pillar-key-message [data-lang="en"],
+html[lang="en"] .comparison-message [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1496,14 +1550,15 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       Diso
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#">Trang chủ</a></li>
-      <li><a href="#solution">Giải pháp</a></li>
-      <li><a href="#features">Tính năng</a></li>
-      <li><a href="#proof">Khách hàng</a></li>
-      <li><a href="#compare">So sánh</a></li>
+      <li><a href="#"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="#compare"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="#cases">Case Studies</a></li>
-      <li><a href="#vision">Tầm nhìn</a></li>
-      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">Đặt lịch demo</a></li>
+      <li><a href="#vision"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
+      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a></li>
     </ul>
     <button class="nav-mobile-btn" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round">
@@ -1529,27 +1584,27 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         SaaS B2B Platform
       </div>
       <h1>Diso Commerce Suite</h1>
-      <p class="hero-tagline">Giải pháp kinh doanh online trọn bộ</p>
-      <p class="hero-subtitle">Từ website bán hàng đến đội ngũ bán hàng nghìn người. 1 nền tảng, 5 giải pháp - bắt đầu từ đâu cũng được.</p>
+      <p class="hero-tagline"><span data-lang="vi">Giải pháp kinh doanh online trọn bộ</span><span data-lang="en">All-in-One Online Commerce Solution</span></p>
+      <p class="hero-subtitle"><span data-lang="vi">Từ website bán hàng đến đội ngũ bán hàng nghìn người. 1 nền tảng, 5 giải pháp - bắt đầu từ đâu cũng được.</span><span data-lang="en">From your own e-commerce website to a sales force of thousands. 1 platform, 5 solutions — start anywhere.</span></p>
       <div class="hero-actions">
         <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
-          Đặt lịch demo miễn phí
+          <span data-lang="vi">Đặt lịch demo miễn phí</span><span data-lang="en">Book a Free Demo</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#solution" class="btn btn-secondary">Tìm hiểu thêm</a>
+        <a href="#solution" class="btn btn-secondary"><span data-lang="vi">Tìm hiểu thêm</span><span data-lang="en">Learn More</span></a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat-item">
           <div class="hero-stat-number">11+</div>
-          <div class="hero-stat-label">Thương hiệu</div>
+          <div class="hero-stat-label"><span data-lang="vi">Thương hiệu</span><span data-lang="en">Brands</span></div>
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-number">6</div>
-          <div class="hero-stat-label">Ngành nghề</div>
+          <div class="hero-stat-label"><span data-lang="vi">Ngành nghề</span><span data-lang="en">Industries</span></div>
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-number">2 tuần</div>
-          <div class="hero-stat-label">Triển khai</div>
+          <div class="hero-stat-label"><span data-lang="vi">Triển khai</span><span data-lang="en">Deployment</span></div>
         </div>
       </div>
     </div>
@@ -1562,19 +1617,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
         <!-- 5 pillar nodes orbiting -->
-        <div class="hero-pillar-node" title="Website TMĐT">
+        <div class="hero-pillar-node" title="E-commerce">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
         </div>
         <div class="hero-pillar-node" title="Affiliate Marketing">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
         </div>
-        <div class="hero-pillar-node" title="Backend Vận hành">
+        <div class="hero-pillar-node" title="Operations">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
         <div class="hero-pillar-node" title="Reseller Network">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
         </div>
-        <div class="hero-pillar-node" title="Đại sứ Thương hiệu">
+        <div class="hero-pillar-node" title="Ambassador">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         </div>
       </div>
@@ -1586,37 +1641,37 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="pain-points" id="problems">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Vấn đề</span>
-      <h2 class="reveal">Kinh doanh online nghe dễ - làm thì khó</h2>
+      <span class="section-label reveal"><span data-lang="vi">Vấn đề</span><span data-lang="en">The Problem</span></span>
+      <h2 class="reveal"><span data-lang="vi">Kinh doanh online nghe dễ - làm thì khó</span><span data-lang="en">Online business sounds easy — doing it is hard</span></h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card reveal reveal-delay-1">
         <div class="pain-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 10h4M13 8h4M7 13h10" opacity="0.4"/></svg>
         </div>
-        <h3>Chưa có website</h3>
-        <p>Thuê dev tốn 500 triệu - 2 tỷ, mất 6-12 tháng. Bán trên sàn thì phí 3-15%/đơn, data khách không thuộc về mình.</p>
+        <h3><span data-lang="vi">Chưa có website</span><span data-lang="en">No website yet</span></h3>
+        <p><span data-lang="vi">Thuê dev tốn 500 triệu - 2 tỷ, mất 6-12 tháng. Bán trên sàn thì phí 3-15%/đơn, data khách không thuộc về mình.</span><span data-lang="en">Selling on marketplaces = building on rented land. When they raise fees or change algorithms, you lose everything.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6" opacity="0.4"/></svg>
         </div>
-        <h3>Không có khách</h3>
-        <p>Chi phí quảng cáo Facebook/Google ngày càng đắt. Chạy ads xong thì hết tiền, hết khách. Không có kênh bán bền vững.</p>
+        <h3><span data-lang="vi">Không có khách</span><span data-lang="en">No customers</span></h3>
+        <p><span data-lang="vi">Chi phí quảng cáo Facebook/Google ngày càng đắt. Chạy ads xong thì hết tiền, hết khách. Không có kênh bán bền vững.</span><span data-lang="en">Pouring money into ads but CAC keeps climbing. No sustainable channel to acquire customers.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2" opacity="0.4"/></svg>
         </div>
-        <h3>Vận hành rối</h3>
-        <p>Đối soát vận chuyển sai, tính hoa hồng nhầm, kế toán khóc. Excel không chịu nổi 100 đơn/ngày.</p>
+        <h3><span data-lang="vi">Vận hành rối</span><span data-lang="en">Chaotic operations</span></h3>
+        <p><span data-lang="vi">Đối soát vận chuyển sai, tính hoa hồng nhầm, kế toán khóc. Excel không chịu nổi 100 đơn/ngày.</span><span data-lang="en">Orders, inventory, commissions, reconciliation — managing everything manually in spreadsheets. Errors everywhere.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-4">
         <div class="pain-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
         </div>
-        <h3>Không scale được</h3>
-        <p>Tuyển sales tốn lương cứng. Mở đại lý thì không kiểm soát được. Muốn mở rộng qua affiliate, reseller nhưng không có hệ thống.</p>
+        <h3><span data-lang="vi">Không scale được</span><span data-lang="en">Can't scale</span></h3>
+        <p><span data-lang="vi">Tuyển sales tốn lương cứng. Mở đại lý thì không kiểm soát được. Muốn mở rộng qua affiliate, reseller nhưng không có hệ thống.</span><span data-lang="en">Want to grow the sales team but there's no system. Managing 10 people is already a headache, let alone 1,000.</span></p>
       </div>
     </div>
   </div>
@@ -1626,9 +1681,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="solution-overview" id="solution">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Giải pháp</span>
-      <h2 class="reveal">1 nền tảng, 5 giải pháp</h2>
-      <p class="section-subtitle reveal">Mua từng phần hoặc trọn bộ - bắt đầu từ đâu cũng được, mở rộng bất cứ lúc nào</p>
+      <span class="section-label reveal"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></span>
+      <h2 class="reveal"><span data-lang="vi">1 nền tảng, 5 giải pháp</span><span data-lang="en">1 Platform, 5 Solutions</span></h2>
+      <p class="section-subtitle reveal"><span data-lang="vi">Mua từng phần hoặc trọn bộ - bắt đầu từ đâu cũng được, mở rộng bất cứ lúc nào</span><span data-lang="en">Buy individual modules or the full suite — start anywhere, scale anytime</span></p>
     </div>
     <div class="pillars-flow">
       <div class="pillar-step reveal reveal-delay-1">
@@ -1637,8 +1692,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div>
           <div class="pillar-step-num">01</div>
-          <h4>Website TMĐT</h4>
-          <p>Có chỗ bán hàng</p>
+          <h4><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></h4>
+          <p><span data-lang="vi">Có chỗ bán hàng</span><span data-lang="en">Professional e-commerce website</span></p>
         </div>
       </div>
       <div class="pillar-arrow reveal">
@@ -1651,7 +1706,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div>
           <div class="pillar-step-num">02</div>
           <h4>Affiliate Marketing</h4>
-          <p>Có khách mua hàng</p>
+          <p><span data-lang="vi">Có khách mua hàng</span><span data-lang="en">Cost-effective marketing</span></p>
         </div>
       </div>
       <div class="pillar-arrow reveal">
@@ -1663,8 +1718,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div>
           <div class="pillar-step-num">03</div>
-          <h4>Backend Vận hành</h4>
-          <p>Chạy trơn tru</p>
+          <h4><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations</span></h4>
+          <p><span data-lang="vi">Chạy trơn tru</span><span data-lang="en">Orders &amp; logistics</span></p>
         </div>
       </div>
       <div class="pillar-arrow reveal">
@@ -1677,7 +1732,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div>
           <div class="pillar-step-num">04</div>
           <h4>Reseller Network</h4>
-          <p>Mở rộng kênh bán</p>
+          <p><span data-lang="vi">Mở rộng kênh bán</span><span data-lang="en">Sales network</span></p>
         </div>
       </div>
       <div class="pillar-arrow reveal">
@@ -1689,8 +1744,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div>
           <div class="pillar-step-num">05</div>
-          <h4>Đại sứ Thương hiệu</h4>
-          <p>Xây thương hiệu</p>
+          <h4><span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Ambassador</span></h4>
+          <p><span data-lang="vi">Xây thương hiệu</span><span data-lang="en">Content &amp; branding</span></p>
         </div>
       </div>
     </div>
@@ -1705,58 +1760,58 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
       </div>
       <div>
-        <span class="section-label" style="margin-bottom:4px">Trụ cột 1</span>
-        <h2 style="font-size:clamp(24px,3vw,32px)">Website Thương mại Điện tử</h2>
+        <span class="section-label" style="margin-bottom:4px"><span data-lang="vi">Trụ cột 1</span><span data-lang="en">Pillar 1</span></span>
+        <h2 style="font-size:clamp(24px,3vw,32px)"><span data-lang="vi">Website Thương mại Điện tử</span><span data-lang="en">E-commerce Website</span></h2>
       </div>
     </div>
-    <p class="pillar-tagline reveal">Website bán hàng chuyên nghiệp - không cần biết code. Triển khai trong 2 tuần.</p>
+    <p class="pillar-tagline reveal"><span data-lang="vi">Website bán hàng chuyên nghiệp - không cần biết code. Triển khai trong 2 tuần.</span><span data-lang="en">Professional e-commerce website — no coding required. Deploy in 2 weeks.</span></p>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon" style="background:rgba(27,54,93,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
         </div>
-        <h4>Quản lý sản phẩm</h4>
-        <p>SKU, giá, biến thể, ảnh sản phẩm. Quản lý catalog linh hoạt, import hàng loạt.</p>
+        <h4><span data-lang="vi">Quản lý sản phẩm</span><span data-lang="en">Product Management</span></h4>
+        <p><span data-lang="vi">SKU, giá, biến thể, ảnh sản phẩm. Quản lý catalog linh hoạt, import hàng loạt.</span><span data-lang="en">Add, edit, bulk import. Support variants, combos, digital products.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon" style="background:rgba(27,54,93,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
         </div>
-        <h4>Giỏ hàng & Thanh toán</h4>
-        <p>Mua hàng mượt mà, hỗ trợ COD và thanh toán online. Checkout tối ưu chuyển đổi.</p>
+        <h4><span data-lang="vi">Giỏ hàng &amp; Thanh toán</span><span data-lang="en">Payments &amp; Shipping</span></h4>
+        <p><span data-lang="vi">Mua hàng mượt mà, hỗ trợ COD và thanh toán online. Checkout tối ưu chuyển đổi.</span><span data-lang="en">Integrated payment gateways and shipping carriers. COD support.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon" style="background:rgba(27,54,93,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M20 12v5l-8 4-8-4v-5" opacity="0.5"/></svg>
         </div>
-        <h4>Mã giảm giá & Flash Sale</h4>
-        <p>Tạo promotion tăng chuyển đổi. Voucher, combo, flash sale theo thời gian.</p>
+        <h4><span data-lang="vi">Mã giảm giá &amp; Flash Sale</span><span data-lang="en">Discount Codes &amp; Flash Sales</span></h4>
+        <p><span data-lang="vi">Tạo promotion tăng chuyển đổi. Voucher, combo, flash sale theo thời gian.</span><span data-lang="en">Auto meta tags, sitemap. Blog, landing pages, popups, email capture.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon" style="background:rgba(27,54,93,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h4>Website thương hiệu riêng</h4>
-        <p>Domain riêng, logo riêng, giao diện tùy chỉnh. 100% white-label.</p>
+        <h4><span data-lang="vi">Website thương hiệu riêng</span><span data-lang="en">Professional Design</span></h4>
+        <p><span data-lang="vi">Domain riêng, logo riêng, giao diện tùy chỉnh. 100% white-label.</span><span data-lang="en">Beautiful, responsive templates. 100% your brand — not a marketplace storefront.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-5">
         <div class="feature-icon" style="background:rgba(27,54,93,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         </div>
-        <h4>Tối ưu Mobile</h4>
-        <p>60%+ giao dịch TMĐT diễn ra trên điện thoại. Responsive, nhanh, mượt.</p>
+        <h4><span data-lang="vi">Tối ưu Mobile</span><span data-lang="en">Analytics Dashboard</span></h4>
+        <p><span data-lang="vi">60%+ giao dịch TMĐT diễn ra trên điện thoại. Responsive, nhanh, mượt.</span><span data-lang="en">Revenue, conversion rate, top products in real-time. Your data, not the marketplace's.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-6">
         <div class="feature-icon" style="background:rgba(27,54,93,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B365D" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </div>
-        <h4>Chuẩn SEO</h4>
-        <p>Khách tìm thấy bạn trên Google. Meta tags, sitemap, structured data tự động.</p>
+        <h4><span data-lang="vi">Chuẩn SEO</span><span data-lang="en">SEO &amp; Marketing tools</span></h4>
+        <p><span data-lang="vi">Khách tìm thấy bạn trên Google. Meta tags, sitemap, structured data tự động.</span><span data-lang="en">Sync inventory with Shopee, Lazada, TikTok Shop. Your website is the main hub.</span></p>
       </div>
     </div>
-    <div class="pillar-key-message reveal">Triển khai trong 2 tuần. Website 100% thương hiệu của bạn - không phải "gian hàng trên sàn".</div>
+    <div class="pillar-key-message reveal"><span data-lang="vi">Triển khai trong 2 tuần. Website 100% thương hiệu của bạn - không phải "gian hàng trên sàn".</span><span data-lang="en">Deploy in 2 weeks. A website that's 100% your brand — not a marketplace storefront.</span></div>
     <div class="pillar-cta reveal">
-      <a href="./features/ecommerce/" class="btn btn-secondary">Xem chi tiết Website TMĐT <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="./features/ecommerce/" class="btn btn-secondary"><span data-lang="vi">Xem chi tiết Website TMĐT</span><span data-lang="en">Learn More about E-commerce</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -1769,58 +1824,58 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
       </div>
       <div>
-        <span class="section-label" style="margin-bottom:4px">Trụ cột 2</span>
+        <span class="section-label" style="margin-bottom:4px"><span data-lang="vi">Trụ cột 2</span><span data-lang="en">Pillar 2</span></span>
         <h2 style="font-size:clamp(24px,3vw,32px)">Affiliate Marketing</h2>
       </div>
     </div>
-    <p class="pillar-tagline reveal">Kéo khách về website mà không tốn tiền quảng cáo. Chỉ trả tiền khi có đơn hàng.</p>
+    <p class="pillar-tagline reveal"><span data-lang="vi">Kéo khách về website mà không tốn tiền quảng cáo. Chỉ trả tiền khi có đơn hàng.</span><span data-lang="en">Drive traffic to your website without ad spend. Pay only when orders come in.</span></p>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon" style="background:rgba(54,140,191,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
         </div>
-        <h4>Link Tracking</h4>
-        <p>Biết chính xác ai mang khách về, bao nhiêu click, bao nhiêu đơn. Minh bạch tuyệt đối.</p>
+        <h4><span data-lang="vi">Link Tracking</span><span data-lang="en">Accurate Tracking</span></h4>
+        <p><span data-lang="vi">Biết chính xác ai mang khách về, bao nhiêu click, bao nhiêu đơn. Minh bạch tuyệt đối.</span><span data-lang="en">Cookie + UTM + fingerprint. Never miss a click, clear attribution.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon" style="background:rgba(54,140,191,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
-        <h4>Hoa hồng linh hoạt</h4>
-        <p>Cấu hình theo sản phẩm, theo tier, theo campaign. Hoa hồng cố định hoặc phần trăm.</p>
+        <h4><span data-lang="vi">Hoa hồng linh hoạt</span><span data-lang="en">Flexible Commissions</span></h4>
+        <p><span data-lang="vi">Cấu hình theo sản phẩm, theo tier, theo campaign. Hoa hồng cố định hoặc phần trăm.</span><span data-lang="en">Revenue %, fixed per order, or tiered. Customize by campaign or product.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon" style="background:rgba(54,140,191,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <h4>Dashboard cho Affiliate</h4>
-        <p>Affiliate tự theo dõi hiệu quả, thu nhập, đơn hàng. Self-service hoàn toàn.</p>
+        <h4><span data-lang="vi">Dashboard cho Affiliate</span><span data-lang="en">Realtime Dashboard</span></h4>
+        <p><span data-lang="vi">Affiliate tự theo dõi hiệu quả, thu nhập, đơn hàng. Self-service hoàn toàn.</span><span data-lang="en">Affiliates track clicks, orders, earnings themselves. Less support, more motivation.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon" style="background:rgba(54,140,191,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
         </div>
-        <h4>Promotion Tools</h4>
-        <p>Banner, link, mã giảm giá riêng cho từng affiliate. Tối đa hoá hiệu quả quảng bá.</p>
+        <h4><span data-lang="vi">Promotion Tools</span><span data-lang="en">Auto Affiliate Recruitment</span></h4>
+        <p><span data-lang="vi">Banner, link, mã giảm giá riêng cho từng affiliate. Tối đa hoá hiệu quả quảng bá.</span><span data-lang="en">Signup landing page, auto or manual approval. Onboarding kit included.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-5">
         <div class="feature-icon" style="background:rgba(54,140,191,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <h4>Phân nhóm & Targeting</h4>
-        <p>Gửi đúng campaign cho đúng nhóm affiliate. Tối ưu ROI từng chiến dịch.</p>
+        <h4><span data-lang="vi">Phân nhóm &amp; Targeting</span><span data-lang="en">Anti-fraud</span></h4>
+        <p><span data-lang="vi">Gửi đúng campaign cho đúng nhóm affiliate. Tối ưu ROI từng chiến dịch.</span><span data-lang="en">Auto-detect click spam and cookie stuffing. Protect your budget.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-6">
         <div class="feature-icon" style="background:rgba(54,140,191,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#368CBF" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <h4>Chống gian lận</h4>
-        <p>Tự động phát hiện click/đơn ảo. Bảo vệ ngân sách quảng cáo của bạn.</p>
+        <h4><span data-lang="vi">Chống gian lận</span><span data-lang="en">Auto Reconciliation</span></h4>
+        <p><span data-lang="vi">Tự động phát hiện click/đơn ảo. Bảo vệ ngân sách quảng cáo của bạn.</span><span data-lang="en">Aggregate commissions, reconcile, pay in one click. No more spreadsheets.</span></p>
       </div>
     </div>
-    <div class="pillar-key-message reveal">Biến blogger, KOL, và bất kỳ ai có mạng xã hội thành kênh bán hàng cho bạn. Chỉ trả tiền khi có đơn.</div>
+    <div class="pillar-key-message reveal"><span data-lang="vi">Biến blogger, KOL, và bất kỳ ai có mạng xã hội thành kênh bán hàng cho bạn. Chỉ trả tiền khi có đơn.</span><span data-lang="en">Turn bloggers, KOLs, and anyone with social media into your sales channel. Pay only for results.</span></div>
     <div class="pillar-cta reveal">
-      <a href="./features/affiliate/" class="btn btn-secondary">Xem chi tiết Affiliate Marketing <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="./features/affiliate/" class="btn btn-secondary"><span data-lang="vi">Xem chi tiết Affiliate Marketing</span><span data-lang="en">Learn More about Affiliate Marketing</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -1833,58 +1888,58 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
       </div>
       <div>
-        <span class="section-label" style="margin-bottom:4px">Trụ cột 3</span>
-        <h2 style="font-size:clamp(24px,3vw,32px)">Backend Vận hành</h2>
+        <span class="section-label" style="margin-bottom:4px"><span data-lang="vi">Trụ cột 3</span><span data-lang="en">Pillar 3</span></span>
+        <h2 style="font-size:clamp(24px,3vw,32px)"><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></h2>
       </div>
     </div>
-    <p class="pillar-tagline reveal">Từ đơn hàng đến giao hàng - tự động hóa toàn bộ. Vận hành như doanh nghiệp lớn.</p>
+    <p class="pillar-tagline reveal"><span data-lang="vi">Từ đơn hàng đến giao hàng - tự động hóa toàn bộ. Vận hành như doanh nghiệp lớn.</span><span data-lang="en">From orders to delivery — fully automated. Operate like an enterprise.</span></p>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon" style="background:rgba(45,156,111,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
         </div>
-        <h4>Quản lý đơn tập trung</h4>
-        <p>1 nơi xem tất cả đơn hàng. Filter, search, export. Không bỏ sót đơn nào.</p>
+        <h4><span data-lang="vi">Quản lý đơn tập trung</span><span data-lang="en">Order Management</span></h4>
+        <p><span data-lang="vi">1 nơi xem tất cả đơn hàng. Filter, search, export. Không bỏ sót đơn nào.</span><span data-lang="en">Process orders with real-time status. Support partial fulfillment and pre-orders.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon" style="background:rgba(45,156,111,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a2 2 0 01-2 2h-1"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
-        <h4>Tích hợp vận chuyển</h4>
-        <p>GHN, GHTK, Viettel Post, J&T - tạo vận đơn 1 click. Theo dõi giao hàng real-time.</p>
+        <h4><span data-lang="vi">Tích hợp vận chuyển</span><span data-lang="en">ERP/Accounting Integration</span></h4>
+        <p><span data-lang="vi">GHN, GHTK, Viettel Post, J&amp;T - tạo vận đơn 1 click. Theo dõi giao hàng real-time.</span><span data-lang="en">Open API, webhooks. Connect to SAP, MISA, or your internal systems.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon" style="background:rgba(45,156,111,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
         </div>
-        <h4>Quản lý tồn kho</h4>
-        <p>Cảnh báo hết hàng tự động. Sync inventory real-time giữa các kênh bán.</p>
+        <h4><span data-lang="vi">Quản lý tồn kho</span><span data-lang="en">Inventory Management</span></h4>
+        <p><span data-lang="vi">Cảnh báo hết hàng tự động. Sync inventory real-time giữa các kênh bán.</span><span data-lang="en">Multi-warehouse, stock alerts, auto-reorder points. Never run out of stock.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon" style="background:rgba(45,156,111,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
-        <h4>Đối soát tự động 4 loại</h4>
-        <p>Đơn hàng, affiliate, reseller, đại sứ thương hiệu. Chính xác đến từng đồng.</p>
+        <h4><span data-lang="vi">Đối soát tự động 4 loại</span><span data-lang="en">Multi-channel Reconciliation</span></h4>
+        <p><span data-lang="vi">Đơn hàng, affiliate, reseller, đại sứ thương hiệu. Chính xác đến từng đồng.</span><span data-lang="en">4 types: orders, commissions, shipping, payments. 100% automated.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-5">
         <div class="feature-icon" style="background:rgba(45,156,111,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
         </div>
-        <h4>Chi trả hoa hồng tự động</h4>
-        <p>Tính thuế, xuất bảng kê. Affiliate và reseller nhận tiền đúng hạn, minh bạch.</p>
+        <h4><span data-lang="vi">Chi trả hoa hồng tự động</span><span data-lang="en">Finance &amp; Reports</span></h4>
+        <p><span data-lang="vi">Tính thuế, xuất bảng kê. Affiliate và reseller nhận tiền đúng hạn, minh bạch.</span><span data-lang="en">P&amp;L, cashflow, margin by product/channel. CFO-ready reports.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-6">
         <div class="feature-icon" style="background:rgba(45,156,111,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D9C6F" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
         </div>
-        <h4>Analytics real-time</h4>
-        <p>Doanh thu, đơn hàng, hiệu quả kênh bán. Dashboard trực quan, data-driven.</p>
+        <h4><span data-lang="vi">Analytics real-time</span><span data-lang="en">Workflow automation</span></h4>
+        <p><span data-lang="vi">Doanh thu, đơn hàng, hiệu quả kênh bán. Dashboard trực quan, data-driven.</span><span data-lang="en">Order confirmed → auto-create shipping label → notify affiliate. Zero manual work.</span></p>
       </div>
     </div>
-    <div class="pillar-key-message reveal">Vận hành như doanh nghiệp lớn - chi phí doanh nghiệp nhỏ.</div>
+    <div class="pillar-key-message reveal"><span data-lang="vi">Vận hành như doanh nghiệp lớn - chi phí doanh nghiệp nhỏ.</span><span data-lang="en">Enterprise-grade operations — at a small business price.</span></div>
     <div class="pillar-cta reveal">
-      <a href="./features/operations/" class="btn btn-secondary">Xem chi tiết Backend Vận hành <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="./features/operations/" class="btn btn-secondary"><span data-lang="vi">Xem chi tiết Backend Vận hành</span><span data-lang="en">Learn More about Operations</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -1897,58 +1952,58 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
       </div>
       <div>
-        <span class="section-label" style="margin-bottom:4px">Trụ cột 4</span>
+        <span class="section-label" style="margin-bottom:4px"><span data-lang="vi">Trụ cột 4</span><span data-lang="en">Pillar 4</span></span>
         <h2 style="font-size:clamp(24px,3vw,32px)">Reseller Network</h2>
       </div>
     </div>
-    <p class="pillar-tagline reveal">1.000 người bán hàng cho bạn - bạn chỉ cần quản lý. Scale không giới hạn.</p>
+    <p class="pillar-tagline reveal"><span data-lang="vi">1.000 người bán hàng cho bạn - bạn chỉ cần quản lý. Scale không giới hạn.</span><span data-lang="en">1,000 people selling for you — you just manage. Scale without limits.</span></p>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon" style="background:rgba(155,89,182,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
         </div>
         <h4>Reseller Storefront</h4>
-        <p>Mỗi reseller có "shop" riêng trên platform. Thương hiệu cá nhân, link riêng.</p>
+        <p><span data-lang="vi">Mỗi reseller có "shop" riêng trên platform. Thương hiệu cá nhân, link riêng.</span><span data-lang="en">Each reseller gets their own storefront on the platform. Personal branding, unique links.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon" style="background:rgba(155,89,182,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <h4>Quản lý đội ngũ</h4>
-        <p>Duyệt, theo dõi, đánh giá reseller. Biết ai bán giỏi, ai cần hỗ trợ.</p>
+        <h4><span data-lang="vi">Quản lý đội ngũ</span><span data-lang="en">Team Management</span></h4>
+        <p><span data-lang="vi">Duyệt, theo dõi, đánh giá reseller. Biết ai bán giỏi, ai cần hỗ trợ.</span><span data-lang="en">Approve, track, evaluate resellers. Know who's performing and who needs support.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon" style="background:rgba(155,89,182,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
-        <h4>Hoa hồng đa cấp</h4>
-        <p>Thưởng theo doanh số, incentive linh hoạt. Hỗ trợ multi-tier commission.</p>
+        <h4><span data-lang="vi">Hoa hồng đa cấp</span><span data-lang="en">Multi-tier Commissions</span></h4>
+        <p><span data-lang="vi">Thưởng theo doanh số, incentive linh hoạt. Hỗ trợ multi-tier commission.</span><span data-lang="en">Performance-based rewards with flexible incentives. Multi-tier commission support.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon" style="background:rgba(155,89,182,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
         </div>
-        <h4>Mã giới thiệu</h4>
-        <p>Đội ngũ tự phát triển qua referral. Viral loop tự nhiên, chi phí = 0.</p>
+        <h4><span data-lang="vi">Mã giới thiệu</span><span data-lang="en">Referral Codes</span></h4>
+        <p><span data-lang="vi">Đội ngũ tự phát triển qua referral. Viral loop tự nhiên, chi phí = 0.</span><span data-lang="en">Team grows organically through referrals. Natural viral loop, zero cost.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-5">
         <div class="feature-icon" style="background:rgba(155,89,182,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <h4>Dashboard cho Reseller</h4>
-        <p>Tự xem đơn, thu nhập, minh bạch. Self-service giảm tải cho team bạn.</p>
+        <h4><span data-lang="vi">Dashboard cho Reseller</span><span data-lang="en">Reseller Dashboard</span></h4>
+        <p><span data-lang="vi">Tự xem đơn, thu nhập, minh bạch. Self-service giảm tải cho team bạn.</span><span data-lang="en">Self-serve order and earnings tracking. Transparent and reduces your support load.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-6">
         <div class="feature-icon" style="background:rgba(155,89,182,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B59B6" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <h4>Gamification</h4>
-        <p>Bảng xếp hạng, nhiệm vụ, đổi quà. Giữ chân reseller, tạo động lực bán.</p>
+        <p><span data-lang="vi">Bảng xếp hạng, nhiệm vụ, đổi quà. Giữ chân reseller, tạo động lực bán.</span><span data-lang="en">Leaderboards, missions, rewards. Retain resellers and drive motivation.</span></p>
       </div>
     </div>
-    <div class="pillar-key-message reveal">Không tốn lương cứng. Reseller bán được thì bạn mới trả hoa hồng. Scale không giới hạn.</div>
+    <div class="pillar-key-message reveal"><span data-lang="vi">Không tốn lương cứng. Reseller bán được thì bạn mới trả hoa hồng. Scale không giới hạn.</span><span data-lang="en">No fixed salaries. You only pay commissions when resellers make sales. Scale without limits.</span></div>
     <div class="pillar-cta reveal">
-      <a href="./features/reseller/" class="btn btn-secondary">Xem chi tiết Reseller Network <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="./features/reseller/" class="btn btn-secondary"><span data-lang="vi">Xem chi tiết Reseller Network</span><span data-lang="en">Learn More about Reseller Network</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -1961,58 +2016,58 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
       </div>
       <div>
-        <span class="section-label" style="margin-bottom:4px">Trụ cột 5</span>
-        <h2 style="font-size:clamp(24px,3vw,32px)">Đại sứ Thương hiệu</h2>
+        <span class="section-label" style="margin-bottom:4px"><span data-lang="vi">Trụ cột 5</span><span data-lang="en">Pillar 5</span></span>
+        <h2 style="font-size:clamp(24px,3vw,32px)"><span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Brand Ambassador</span></h2>
       </div>
     </div>
-    <p class="pillar-tagline reveal">Content marketing hiệu quả - đo lường được từng đồng. Xây thương hiệu bền vững.</p>
+    <p class="pillar-tagline reveal"><span data-lang="vi">Content marketing hiệu quả - đo lường được từng đồng. Xây thương hiệu bền vững.</span><span data-lang="en">Effective content marketing — measure every dollar. Build a lasting brand.</span></p>
     <div class="features-grid">
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon" style="background:rgba(255,111,97,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>
         </div>
-        <h4>Campaign content marketing</h4>
-        <p>Tạo chiến dịch theo brief, điều kiện tham gia. Quản lý nhiều campaign đồng thời.</p>
+        <h4><span data-lang="vi">Campaign content marketing</span><span data-lang="en">Content Marketing Campaigns</span></h4>
+        <p><span data-lang="vi">Tạo chiến dịch theo brief, điều kiện tham gia. Quản lý nhiều campaign đồng thời.</span><span data-lang="en">Create campaigns with briefs and participation criteria. Manage multiple campaigns simultaneously.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon" style="background:rgba(255,111,97,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
-        <h4>7 mạng xã hội</h4>
-        <p>TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google. Phủ sóng toàn diện.</p>
+        <h4><span data-lang="vi">7 mạng xã hội</span><span data-lang="en">7 Social Platforms</span></h4>
+        <p><span data-lang="vi">TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google. Phủ sóng toàn diện.</span><span data-lang="en">TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google. Full coverage.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon" style="background:rgba(255,111,97,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         </div>
-        <h4>Duyệt nội dung</h4>
-        <p>Kiểm tra chất lượng, hashtag, batch approve/reject. Kiểm soát brand voice.</p>
+        <h4><span data-lang="vi">Duyệt nội dung</span><span data-lang="en">Content Approval</span></h4>
+        <p><span data-lang="vi">Kiểm tra chất lượng, hashtag, batch approve/reject. Kiểm soát brand voice.</span><span data-lang="en">Quality checks, hashtags, batch approve/reject. Control your brand voice.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon" style="background:rgba(255,111,97,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
         </div>
-        <h4>Analytics chi tiết</h4>
-        <p>Views, likes, comments, engagement rate hàng ngày. Biết content nào hiệu quả.</p>
+        <h4><span data-lang="vi">Analytics chi tiết</span><span data-lang="en">Detailed Analytics</span></h4>
+        <p><span data-lang="vi">Views, likes, comments, engagement rate hàng ngày. Biết content nào hiệu quả.</span><span data-lang="en">Daily views, likes, comments, engagement rate. Know which content performs.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-5">
         <div class="feature-icon" style="background:rgba(255,111,97,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
         </div>
-        <h4>Chống gian lận</h4>
-        <p>Phát hiện fake views, fake followers tự động. Chỉ trả thưởng cho kết quả thực.</p>
+        <h4><span data-lang="vi">Chống gian lận</span><span data-lang="en">Fraud Prevention</span></h4>
+        <p><span data-lang="vi">Phát hiện fake views, fake followers tự động. Chỉ trả thưởng cho kết quả thực.</span><span data-lang="en">Auto-detect fake views and followers. Only reward real results.</span></p>
       </div>
       <div class="feature-card reveal reveal-delay-6">
         <div class="feature-icon" style="background:rgba(255,111,97,0.08)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <h4>Thưởng theo hiệu quả</h4>
-        <p>3 loại: theo thống kê, theo milestone, theo views. Motivation rõ ràng cho đại sứ.</p>
+        <h4><span data-lang="vi">Thưởng theo hiệu quả</span><span data-lang="en">Performance-based Rewards</span></h4>
+        <p><span data-lang="vi">3 loại: theo thống kê, theo milestone, theo views. Motivation rõ ràng cho đại sứ.</span><span data-lang="en">3 types: stats-based, milestone-based, views-based. Clear motivation for ambassadors.</span></p>
       </div>
     </div>
-    <div class="pillar-key-message reveal">Đại sứ tạo content, Brand được nhận diện, Khách hàng tin tưởng, Doanh thu tăng. Vòng lặp tăng trưởng bền vững.</div>
+    <div class="pillar-key-message reveal"><span data-lang="vi">Đại sứ tạo content, Brand được nhận diện, Khách hàng tin tưởng, Doanh thu tăng. Vòng lặp tăng trưởng bền vững.</span><span data-lang="en">Ambassadors create content, your brand gets recognized, customers trust you, revenue grows. A sustainable growth loop.</span></div>
     <div class="pillar-cta reveal">
-      <a href="./features/ambassador/" class="btn btn-secondary">Xem chi tiết Đại sứ Thương hiệu <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="./features/ambassador/" class="btn btn-secondary"><span data-lang="vi">Xem chi tiết Đại sứ Thương hiệu</span><span data-lang="en">Learn More about Brand Ambassador</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -2020,8 +2075,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <!-- ============ SOCIAL PROOF ============ -->
 <section class="social-proof" id="proof">
   <div class="container text-center">
-    <span class="section-label reveal">Khách hàng</span>
-    <h2 class="reveal">Được tin dùng bởi các thương hiệu hàng đầu</h2>
+    <span class="section-label reveal"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></span>
+    <h2 class="reveal"><span data-lang="vi">Được tin dùng bởi các thương hiệu hàng đầu</span><span data-lang="en">Trusted by leading brands</span></h2>
     <div class="logo-wall">
       <div class="logo-item logo-featured reveal reveal-delay-1"><span class="logo-text tech">AccessTrade</span></div>
       <div class="logo-item reveal reveal-delay-1"><span class="logo-text bank">TPBank</span></div>
@@ -2037,8 +2092,10 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       <div class="logo-item reveal reveal-delay-6"><span class="logo-text entertainment">Wild Rift</span></div>
     </div>
     <p class="proof-stats reveal">
-      <strong>12+ thương hiệu</strong> trải dài <strong>6 ngành</strong>: Ngân hàng, Fintech, Gaming, Retail, F&B, FMCG<br>
-      Tích hợp <strong>7 nền tảng social</strong>: TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google
+      <span data-lang="vi"><strong>12+ thương hiệu</strong> trải dài <strong>6 ngành</strong>: Ngân hàng, Fintech, Gaming, Retail, F&amp;B, FMCG<br>
+      Tích hợp <strong>7 nền tảng social</strong>: TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google</span>
+      <span data-lang="en"><strong>12+ brands</strong> across <strong>6 industries</strong>: Banking, Fintech, Gaming, Retail, F&amp;B, FMCG<br>
+      Integrated with <strong>7 social platforms</strong>: TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google</span>
     </p>
   </div>
 </section>
@@ -2047,55 +2104,55 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="case-studies-preview" id="cases">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Đã được chứng minh</span>
-      <h2 class="reveal">Câu chuyện thành công — Trong nước & Quốc tế</h2>
-      <p class="section-desc reveal">Mô hình D2C, Affiliate, Reseller, Ambassador đã tạo ra kết quả thực tế tại Việt Nam và thế giới.</p>
+      <span class="section-label reveal"><span data-lang="vi">Đã được chứng minh</span><span data-lang="en">Proven Results</span></span>
+      <h2 class="reveal"><span data-lang="vi">Câu chuyện thành công — Trong nước &amp; Quốc tế</span><span data-lang="en">Success Stories — Local &amp; Global</span></h2>
+      <p class="section-desc reveal"><span data-lang="vi">Mô hình D2C, Affiliate, Reseller, Ambassador đã tạo ra kết quả thực tế tại Việt Nam và thế giới.</span><span data-lang="en">D2C, Affiliate, Reseller, and Ambassador models have delivered real results in Vietnam and worldwide.</span></p>
     </div>
     <div class="cases-grid">
       <div class="case-card reveal reveal-delay-1">
         <div class="case-tag vn">Việt Nam</div>
         <h4>Coolmate</h4>
-        <p class="case-model">D2C Thời trang nam</p>
+        <p class="case-model"><span data-lang="vi">D2C Thời trang nam</span><span data-lang="en">D2C Men's Fashion</span></p>
         <div class="case-stats">
-          <div class="case-stat"><strong>139 tỷ</strong><span>Doanh thu VND</span></div>
-          <div class="case-stat"><strong>3.5x</strong><span>Tăng trưởng YoY</span></div>
+          <div class="case-stat"><strong>139 tỷ</strong><span><span data-lang="vi">Doanh thu VND</span><span data-lang="en">Revenue VND</span></span></div>
+          <div class="case-stat"><strong>3.5x</strong><span><span data-lang="vi">Tăng trưởng YoY</span><span data-lang="en">YoY Growth</span></span></div>
         </div>
-        <p class="case-lesson">Website riêng là kênh bán chính — không phụ thuộc sàn.</p>
+        <p class="case-lesson"><span data-lang="vi">Website riêng là kênh bán chính — không phụ thuộc sàn.</span><span data-lang="en">Own website as the primary sales channel — no marketplace dependency.</span></p>
       </div>
       <div class="case-card reveal reveal-delay-2">
-        <div class="case-tag intl">Quốc tế</div>
+        <div class="case-tag intl"><span data-lang="vi">Quốc tế</span><span data-lang="en">Global</span></div>
         <h4>Gymshark</h4>
         <p class="case-model">D2C + Brand Ambassador</p>
         <div class="case-stats">
-          <div class="case-stat"><strong>£1 tỷ+</strong><span>Doanh thu</span></div>
+          <div class="case-stat"><strong>£1 tỷ+</strong><span><span data-lang="vi">Doanh thu</span><span data-lang="en">Revenue</span></span></div>
           <div class="case-stat"><strong>6.6x</strong><span>ROI Ambassador</span></div>
         </div>
-        <p class="case-lesson">100% D2C, không Amazon. Ambassador + website riêng = unicorn.</p>
+        <p class="case-lesson"><span data-lang="vi">100% D2C, không Amazon. Ambassador + website riêng = unicorn.</span><span data-lang="en">100% D2C, no Amazon. Ambassador + own website = unicorn.</span></p>
       </div>
       <div class="case-card reveal reveal-delay-3">
-        <div class="case-tag intl">Quốc tế</div>
+        <div class="case-tag intl"><span data-lang="vi">Quốc tế</span><span data-lang="en">Global</span></div>
         <h4>Fashion Nova</h4>
         <p class="case-model">D2C + Micro-Influencer</p>
         <div class="case-stats">
           <div class="case-stat"><strong>$111.9M</strong><span>Earned media</span></div>
           <div class="case-stat"><strong>3.000</strong><span>Micro-influencer</span></div>
         </div>
-        <p class="case-lesson">Không cần celebrity — 3.000 micro-influencer tạo giá trị lớn hơn mọi chiến dịch ads.</p>
+        <p class="case-lesson"><span data-lang="vi">Không cần celebrity — 3.000 micro-influencer tạo giá trị lớn hơn mọi chiến dịch ads.</span><span data-lang="en">No celebrities needed — 3,000 micro-influencers deliver more value than any ad campaign.</span></p>
       </div>
       <div class="case-card reveal reveal-delay-4">
-        <div class="case-tag intl">Quốc tế</div>
+        <div class="case-tag intl"><span data-lang="vi">Quốc tế</span><span data-lang="en">Global</span></div>
         <h4>Meesho</h4>
         <p class="case-model">Reseller Platform</p>
         <div class="case-stats">
           <div class="case-stat"><strong>187 triệu</strong><span>Users</span></div>
           <div class="case-stat"><strong>$600M</strong><span>IPO Valuation</span></div>
         </div>
-        <p class="case-lesson">Reseller network scale được đến hàng trăm triệu users.</p>
+        <p class="case-lesson"><span data-lang="vi">Reseller network scale được đến hàng trăm triệu users.</span><span data-lang="en">Reseller networks can scale to hundreds of millions of users.</span></p>
       </div>
     </div>
     <div class="cases-cta reveal">
-      <p><strong>8 case study chi tiết</strong> — Coolmate, AccessTrade, Selly.vn, Gymshark, Fashion Nova, Meesho & more.</p>
-      <a href="./case-studies/" class="btn btn-secondary">Xem tất cả Case Studies <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <p><strong><span data-lang="vi">8 case study chi tiết</span><span data-lang="en">8 detailed case studies</span></strong> — Coolmate, AccessTrade, Selly.vn, Gymshark, Fashion Nova, Meesho &amp; more.</p>
+      <a href="./case-studies/" class="btn btn-secondary"><span data-lang="vi">Xem tất cả Case Studies</span><span data-lang="en">View All Case Studies</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -2104,68 +2161,70 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="comparison" id="compare">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">So sánh</span>
-      <h2 class="reveal">Tại sao Diso Commerce Suite?</h2>
+      <span class="section-label reveal"><span data-lang="vi">So sánh</span><span data-lang="en">Comparison</span></span>
+      <h2 class="reveal"><span data-lang="vi">Tại sao Diso Commerce Suite?</span><span data-lang="en">Why Diso Commerce Suite?</span></h2>
     </div>
     <div class="comparison-table-wrap reveal">
       <table class="comparison-table">
         <thead>
           <tr>
             <th></th>
-            <th>Tự Build</th>
-            <th>Bán trên Sàn</th>
+            <th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th>
+            <th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></th>
             <th class="col-diso">Diso Commerce Suite</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Chi phí</td>
-            <td class="cross">1-2 tỷ VND</td>
-            <td class="neutral">"Miễn phí" + 3-15%/đơn</td>
-            <td class="col-diso check">Phí SaaS hàng tháng</td>
+            <td><span data-lang="vi">Chi phí</span><span data-lang="en">Cost</span></td>
+            <td class="cross"><span data-lang="vi">1-2 tỷ VND</span><span data-lang="en">1-2B VND (~$40-80K)</span></td>
+            <td class="neutral"><span data-lang="vi">"Miễn phí" + 3-15%/đơn</span><span data-lang="en">"Free" + 3-15%/order</span></td>
+            <td class="col-diso check"><span data-lang="vi">Phí SaaS hàng tháng</span><span data-lang="en">Monthly SaaS fee</span></td>
           </tr>
           <tr>
-            <td>Thời gian</td>
-            <td class="cross">6-12 tháng</td>
-            <td class="neutral">Ngay lập tức</td>
-            <td class="col-diso check">2-4 tuần</td>
+            <td><span data-lang="vi">Thời gian</span><span data-lang="en">Timeline</span></td>
+            <td class="cross"><span data-lang="vi">6-12 tháng</span><span data-lang="en">6-12 months</span></td>
+            <td class="neutral"><span data-lang="vi">Ngay lập tức</span><span data-lang="en">Instant</span></td>
+            <td class="col-diso check"><span data-lang="vi">2-4 tuần</span><span data-lang="en">2-4 weeks</span></td>
           </tr>
           <tr>
-            <td>Thương hiệu</td>
-            <td class="check">Của bạn</td>
-            <td class="cross">Của sàn</td>
-            <td class="col-diso check">Của bạn (white-label)</td>
+            <td><span data-lang="vi">Thương hiệu</span><span data-lang="en">Branding</span></td>
+            <td class="check"><span data-lang="vi">Của bạn</span><span data-lang="en">Yours</span></td>
+            <td class="cross"><span data-lang="vi">Của sàn</span><span data-lang="en">Marketplace's</span></td>
+            <td class="col-diso check"><span data-lang="vi">Của bạn (white-label)</span><span data-lang="en">Yours (white-label)</span></td>
           </tr>
           <tr>
-            <td>Data khách hàng</td>
-            <td class="check">Của bạn</td>
-            <td class="cross">Của sàn</td>
-            <td class="col-diso check">Của bạn</td>
+            <td><span data-lang="vi">Data khách hàng</span><span data-lang="en">Customer Data</span></td>
+            <td class="check"><span data-lang="vi">Của bạn</span><span data-lang="en">Yours</span></td>
+            <td class="cross"><span data-lang="vi">Của sàn</span><span data-lang="en">Marketplace's</span></td>
+            <td class="col-diso check"><span data-lang="vi">Của bạn</span><span data-lang="en">Yours</span></td>
           </tr>
           <tr>
             <td>Affiliate + Reseller</td>
-            <td class="cross">Tự build thêm</td>
-            <td class="cross">Không có</td>
+            <td class="cross"><span data-lang="vi">Tự build thêm</span><span data-lang="en">Build separately</span></td>
+            <td class="cross"><span data-lang="vi">Không có</span><span data-lang="en">Not available</span></td>
             <td class="col-diso check">Built-in</td>
           </tr>
           <tr>
-            <td>Đối soát</td>
-            <td class="cross">Tự build</td>
-            <td class="neutral">Sàn quyết định</td>
-            <td class="col-diso check">4 loại tự động</td>
+            <td><span data-lang="vi">Đối soát</span><span data-lang="en">Reconciliation</span></td>
+            <td class="cross"><span data-lang="vi">Tự build</span><span data-lang="en">Build yourself</span></td>
+            <td class="neutral"><span data-lang="vi">Sàn quyết định</span><span data-lang="en">Marketplace controls</span></td>
+            <td class="col-diso check"><span data-lang="vi">4 loại tự động</span><span data-lang="en">4 types, automated</span></td>
           </tr>
           <tr>
-            <td>Rủi ro</td>
-            <td class="cross">Team nghỉ = dừng</td>
-            <td class="cross">Sàn đổi policy = mất kênh</td>
-            <td class="col-diso check">Diso maintain & upgrade</td>
+            <td><span data-lang="vi">Rủi ro</span><span data-lang="en">Risk</span></td>
+            <td class="cross"><span data-lang="vi">Team nghỉ = dừng</span><span data-lang="en">Team leaves = stopped</span></td>
+            <td class="cross"><span data-lang="vi">Sàn đổi policy = mất kênh</span><span data-lang="en">Policy change = lose channel</span></td>
+            <td class="col-diso check">Diso maintain &amp; upgrade</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="comparison-message reveal">
-      <p><strong>Bán trên sàn = xây nhà trên đất thuê.</strong> Tự build = đắt và lâu.<br>
-      <strong>Diso = website riêng, data riêng, triển khai nhanh.</strong></p>
+      <span data-lang="vi"><p><strong>Bán trên sàn = xây nhà trên đất thuê.</strong> Tự build = đắt và lâu.<br>
+      <strong>Diso = website riêng, data riêng, triển khai nhanh.</strong></p></span>
+      <span data-lang="en"><p><strong>Selling on marketplaces = building on rented land.</strong> Building in-house = expensive and slow.<br>
+      <strong>Diso = your own website, your own data, fast deployment.</strong></p></span>
     </div>
   </div>
 </section>
@@ -2176,15 +2235,15 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
     <div class="stats-grid">
       <div class="stat-item reveal reveal-delay-1">
         <div class="stat-number">2 tuần</div>
-        <div class="stat-label">Triển khai website bán hàng chuyên nghiệp</div>
+        <div class="stat-label"><span data-lang="vi">Triển khai website bán hàng chuyên nghiệp</span><span data-lang="en">Deploy a professional e-commerce website</span></div>
       </div>
       <div class="stat-item reveal reveal-delay-2">
-        <div class="stat-number">7 nền tảng</div>
-        <div class="stat-label">Social media tích hợp sẵn</div>
+        <div class="stat-number"><span data-lang="vi">7 nền tảng</span><span data-lang="en">7 Platforms</span></div>
+        <div class="stat-label"><span data-lang="vi">Social media tích hợp sẵn</span><span data-lang="en">Social media integrations built-in</span></div>
       </div>
       <div class="stat-item reveal reveal-delay-3">
-        <div class="stat-number">4 loại</div>
-        <div class="stat-label">Đối soát tự động hoàn toàn</div>
+        <div class="stat-number"><span data-lang="vi">4 loại</span><span data-lang="en">4 Types</span></div>
+        <div class="stat-label"><span data-lang="vi">Đối soát tự động hoàn toàn</span><span data-lang="en">Fully automated reconciliation</span></div>
       </div>
     </div>
   </div>
@@ -2195,17 +2254,17 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="container">
     <div class="vision-inner">
       <div class="vision-content reveal">
-        <span class="section-label">Tầm nhìn</span>
-        <h2>Sau 2-3 năm, bạn không còn là "seller trên sàn"</h2>
-        <p class="vision-subtitle">Bạn sẽ là chủ một nền tảng thương mại điện tử — với tài sản thuộc về mình mãi mãi.</p>
+        <span class="section-label"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></span>
+        <h2><span data-lang="vi">Sau 2-3 năm, bạn không còn là "seller trên sàn"</span><span data-lang="en">In 2-3 years, you'll no longer be a "marketplace seller"</span></h2>
+        <p class="vision-subtitle"><span data-lang="vi">Bạn sẽ là chủ một nền tảng thương mại điện tử — với tài sản thuộc về mình mãi mãi.</span><span data-lang="en">You'll own an e-commerce platform — with assets that belong to you forever.</span></p>
         <div class="vision-assets">
           <div class="vision-asset">
             <div class="vision-asset-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
             <div>
-              <strong>1.000+ người bán hàng cho bạn</strong>
-              <span>Affiliate + Reseller + Đại sứ — không lương cứng</span>
+              <strong><span data-lang="vi">1.000+ người bán hàng cho bạn</span><span data-lang="en">1,000+ people selling for you</span></strong>
+              <span><span data-lang="vi">Affiliate + Reseller + Đại sứ — không lương cứng</span><span data-lang="en">Affiliate + Reseller + Ambassador — no fixed salaries</span></span>
             </div>
           </div>
           <div class="vision-asset">
@@ -2213,8 +2272,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
             <div>
-              <strong>Website riêng, thương hiệu riêng</strong>
-              <span>Domain, giao diện, trải nghiệm 100% của bạn</span>
+              <strong><span data-lang="vi">Website riêng, thương hiệu riêng</span><span data-lang="en">Your own website, your own brand</span></strong>
+              <span><span data-lang="vi">Domain, giao diện, trải nghiệm 100% của bạn</span><span data-lang="en">Domain, design, experience — 100% yours</span></span>
             </div>
           </div>
           <div class="vision-asset">
@@ -2222,8 +2281,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
             </div>
             <div>
-              <strong>Database 50.000+ khách hàng</strong>
-              <span>Tài sản triệu đô — remarketing miễn phí</span>
+              <strong><span data-lang="vi">Database 50.000+ khách hàng</span><span data-lang="en">Database of 50,000+ customers</span></strong>
+              <span><span data-lang="vi">Tài sản triệu đô — remarketing miễn phí</span><span data-lang="en">A million-dollar asset — free remarketing</span></span>
             </div>
           </div>
           <div class="vision-asset">
@@ -2231,23 +2290,23 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div>
-              <strong>Độc lập khỏi mọi nền tảng</strong>
-              <span>Sàn tăng phí, đổi policy? Bạn không bị ảnh hưởng</span>
+              <strong><span data-lang="vi">Độc lập khỏi mọi nền tảng</span><span data-lang="en">Independent from all platforms</span></strong>
+              <span><span data-lang="vi">Sàn tăng phí, đổi policy? Bạn không bị ảnh hưởng</span><span data-lang="en">Marketplace raises fees, changes policy? You're not affected</span></span>
             </div>
           </div>
         </div>
-        <a href="./vision/" class="btn btn-secondary">Xem tầm nhìn 3 năm chi tiết <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="./vision/" class="btn btn-secondary"><span data-lang="vi">Xem tầm nhìn 3 năm chi tiết</span><span data-lang="en">See the detailed 3-year vision</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="vision-highlight reveal reveal-delay-2">
         <div class="vision-quote">
-          <p>"Đó không phải phần mềm.<br><strong>Đó là tài sản.</strong>"</p>
+          <p><span data-lang="vi">"Đó không phải phần mềm.<br><strong>Đó là tài sản.</strong>"</span><span data-lang="en">"It's not software.<br><strong>It's an asset.</strong>"</span></p>
         </div>
         <div class="vision-risk">
-          <h4>Rủi ro nếu không làm</h4>
+          <h4><span data-lang="vi">Rủi ro nếu không làm</span><span data-lang="en">Risk of inaction</span></h4>
           <ul>
-            <li>2024: Shopee tăng phí 3% → 6.5%. <strong>7.000+ seller rời sàn.</strong></li>
-            <li>TikTok Shop đổi thuật toán. Nhiều shop mất <strong>50-70% traffic</strong> qua đêm.</li>
-            <li>Mỗi ngày không xây nền tảng riêng = mỗi ngày mất khách vào tay sàn.</li>
+            <li><span data-lang="vi">2024: Shopee tăng phí 3% → 6.5%. <strong>7.000+ seller rời sàn.</strong></span><span data-lang="en">2024: Shopee tăng phí 3% → 6.5%. <strong>7,000+ sellers left the platform.</strong></span></li>
+            <li><span data-lang="vi">TikTok Shop đổi thuật toán. Nhiều shop mất <strong>50-70% traffic</strong> qua đêm.</span><span data-lang="en">TikTok Shop changed its algorithm. Many shops lost <strong>50-70% of traffic</strong> overnight.</span></li>
+            <li><span data-lang="vi">Mỗi ngày không xây nền tảng riêng = mỗi ngày mất khách vào tay sàn.</span><span data-lang="en">Every day without your own platform = every day losing customers to marketplaces.</span></li>
           </ul>
         </div>
       </div>
@@ -2259,22 +2318,22 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="cta-section" id="start">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Bắt đầu</span>
-      <h2 class="reveal">Bắt đầu chỉ với 3 bước</h2>
+      <span class="section-label reveal"><span data-lang="vi">Bắt đầu</span><span data-lang="en">Get Started</span></span>
+      <h2 class="reveal"><span data-lang="vi">Bắt đầu chỉ với 3 bước</span><span data-lang="en">Get started in 3 simple steps</span></h2>
     </div>
     <div class="steps-grid">
       <div class="step-card reveal reveal-delay-1">
         <div class="step-number">1</div>
-        <h3>Demo miễn phí</h3>
-        <p>Xem trực tiếp platform hoạt động trong 30 phút. Hỏi đáp cùng team Diso.</p>
+        <h3><span data-lang="vi">Demo miễn phí</span><span data-lang="en">Free Demo</span></h3>
+        <p><span data-lang="vi">Xem trực tiếp platform hoạt động trong 30 phút. Hỏi đáp cùng team Diso.</span><span data-lang="en">See the platform in action in 30 minutes. Q&amp;A with the Diso team.</span></p>
         <span class="step-connector" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
         </span>
       </div>
       <div class="step-card reveal reveal-delay-2">
         <div class="step-number">2</div>
-        <h3>Pilot 1-2 tháng</h3>
-        <p>Chạy thử với 1 chiến dịch thực tế. Đánh giá hiệu quả bằng dữ liệu thực.</p>
+        <h3><span data-lang="vi">Pilot 1-2 tháng</span><span data-lang="en">1-2 Month Pilot</span></h3>
+        <p><span data-lang="vi">Chạy thử với 1 chiến dịch thực tế. Đánh giá hiệu quả bằng dữ liệu thực.</span><span data-lang="en">Run a real campaign as a trial. Evaluate results with actual data.</span></p>
         <span class="step-connector" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
         </span>
@@ -2282,14 +2341,14 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       <div class="step-card reveal reveal-delay-3">
         <div class="step-number">3</div>
         <h3>Go live</h3>
-        <p>Triển khai chính thức. Đội ngũ Diso hỗ trợ onboarding toàn bộ.</p>
+        <p><span data-lang="vi">Triển khai chính thức. Đội ngũ Diso hỗ trợ onboarding toàn bộ.</span><span data-lang="en">Official launch. Diso team supports full onboarding.</span></p>
       </div>
     </div>
     <div class="cta-bottom reveal">
-      <h3>Sẵn sàng tăng trưởng?</h3>
-      <p>Website riêng. Data riêng. Thương hiệu riêng. Không phải "gian hàng trên sàn".</p>
+      <h3><span data-lang="vi">Sẵn sàng tăng trưởng?</span><span data-lang="en">Ready to grow?</span></h3>
+      <p><span data-lang="vi">Website riêng. Data riêng. Thương hiệu riêng. Không phải "gian hàng trên sàn".</span><span data-lang="en">Your own website. Your own data. Your own brand. Not a marketplace storefront.</span></p>
       <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
-        Đặt lịch demo miễn phí
+        <span data-lang="vi">Đặt lịch demo miễn phí</span><span data-lang="en">Book a Free Demo</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -2301,7 +2360,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">Diso</div>
-      <div class="footer-text">&copy; 2026 Diso. Giải pháp kinh doanh online trọn bộ.</div>
+      <div class="footer-text">&copy; 2026 Diso. <span data-lang="vi">Giải pháp kinh doanh online trọn bộ.</span><span data-lang="en">All-in-One Online Commerce Solution.</span></div>
     </div>
   </div>
 </footer>
@@ -2334,6 +2393,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   navToggle.addEventListener('click', function() {
     const isOpen = navLinks.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Language toggle
+  var langToggle = document.getElementById('langToggle');
+  var htmlEl = document.documentElement;
+  var savedLang = localStorage.getItem('diso-lang') || 'vi';
+  if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+  langToggle.addEventListener('click', function() {
+    var current = htmlEl.getAttribute('lang') || 'vi';
+    var next = current === 'vi' ? 'en' : 'vi';
+    htmlEl.setAttribute('lang', next);
+    localStorage.setItem('diso-lang', next);
   });
 
   // Close mobile nav on link click

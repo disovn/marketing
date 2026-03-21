@@ -1130,6 +1130,53 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   .reveal { transition: opacity 0.3s ease; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .comparison-message [data-lang="en"],
+html[lang="en"] .comparison-note [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1158,14 +1205,15 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       Diso
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../">Trang chủ</a></li>
-      <li><a href="../#solution">Giải pháp</a></li>
-      <li><a href="../#features">Tính năng</a></li>
-      <li><a href="../#proof">Khách hàng</a></li>
-      <li><a href="../comparison/" class="active">So sánh</a></li>
+      <li><a href="../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Customers</span></a></li>
+      <li><a href="../comparison/" class="active"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../case-studies/">Case Studies</a></li>
-      <li><a href="../vision/">Tầm nhìn</a></li>
-      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">Đặt lịch demo</a></li>
+      <li><a href="../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
+      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a></li>
     </ul>
     <button class="nav-mobile-btn" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round">
@@ -1185,26 +1233,26 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   </div>
   <div class="container">
     <nav class="breadcrumb reveal" aria-label="Breadcrumb">
-      <a href="../">Trang chủ</a>
+      <a href="../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span>/</span>
-      So sánh giải pháp
+      <span data-lang="vi">So sánh giải pháp</span><span data-lang="en">Solution Comparison</span>
     </nav>
     <div class="text-center" style="margin-top: 32px;">
-      <span class="section-label reveal">So sánh</span>
-      <h1 class="reveal">So sánh giải pháp</h1>
-      <p class="hero-subtitle reveal" style="text-align:center;">3 lựa chọn phổ biến khi kinh doanh online. Xem chi tiết để tìm giải pháp phù hợp nhất cho doanh nghiệp của bạn.</p>
+      <span class="section-label reveal"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></span>
+      <h1 class="reveal"><span data-lang="vi">So sánh giải pháp</span><span data-lang="en">Solution Comparison</span></h1>
+      <p class="hero-subtitle reveal" style="text-align:center;"><span data-lang="vi">3 lựa chọn phổ biến khi kinh doanh online. Xem chi tiết để tìm giải pháp phù hợp nhất cho doanh nghiệp của bạn.</span><span data-lang="en">3 popular options for online business. See details to find the best solution for your brand.</span></p>
       <div class="hero-options reveal">
         <div class="hero-option">
           <div class="option-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
           </div>
-          Tự Build
+          <span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span>
         </div>
         <div class="hero-option">
           <div class="option-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
           </div>
-          Bán trên Sàn
+          <span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span>
         </div>
         <div class="hero-option">
           <div class="option-icon">
@@ -1221,64 +1269,64 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="comparison-section bg-light" id="overview">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Tổng quan</span>
-      <h2 class="reveal">Bảng so sánh tổng quan</h2>
-      <p class="section-subtitle reveal">7 tiêu chí quan trọng nhất khi lựa chọn giải pháp kinh doanh online</p>
+      <span class="section-label reveal"><span data-lang="vi">Tổng quan</span><span data-lang="en">Overview</span></span>
+      <h2 class="reveal"><span data-lang="vi">Bảng so sánh tổng quan</span><span data-lang="en">Overview Comparison</span></h2>
+      <p class="section-subtitle reveal"><span data-lang="vi">7 tiêu chí quan trọng nhất khi lựa chọn giải pháp kinh doanh online</span><span data-lang="en">7 most important criteria when choosing an online commerce solution</span></p>
     </div>
     <div class="reveal">
-      <div class="scroll-hint">Vuốt sang phải để xem thêm &rarr;</div>
+      <div class="scroll-hint"><span data-lang="vi">Vuốt sang phải để xem thêm</span><span data-lang="en">Swipe right to see more</span> &rarr;</div>
       <div class="table-wrap">
         <table class="comp-table">
           <thead>
             <tr>
-              <th>Tiêu chí</th>
-              <th>Tự Build <span class="col-label">(thuê dev)</span></th>
-              <th>Bán trên Sàn <span class="col-label">(Shopee/Lazada/TikTok)</span></th>
+              <th><span data-lang="vi">Tiêu chí</span><span data-lang="en">Criteria</span></th>
+              <th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span> <span class="col-label"><span data-lang="vi">(thuê dev)</span><span data-lang="en">(hire devs)</span></span></th>
+              <th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span> <span class="col-label">(Shopee/Lazada/TikTok)</span></th>
               <th class="col-diso">Diso Commerce Suite <span class="col-label">SaaS Platform</span></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Chi phí ban đầu</td>
-              <td>500 triệu — 2 tỷ VND</td>
-              <td>"Miễn phí"</td>
-              <td class="col-diso"><strong>Phí SaaS hàng tháng</strong></td>
+              <td><span data-lang="vi">Chi phí ban đầu</span><span data-lang="en">Upfront Cost</span></td>
+              <td><span data-lang="vi">500 triệu — 2 tỷ VND</span><span data-lang="en">500M — 2B VND (~$20-80K)</span></td>
+              <td>"<span data-lang="vi">Miễn phí</span><span data-lang="en">Free</span>"</td>
+              <td class="col-diso"><strong><span data-lang="vi">Phí SaaS hàng tháng</span><span data-lang="en">Monthly SaaS fee</span></strong></td>
             </tr>
             <tr>
-              <td>Chi phí vận hành</td>
-              <td>Lương team dev 50-100tr/tháng</td>
-              <td>3-15% phí hoa hồng mỗi đơn</td>
-              <td class="col-diso"><strong>Cố định, dự đoán được</strong></td>
+              <td><span data-lang="vi">Chi phí vận hành</span><span data-lang="en">Operating Cost</span></td>
+              <td><span data-lang="vi">Lương team dev 50-100tr/tháng</span><span data-lang="en">Dev team salary 50-100M/month</span></td>
+              <td><span data-lang="vi">3-15% phí hoa hồng mỗi đơn</span><span data-lang="en">3-15% commission per order</span></td>
+              <td class="col-diso"><strong><span data-lang="vi">Cố định, dự đoán được</span><span data-lang="en">Fixed, predictable</span></strong></td>
             </tr>
             <tr>
-              <td>Thời gian triển khai</td>
-              <td>6-12 tháng</td>
-              <td><span class="check">Ngay lập tức</span></td>
-              <td class="col-diso"><strong>2-4 tuần</strong></td>
+              <td><span data-lang="vi">Thời gian triển khai</span><span data-lang="en">Timeline</span></td>
+              <td><span data-lang="vi">6-12 tháng</span><span data-lang="en">6-12 months</span></td>
+              <td><span class="check"><span data-lang="vi">Ngay lập tức</span><span data-lang="en">Instant</span></span></td>
+              <td class="col-diso"><strong><span data-lang="vi">2-4 tuần</span><span data-lang="en">2-4 weeks</span></strong></td>
             </tr>
             <tr>
-              <td>Thương hiệu</td>
-              <td><span class="check-icon">100% của bạn</span></td>
-              <td><span class="cross-icon">Của sàn (logo sàn, template sàn)</span></td>
-              <td class="col-diso"><span class="check-icon"><strong>100% của bạn (white-label)</strong></span></td>
+              <td><span data-lang="vi">Thương hiệu</span><span data-lang="en">Branding</span></td>
+              <td><span class="check-icon"><span data-lang="vi">100% của bạn</span><span data-lang="en">100% yours</span></span></td>
+              <td><span class="cross-icon"><span data-lang="vi">Của sàn (logo sàn, template sàn)</span><span data-lang="en">Marketplace's (their logo, template)</span></span></td>
+              <td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">100% của bạn (white-label)</span><span data-lang="en">100% yours (white-label)</span></strong></span></td>
             </tr>
             <tr>
-              <td>Domain riêng</td>
-              <td><span class="check-icon">Có</span></td>
+              <td><span data-lang="vi">Domain riêng</span><span data-lang="en">Custom Domain</span></td>
+              <td><span class="check-icon"><span data-lang="vi">Có</span><span data-lang="en">Yes</span></span></td>
               <td><span class="cross-icon">shopee.vn/shop/...</span></td>
               <td class="col-diso"><span class="check-icon"><strong>yourbrand.com</strong></span></td>
             </tr>
             <tr>
-              <td>Data khách hàng</td>
-              <td><span class="check-icon">Của bạn</span></td>
-              <td><span class="cross-icon">Của sàn</span></td>
-              <td class="col-diso"><span class="check-icon"><strong>Của bạn</strong></span></td>
+              <td><span data-lang="vi">Data khách hàng</span><span data-lang="en">Customer Data</span></td>
+              <td><span class="check-icon"><span data-lang="vi">Của bạn</span><span data-lang="en">Yours</span></span></td>
+              <td><span class="cross-icon"><span data-lang="vi">Của sàn</span><span data-lang="en">Marketplace's</span></span></td>
+              <td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Của bạn</span><span data-lang="en">Yours</span></strong></span></td>
             </tr>
             <tr>
-              <td>SEO & Google Search</td>
-              <td><span class="check-icon">Tự làm</span></td>
-              <td><span class="cross-icon">Traffic thuộc sàn</span></td>
-              <td class="col-diso"><span class="check-icon"><strong>Chuẩn SEO built-in</strong></span></td>
+              <td>SEO &amp; Google Search</td>
+              <td><span class="check-icon"><span data-lang="vi">Tự làm</span><span data-lang="en">DIY</span></span></td>
+              <td><span class="cross-icon"><span data-lang="vi">Traffic thuộc sàn</span><span data-lang="en">Traffic belongs to marketplace</span></span></td>
+              <td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Chuẩn SEO built-in</span><span data-lang="en">SEO-ready built-in</span></strong></span></td>
             </tr>
           </tbody>
         </table>
@@ -1287,7 +1335,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
     <div class="text-center reveal" style="margin-top:32px;">
       <a href="../#solution" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Tìm hiểu thêm về 5 trụ cột trên trang chủ
+        <span data-lang="vi">Tìm hiểu thêm về 5 trụ cột trên trang chủ</span><span data-lang="en">Learn more about 5 pillars on the homepage</span>
       </a>
     </div>
   </div>
@@ -1298,7 +1346,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="tab-bar-inner">
     <a class="tab-item active" href="#pillar-1">
       <div class="tab-icon t1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-      Website TMĐT
+      <span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce</span>
     </a>
     <a class="tab-item" href="#pillar-2">
       <div class="tab-icon t2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
@@ -1306,7 +1354,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
     </a>
     <a class="tab-item" href="#pillar-3">
       <div class="tab-icon t3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-      Vận hành
+      <span data-lang="vi">Vận hành</span><span data-lang="en">Operations</span>
     </a>
     <a class="tab-item" href="#pillar-4">
       <div class="tab-icon t4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
@@ -1314,7 +1362,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
     </a>
     <a class="tab-item" href="#pillar-5">
       <div class="tab-icon t5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-      Đại sứ
+      <span data-lang="vi">Đại sứ</span><span data-lang="en">Ambassador</span>
     </a>
   </div>
 </div>
@@ -1328,23 +1376,23 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       <div class="pillar-header reveal">
         <div class="pillar-icon-lg p1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
         <div class="pillar-header-text">
-          <h3>1. Website Thương mại điện tử</h3>
-          <a href="../#features" class="pillar-link">Xem trên trang chủ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <h3>1. <span data-lang="vi">Website Thương mại điện tử</span><span data-lang="en">E-commerce Website</span></h3>
+          <a href="../#features" class="pillar-link"><span data-lang="vi">Xem trên trang chủ</span><span data-lang="en">View on homepage</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="reveal">
-        <div class="scroll-hint">Vuốt sang phải để xem thêm &rarr;</div>
+        <div class="scroll-hint"><span data-lang="vi">Vuốt sang phải để xem thêm</span><span data-lang="en">Swipe right to see more</span> &rarr;</div>
         <div class="table-wrap">
           <table class="comp-table">
-            <thead><tr><th>Tính năng</th><th>Tự Build</th><th>Bán trên Sàn</th><th class="col-diso">Diso</th></tr></thead>
+            <thead><tr><th><span data-lang="vi">Tính năng</span><span data-lang="en">Feature</span></th><th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th><th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></th><th class="col-diso">Diso</th></tr></thead>
             <tbody>
-              <tr><td>Quản lý sản phẩm (SKU, biến thể, giá)</td><td><span class="check-icon">Tự code</span></td><td><span class="check-icon">Có sẵn</span></td><td class="col-diso"><span class="check-icon"><strong>Có sẵn</strong></span></td></tr>
-              <tr><td>Giỏ hàng & thanh toán</td><td><span class="check-icon">Tự tích hợp</span></td><td><span class="check-icon">Có sẵn</span></td><td class="col-diso"><span class="check-icon"><strong>Có sẵn (COD + online)</strong></span></td></tr>
-              <tr><td>Giao diện tùy chỉnh</td><td><span class="check-icon">Tự do</span></td><td><span class="cross-icon">Template sàn</span></td><td class="col-diso"><span class="check-icon"><strong>White-label, tùy chỉnh</strong></span></td></tr>
-              <tr><td>Mã giảm giá & Flash Sale</td><td class="neutral">Tự code thêm</td><td><span class="check-icon">Có sẵn</span></td><td class="col-diso"><span class="check-icon"><strong>Có sẵn</strong></span></td></tr>
-              <tr><td>Tối ưu Mobile</td><td class="neutral">Tùy team dev</td><td><span class="check-icon">App sàn</span></td><td class="col-diso"><span class="check-icon"><strong>Responsive built-in</strong></span></td></tr>
-              <tr><td>SEO</td><td class="neutral">Tùy team dev</td><td><span class="cross-icon">Không kiểm soát</span></td><td class="col-diso"><span class="check-icon"><strong>Chuẩn SEO</strong></span></td></tr>
-              <tr class="row-summary"><td>Tổng thời gian</td><td>6-12 tháng</td><td>Ngay</td><td class="col-diso"><strong>2 tuần</strong></td></tr>
+              <tr><td><span data-lang="vi">Quản lý sản phẩm (SKU, biến thể, giá)</span><span data-lang="en">Product management (SKU, variants, pricing)</span></td><td><span class="check-icon"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></span></td><td><span class="check-icon"><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Giỏ hàng &amp; thanh toán</span><span data-lang="en">Cart &amp; checkout</span></td><td><span class="check-icon"><span data-lang="vi">Tự tích hợp</span><span data-lang="en">Integrate yourself</span></span></td><td><span class="check-icon"><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Có sẵn (COD + online)</span><span data-lang="en">Available (COD + online)</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Giao diện tùy chỉnh</span><span data-lang="en">Custom UI</span></td><td><span class="check-icon"><span data-lang="vi">Tự do</span><span data-lang="en">Full freedom</span></span></td><td><span class="cross-icon"><span data-lang="vi">Template sàn</span><span data-lang="en">Marketplace template</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">White-label, tùy chỉnh</span><span data-lang="en">White-label, customizable</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Mã giảm giá &amp; Flash Sale</span><span data-lang="en">Discounts &amp; Flash Sale</span></td><td class="neutral"><span data-lang="vi">Tự code thêm</span><span data-lang="en">Code extra</span></td><td><span class="check-icon"><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Tối ưu Mobile</span><span data-lang="en">Mobile Optimization</span></td><td class="neutral"><span data-lang="vi">Tùy team dev</span><span data-lang="en">Depends on dev team</span></td><td><span class="check-icon"><span data-lang="vi">App sàn</span><span data-lang="en">Marketplace app</span></span></td><td class="col-diso"><span class="check-icon"><strong>Responsive built-in</strong></span></td></tr>
+              <tr><td>SEO</td><td class="neutral"><span data-lang="vi">Tùy team dev</span><span data-lang="en">Depends on dev team</span></td><td><span class="cross-icon"><span data-lang="vi">Không kiểm soát</span><span data-lang="en">No control</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Chuẩn SEO</span><span data-lang="en">SEO-ready</span></strong></span></td></tr>
+              <tr class="row-summary"><td><span data-lang="vi">Tổng thời gian</span><span data-lang="en">Total timeline</span></td><td><span data-lang="vi">6-12 tháng</span><span data-lang="en">6-12 months</span></td><td><span data-lang="vi">Ngay</span><span data-lang="en">Instant</span></td><td class="col-diso"><strong><span data-lang="vi">2 tuần</span><span data-lang="en">2 weeks</span></strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -1359,22 +1407,22 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="pillar-icon-lg p2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
         <div class="pillar-header-text">
           <h3>2. Affiliate Marketing</h3>
-          <a href="../#features" class="pillar-link">Xem trên trang chủ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <a href="../#features" class="pillar-link"><span data-lang="vi">Xem trên trang chủ</span><span data-lang="en">View on homepage</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="reveal">
-        <div class="scroll-hint">Vuốt sang phải để xem thêm &rarr;</div>
+        <div class="scroll-hint"><span data-lang="vi">Vuốt sang phải để xem thêm</span><span data-lang="en">Swipe right to see more</span> &rarr;</div>
         <div class="table-wrap">
           <table class="comp-table">
-            <thead><tr><th>Tính năng</th><th>Tự Build</th><th>Bán trên Sàn</th><th class="col-diso">Diso</th></tr></thead>
+            <thead><tr><th><span data-lang="vi">Tính năng</span><span data-lang="en">Feature</span></th><th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th><th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></th><th class="col-diso">Diso</th></tr></thead>
             <tbody>
-              <tr><td>Link tracking (click, đơn hàng)</td><td class="neutral">Tự code hoặc mua tool</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Built-in</strong></span></td></tr>
-              <tr><td>Cấu hình hoa hồng linh hoạt</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Theo sản phẩm, tier, campaign</strong></span></td></tr>
-              <tr><td>Dashboard cho affiliate</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Affiliate tự theo dõi</strong></span></td></tr>
-              <tr><td>Promotion tools (banner, mã riêng)</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Có sẵn</strong></span></td></tr>
-              <tr><td>Phân nhóm & targeting</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Gửi đúng campaign đúng người</strong></span></td></tr>
-              <tr><td>Chống gian lận click/đơn ảo</td><td class="neutral">Tự code (rất phức tạp)</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tự động phát hiện</strong></span></td></tr>
-              <tr class="row-summary"><td>Tổng thời gian</td><td>3-6 tháng thêm</td><td>Không có</td><td class="col-diso"><strong>Có sẵn</strong></td></tr>
+              <tr><td><span data-lang="vi">Link tracking (click, đơn hàng)</span><span data-lang="en">Link tracking (clicks, orders)</span></td><td class="neutral"><span data-lang="vi">Tự code hoặc mua tool</span><span data-lang="en">Code or buy tool</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong>Built-in</strong></span></td></tr>
+              <tr><td><span data-lang="vi">Cấu hình hoa hồng linh hoạt</span><span data-lang="en">Flexible commission config</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Theo sản phẩm, tier, campaign</span><span data-lang="en">By product, tier, campaign</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Dashboard cho affiliate</span><span data-lang="en">Affiliate dashboard</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Affiliate tự theo dõi</span><span data-lang="en">Self-tracking for affiliates</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Promotion tools (banner, mã riêng)</span><span data-lang="en">Promotion tools (banners, unique codes)</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Phân nhóm &amp; targeting</span><span data-lang="en">Segmentation &amp; targeting</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Gửi đúng campaign đúng người</span><span data-lang="en">Send right campaign to right audience</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Chống gian lận click/đơn ảo</span><span data-lang="en">Fraud detection (fake clicks/orders)</span></td><td class="neutral"><span data-lang="vi">Tự code (rất phức tạp)</span><span data-lang="en">Code yourself (very complex)</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự động phát hiện</span><span data-lang="en">Auto-detected</span></strong></span></td></tr>
+              <tr class="row-summary"><td><span data-lang="vi">Tổng thời gian</span><span data-lang="en">Total timeline</span></td><td><span data-lang="vi">3-6 tháng thêm</span><span data-lang="en">3-6 more months</span></td><td><span data-lang="vi">Không có</span><span data-lang="en">None</span></td><td class="col-diso"><strong><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -1388,27 +1436,27 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       <div class="pillar-header reveal">
         <div class="pillar-icon-lg p3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <div class="pillar-header-text">
-          <h3>3. Backend vận hành</h3>
-          <a href="../#features" class="pillar-link">Xem trên trang chủ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <h3>3. <span data-lang="vi">Backend vận hành</span><span data-lang="en">Operations Backend</span></h3>
+          <a href="../#features" class="pillar-link"><span data-lang="vi">Xem trên trang chủ</span><span data-lang="en">View on homepage</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="reveal">
-        <div class="scroll-hint">Vuốt sang phải để xem thêm &rarr;</div>
+        <div class="scroll-hint"><span data-lang="vi">Vuốt sang phải để xem thêm</span><span data-lang="en">Swipe right to see more</span> &rarr;</div>
         <div class="table-wrap">
           <table class="comp-table">
-            <thead><tr><th>Tính năng</th><th>Tự Build</th><th>Bán trên Sàn</th><th class="col-diso">Diso</th></tr></thead>
+            <thead><tr><th><span data-lang="vi">Tính năng</span><span data-lang="en">Feature</span></th><th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th><th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></th><th class="col-diso">Diso</th></tr></thead>
             <tbody>
-              <tr><td>Quản lý đơn hàng tập trung</td><td class="neutral">Tự code</td><td><span class="check-icon">Của sàn</span></td><td class="col-diso"><span class="check-icon"><strong>1 nơi xem tất cả</strong></span></td></tr>
-              <tr><td>Tích hợp vận chuyển (GHN, GHTK, J&T, Viettel Post)</td><td class="neutral">Tự tích hợp từng API</td><td><span class="check-icon">Sàn lo</span></td><td class="col-diso"><span class="check-icon"><strong>Tạo vận đơn 1 click</strong></span></td></tr>
-              <tr><td>Quản lý tồn kho</td><td class="neutral">Tự code</td><td class="neutral">Cơ bản</td><td class="col-diso"><span class="check-icon"><strong>Cảnh báo hết hàng tự động</strong></span></td></tr>
-              <tr><td>Đối soát đơn hàng</td><td class="neutral">Tự code</td><td class="neutral">Sàn quyết định</td><td class="col-diso"><span class="check-icon"><strong>Tự động</strong></span></td></tr>
-              <tr><td>Đối soát hoa hồng affiliate</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tự động</strong></span></td></tr>
-              <tr><td>Đối soát hoa hồng reseller</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tự động</strong></span></td></tr>
-              <tr><td>Đối soát đại sứ thương hiệu</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tự động</strong></span></td></tr>
-              <tr><td>CRM khách hàng</td><td class="neutral">Tự code hoặc mua tool</td><td><span class="cross-icon">Data của sàn</span></td><td class="col-diso"><span class="check-icon"><strong>Chăm sóc, tái mua</strong></span></td></tr>
-              <tr><td>Analytics real-time</td><td class="neutral">Tự code</td><td class="neutral">Cơ bản</td><td class="col-diso"><span class="check-icon"><strong>Doanh thu, đơn hàng, hiệu quả</strong></span></td></tr>
-              <tr><td>Phân quyền admin</td><td class="neutral">Tự code</td><td><span class="cross-icon">Hạn chế</span></td><td class="col-diso"><span class="check-icon"><strong>Root / Admin / Collaborator</strong></span></td></tr>
-              <tr class="row-summary"><td>Tổng: 4 loại đối soát</td><td>Tự build từng cái</td><td>Chỉ có 1 (của sàn)</td><td class="col-diso"><strong>4 loại tự động</strong></td></tr>
+              <tr><td><span data-lang="vi">Quản lý đơn hàng tập trung</span><span data-lang="en">Centralized order management</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="check-icon"><span data-lang="vi">Của sàn</span><span data-lang="en">Marketplace's</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">1 nơi xem tất cả</span><span data-lang="en">1 place for all</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Tích hợp vận chuyển (GHN, GHTK, J&amp;T, Viettel Post)</span><span data-lang="en">Shipping integrations (GHN, GHTK, J&amp;T, Viettel Post)</span></td><td class="neutral"><span data-lang="vi">Tự tích hợp từng API</span><span data-lang="en">Integrate each API yourself</span></td><td><span class="check-icon"><span data-lang="vi">Sàn lo</span><span data-lang="en">Marketplace handles</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tạo vận đơn 1 click</span><span data-lang="en">Create shipment in 1 click</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Quản lý tồn kho</span><span data-lang="en">Inventory management</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td class="neutral"><span data-lang="vi">Cơ bản</span><span data-lang="en">Basic</span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Cảnh báo hết hàng tự động</span><span data-lang="en">Auto low-stock alerts</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Đối soát đơn hàng</span><span data-lang="en">Order reconciliation</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td class="neutral"><span data-lang="vi">Sàn quyết định</span><span data-lang="en">Marketplace controls</span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự động</span><span data-lang="en">Automated</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Đối soát hoa hồng affiliate</span><span data-lang="en">Affiliate commission reconciliation</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự động</span><span data-lang="en">Automated</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Đối soát hoa hồng reseller</span><span data-lang="en">Reseller commission reconciliation</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự động</span><span data-lang="en">Automated</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Đối soát đại sứ thương hiệu</span><span data-lang="en">Brand ambassador reconciliation</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự động</span><span data-lang="en">Automated</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">CRM khách hàng</span><span data-lang="en">Customer CRM</span></td><td class="neutral"><span data-lang="vi">Tự code hoặc mua tool</span><span data-lang="en">Code or buy tool</span></td><td><span class="cross-icon"><span data-lang="vi">Data của sàn</span><span data-lang="en">Marketplace owns data</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Chăm sóc, tái mua</span><span data-lang="en">Care &amp; re-purchase</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Analytics real-time</span><span data-lang="en">Real-time analytics</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td class="neutral"><span data-lang="vi">Cơ bản</span><span data-lang="en">Basic</span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Doanh thu, đơn hàng, hiệu quả</span><span data-lang="en">Revenue, orders, performance</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Phân quyền admin</span><span data-lang="en">Admin roles</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Hạn chế</span><span data-lang="en">Limited</span></span></td><td class="col-diso"><span class="check-icon"><strong>Root / Admin / Collaborator</strong></span></td></tr>
+              <tr class="row-summary"><td><span data-lang="vi">Tổng: 4 loại đối soát</span><span data-lang="en">Total: 4 reconciliation types</span></td><td><span data-lang="vi">Tự build từng cái</span><span data-lang="en">Build each yourself</span></td><td><span data-lang="vi">Chỉ có 1 (của sàn)</span><span data-lang="en">Only 1 (marketplace's)</span></td><td class="col-diso"><strong><span data-lang="vi">4 loại tự động</span><span data-lang="en">4 types, automated</span></strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -1423,22 +1471,22 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="pillar-icon-lg p4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div class="pillar-header-text">
           <h3>4. Reseller Network</h3>
-          <a href="../#features" class="pillar-link">Xem trên trang chủ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <a href="../#features" class="pillar-link"><span data-lang="vi">Xem trên trang chủ</span><span data-lang="en">View on homepage</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="reveal">
-        <div class="scroll-hint">Vuốt sang phải để xem thêm &rarr;</div>
+        <div class="scroll-hint"><span data-lang="vi">Vuốt sang phải để xem thêm</span><span data-lang="en">Swipe right to see more</span> &rarr;</div>
         <div class="table-wrap">
           <table class="comp-table">
-            <thead><tr><th>Tính năng</th><th>Tự Build</th><th>Bán trên Sàn</th><th class="col-diso">Diso</th></tr></thead>
+            <thead><tr><th><span data-lang="vi">Tính năng</span><span data-lang="en">Feature</span></th><th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th><th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></th><th class="col-diso">Diso</th></tr></thead>
             <tbody>
-              <tr><td>Reseller storefront riêng</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Mỗi reseller có "shop" riêng</strong></span></td></tr>
-              <tr><td>Quản lý đội ngũ reseller</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Duyệt, theo dõi, đánh giá</strong></span></td></tr>
-              <tr><td>Hoa hồng đa cấp</td><td class="neutral">Tự code (phức tạp)</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Theo doanh số, incentive linh hoạt</strong></span></td></tr>
-              <tr><td>Mã giới thiệu & referral</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Đội ngũ tự phát triển</strong></span></td></tr>
-              <tr><td>Dashboard cho reseller</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tự xem đơn, thu nhập</strong></span></td></tr>
-              <tr><td>Gamification (xếp hạng, nhiệm vụ)</td><td class="neutral">Tự code (rất phức tạp)</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Bảng xếp hạng, đổi quà</strong></span></td></tr>
-              <tr class="row-summary"><td>Tổng thời gian</td><td>4-8 tháng thêm</td><td>Không có</td><td class="col-diso"><strong>Có sẵn</strong></td></tr>
+              <tr><td><span data-lang="vi">Reseller storefront riêng</span><span data-lang="en">Individual reseller storefront</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Mỗi reseller có "shop" riêng</span><span data-lang="en">Each reseller gets their own "shop"</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Quản lý đội ngũ reseller</span><span data-lang="en">Reseller team management</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Duyệt, theo dõi, đánh giá</span><span data-lang="en">Approve, track, evaluate</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Hoa hồng đa cấp</span><span data-lang="en">Multi-tier commission</span></td><td class="neutral"><span data-lang="vi">Tự code (phức tạp)</span><span data-lang="en">Code yourself (complex)</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Theo doanh số, incentive linh hoạt</span><span data-lang="en">By sales, flexible incentives</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Mã giới thiệu &amp; referral</span><span data-lang="en">Referral codes</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Đội ngũ tự phát triển</span><span data-lang="en">Team grows organically</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Dashboard cho reseller</span><span data-lang="en">Reseller dashboard</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự xem đơn, thu nhập</span><span data-lang="en">Self-view orders &amp; income</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Gamification (xếp hạng, nhiệm vụ)</span><span data-lang="en">Gamification (leaderboard, missions)</span></td><td class="neutral"><span data-lang="vi">Tự code (rất phức tạp)</span><span data-lang="en">Code yourself (very complex)</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Bảng xếp hạng, đổi quà</span><span data-lang="en">Leaderboard &amp; rewards</span></strong></span></td></tr>
+              <tr class="row-summary"><td><span data-lang="vi">Tổng thời gian</span><span data-lang="en">Total timeline</span></td><td><span data-lang="vi">4-8 tháng thêm</span><span data-lang="en">4-8 more months</span></td><td><span data-lang="vi">Không có</span><span data-lang="en">None</span></td><td class="col-diso"><strong><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -1452,23 +1500,23 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       <div class="pillar-header reveal">
         <div class="pillar-icon-lg p5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
         <div class="pillar-header-text">
-          <h3>5. Đại sứ Thương hiệu</h3>
-          <a href="../#features" class="pillar-link">Xem trên trang chủ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          <h3>5. <span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Brand Ambassador</span></h3>
+          <a href="../#features" class="pillar-link"><span data-lang="vi">Xem trên trang chủ</span><span data-lang="en">View on homepage</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
         </div>
       </div>
       <div class="reveal">
-        <div class="scroll-hint">Vuốt sang phải để xem thêm &rarr;</div>
+        <div class="scroll-hint"><span data-lang="vi">Vuốt sang phải để xem thêm</span><span data-lang="en">Swipe right to see more</span> &rarr;</div>
         <div class="table-wrap">
           <table class="comp-table">
-            <thead><tr><th>Tính năng</th><th>Tự Build</th><th>Bán trên Sàn</th><th class="col-diso">Diso</th></tr></thead>
+            <thead><tr><th><span data-lang="vi">Tính năng</span><span data-lang="en">Feature</span></th><th><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></th><th><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></th><th class="col-diso">Diso</th></tr></thead>
             <tbody>
-              <tr><td>Campaign content marketing</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tạo chiến dịch theo brief</strong></span></td></tr>
-              <tr><td>7 nền tảng social</td><td class="neutral">Tự tích hợp từng API</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>TikTok, YouTube, FB, IG, Threads, Shopee, Google</strong></span></td></tr>
-              <tr><td>Duyệt nội dung & hashtag</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Batch approve/reject</strong></span></td></tr>
-              <tr><td>Analytics (views, likes, engagement)</td><td class="neutral">Tự crawl data</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Cập nhật hàng ngày</strong></span></td></tr>
-              <tr><td>Chống gian lận (fake views/followers)</td><td class="neutral">Tự code (cực khó)</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>Tự động phát hiện</strong></span></td></tr>
-              <tr><td>Thưởng theo hiệu quả</td><td class="neutral">Tự code</td><td><span class="cross-icon">Không có</span></td><td class="col-diso"><span class="check-icon"><strong>3 loại: thống kê, milestone, views</strong></span></td></tr>
-              <tr class="row-summary"><td>Tổng thời gian</td><td>6-12 tháng thêm</td><td>Không có</td><td class="col-diso"><strong>Có sẵn</strong></td></tr>
+              <tr><td><span data-lang="vi">Campaign content marketing</span><span data-lang="en">Content marketing campaigns</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tạo chiến dịch theo brief</span><span data-lang="en">Create campaigns by brief</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">7 nền tảng social</span><span data-lang="en">7 social platforms</span></td><td class="neutral"><span data-lang="vi">Tự tích hợp từng API</span><span data-lang="en">Integrate each API yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong>TikTok, YouTube, FB, IG, Threads, Shopee, Google</strong></span></td></tr>
+              <tr><td><span data-lang="vi">Duyệt nội dung &amp; hashtag</span><span data-lang="en">Content &amp; hashtag approval</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong>Batch approve/reject</strong></span></td></tr>
+              <tr><td><span data-lang="vi">Analytics (views, likes, engagement)</span><span data-lang="en">Analytics (views, likes, engagement)</span></td><td class="neutral"><span data-lang="vi">Tự crawl data</span><span data-lang="en">Crawl data yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Cập nhật hàng ngày</span><span data-lang="en">Updated daily</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Chống gian lận (fake views/followers)</span><span data-lang="en">Fraud detection (fake views/followers)</span></td><td class="neutral"><span data-lang="vi">Tự code (cực khó)</span><span data-lang="en">Code yourself (extremely hard)</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">Tự động phát hiện</span><span data-lang="en">Auto-detected</span></strong></span></td></tr>
+              <tr><td><span data-lang="vi">Thưởng theo hiệu quả</span><span data-lang="en">Performance-based rewards</span></td><td class="neutral"><span data-lang="vi">Tự code</span><span data-lang="en">Code yourself</span></td><td><span class="cross-icon"><span data-lang="vi">Không có</span><span data-lang="en">None</span></span></td><td class="col-diso"><span class="check-icon"><strong><span data-lang="vi">3 loại: thống kê, milestone, views</span><span data-lang="en">3 types: stats, milestone, views</span></strong></span></td></tr>
+              <tr class="row-summary"><td><span data-lang="vi">Tổng thời gian</span><span data-lang="en">Total timeline</span></td><td><span data-lang="vi">6-12 tháng thêm</span><span data-lang="en">6-12 more months</span></td><td><span data-lang="vi">Không có</span><span data-lang="en">None</span></td><td class="col-diso"><strong><span data-lang="vi">Có sẵn</span><span data-lang="en">Available</span></strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -1482,9 +1530,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="cost-section" id="cost">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Chi phí & Thời gian</span>
-      <h2 class="reveal">Tổng kết chi phí & thời gian</h2>
-      <p class="section-subtitle reveal">So sánh tổng chi phí sở hữu (TCO) qua các phương án</p>
+      <span class="section-label reveal"><span data-lang="vi">Chi phí &amp; Thời gian</span><span data-lang="en">Cost &amp; Timeline</span></span>
+      <h2 class="reveal"><span data-lang="vi">Tổng kết chi phí &amp; thời gian</span><span data-lang="en">Cost &amp; Timeline Summary</span></h2>
+      <p class="section-subtitle reveal"><span data-lang="vi">So sánh tổng chi phí sở hữu (TCO) qua các phương án</span><span data-lang="en">Compare total cost of ownership (TCO) across options</span></p>
     </div>
     <div class="cost-grid">
 
@@ -1494,29 +1542,29 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="cost-card-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
           </div>
-          <div class="cost-card-title">Tự Build</div>
+          <div class="cost-card-title"><span data-lang="vi">Tự Build</span><span data-lang="en">Build In-house</span></div>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Chi phí năm 1</span>
-          <span class="cost-value">1-3 tỷ VND</span>
+          <span class="cost-label"><span data-lang="vi">Chi phí năm 1</span><span data-lang="en">Year 1 cost</span></span>
+          <span class="cost-value"><span data-lang="vi">1-3 tỷ VND</span><span data-lang="en">1-3B VND (~$40-120K)</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Chi phí năm 2+</span>
-          <span class="cost-value">600tr-1.2 tỷ/năm</span>
+          <span class="cost-label"><span data-lang="vi">Chi phí năm 2+</span><span data-lang="en">Year 2+ cost</span></span>
+          <span class="cost-value"><span data-lang="vi">600tr-1.2 tỷ/năm</span><span data-lang="en">600M-1.2B/year</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Thời gian đủ 5 module</span>
-          <span class="cost-value">18-36 tháng</span>
+          <span class="cost-label"><span data-lang="vi">Thời gian đủ 5 module</span><span data-lang="en">Time for 5 modules</span></span>
+          <span class="cost-value"><span data-lang="vi">18-36 tháng</span><span data-lang="en">18-36 months</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Rủi ro lớn nhất</span>
-          <span class="cost-value">Team nghỉ = dự án dừng</span>
+          <span class="cost-label"><span data-lang="vi">Rủi ro lớn nhất</span><span data-lang="en">Biggest risk</span></span>
+          <span class="cost-value"><span data-lang="vi">Team nghỉ = dự án dừng</span><span data-lang="en">Team leaves = project stops</span></span>
         </div>
         <div class="cost-item">
           <span class="cost-label">Scale</span>
-          <span class="cost-value">Tốn thêm dev khi scale</span>
+          <span class="cost-value"><span data-lang="vi">Tốn thêm dev khi scale</span><span data-lang="en">Needs more devs to scale</span></span>
         </div>
-        <span class="cost-badge badge-warning">Chi phí cao, rủi ro lớn</span>
+        <span class="cost-badge badge-warning"><span data-lang="vi">Chi phí cao, rủi ro lớn</span><span data-lang="en">High cost, high risk</span></span>
       </div>
 
       <!-- Card: Bán trên Sàn -->
@@ -1525,29 +1573,29 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="cost-card-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
           </div>
-          <div class="cost-card-title">Bán trên Sàn</div>
+          <div class="cost-card-title"><span data-lang="vi">Bán trên Sàn</span><span data-lang="en">Sell on Marketplaces</span></div>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Chi phí năm 1</span>
-          <span class="cost-value">3-15% x doanh thu</span>
+          <span class="cost-label"><span data-lang="vi">Chi phí năm 1</span><span data-lang="en">Year 1 cost</span></span>
+          <span class="cost-value"><span data-lang="vi">3-15% x doanh thu</span><span data-lang="en">3-15% of revenue</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Chi phí năm 2+</span>
-          <span class="cost-value">3-15% (tăng theo scale)</span>
+          <span class="cost-label"><span data-lang="vi">Chi phí năm 2+</span><span data-lang="en">Year 2+ cost</span></span>
+          <span class="cost-value"><span data-lang="vi">3-15% (tăng theo scale)</span><span data-lang="en">3-15% (grows with scale)</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Thời gian đủ 5 module</span>
-          <span class="cost-value">Không bao giờ</span>
+          <span class="cost-label"><span data-lang="vi">Thời gian đủ 5 module</span><span data-lang="en">Time for 5 modules</span></span>
+          <span class="cost-value"><span data-lang="vi">Không bao giờ</span><span data-lang="en">Never</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Rủi ro lớn nhất</span>
-          <span class="cost-value">Sàn đổi policy = mất kênh</span>
+          <span class="cost-label"><span data-lang="vi">Rủi ro lớn nhất</span><span data-lang="en">Biggest risk</span></span>
+          <span class="cost-value"><span data-lang="vi">Sàn đổi policy = mất kênh</span><span data-lang="en">Policy change = lose channel</span></span>
         </div>
         <div class="cost-item">
           <span class="cost-label">Scale</span>
-          <span class="cost-value">Bị giới hạn bởi sàn</span>
+          <span class="cost-value"><span data-lang="vi">Bị giới hạn bởi sàn</span><span data-lang="en">Limited by marketplace</span></span>
         </div>
-        <span class="cost-badge badge-info">Phụ thuộc nền tảng</span>
+        <span class="cost-badge badge-info"><span data-lang="vi">Phụ thuộc nền tảng</span><span data-lang="en">Platform-dependent</span></span>
       </div>
 
       <!-- Card: Diso -->
@@ -1559,26 +1607,26 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="cost-card-title">Diso Commerce Suite</div>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Chi phí năm 1</span>
-          <span class="cost-value">Phí SaaS cố định</span>
+          <span class="cost-label"><span data-lang="vi">Chi phí năm 1</span><span data-lang="en">Year 1 cost</span></span>
+          <span class="cost-value"><span data-lang="vi">Phí SaaS cố định</span><span data-lang="en">Fixed SaaS fee</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Chi phí năm 2+</span>
-          <span class="cost-value">Phí SaaS cố định</span>
+          <span class="cost-label"><span data-lang="vi">Chi phí năm 2+</span><span data-lang="en">Year 2+ cost</span></span>
+          <span class="cost-value"><span data-lang="vi">Phí SaaS cố định</span><span data-lang="en">Fixed SaaS fee</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Thời gian đủ 5 module</span>
-          <span class="cost-value">2-4 tuần</span>
+          <span class="cost-label"><span data-lang="vi">Thời gian đủ 5 module</span><span data-lang="en">Time for 5 modules</span></span>
+          <span class="cost-value"><span data-lang="vi">2-4 tuần</span><span data-lang="en">2-4 weeks</span></span>
         </div>
         <div class="cost-item">
-          <span class="cost-label">Rủi ro lớn nhất</span>
-          <span class="cost-value">Diso maintain & upgrade</span>
+          <span class="cost-label"><span data-lang="vi">Rủi ro lớn nhất</span><span data-lang="en">Biggest risk</span></span>
+          <span class="cost-value"><span data-lang="vi">Diso maintain &amp; upgrade</span><span data-lang="en">Diso maintains &amp; upgrades</span></span>
         </div>
         <div class="cost-item">
           <span class="cost-label">Scale</span>
-          <span class="cost-value">Không giới hạn</span>
+          <span class="cost-value"><span data-lang="vi">Không giới hạn</span><span data-lang="en">Unlimited</span></span>
         </div>
-        <span class="cost-badge badge-success">Nhanh, ổn định, dự đoán được</span>
+        <span class="cost-badge badge-success"><span data-lang="vi">Nhanh, ổn định, dự đoán được</span><span data-lang="en">Fast, stable, predictable</span></span>
       </div>
 
     </div>
@@ -1589,29 +1637,29 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="decisions-section" id="decisions">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Quyết định</span>
-      <h2 class="reveal">3 câu hỏi giúp bạn quyết định</h2>
+      <span class="section-label reveal"><span data-lang="vi">Quyết định</span><span data-lang="en">Decision</span></span>
+      <h2 class="reveal"><span data-lang="vi">3 câu hỏi giúp bạn quyết định</span><span data-lang="en">3 questions to help you decide</span></h2>
     </div>
     <div class="decisions-grid">
       <div class="decision-card reveal reveal-delay-1">
         <div class="decision-number">1</div>
-        <h3>Bạn muốn xây thương hiệu riêng hay "gian hàng trên sàn"?</h3>
+        <h3><span data-lang="vi">Bạn muốn xây thương hiệu riêng hay "gian hàng trên sàn"?</span><span data-lang="en">Do you want your own brand or a "marketplace shop"?</span></h3>
         <div class="decision-answer">
-          Nếu thương hiệu riêng: <strong>Diso</strong> hoặc Tự Build. Sàn không phải lựa chọn.
+          <span data-lang="vi">Nếu thương hiệu riêng: <strong>Diso</strong> hoặc Tự Build. Sàn không phải lựa chọn.</span><span data-lang="en">For your own brand: <strong>Diso</strong> or Build In-house. Marketplace is not an option.</span>
         </div>
       </div>
       <div class="decision-card reveal reveal-delay-2">
         <div class="decision-number">2</div>
-        <h3>Bạn có budget 1-2 tỷ và team dev 5-10 người?</h3>
+        <h3><span data-lang="vi">Bạn có budget 1-2 tỷ và team dev 5-10 người?</span><span data-lang="en">Do you have a 1-2B budget and a dev team of 5-10?</span></h3>
         <div class="decision-answer">
-          Nếu có: Tự Build là option. Nếu không: <strong>Diso</strong> là lựa chọn duy nhất.
+          <span data-lang="vi">Nếu có: Tự Build là option. Nếu không: <strong>Diso</strong> là lựa chọn duy nhất.</span><span data-lang="en">If yes: Build In-house is an option. If not: <strong>Diso</strong> is the only choice.</span>
         </div>
       </div>
       <div class="decision-card reveal reveal-delay-3">
         <div class="decision-number">3</div>
-        <h3>Bạn cần affiliate + reseller + đại sứ thương hiệu?</h3>
+        <h3><span data-lang="vi">Bạn cần affiliate + reseller + đại sứ thương hiệu?</span><span data-lang="en">Do you need affiliate + reseller + brand ambassador?</span></h3>
         <div class="decision-answer">
-          Tự Build thêm 12-24 tháng nữa. Bán trên Sàn không có. <strong>Diso có sẵn ngay.</strong>
+          <span data-lang="vi">Tự Build thêm 12-24 tháng nữa. Bán trên Sàn không có. <strong>Diso có sẵn ngay.</strong></span><span data-lang="en">Build In-house needs 12-24 more months. Marketplaces have none. <strong>Diso has it all, ready now.</strong></span>
         </div>
       </div>
     </div>
@@ -1622,21 +1670,21 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="messages-section" id="messages">
   <div class="container">
     <div class="text-center">
-      <span class="section-label reveal">Tóm tắt</span>
-      <h2 class="reveal">Điều bạn cần nhớ</h2>
+      <span class="section-label reveal"><span data-lang="vi">Tóm tắt</span><span data-lang="en">Summary</span></span>
+      <h2 class="reveal"><span data-lang="vi">Điều bạn cần nhớ</span><span data-lang="en">Key Takeaways</span></h2>
     </div>
     <div class="messages-grid">
       <div class="message-card reveal reveal-delay-1">
-        <div class="message-quote">Bán trên sàn = xây nhà trên đất thuê.</div>
-        <div class="message-detail">Sàn đổi phí, đổi thuật toán, đổi policy &mdash; bạn không kiểm soát được.</div>
+        <div class="message-quote"><span data-lang="vi">Bán trên sàn = xây nhà trên đất thuê.</span><span data-lang="en">Selling on marketplaces = building on rented land.</span></div>
+        <div class="message-detail"><span data-lang="vi">Sàn đổi phí, đổi thuật toán, đổi policy &mdash; bạn không kiểm soát được.</span><span data-lang="en">Marketplace changes fees, algorithms, policies &mdash; you have no control.</span></div>
       </div>
       <div class="message-card reveal reveal-delay-2">
-        <div class="message-quote">Tự build = đắt, lâu, và rủi ro cao.</div>
-        <div class="message-detail">1-2 tỷ cho website. Thêm 1-2 tỷ cho affiliate + reseller + ambassador.</div>
+        <div class="message-quote"><span data-lang="vi">Tự build = đắt, lâu, và rủi ro cao.</span><span data-lang="en">Building in-house = expensive, slow, and high-risk.</span></div>
+        <div class="message-detail"><span data-lang="vi">1-2 tỷ cho website. Thêm 1-2 tỷ cho affiliate + reseller + ambassador.</span><span data-lang="en">1-2B for the website. Another 1-2B for affiliate + reseller + ambassador.</span></div>
       </div>
       <div class="message-card reveal reveal-delay-3">
-        <div class="message-quote">Diso = website riêng, data riêng, triển khai nhanh.</div>
-        <div class="message-detail">5 giải pháp trọn bộ trong 2-4 tuần. Đã triển khai cho 12+ thương hiệu hàng đầu.</div>
+        <div class="message-quote"><span data-lang="vi">Diso = website riêng, data riêng, triển khai nhanh.</span><span data-lang="en">Diso = your own website, your own data, fast deployment.</span></div>
+        <div class="message-detail"><span data-lang="vi">5 giải pháp trọn bộ trong 2-4 tuần. Đã triển khai cho 12+ thương hiệu hàng đầu.</span><span data-lang="en">5 complete solutions in 2-4 weeks. Deployed for 12+ leading brands.</span></div>
       </div>
     </div>
   </div>
@@ -1646,13 +1694,13 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="cta-section" id="cta">
   <div class="container">
     <div class="cta-box reveal">
-      <h2>Đặt lịch demo miễn phí &mdash; 30 phút</h2>
-      <p>Xem trực tiếp 5 module hoạt động. Không cam kết. Không phí.</p>
+      <h2><span data-lang="vi">Đặt lịch demo miễn phí &mdash; 30 phút</span><span data-lang="en">Book a Free Demo &mdash; 30 minutes</span></h2>
+      <p><span data-lang="vi">Xem trực tiếp 5 module hoạt động. Không cam kết. Không phí.</span><span data-lang="en">See all 5 modules live. No commitment. No charge.</span></p>
       <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
-        Đặt lịch demo ngay
+        <span data-lang="vi">Đặt lịch demo ngay</span><span data-lang="en">Book a Free Demo</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="cta-sub">Hoặc <a href="../" style="color:var(--secondary);font-weight:500;">quay lại trang chủ</a> để tìm hiểu thêm</p>
+      <p class="cta-sub"><span data-lang="vi">Hoặc <a href="../" style="color:var(--secondary);font-weight:500;">quay lại trang chủ</a> để tìm hiểu thêm</span><span data-lang="en">Or <a href="../" style="color:var(--secondary);font-weight:500;">go back to homepage</a> to learn more</span></p>
     </div>
   </div>
 </section>
@@ -1662,7 +1710,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">Diso</div>
-      <div class="footer-text">&copy; 2026 Diso. Giải pháp kinh doanh online trọn bộ.</div>
+      <div class="footer-text">&copy; 2026 Diso. <span data-lang="vi">Giải pháp kinh doanh online trọn bộ.</span><span data-lang="en">All-in-One Online Commerce Solution.</span></div>
     </div>
   </div>
 </footer>
@@ -1686,6 +1734,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       navLinks.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Language toggle
+  var langToggle = document.getElementById('langToggle');
+  var htmlEl = document.documentElement;
+  var savedLang = localStorage.getItem('diso-lang') || 'vi';
+  if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+  langToggle.addEventListener('click', function() {
+    var current = htmlEl.getAttribute('lang') || 'vi';
+    var next = current === 'vi' ? 'en' : 'vi';
+    htmlEl.setAttribute('lang', next);
+    localStorage.setItem('diso-lang', next);
   });
 
   // Scroll reveal with Intersection Observer

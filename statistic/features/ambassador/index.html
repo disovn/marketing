@@ -1432,6 +1432,55 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   .hero-stats-row { flex-direction: column; gap: 12px; }
   .cta-buttons { flex-direction: column; align-items: center; }
 }
+
+/* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .pillar-tagline [data-lang="en"],
+html[lang="en"] .pillar-key-message [data-lang="en"],
+html[lang="en"] .feature-detail-text [data-lang="en"],
+html[lang="en"] .feature-desc [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1460,16 +1509,17 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       <span class="logo-mark">D</span> Diso
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../../">Trang chủ</a></li>
-      <li><a href="../../#solution">Giải pháp</a></li>
-      <li><a href="../../#features">Tính năng</a></li>
-      <li><a href="../../#proof">Khách hàng</a></li>
-      <li><a href="../../comparison/">So sánh</a></li>
+      <li><a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../../case-studies/">Case Studies</a></li>
-      <li><a href="../../vision/">Tầm nhìn</a></li>
+      <li><a href="../../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
       <li>
         <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">
-          Đặt lịch demo
+          <span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span>
         </a>
       </li>
     </ul>
@@ -1489,24 +1539,24 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   </div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../">Trang chủ</a>
+      <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span class="breadcrumb-sep">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
-      <a href="../../#solution">Giải pháp</a>
+      <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
       <span class="breadcrumb-sep">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
-      <span>Đại sứ Thương hiệu</span>
+      <span><span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Brand Ambassador</span></span>
     </nav>
 
     <div class="pillar-badge">
       <span class="pillar-badge-dot"></span>
-      Giải pháp 5 / 5 &mdash; Brand Ambassador
+      <span data-lang="vi">Giải pháp 5 / 5 &mdash; Brand Ambassador</span><span data-lang="en">Pillar 5 / 5 &mdash; Brand Ambassador</span>
     </div>
 
-    <h1>Đại sứ Thương hiệu</h1>
-    <p class="hero-subtitle">Content marketing hiệu quả — đo lường được từng đồng</p>
+    <h1><span data-lang="vi">Đại sứ Thương hiệu</span><span data-lang="en">Brand Ambassador</span></h1>
+    <p class="hero-subtitle"><span data-lang="vi">Content marketing hiệu quả — đo lường được từng đồng</span><span data-lang="en">Effective content marketing — measure every dollar</span></p>
 
     <div class="hero-stats-row">
       <div class="hero-stat">
@@ -1514,8 +1564,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         </div>
         <div>
-          <div class="hero-stat-text">7 nền tảng</div>
-          <div class="hero-stat-sub">TikTok, YouTube, Facebook &amp; hơn nữa</div>
+          <div class="hero-stat-text"><span data-lang="vi">7 nền tảng</span><span data-lang="en">7 platforms</span></div>
+          <div class="hero-stat-sub"><span data-lang="vi">TikTok, YouTube, Facebook &amp; hơn nữa</span><span data-lang="en">TikTok, YouTube, Facebook &amp; more</span></div>
         </div>
       </div>
       <div class="hero-stat">
@@ -1523,8 +1573,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
         </div>
         <div>
-          <div class="hero-stat-text">3 loại thưởng</div>
-          <div class="hero-stat-sub">Linh hoạt theo kết quả thực tế</div>
+          <div class="hero-stat-text"><span data-lang="vi">3 loại thưởng</span><span data-lang="en">3 reward types</span></div>
+          <div class="hero-stat-sub"><span data-lang="vi">Linh hoạt theo kết quả thực tế</span><span data-lang="en">Flexible based on actual results</span></div>
         </div>
       </div>
       <div class="hero-stat">
@@ -1532,8 +1582,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div>
-          <div class="hero-stat-text">0 rủi ro</div>
-          <div class="hero-stat-sub">Thưởng sau khi đo lường kết quả</div>
+          <div class="hero-stat-text"><span data-lang="vi">0 rủi ro</span><span data-lang="en">0 risk</span></div>
+          <div class="hero-stat-sub"><span data-lang="vi">Thưởng sau khi đo lường kết quả</span><span data-lang="en">Reward after results are measured</span></div>
         </div>
       </div>
     </div>
@@ -1544,9 +1594,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="pain-section">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Vấn đề thực tế</span>
-      <h2>Bạn đang mất tiền mà không biết</h2>
-      <p class="section-subtitle">Những rào cản khiến doanh nghiệp lãng phí ngân sách marketing và thời gian mỗi ngày.</p>
+      <span class="section-label"><span data-lang="vi">Vấn đề thực tế</span><span data-lang="en">Real Pain Points</span></span>
+      <h2><span data-lang="vi">Bạn đang mất tiền mà không biết</span><span data-lang="en">You're losing money without knowing it</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Những rào cản khiến doanh nghiệp lãng phí ngân sách marketing và thời gian mỗi ngày.</span><span data-lang="en">Barriers that cause businesses to waste marketing budget and time every day.</span></p>
     </div>
 
     <div class="pain-grid">
@@ -1555,8 +1605,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <div class="pain-content">
-          <h4>Trả tiền trước, không biết hiệu quả</h4>
-          <p>Thuê KOL phải thanh toán 100% trước khi video được đăng. Không có cách nào biết trước liệu chiến dịch có mang lại doanh thu hay không.</p>
+          <h4><span data-lang="vi">Trả tiền trước, không biết hiệu quả</span><span data-lang="en">Pay upfront, no idea of results</span></h4>
+          <p><span data-lang="vi">Thuê KOL phải thanh toán 100% trước khi video được đăng. Không có cách nào biết trước liệu chiến dịch có mang lại doanh thu hay không.</span><span data-lang="en">Hiring KOLs requires 100% payment before the video is posted. No way to know in advance if the campaign will generate revenue.</span></p>
         </div>
       </div>
 
@@ -1565,8 +1615,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="4" y1="4" x2="20" y2="20"/></svg>
         </div>
         <div class="pain-content">
-          <h4>Không đo lường được fake views</h4>
-          <p>30-40% KOL/KOC tại Việt Nam có tỷ lệ tương tác giả. Bạn đang trả tiền cho những lượt xem mà không có người thật nào nhìn thấy sản phẩm của bạn.</p>
+          <h4><span data-lang="vi">Không đo lường được fake views</span><span data-lang="en">Can't measure fake views</span></h4>
+          <p><span data-lang="vi">30-40% KOL/KOC tại Việt Nam có tỷ lệ tương tác giả. Bạn đang trả tiền cho những lượt xem mà không có người thật nào nhìn thấy sản phẩm của bạn.</span><span data-lang="en">30-40% of KOL/KOC in Vietnam have fake engagement rates. You're paying for views that no real person ever saw your product.</span></p>
         </div>
       </div>
 
@@ -1575,8 +1625,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </div>
         <div class="pain-content">
-          <h4>Quản lý 20-50 đại sứ bằng Excel và Zalo</h4>
-          <p>Mỗi ngày tốn 2-3 giờ để theo dõi tiến độ, nhắc nhở đăng bài, kiểm tra link, tính toán hoa hồng thủ công trong spreadsheet.</p>
+          <h4><span data-lang="vi">Quản lý 20-50 đại sứ bằng Excel và Zalo</span><span data-lang="en">Managing 20-50 ambassadors via Excel and Zalo</span></h4>
+          <p><span data-lang="vi">Mỗi ngày tốn 2-3 giờ để theo dõi tiến độ, nhắc nhở đăng bài, kiểm tra link, tính toán hoa hồng thủ công trong spreadsheet.</span><span data-lang="en">Spending 2-3 hours daily tracking progress, reminding ambassadors to post, checking links, and manually calculating commissions in spreadsheets.</span></p>
         </div>
       </div>
 
@@ -1585,26 +1635,26 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="pain-content">
-          <h4>Tự xây dựng mất 6-12 tháng</h4>
-          <p>Phát triển hệ thống Ambassador nội bộ từ đầu cần đội ngũ kỹ thuật, tích hợp API từng nền tảng, và vẫn thiếu tính năng chống gian lận chuyên nghiệp.</p>
+          <h4><span data-lang="vi">Tự xây dựng mất 6-12 tháng</span><span data-lang="en">Building in-house takes 6-12 months</span></h4>
+          <p><span data-lang="vi">Phát triển hệ thống Ambassador nội bộ từ đầu cần đội ngũ kỹ thuật, tích hợp API từng nền tảng, và vẫn thiếu tính năng chống gian lận chuyên nghiệp.</span><span data-lang="en">Building an in-house Ambassador system requires a tech team, platform API integrations, and still lacks professional fraud detection features.</span></p>
         </div>
       </div>
     </div>
 
     <div class="market-stats reveal">
-      <div class="market-stats-title">Thị trường Social Commerce Việt Nam</div>
+      <div class="market-stats-title"><span data-lang="vi">Thị trường Social Commerce Việt Nam</span><span data-lang="en">Vietnam Social Commerce Market</span></div>
       <div class="market-stats-grid">
         <div class="market-stat-item">
           <div class="market-stat-number">5B USD</div>
-          <div class="market-stat-label">Quy mô thị trường<br>social commerce VN 2025</div>
+          <div class="market-stat-label"><span data-lang="vi">Quy mô thị trường<br>social commerce VN 2025</span><span data-lang="en">Social commerce market size<br>Vietnam 2025</span></div>
         </div>
         <div class="market-stat-item">
           <div class="market-stat-number">300K+</div>
-          <div class="market-stat-label">KOL/KOC hoạt động<br>30-40% có fake engagement</div>
+          <div class="market-stat-label"><span data-lang="vi">KOL/KOC hoạt động<br>30-40% có fake engagement</span><span data-lang="en">Active KOL/KOC<br>30-40% have fake engagement</span></div>
         </div>
         <div class="market-stat-item">
           <div class="market-stat-number">10B USD</div>
-          <div class="market-stat-label">Dự báo thị trường<br>đến năm 2030</div>
+          <div class="market-stat-label"><span data-lang="vi">Dự báo thị trường<br>đến năm 2030</span><span data-lang="en">Market forecast<br>by 2030</span></div>
         </div>
       </div>
     </div>
@@ -1615,9 +1665,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="features-section">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Tính năng</span>
-      <h2>Giải pháp toàn diện cho Ambassador Marketing</h2>
-      <p class="section-subtitle">6 nhóm tính năng cốt lõi giúp bạn quản lý, đo lường và tối ưu chiến dịch đại sứ thương hiệu.</p>
+      <span class="section-label"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></span>
+      <h2><span data-lang="vi">Giải pháp toàn diện cho Ambassador Marketing</span><span data-lang="en">Complete solution for Ambassador Marketing</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">6 nhóm tính năng cốt lõi giúp bạn quản lý, đo lường và tối ưu chiến dịch đại sứ thương hiệu.</span><span data-lang="en">6 core feature groups to help you manage, measure, and optimize brand ambassador campaigns.</span></p>
     </div>
 
     <div class="features-grid">
@@ -1632,7 +1682,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <div class="feature-card-title">Campaign Content Marketing</div>
           </div>
         </div>
-        <p class="feature-card-desc">Tạo chiến dịch với brief rõ ràng, hashtag yêu cầu, khung thời gian đăng bài, và ngân sách dự kiến. Hệ thống tự động phân phối nhiệm vụ đến từng đại sứ theo tiêu chí phù hợp.</p>
+        <p class="feature-card-desc"><span data-lang="vi">Tạo chiến dịch với brief rõ ràng, hashtag yêu cầu, khung thời gian đăng bài, và ngân sách dự kiến. Hệ thống tự động phân phối nhiệm vụ đến từng đại sứ theo tiêu chí phù hợp.</span><span data-lang="en">Create campaigns with clear briefs, required hashtags, posting schedules, and estimated budgets. The system automatically distributes tasks to each ambassador based on matching criteria.</span></p>
       </div>
 
       <!-- Feature 2: 7 Platforms — FEATURED -->
@@ -1642,10 +1692,10 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           </div>
           <div>
-            <div class="feature-card-title">7 Nền tảng Social</div>
+            <div class="feature-card-title"><span data-lang="vi">7 Nền tảng Social</span><span data-lang="en">7 Social Platforms</span></div>
           </div>
         </div>
-        <p class="feature-card-desc">Thu thập và phân tích dữ liệu tự động trên tất cả nền tảng lớn tại Việt Nam.</p>
+        <p class="feature-card-desc"><span data-lang="vi">Thu thập và phân tích dữ liệu tự động trên tất cả nền tảng lớn tại Việt Nam.</span><span data-lang="en">Automatically collect and analyze data across all major platforms in Vietnam.</span></p>
         <div class="platform-grid">
           <div class="platform-tag tiktok">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.54V6.78a4.85 4.85 0 0 1-1.02-.09z"/></svg>
@@ -1685,10 +1735,10 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
           </div>
           <div>
-            <div class="feature-card-title">Duyệt Nội dung</div>
+            <div class="feature-card-title"><span data-lang="vi">Duyệt Nội dung</span><span data-lang="en">Content Approval</span></div>
           </div>
         </div>
-        <p class="feature-card-desc">Đại sứ gửi draft content qua hệ thống trước khi đăng. Brand owner duyệt, yêu cầu chỉnh sửa, hoặc từ chối — tất cả trong một luồng công việc có lịch sử theo dõi đầy đủ.</p>
+        <p class="feature-card-desc"><span data-lang="vi">Đại sứ gửi draft content qua hệ thống trước khi đăng. Brand owner duyệt, yêu cầu chỉnh sửa, hoặc từ chối — tất cả trong một luồng công việc có lịch sử theo dõi đầy đủ.</span><span data-lang="en">Ambassadors submit content drafts via the system before posting. Brand owners approve, request edits, or reject — all in a workflow with full tracking history.</span></p>
       </div>
 
       <!-- Feature 4: Detailed Analytics -->
@@ -1698,10 +1748,10 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
           <div>
-            <div class="feature-card-title">Analytics Chi tiết</div>
+            <div class="feature-card-title"><span data-lang="vi">Analytics Chi tiết</span><span data-lang="en">Detailed Analytics</span></div>
           </div>
         </div>
-        <p class="feature-card-desc">Dashboard thời gian thực cho từng đại sứ và từng chiến dịch: views, reach, engagement rate, click-through, conversion, doanh thu quy đổi — tất cả trên một màn hình.</p>
+        <p class="feature-card-desc"><span data-lang="vi">Dashboard thời gian thực cho từng đại sứ và từng chiến dịch: views, reach, engagement rate, click-through, conversion, doanh thu quy đổi — tất cả trên một màn hình.</span><span data-lang="en">Real-time dashboard per ambassador and campaign: views, reach, engagement rate, click-through, conversion, attributed revenue — all on one screen.</span></p>
       </div>
 
       <!-- Feature 5: Fraud Detection -->
@@ -1711,10 +1761,10 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="12" x2="11" y2="14"/><line x1="15" y1="10" x2="11" y2="14"/></svg>
           </div>
           <div>
-            <div class="feature-card-title">Chống Gian lận</div>
+            <div class="feature-card-title"><span data-lang="vi">Chống Gian lận</span><span data-lang="en">Fraud Prevention</span></div>
           </div>
         </div>
-        <p class="feature-card-desc">Thuật toán phát hiện fake views, bot engagement, và tài khoản ảo tự động. Báo cáo cảnh báo theo thời gian thực, giúp loại bỏ đại sứ không trung thực trước khi chi tiền thưởng.</p>
+        <p class="feature-card-desc"><span data-lang="vi">Thuật toán phát hiện fake views, bot engagement, và tài khoản ảo tự động. Báo cáo cảnh báo theo thời gian thực, giúp loại bỏ đại sứ không trung thực trước khi chi tiền thưởng.</span><span data-lang="en">Algorithms automatically detect fake views, bot engagement, and fake accounts. Real-time alert reports help remove dishonest ambassadors before paying rewards.</span></p>
       </div>
 
       <!-- Feature 6: Performance Rewards — FEATURED -->
@@ -1724,22 +1774,22 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
           </div>
           <div>
-            <div class="feature-card-title">Thưởng theo Hiệu quả</div>
+            <div class="feature-card-title"><span data-lang="vi">Thưởng theo Hiệu quả</span><span data-lang="en">Performance-based Rewards</span></div>
           </div>
         </div>
-        <p class="feature-card-desc">3 hình thức thưởng linh hoạt, tất cả đều dựa trên kết quả đo lường thực tế.</p>
+        <p class="feature-card-desc"><span data-lang="vi">3 hình thức thưởng linh hoạt, tất cả đều dựa trên kết quả đo lường thực tế.</span><span data-lang="en">3 flexible reward formats, all based on measured real results.</span></p>
         <table class="reward-table">
           <tr>
-            <td><span class="reward-badge r1">Thống kê</span></td>
-            <td>% hoa hồng trên doanh thu thực tế phát sinh từ link/mã riêng của đại sứ</td>
+            <td><span class="reward-badge r1"><span data-lang="vi">Thống kê</span><span data-lang="en">Revenue</span></span></td>
+            <td><span data-lang="vi">% hoa hồng trên doanh thu thực tế phát sinh từ link/mã riêng của đại sứ</span><span data-lang="en">% commission on actual revenue generated from the ambassador's unique link/code</span></td>
           </tr>
           <tr>
             <td><span class="reward-badge r2">Milestone</span></td>
-            <td>Thưởng lũy tiến khi đạt mốc: 10K views, 50K views, 100K views, hoặc số đơn hàng</td>
+            <td><span data-lang="vi">Thưởng lũy tiến khi đạt mốc: 10K views, 50K views, 100K views, hoặc số đơn hàng</span><span data-lang="en">Progressive rewards at milestones: 10K views, 50K views, 100K views, or order count</span></td>
           </tr>
           <tr>
             <td><span class="reward-badge r3">Views</span></td>
-            <td>Thanh toán theo giá cố định mỗi 1.000 views thực (sau khi lọc fake traffic)</td>
+            <td><span data-lang="vi">Thanh toán theo giá cố định mỗi 1.000 views thực (sau khi lọc fake traffic)</span><span data-lang="en">Fixed price per 1,000 real views (after filtering fake traffic)</span></td>
           </tr>
         </table>
       </div>
@@ -1752,71 +1802,71 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="comparison-section">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">So sánh</span>
-      <h2>Diso Ambassador vs. các phương án khác</h2>
-      <p class="section-subtitle">Đánh giá khách quan giữa Diso, Agency truyền thống, và tự vận hành thủ công.</p>
+      <span class="section-label"><span data-lang="vi">So sánh</span><span data-lang="en">Comparison</span></span>
+      <h2><span data-lang="vi">Diso Ambassador vs. các phương án khác</span><span data-lang="en">Diso Ambassador vs. other options</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Đánh giá khách quan giữa Diso, Agency truyền thống, và tự vận hành thủ công.</span><span data-lang="en">Objective comparison between Diso, traditional agencies, and manual self-management.</span></p>
     </div>
 
     <div class="table-wrap reveal">
       <table class="comp-table">
         <thead>
           <tr>
-            <th>Tiêu chí</th>
-            <th>Agency KOL</th>
-            <th>Tự quản lý (Excel)</th>
+            <th><span data-lang="vi">Tiêu chí</span><span data-lang="en">Criteria</span></th>
+            <th><span data-lang="vi">Agency KOL</span><span data-lang="en">KOL Agency</span></th>
+            <th><span data-lang="vi">Tự quản lý (Excel)</span><span data-lang="en">Self-manage (Excel)</span></th>
             <th class="col-diso">Diso Ambassador</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Mô hình thanh toán</td>
-            <td><span class="cross-icon">Trả trước 100%, không hoàn</span></td>
-            <td><span class="partial-icon">Thương lượng, vẫn rủi ro</span></td>
-            <td class="col-diso"><span class="check-icon">Pay-per-performance, thưởng sau đo lường</span></td>
+            <td><span data-lang="vi">Mô hình thanh toán</span><span data-lang="en">Payment model</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Trả trước 100%, không hoàn</span><span data-lang="en">100% upfront, non-refundable</span></span></td>
+            <td><span class="partial-icon"><span data-lang="vi">Thương lượng, vẫn rủi ro</span><span data-lang="en">Negotiable, still risky</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Pay-per-performance, thưởng sau đo lường</span><span data-lang="en">Pay-per-performance, reward after measurement</span></span></td>
           </tr>
           <tr>
-            <td>Phát hiện fake views</td>
-            <td><span class="cross-icon">Không có, tự báo cáo</span></td>
-            <td><span class="cross-icon">Không có khả năng</span></td>
-            <td class="col-diso"><span class="check-icon">Tự động, real-time</span></td>
+            <td><span data-lang="vi">Phát hiện fake views</span><span data-lang="en">Fake view detection</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Không có, tự báo cáo</span><span data-lang="en">None, self-reported</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Không có khả năng</span><span data-lang="en">Not capable</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Tự động, real-time</span><span data-lang="en">Automated, real-time</span></span></td>
           </tr>
           <tr>
-            <td>Số nền tảng theo dõi</td>
-            <td><span class="partial-icon">1-2 nền tảng chính</span></td>
-            <td><span class="partial-icon">Tùy link theo dõi thủ công</span></td>
-            <td class="col-diso"><span class="check-icon">7 nền tảng tích hợp sẵn</span></td>
+            <td><span data-lang="vi">Số nền tảng theo dõi</span><span data-lang="en">Platforms tracked</span></td>
+            <td><span class="partial-icon"><span data-lang="vi">1-2 nền tảng chính</span><span data-lang="en">1-2 main platforms</span></span></td>
+            <td><span class="partial-icon"><span data-lang="vi">Tùy link theo dõi thủ công</span><span data-lang="en">Depends on manual tracking links</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">7 nền tảng tích hợp sẵn</span><span data-lang="en">7 pre-integrated platforms</span></span></td>
           </tr>
           <tr>
-            <td>Thời gian quản lý / ngày</td>
-            <td><span class="partial-icon">1-2 giờ (liên lạc agency)</span></td>
-            <td><span class="cross-icon">2-3 giờ Excel + Zalo</span></td>
-            <td class="col-diso"><span class="check-icon">Dưới 30 phút, tự động hóa</span></td>
+            <td><span data-lang="vi">Thời gian quản lý / ngày</span><span data-lang="en">Management time / day</span></td>
+            <td><span class="partial-icon"><span data-lang="vi">1-2 giờ (liên lạc agency)</span><span data-lang="en">1-2 hours (agency contact)</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">2-3 giờ Excel + Zalo</span><span data-lang="en">2-3 hours Excel + Zalo</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Dưới 30 phút, tự động hóa</span><span data-lang="en">Under 30 minutes, automated</span></span></td>
           </tr>
           <tr>
-            <td>Duyệt nội dung</td>
-            <td><span class="partial-icon">Email/Zalo, không có lịch sử</span></td>
-            <td><span class="cross-icon">Thủ công, dễ bỏ sót</span></td>
-            <td class="col-diso"><span class="check-icon">Workflow có track record đầy đủ</span></td>
+            <td><span data-lang="vi">Duyệt nội dung</span><span data-lang="en">Content approval</span></td>
+            <td><span class="partial-icon"><span data-lang="vi">Email/Zalo, không có lịch sử</span><span data-lang="en">Email/Zalo, no history</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Thủ công, dễ bỏ sót</span><span data-lang="en">Manual, easy to miss</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Workflow có track record đầy đủ</span><span data-lang="en">Workflow with full track record</span></span></td>
           </tr>
           <tr>
-            <td>Thời gian triển khai</td>
-            <td><span class="partial-icon">2-4 tuần tìm kiếm KOL</span></td>
-            <td><span class="cross-icon">Tự build: 6-12 tháng</span></td>
-            <td class="col-diso"><span class="check-icon">Setup trong 1 tuần, dùng ngay</span></td>
+            <td><span data-lang="vi">Thời gian triển khai</span><span data-lang="en">Deployment time</span></td>
+            <td><span class="partial-icon"><span data-lang="vi">2-4 tuần tìm kiếm KOL</span><span data-lang="en">2-4 weeks to find KOLs</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Tự build: 6-12 tháng</span><span data-lang="en">Self-build: 6-12 months</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Setup trong 1 tuần, dùng ngay</span><span data-lang="en">Setup in 1 week, use immediately</span></span></td>
           </tr>
           <tr>
-            <td>Chi phí khi chiến dịch thất bại</td>
-            <td><span class="cross-icon">Mất toàn bộ ngân sách</span></td>
-            <td><span class="cross-icon">Mất thời gian + ngân sách</span></td>
-            <td class="col-diso"><span class="check-icon">Chỉ trả chi phí platform, 0 thưởng</span></td>
+            <td><span data-lang="vi">Chi phí khi chiến dịch thất bại</span><span data-lang="en">Cost if campaign fails</span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Mất toàn bộ ngân sách</span><span data-lang="en">Lose entire budget</span></span></td>
+            <td><span class="cross-icon"><span data-lang="vi">Mất thời gian + ngân sách</span><span data-lang="en">Lose time + budget</span></span></td>
+            <td class="col-diso"><span class="check-icon"><span data-lang="vi">Chỉ trả chi phí platform, 0 thưởng</span><span data-lang="en">Only platform cost, 0 rewards</span></span></td>
           </tr>
         </tbody>
         <tfoot>
           <tr class="row-summary">
-            <td>Tổng kết</td>
-            <td>Chi phí cao, rủi ro cao</td>
-            <td>Tốn thời gian, không scale được</td>
-            <td class="col-diso">Hiệu quả, đo lường được, an toàn</td>
+            <td><span data-lang="vi">Tổng kết</span><span data-lang="en">Verdict</span></td>
+            <td><span data-lang="vi">Chi phí cao, rủi ro cao</span><span data-lang="en">High cost, high risk</span></td>
+            <td><span data-lang="vi">Tốn thời gian, không scale được</span><span data-lang="en">Time-consuming, can't scale</span></td>
+            <td class="col-diso"><span data-lang="vi">Hiệu quả, đo lường được, an toàn</span><span data-lang="en">Effective, measurable, safe</span></td>
           </tr>
         </tfoot>
       </table>
@@ -1828,9 +1878,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="workflow-section">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Quy trình</span>
-      <h2>4 bước từ ý tưởng đến doanh thu</h2>
-      <p class="section-subtitle">Quy trình được thiết kế để tối giản công việc thủ công và tối đa hóa kết quả đo lường được.</p>
+      <span class="section-label"><span data-lang="vi">Quy trình</span><span data-lang="en">Process</span></span>
+      <h2><span data-lang="vi">4 bước từ ý tưởng đến doanh thu</span><span data-lang="en">4 steps from idea to revenue</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Quy trình được thiết kế để tối giản công việc thủ công và tối đa hóa kết quả đo lường được.</span><span data-lang="en">A process designed to minimize manual work and maximize measurable results.</span></p>
     </div>
 
     <div class="workflow-steps">
@@ -1842,8 +1892,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           </div>
           <span class="step-number">1</span>
         </div>
-        <div class="step-title">Tạo Campaign</div>
-        <p class="step-desc">Định nghĩa mục tiêu, ngân sách, nền tảng, hashtag bắt buộc, và hình thức thưởng cho chiến dịch.</p>
+        <div class="step-title"><span data-lang="vi">Tạo Campaign</span><span data-lang="en">Create Campaign</span></div>
+        <p class="step-desc"><span data-lang="vi">Định nghĩa mục tiêu, ngân sách, nền tảng, hashtag bắt buộc, và hình thức thưởng cho chiến dịch.</span><span data-lang="en">Define objectives, budget, platforms, required hashtags, and reward format for the campaign.</span></p>
       </div>
 
       <div class="workflow-step reveal">
@@ -1853,8 +1903,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           </div>
           <span class="step-number">2</span>
         </div>
-        <div class="step-title">Tuyển Đại sứ</div>
-        <p class="step-desc">Mời đại sứ từ danh sách có sẵn hoặc mở đăng ký mới. Hệ thống gợi ý theo lịch sử hiệu quả và tỷ lệ fake thấp.</p>
+        <div class="step-title"><span data-lang="vi">Tuyển Đại sứ</span><span data-lang="en">Recruit Ambassadors</span></div>
+        <p class="step-desc"><span data-lang="vi">Mời đại sứ từ danh sách có sẵn hoặc mở đăng ký mới. Hệ thống gợi ý theo lịch sử hiệu quả và tỷ lệ fake thấp.</span><span data-lang="en">Invite ambassadors from an existing list or open new registrations. System recommends based on performance history and low fake rate.</span></p>
       </div>
 
       <div class="workflow-step reveal">
@@ -1864,8 +1914,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           </div>
           <span class="step-number">3</span>
         </div>
-        <div class="step-title">Tạo &amp; Duyệt Content</div>
-        <p class="step-desc">Đại sứ gửi draft, brand duyệt trực tiếp trên hệ thống. Sau khi được duyệt, nội dung được đăng và hệ thống bắt đầu theo dõi.</p>
+        <div class="step-title"><span data-lang="vi">Tạo &amp; Duyệt Content</span><span data-lang="en">Create &amp; Approve Content</span></div>
+        <p class="step-desc"><span data-lang="vi">Đại sứ gửi draft, brand duyệt trực tiếp trên hệ thống. Sau khi được duyệt, nội dung được đăng và hệ thống bắt đầu theo dõi.</span><span data-lang="en">Ambassadors submit drafts, brand approves directly in the system. After approval, content is posted and the system starts tracking.</span></p>
       </div>
 
       <div class="workflow-step reveal">
@@ -1875,8 +1925,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           </div>
           <span class="step-number">4</span>
         </div>
-        <div class="step-title">Đo lường &amp; Thưởng</div>
-        <p class="step-desc">Analytics tự động cập nhật theo ngày. Khi đạt ngưỡng, hệ thống tính toán và đề xuất thanh toán thưởng cho từng đại sứ.</p>
+        <div class="step-title"><span data-lang="vi">Đo lường &amp; Thưởng</span><span data-lang="en">Measure &amp; Reward</span></div>
+        <p class="step-desc"><span data-lang="vi">Analytics tự động cập nhật theo ngày. Khi đạt ngưỡng, hệ thống tính toán và đề xuất thanh toán thưởng cho từng đại sứ.</span><span data-lang="en">Analytics auto-update daily. When thresholds are reached, the system calculates and proposes reward payments for each ambassador.</span></p>
       </div>
 
     </div>
@@ -1888,8 +1938,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="container">
     <div class="text-center reveal">
       <span class="section-label">Case study</span>
-      <h2>Kết quả thực tế</h2>
-      <p class="section-subtitle">Xem một thương hiệu skincare đã dùng Diso Ambassador để tối ưu chi phí marketing như thế nào.</p>
+      <h2><span data-lang="vi">Kết quả thực tế</span><span data-lang="en">Real Results</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Xem một thương hiệu skincare đã dùng Diso Ambassador để tối ưu chi phí marketing như thế nào.</span><span data-lang="en">See how a skincare brand used Diso Ambassador to optimize marketing costs.</span></p>
     </div>
 
     <div class="usecase-card reveal">
@@ -1898,35 +1948,35 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
         <div>
-          <div class="usecase-brand-name">Thương hiệu Skincare Nội địa</div>
-          <div class="usecase-brand-type">Chiến dịch TikTok &mdash; 30 Đại sứ, Q1 2025</div>
+          <div class="usecase-brand-name"><span data-lang="vi">Thương hiệu Skincare Nội địa</span><span data-lang="en">Local Skincare Brand</span></div>
+          <div class="usecase-brand-type"><span data-lang="vi">Chiến dịch TikTok &mdash; 30 Đại sứ, Q1 2025</span><span data-lang="en">TikTok Campaign &mdash; 30 Ambassadors, Q1 2025</span></div>
         </div>
       </div>
 
       <blockquote class="usecase-quote">
-        "Chúng tôi chạy cùng lúc 30 đại sứ TikTok trong 6 tuần. Hệ thống phát hiện 3 đại sứ có fake views ngay tuần đầu — tiết kiệm gần 1.5 triệu VND thưởng ảo. Tổng chi phí thực sự chỉ 4 triệu VND cho 2 triệu views thực, bằng 30% so với thuê agency truyền thống."
+        <span data-lang="vi">"Chúng tôi chạy cùng lúc 30 đại sứ TikTok trong 6 tuần. Hệ thống phát hiện 3 đại sứ có fake views ngay tuần đầu — tiết kiệm gần 1.5 triệu VND thưởng ảo. Tổng chi phí thực sự chỉ 4 triệu VND cho 2 triệu views thực, bằng 30% so với thuê agency truyền thống."</span><span data-lang="en">"We ran 30 TikTok ambassadors simultaneously for 6 weeks. The system detected 3 ambassadors with fake views in the first week — saving nearly 1.5M VND in phantom rewards. Total actual cost was only 4M VND for 2M real views, just 30% of hiring a traditional agency."</span>
       </blockquote>
 
       <div class="usecase-results">
         <div class="usecase-result">
           <div class="result-number">30</div>
-          <div class="result-label">Đại sứ TikTok tham gia</div>
+          <div class="result-label"><span data-lang="vi">Đại sứ TikTok tham gia</span><span data-lang="en">TikTok ambassadors</span></div>
         </div>
         <div class="usecase-result">
           <div class="result-number">2M</div>
-          <div class="result-label">Views thực (đã lọc fake)</div>
+          <div class="result-label"><span data-lang="vi">Views thực (đã lọc fake)</span><span data-lang="en">Real views (fake filtered)</span></div>
         </div>
         <div class="usecase-result">
           <div class="result-number">3</div>
-          <div class="result-label">Fake accounts bị phát hiện</div>
+          <div class="result-label"><span data-lang="vi">Fake accounts bị phát hiện</span><span data-lang="en">Fake accounts detected</span></div>
         </div>
         <div class="usecase-result">
           <div class="result-number">4M</div>
-          <div class="result-label">VND tổng chi phí thưởng</div>
+          <div class="result-label"><span data-lang="vi">VND tổng chi phí thưởng</span><span data-lang="en">VND total reward cost</span></div>
         </div>
         <div class="usecase-result">
           <div class="result-number">70%</div>
-          <div class="result-label">Tiết kiệm so với agency</div>
+          <div class="result-label"><span data-lang="vi">Tiết kiệm so với agency</span><span data-lang="en">Savings vs. agency</span></div>
         </div>
       </div>
     </div>
@@ -1937,8 +1987,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="numbers-section">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Con số nổi bật</span>
-      <h2>Tại sao chọn Diso Ambassador</h2>
+      <span class="section-label"><span data-lang="vi">Con số nổi bật</span><span data-lang="en">Key Numbers</span></span>
+      <h2><span data-lang="vi">Tại sao chọn Diso Ambassador</span><span data-lang="en">Why choose Diso Ambassador</span></h2>
     </div>
 
     <div class="numbers-grid">
@@ -1946,32 +1996,32 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="number-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         </div>
-        <div class="number-value">7<span class="number-unit"> nền tảng</span></div>
-        <div class="number-label">TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google — tất cả trên một dashboard</div>
+        <div class="number-value">7<span class="number-unit"><span data-lang="vi"> nền tảng</span><span data-lang="en"> platforms</span></span></div>
+        <div class="number-label"><span data-lang="vi">TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google — tất cả trên một dashboard</span><span data-lang="en">TikTok, YouTube, Facebook, Instagram, Threads, Shopee, Google — all on one dashboard</span></div>
       </div>
 
       <div class="number-card reveal">
         <div class="number-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
         </div>
-        <div class="number-value">3<span class="number-unit"> loại thưởng</span></div>
-        <div class="number-label">Thống kê doanh thu, milestone lũy tiến, và giá theo views — linh hoạt cho mọi chiến dịch</div>
+        <div class="number-value">3<span class="number-unit"><span data-lang="vi"> loại thưởng</span><span data-lang="en"> reward types</span></span></div>
+        <div class="number-label"><span data-lang="vi">Thống kê doanh thu, milestone lũy tiến, và giá theo views — linh hoạt cho mọi chiến dịch</span><span data-lang="en">Revenue tracking, progressive milestones, and CPV — flexible for every campaign</span></div>
       </div>
 
       <div class="number-card reveal">
         <div class="number-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="number-value">6-12<span class="number-unit"> tháng</span></div>
-        <div class="number-label">Tiết kiệm thời gian so với tự xây dựng hệ thống Ambassador từ đầu</div>
+        <div class="number-value">6-12<span class="number-unit"><span data-lang="vi"> tháng</span><span data-lang="en"> months</span></span></div>
+        <div class="number-label"><span data-lang="vi">Tiết kiệm thời gian so với tự xây dựng hệ thống Ambassador từ đầu</span><span data-lang="en">Time saved compared to building an Ambassador system from scratch</span></div>
       </div>
 
       <div class="number-card reveal">
         <div class="number-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="number-value">0<span class="number-unit"> rủi ro</span></div>
-        <div class="number-label">Không trả tiền trước, thưởng chỉ sau khi kết quả được xác minh và lọc fake</div>
+        <div class="number-value">0<span class="number-unit"><span data-lang="vi"> rủi ro</span><span data-lang="en"> risk</span></span></div>
+        <div class="number-label"><span data-lang="vi">Không trả tiền trước, thưởng chỉ sau khi kết quả được xác minh và lọc fake</span><span data-lang="en">No upfront payment, rewards only after results are verified and fake-filtered</span></div>
       </div>
     </div>
   </div>
@@ -1981,9 +2031,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="connections-section">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Hệ sinh thái</span>
-      <h2>Hoạt động cùng toàn bộ hệ sinh thái Diso</h2>
-      <p class="section-subtitle">Ambassador không hoạt động đơn lẻ — dữ liệu được đồng bộ và khuếch đại qua các giải pháp liên quan.</p>
+      <span class="section-label"><span data-lang="vi">Hệ sinh thái</span><span data-lang="en">Ecosystem</span></span>
+      <h2><span data-lang="vi">Hoạt động cùng toàn bộ hệ sinh thái Diso</span><span data-lang="en">Works with the entire Diso ecosystem</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Ambassador không hoạt động đơn lẻ — dữ liệu được đồng bộ và khuếch đại qua các giải pháp liên quan.</span><span data-lang="en">Ambassador doesn't work alone — data is synced and amplified across related solutions.</span></p>
     </div>
 
     <div class="connections-hub reveal">
@@ -1992,7 +2042,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="hub-node-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div class="hub-node-label">Đại sứ<br>Thương hiệu</div>
+          <div class="hub-node-label"><span data-lang="vi">Đại sứ<br>Thương hiệu</span><span data-lang="en">Brand<br>Ambassador</span></div>
         </div>
         <div class="hub-connector-line"></div>
       </div>
@@ -2002,8 +2052,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="conn-node-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </div>
-          <div class="conn-node-title">Website TMĐT</div>
-          <div class="conn-node-desc">Link đại sứ dẫn thẳng vào trang sản phẩm, theo dõi conversion end-to-end</div>
+          <div class="conn-node-title"><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></div>
+          <div class="conn-node-desc"><span data-lang="vi">Link đại sứ dẫn thẳng vào trang sản phẩm, theo dõi conversion end-to-end</span><span data-lang="en">Ambassador links lead directly to product pages, tracking end-to-end conversions</span></div>
         </div>
 
         <div class="conn-node cn2">
@@ -2011,7 +2061,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="conn-node-title">Affiliate</div>
-          <div class="conn-node-desc">Đại sứ có thể đồng thời là affiliate, chia sẻ doanh thu và commission tự động</div>
+          <div class="conn-node-desc"><span data-lang="vi">Đại sứ có thể đồng thời là affiliate, chia sẻ doanh thu và commission tự động</span><span data-lang="en">Ambassadors can simultaneously be affiliates, sharing revenue and auto commission</span></div>
         </div>
 
         <div class="conn-node cn3">
@@ -2019,15 +2069,15 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <div class="conn-node-title">Reseller</div>
-          <div class="conn-node-desc">Đại sứ hiệu quả cao có thể được nâng cấp thành Reseller với quyền lợi sâu hơn</div>
+          <div class="conn-node-desc"><span data-lang="vi">Đại sứ hiệu quả cao có thể được nâng cấp thành Reseller với quyền lợi sâu hơn</span><span data-lang="en">High-performing ambassadors can be upgraded to Resellers with deeper benefits</span></div>
         </div>
 
         <div class="conn-node cn4">
           <div class="conn-node-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <div class="conn-node-title">Backend Vận hành</div>
-          <div class="conn-node-desc">Dữ liệu đại sứ đồng bộ vào báo cáo tổng hợp và hệ thống kế toán nội bộ</div>
+          <div class="conn-node-title"><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></div>
+          <div class="conn-node-desc"><span data-lang="vi">Dữ liệu đại sứ đồng bộ vào báo cáo tổng hợp và hệ thống kế toán nội bộ</span><span data-lang="en">Ambassador data syncs into consolidated reports and internal accounting system</span></div>
         </div>
       </div>
     </div>
@@ -2038,44 +2088,44 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="cta-section">
   <div class="cta-bg-gradient"></div>
   <div class="container">
-    <span class="section-label" style="color: rgba(255,111,97,0.85);">Bắt đầu ngay</span>
-    <h2>Sẵn sàng đo lường Ambassador Marketing?</h2>
-    <p class="section-subtitle">Demo 30 phút — chúng tôi sẽ chạy thử chiến dịch thực tế với dữ liệu thật của bạn.</p>
+    <span class="section-label" style="color: rgba(255,111,97,0.85);"><span data-lang="vi">Bắt đầu ngay</span><span data-lang="en">Get Started</span></span>
+    <h2><span data-lang="vi">Sẵn sàng đo lường Ambassador Marketing?</span><span data-lang="en">Ready to measure Ambassador Marketing?</span></h2>
+    <p class="section-subtitle"><span data-lang="vi">Demo 30 phút — chúng tôi sẽ chạy thử chiến dịch thực tế với dữ liệu thật của bạn.</span><span data-lang="en">30-minute demo — we'll run a real campaign test with your actual data.</span></p>
 
     <div class="cta-points">
       <div class="cta-point">
         <div class="cta-point-icon">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        Không cần thẻ tín dụng
+        <span data-lang="vi">Không cần thẻ tín dụng</span><span data-lang="en">No credit card required</span>
       </div>
       <div class="cta-point">
         <div class="cta-point-icon">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        Setup trong 1 tuần
+        <span data-lang="vi">Setup trong 1 tuần</span><span data-lang="en">Setup in 1 week</span>
       </div>
       <div class="cta-point">
         <div class="cta-point-icon">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        Hỗ trợ onboarding miễn phí
+        <span data-lang="vi">Hỗ trợ onboarding miễn phí</span><span data-lang="en">Free onboarding support</span>
       </div>
       <div class="cta-point">
         <div class="cta-point-icon">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        0 rủi ro thanh toán trước
+        <span data-lang="vi">0 rủi ro thanh toán trước</span><span data-lang="en">0 upfront payment risk</span>
       </div>
     </div>
 
     <div class="cta-buttons">
       <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary btn-lg">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Đặt lịch demo miễn phí 30 phút
+        <span data-lang="vi">Đặt lịch demo miễn phí 30 phút</span><span data-lang="en">Book a Free Demo</span>
       </a>
       <a href="../../comparison/" class="btn btn-outline btn-lg">
-        So sánh tất cả giải pháp
+        <span data-lang="vi">So sánh tất cả giải pháp</span><span data-lang="en">Compare all solutions</span>
       </a>
     </div>
   </div>
@@ -2089,12 +2139,12 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
       Diso
     </a>
     <div class="footer-links">
-      <a href="../../">Trang chủ</a>
-      <a href="../../comparison/">So sánh</a>
-      <a href="../../#solution">Giải pháp</a>
-      <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow">Đặt lịch demo</a>
+      <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
+      <a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a>
+      <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
+      <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a>
     </div>
-    <p class="footer-copy">&copy; 2025 Diso. Mọi quyền được bảo lưu.</p>
+    <p class="footer-copy">&copy; 2025 Diso. <span data-lang="vi">Mọi quyền được bảo lưu.</span><span data-lang="en">All rights reserved.</span></p>
   </div>
 </footer>
 
@@ -2149,6 +2199,19 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('open');
     navToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
   });
+});
+
+// Language toggle
+var langToggle = document.getElementById('langToggle');
+var htmlEl = document.documentElement;
+var savedLang = localStorage.getItem('diso-lang') || 'vi';
+if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+langToggle.addEventListener('click', function() {
+  var current = htmlEl.getAttribute('lang') || 'vi';
+  var next = current === 'vi' ? 'en' : 'vi';
+  htmlEl.setAttribute('lang', next);
+  localStorage.setItem('diso-lang', next);
 });
 
 // ========================================

@@ -1555,6 +1555,55 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ========================================
+   LANGUAGE TOGGLE
+   ======================================== */
+[data-lang="en"] { display: none; }
+html[lang="en"] [data-lang="vi"] { display: none; }
+html[lang="en"] [data-lang="en"] { display: inline; }
+html[lang="en"] h1 [data-lang="en"],
+html[lang="en"] h2 [data-lang="en"],
+html[lang="en"] h3 [data-lang="en"],
+html[lang="en"] h4 [data-lang="en"],
+html[lang="en"] p [data-lang="en"],
+html[lang="en"] div [data-lang="en"],
+html[lang="en"] li [data-lang="en"],
+html[lang="en"] td [data-lang="en"],
+html[lang="en"] th [data-lang="en"],
+html[lang="en"] strong [data-lang="en"],
+html[lang="en"] span [data-lang="en"] { display: inline; }
+html[lang="en"] .section-subtitle [data-lang="en"],
+html[lang="en"] .section-desc [data-lang="en"],
+html[lang="en"] .pillar-tagline [data-lang="en"],
+html[lang="en"] .pillar-key-message [data-lang="en"],
+html[lang="en"] .feature-detail-text [data-lang="en"],
+html[lang="en"] .feature-desc [data-lang="en"] { display: block; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  margin-right: 8px;
+}
+.lang-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.lang-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
    RESPONSIVE UTILITIES
    ======================================== */
 @media (max-width: 480px) {
@@ -1588,14 +1637,15 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   <div class="nav-inner">
     <a href="../../" class="nav-logo"><span class="logo-mark">D</span> Diso</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../../">Trang chủ</a></li>
-      <li><a href="../../#solution">Giải pháp</a></li>
-      <li><a href="../../#features">Tính năng</a></li>
-      <li><a href="../../#proof">Khách hàng</a></li>
-      <li><a href="../../comparison/">So sánh</a></li>
+      <li><a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a></li>
+      <li><a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a></li>
+      <li><a href="../../#features"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></a></li>
+      <li><a href="../../#proof"><span data-lang="vi">Khách hàng</span><span data-lang="en">Clients</span></a></li>
+      <li><a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a></li>
       <li><a href="../../case-studies/">Case Studies</a></li>
-      <li><a href="../../vision/">Tầm nhìn</a></li>
-      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta">Đặt lịch demo</a></li>
+      <li><a href="../../vision/"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+      <li><button class="lang-toggle" id="langToggle" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-lang="vi">EN</span><span data-lang="en">VI</span></button></li>
+      <li><a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-primary nav-cta"><span data-lang="vi">Đặt lịch demo</span><span data-lang="en">Book a Demo</span></a></li>
     </ul>
     <button class="nav-mobile-btn" id="navToggle" aria-label="Toggle navigation">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -1611,24 +1661,24 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
   </div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../">Trang chủ</a>
+      <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
       <span class="breadcrumb-sep">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
-      <a href="../../#solution">Giải pháp</a>
+      <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
       <span class="breadcrumb-sep">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
-      <span>Backend Vận hành</span>
+      <span><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></span>
     </nav>
 
     <div class="pillar-badge">
       <span class="pillar-badge-dot"></span>
-      Giải pháp 3 / 5
+      <span data-lang="vi">Giải pháp 3 / 5</span><span data-lang="en">Pillar 3 / 5</span>
     </div>
 
-    <h1>Backend Vận hành</h1>
-    <p class="hero-subtitle">Từ đơn hàng đến giao hàng — tự động hóa toàn bộ</p>
+    <h1><span data-lang="vi">Backend Vận hành</span><span data-lang="en">Operations Backend</span></h1>
+    <p class="hero-subtitle"><span data-lang="vi">Từ đơn hàng đến giao hàng — tự động hóa toàn bộ</span><span data-lang="en">From orders to delivery — fully automated</span></p>
 
     <div class="hero-stats-row">
       <div class="hero-stat-item">
@@ -1637,7 +1687,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         </div>
         <div class="hero-stat-text">
           <div class="hero-stat-num">1 dashboard</div>
-          <div class="hero-stat-label">Tất cả đơn hàng</div>
+          <div class="hero-stat-label"><span data-lang="vi">Tất cả đơn hàng</span><span data-lang="en">All orders</span></div>
         </div>
       </div>
       <div class="hero-stat-item">
@@ -1645,8 +1695,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="hero-stat-text">
-          <div class="hero-stat-num">4 loại đối soát</div>
-          <div class="hero-stat-label">Tự động 100%</div>
+          <div class="hero-stat-num"><span data-lang="vi">4 loại đối soát</span><span data-lang="en">4 reconciliation types</span></div>
+          <div class="hero-stat-label"><span data-lang="vi">Tự động 100%</span><span data-lang="en">100% automated</span></div>
         </div>
       </div>
       <div class="hero-stat-item">
@@ -1654,8 +1704,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="hero-stat-text">
-          <div class="hero-stat-num">4 hãng vận chuyển</div>
-          <div class="hero-stat-label">1 click tạo đơn</div>
+          <div class="hero-stat-num"><span data-lang="vi">4 hãng vận chuyển</span><span data-lang="en">4 shipping carriers</span></div>
+          <div class="hero-stat-label"><span data-lang="vi">1 click tạo đơn</span><span data-lang="en">1 click to ship</span></div>
         </div>
       </div>
     </div>
@@ -1666,9 +1716,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Vấn đề thực tế</span>
-      <h2>Vận hành thủ công — chi phí ẩn cao</h2>
-      <p class="section-subtitle">Khi đơn hàng tăng, mọi thứ bắt đầu vỡ vụn nếu không có hệ thống</p>
+      <span class="section-label"><span data-lang="vi">Vấn đề thực tế</span><span data-lang="en">Real Problems</span></span>
+      <h2><span data-lang="vi">Vận hành thủ công — chi phí ẩn cao</span><span data-lang="en">Manual operations — high hidden costs</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Khi đơn hàng tăng, mọi thứ bắt đầu vỡ vụn nếu không có hệ thống</span><span data-lang="en">When orders grow, everything starts to break without a system</span></p>
     </div>
 
     <div class="pain-grid">
@@ -1676,48 +1726,48 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <h3>100 đơn/ngày là giới hạn</h3>
-        <p>Qua 100 đơn/ngày, quản lý thủ công bắt đầu rối loạn — sai tên, sai địa chỉ, trùng đơn, bỏ sót khiếu nại.</p>
+        <h3><span data-lang="vi">100 đơn/ngày là giới hạn</span><span data-lang="en">100 orders/day is the limit</span></h3>
+        <p><span data-lang="vi">Qua 100 đơn/ngày, quản lý thủ công bắt đầu rối loạn — sai tên, sai địa chỉ, trùng đơn, bỏ sót khiếu nại.</span><span data-lang="en">Past 100 orders/day, manual management starts to break down — wrong names, wrong addresses, duplicate orders, missed complaints.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3>Kế toán đối soát bằng tay</h3>
-        <p>4 loại cần đối soát: đơn hàng, affiliate, reseller, đại sứ. Mỗi loại một file Excel, mỗi tháng mất hàng chục giờ.</p>
+        <h3><span data-lang="vi">Kế toán đối soát bằng tay</span><span data-lang="en">Manual accounting reconciliation</span></h3>
+        <p><span data-lang="vi">4 loại cần đối soát: đơn hàng, affiliate, reseller, đại sứ. Mỗi loại một file Excel, mỗi tháng mất hàng chục giờ.</span><span data-lang="en">4 types to reconcile: orders, affiliate, reseller, ambassador. Each a separate Excel file, taking dozens of hours per month.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3>4 tab vận chuyển mở song song</h3>
-        <p>GHN, GHTK, Viettel Post, J&amp;T — mỗi hãng một cửa sổ, nhân viên phải nhập thủ công từng đơn.</p>
+        <h3><span data-lang="vi">4 tab vận chuyển mở song song</span><span data-lang="en">4 shipping tabs open simultaneously</span></h3>
+        <p><span data-lang="vi">GHN, GHTK, Viettel Post, J&amp;T — mỗi hãng một cửa sổ, nhân viên phải nhập thủ công từng đơn.</span><span data-lang="en">GHN, GHTK, Viettel Post, J&amp;T — one window per carrier, staff must manually enter each order.</span></p>
       </div>
       <div class="pain-card reveal reveal-delay-4">
         <div class="pain-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
         </div>
-        <h3>Data rải rác khắp nơi</h3>
-        <p>Khách hàng, đơn hàng, hoa hồng — mỗi thứ một chỗ. Không có cái nhìn tổng thể để ra quyết định.</p>
+        <h3><span data-lang="vi">Data rải rác khắp nơi</span><span data-lang="en">Data scattered everywhere</span></h3>
+        <p><span data-lang="vi">Khách hàng, đơn hàng, hoa hồng — mỗi thứ một chỗ. Không có cái nhìn tổng thể để ra quyết định.</span><span data-lang="en">Customers, orders, commissions — each in a different place. No unified view to make decisions.</span></p>
       </div>
     </div>
 
     <!-- Operations Reality -->
     <div class="ops-reality reveal">
-      <h3>Thực tế vận hành — con số không thể phủ nhận</h3>
-      <p class="ops-reality-sub">Đây là lý do bạn cần hệ thống, không phải thêm người</p>
+      <h3><span data-lang="vi">Thực tế vận hành — con số không thể phủ nhận</span><span data-lang="en">Operations reality — numbers that can't be ignored</span></h3>
+      <p class="ops-reality-sub"><span data-lang="vi">Đây là lý do bạn cần hệ thống, không phải thêm người</span><span data-lang="en">This is why you need a system, not more headcount</span></p>
       <div class="ops-reality-grid">
         <div class="ops-reality-item">
-          <div class="item-num">4 loại</div>
-          <div class="item-label">đối soát cần xử lý mỗi tháng — sàn TMĐT chỉ có 1</div>
+          <div class="item-num"><span data-lang="vi">4 loại</span><span data-lang="en">4 types</span></div>
+          <div class="item-label"><span data-lang="vi">đối soát cần xử lý mỗi tháng — sàn TMĐT chỉ có 1</span><span data-lang="en">reconciliation types per month — marketplaces only have 1</span></div>
         </div>
         <div class="ops-reality-item">
           <div class="item-num">50–100tr</div>
-          <div class="item-label">chi phí team dev/tháng nếu tự xây hệ thống tương đương</div>
+          <div class="item-label"><span data-lang="vi">chi phí team dev/tháng nếu tự xây hệ thống tương đương</span><span data-lang="en">VND/month for a dev team to build an equivalent system</span></div>
         </div>
         <div class="ops-reality-item">
           <div class="item-num">5–10%</div>
-          <div class="item-label">tỷ lệ sai sót khi đối soát thủ công, theo khảo sát thực tế</div>
+          <div class="item-label"><span data-lang="vi">tỷ lệ sai sót khi đối soát thủ công, theo khảo sát thực tế</span><span data-lang="en">error rate in manual reconciliation, based on real surveys</span></div>
         </div>
       </div>
     </div>
@@ -1728,9 +1778,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Tính năng</span>
-      <h2>7 tính năng vận hành cốt lõi</h2>
-      <p class="section-subtitle">Mọi thứ bạn cần để vận hành quy mô lớn — trong một hệ thống thống nhất</p>
+      <span class="section-label"><span data-lang="vi">Tính năng</span><span data-lang="en">Features</span></span>
+      <h2><span data-lang="vi">7 tính năng vận hành cốt lõi</span><span data-lang="en">7 core operations features</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Mọi thứ bạn cần để vận hành quy mô lớn — trong một hệ thống thống nhất</span><span data-lang="en">Everything you need to operate at scale — in one unified system</span></p>
     </div>
 
     <!-- Top row: 3 cards -->
@@ -1739,33 +1789,33 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feat-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3>Quản lý đơn hàng tập trung</h3>
-        <p>1 dashboard duy nhất cho tất cả đơn từ mọi kênh — website, affiliate, reseller, đại sứ. Không bỏ sót, không trùng.</p>
+        <h3><span data-lang="vi">Quản lý đơn hàng tập trung</span><span data-lang="en">Order Management</span></h3>
+        <p><span data-lang="vi">1 dashboard duy nhất cho tất cả đơn từ mọi kênh — website, affiliate, reseller, đại sứ. Không bỏ sót, không trùng.</span><span data-lang="en">1 unified dashboard for all orders across every channel — website, affiliate, reseller, ambassador. No missed, no duplicates.</span></p>
         <div class="feat-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          1 dashboard duy nhất
+          <span data-lang="vi">1 dashboard duy nhất</span><span data-lang="en">1 unified dashboard</span>
         </div>
       </div>
       <div class="feat-card reveal reveal-delay-2">
         <div class="feat-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
-        <h3>Tích hợp vận chuyển 4 hãng</h3>
-        <p>GHN, GHTK, Viettel Post, J&amp;T Express tích hợp sẵn. Tạo vận đơn 1 click, theo dõi trạng thái real-time.</p>
+        <h3><span data-lang="vi">Tích hợp vận chuyển 4 hãng</span><span data-lang="en">4 Shipping Carriers Integrated</span></h3>
+        <p><span data-lang="vi">GHN, GHTK, Viettel Post, J&amp;T Express tích hợp sẵn. Tạo vận đơn 1 click, theo dõi trạng thái real-time.</span><span data-lang="en">GHN, GHTK, Viettel Post, J&amp;T Express built-in. Create shipments with 1 click, track status in real-time.</span></p>
         <div class="feat-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          1 click tạo vận đơn
+          <span data-lang="vi">1 click tạo vận đơn</span><span data-lang="en">1 click to create shipment</span>
         </div>
       </div>
       <div class="feat-card reveal reveal-delay-3">
         <div class="feat-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
         </div>
-        <h3>Quản lý tồn kho thông minh</h3>
-        <p>Theo dõi tồn kho theo SKU, cảnh báo tự động khi sắp hết hàng. Đồng bộ từ đơn hàng xuống kho ngay lập tức.</p>
+        <h3><span data-lang="vi">Quản lý tồn kho thông minh</span><span data-lang="en">Inventory Management</span></h3>
+        <p><span data-lang="vi">Theo dõi tồn kho theo SKU, cảnh báo tự động khi sắp hết hàng. Đồng bộ từ đơn hàng xuống kho ngay lập tức.</span><span data-lang="en">Track inventory by SKU, auto-alert when stock is low. Orders sync down to inventory instantly.</span></p>
         <div class="feat-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Cảnh báo tự động
+          <span data-lang="vi">Cảnh báo tự động</span><span data-lang="en">Auto alerts</span>
         </div>
       </div>
     </div>
@@ -1777,11 +1827,11 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="feat-wide-title">
-          <h3>Đối soát tự động 4 loại</h3>
-          <p>Tính năng độc quyền mà không sàn TMĐT nào có — tự động đối soát toàn bộ dòng tiền trong hệ sinh thái của bạn</p>
+          <h3><span data-lang="vi">Đối soát tự động 4 loại</span><span data-lang="en">Multi-channel Reconciliation</span></h3>
+          <p><span data-lang="vi">Tính năng độc quyền mà không sàn TMĐT nào có — tự động đối soát toàn bộ dòng tiền trong hệ sinh thái của bạn</span><span data-lang="en">An exclusive feature no marketplace offers — automatically reconcile all cash flows across your ecosystem</span></p>
           <span class="feat-wide-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Điểm khác biệt cốt lõi
+            <span data-lang="vi">Điểm khác biệt cốt lõi</span><span data-lang="en">Core differentiator</span>
           </span>
         </div>
       </div>
@@ -1790,29 +1840,29 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="feat-wide-sub-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h4>Đối soát đơn hàng</h4>
-          <p>Khớp doanh thu thực thu từ cổng thanh toán với đơn đã xác nhận. Phát hiện chênh lệch tức thì.</p>
+          <h4><span data-lang="vi">Đối soát đơn hàng</span><span data-lang="en">Order Reconciliation</span></h4>
+          <p><span data-lang="vi">Khớp doanh thu thực thu từ cổng thanh toán với đơn đã xác nhận. Phát hiện chênh lệch tức thì.</span><span data-lang="en">Match actual revenue from payment gateways with confirmed orders. Detect discrepancies instantly.</span></p>
         </div>
         <div class="feat-wide-sub-item">
           <div class="feat-wide-sub-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h4>Đối soát Affiliate</h4>
-          <p>Tính hoa hồng chính xác theo từng publisher, link tracking. Xuất báo cáo chi trả tự động.</p>
+          <h4><span data-lang="vi">Đối soát Affiliate</span><span data-lang="en">Affiliate Reconciliation</span></h4>
+          <p><span data-lang="vi">Tính hoa hồng chính xác theo từng publisher, link tracking. Xuất báo cáo chi trả tự động.</span><span data-lang="en">Calculate commission accurately per publisher and tracking link. Export payment reports automatically.</span></p>
         </div>
         <div class="feat-wide-sub-item">
           <div class="feat-wide-sub-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <h4>Đối soát Reseller</h4>
-          <p>Theo dõi chiết khấu, thanh toán còn thiếu, công nợ của từng đại lý. Không bao giờ nhầm lẫn.</p>
+          <h4><span data-lang="vi">Đối soát Reseller</span><span data-lang="en">Reseller Reconciliation</span></h4>
+          <p><span data-lang="vi">Theo dõi chiết khấu, thanh toán còn thiếu, công nợ của từng đại lý. Không bao giờ nhầm lẫn.</span><span data-lang="en">Track discounts, outstanding payments, debts per reseller. Never mix up figures.</span></p>
         </div>
         <div class="feat-wide-sub-item">
           <div class="feat-wide-sub-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <h4>Đối soát Đại sứ</h4>
-          <p>Kiểm soát hoa hồng đại sứ thương hiệu theo đơn thực, hiệu suất theo tháng. Minh bạch hoàn toàn.</p>
+          <h4><span data-lang="vi">Đối soát Đại sứ</span><span data-lang="en">Ambassador Reconciliation</span></h4>
+          <p><span data-lang="vi">Kiểm soát hoa hồng đại sứ thương hiệu theo đơn thực, hiệu suất theo tháng. Minh bạch hoàn toàn.</span><span data-lang="en">Control brand ambassador commissions by actual orders, monthly performance. Fully transparent.</span></p>
         </div>
       </div>
     </div>
@@ -1823,30 +1873,30 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="feat-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>CRM Khách hàng</h3>
-        <p>Data khách hàng là của bạn, không phải của sàn. Phân nhóm theo hành vi, lịch sử mua, giá trị vòng đời. Kích hoạt tái mua chủ động.</p>
+        <h3><span data-lang="vi">CRM Khách hàng</span><span data-lang="en">Customer CRM</span></h3>
+        <p><span data-lang="vi">Data khách hàng là của bạn, không phải của sàn. Phân nhóm theo hành vi, lịch sử mua, giá trị vòng đời. Kích hoạt tái mua chủ động.</span><span data-lang="en">Customer data belongs to you, not the marketplace. Segment by behavior, purchase history, lifetime value. Proactively activate repeat purchases.</span></p>
         <div class="feat-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Data của bạn, bạn sở hữu
+          <span data-lang="vi">Data của bạn, bạn sở hữu</span><span data-lang="en">Your data, you own it</span>
         </div>
       </div>
       <div class="feat-card reveal reveal-delay-2">
         <div class="feat-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
-        <h3>Analytics Real-time</h3>
-        <p>Dashboard doanh thu, số đơn, hiệu quả từng kênh bán — cập nhật liên tục. Ra quyết định dựa trên dữ liệu thực.</p>
+        <h3><span data-lang="vi">Analytics Real-time</span><span data-lang="en">Finance &amp; Reports</span></h3>
+        <p><span data-lang="vi">Dashboard doanh thu, số đơn, hiệu quả từng kênh bán — cập nhật liên tục. Ra quyết định dựa trên dữ liệu thực.</span><span data-lang="en">Revenue dashboard, order counts, sales channel performance — continuously updated. Make decisions based on real data.</span></p>
         <div class="feat-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Cập nhật liên tục
+          <span data-lang="vi">Cập nhật liên tục</span><span data-lang="en">Continuously updated</span>
         </div>
       </div>
       <div class="feat-card reveal reveal-delay-3">
         <div class="feat-icon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>Phân quyền Admin</h3>
-        <p>3 cấp quyền: Root (toàn quyền), Admin (quản lý vận hành), Collaborator (thực thi). Ai được xem gì, làm gì — kiểm soát hoàn toàn.</p>
+        <h3><span data-lang="vi">Phân quyền Admin</span><span data-lang="en">Admin Permissions</span></h3>
+        <p><span data-lang="vi">3 cấp quyền: Root (toàn quyền), Admin (quản lý vận hành), Collaborator (thực thi). Ai được xem gì, làm gì — kiểm soát hoàn toàn.</span><span data-lang="en">3 permission levels: Root (full access), Admin (operations management), Collaborator (execution). Who sees what, who does what — fully controlled.</span></p>
         <div class="feat-tag">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           Root / Admin / Collaborator
@@ -1860,24 +1910,24 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">So sánh</span>
-      <h2>Diso vs. các giải pháp thay thế</h2>
-      <p class="section-subtitle">Tại sao tự xây hoặc dùng sàn TMĐT không phải câu trả lời</p>
+      <span class="section-label"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></span>
+      <h2><span data-lang="vi">Diso vs. các giải pháp thay thế</span><span data-lang="en">Diso vs. the alternatives</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Tại sao tự xây hoặc dùng sàn TMĐT không phải câu trả lời</span><span data-lang="en">Why building in-house or using a marketplace isn't the answer</span></p>
     </div>
 
     <div class="comp-wrap reveal">
       <table class="comp-table">
         <thead>
           <tr>
-            <th style="width:34%">Tính năng</th>
+            <th style="width:34%"><span data-lang="vi">Tính năng</span><span data-lang="en">Feature</span></th>
             <th class="col-diso" style="width:22%">Diso</th>
-            <th style="width:22%">Sàn TMĐT</th>
-            <th style="width:22%">Tự xây</th>
+            <th style="width:22%"><span data-lang="vi">Sàn TMĐT</span><span data-lang="en">Marketplace</span></th>
+            <th style="width:22%"><span data-lang="vi">Tự xây</span><span data-lang="en">Build In-house</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="col-feature">Quản lý đơn tất cả kênh trong 1 nơi</td>
+            <td class="col-feature"><span data-lang="vi">Quản lý đơn tất cả kênh trong 1 nơi</span><span data-lang="en">Manage all channel orders in 1 place</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1885,7 +1935,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-partial">~</span></td>
           </tr>
           <tr>
-            <td class="col-feature">Tích hợp GHN, GHTK, Viettel, J&amp;T</td>
+            <td class="col-feature"><span data-lang="vi">Tích hợp GHN, GHTK, Viettel, J&amp;T</span><span data-lang="en">GHN, GHTK, Viettel, J&amp;T integrated</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1893,7 +1943,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-partial">~</span></td>
           </tr>
           <tr>
-            <td class="col-feature">Đối soát Affiliate tự động</td>
+            <td class="col-feature"><span data-lang="vi">Đối soát Affiliate tự động</span><span data-lang="en">Auto Affiliate Reconciliation</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1901,7 +1951,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-partial">~</span></td>
           </tr>
           <tr>
-            <td class="col-feature">Đối soát Reseller &amp; Đại sứ</td>
+            <td class="col-feature"><span data-lang="vi">Đối soát Reseller &amp; Đại sứ</span><span data-lang="en">Reseller &amp; Ambassador Reconciliation</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1909,7 +1959,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-partial">~</span></td>
           </tr>
           <tr>
-            <td class="col-feature">CRM — data khách hàng thuộc bạn</td>
+            <td class="col-feature"><span data-lang="vi">CRM — data khách hàng thuộc bạn</span><span data-lang="en">CRM — customer data belongs to you</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1917,7 +1967,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span></td>
           </tr>
           <tr>
-            <td class="col-feature">Analytics real-time đa kênh</td>
+            <td class="col-feature"><span data-lang="vi">Analytics real-time đa kênh</span><span data-lang="en">Real-time multi-channel analytics</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1925,7 +1975,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-partial">~</span></td>
           </tr>
           <tr>
-            <td class="col-feature">Phân quyền đa cấp Admin</td>
+            <td class="col-feature"><span data-lang="vi">Phân quyền đa cấp Admin</span><span data-lang="en">Multi-level Admin permissions</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1933,7 +1983,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span></td>
           </tr>
           <tr>
-            <td class="col-feature">Tích hợp với Affiliate &amp; Reseller giải pháp</td>
+            <td class="col-feature"><span data-lang="vi">Tích hợp với Affiliate &amp; Reseller giải pháp</span><span data-lang="en">Integration with Affiliate &amp; Reseller solutions</span></td>
             <td class="col-diso">
               <span class="check-yes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             </td>
@@ -1941,16 +1991,16 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <td><span class="check-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
           </tr>
           <tr>
-            <td class="col-feature">Chi phí triển khai</td>
-            <td class="col-diso" style="color: var(--green); font-weight: 700;">SaaS, không upfront</td>
-            <td style="color: var(--text-muted); font-size: 14px;">Phí sàn + ràng buộc</td>
-            <td style="color: var(--red); font-size: 14px;">50–100tr/tháng</td>
+            <td class="col-feature"><span data-lang="vi">Chi phí triển khai</span><span data-lang="en">Deployment cost</span></td>
+            <td class="col-diso" style="color: var(--green); font-weight: 700;"><span data-lang="vi">SaaS, không upfront</span><span data-lang="en">SaaS, no upfront</span></td>
+            <td style="color: var(--text-muted); font-size: 14px;"><span data-lang="vi">Phí sàn + ràng buộc</span><span data-lang="en">Platform fees + lock-in</span></td>
+            <td style="color: var(--red); font-size: 14px;"><span data-lang="vi">50–100tr/tháng</span><span data-lang="en">50–100M VND/month</span></td>
           </tr>
           <tr>
-            <td class="col-feature">Thời gian chạy</td>
-            <td class="col-diso" style="color: var(--green); font-weight: 700;">Ngay sau onboarding</td>
-            <td style="color: var(--text-muted); font-size: 14px;">Ngay (giới hạn)</td>
-            <td style="color: var(--red); font-size: 14px;">3–6 tháng</td>
+            <td class="col-feature"><span data-lang="vi">Thời gian chạy</span><span data-lang="en">Time to go live</span></td>
+            <td class="col-diso" style="color: var(--green); font-weight: 700;"><span data-lang="vi">Ngay sau onboarding</span><span data-lang="en">Right after onboarding</span></td>
+            <td style="color: var(--text-muted); font-size: 14px;"><span data-lang="vi">Ngay (giới hạn)</span><span data-lang="en">Immediately (limited)</span></td>
+            <td style="color: var(--red); font-size: 14px;"><span data-lang="vi">3–6 tháng</span><span data-lang="en">3–6 months</span></td>
           </tr>
         </tbody>
       </table>
@@ -1962,9 +2012,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Quy trình</span>
-      <h2>Từ đơn hàng đến dòng tiền — 4 bước tự động</h2>
-      <p class="section-subtitle">Mỗi bước được hệ thống xử lý và ghi nhận, không cần can thiệp thủ công</p>
+      <span class="section-label"><span data-lang="vi">Quy trình</span><span data-lang="en">Workflow</span></span>
+      <h2><span data-lang="vi">Từ đơn hàng đến dòng tiền — 4 bước tự động</span><span data-lang="en">From orders to cash flow — 4 automated steps</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Mỗi bước được hệ thống xử lý và ghi nhận, không cần can thiệp thủ công</span><span data-lang="en">Each step is processed and recorded by the system, no manual intervention needed</span></p>
     </div>
 
     <div class="workflow-steps">
@@ -1973,9 +2023,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
         <div class="workflow-step-content">
-          <div class="workflow-step-label">Bước 1</div>
-          <h3>Ghi nhận</h3>
-          <p>Đơn hàng từ tất cả kênh tự động vào 1 dashboard. Phân loại theo nguồn, kênh, trạng thái.</p>
+          <div class="workflow-step-label"><span data-lang="vi">Bước 1</span><span data-lang="en">Step 1</span></div>
+          <h3><span data-lang="vi">Ghi nhận</span><span data-lang="en">Record</span></h3>
+          <p><span data-lang="vi">Đơn hàng từ tất cả kênh tự động vào 1 dashboard. Phân loại theo nguồn, kênh, trạng thái.</span><span data-lang="en">Orders from all channels flow automatically into 1 dashboard. Categorized by source, channel, status.</span></p>
         </div>
       </div>
       <div class="workflow-step reveal reveal-delay-2">
@@ -1983,9 +2033,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <div class="workflow-step-content">
-          <div class="workflow-step-label">Bước 2</div>
-          <h3>Xác nhận</h3>
-          <p>Xác nhận đơn, trừ kho tự động, thông báo bên liên quan. Không cần nhập tay.</p>
+          <div class="workflow-step-label"><span data-lang="vi">Bước 2</span><span data-lang="en">Step 2</span></div>
+          <h3><span data-lang="vi">Xác nhận</span><span data-lang="en">Confirm</span></h3>
+          <p><span data-lang="vi">Xác nhận đơn, trừ kho tự động, thông báo bên liên quan. Không cần nhập tay.</span><span data-lang="en">Confirm order, auto-deduct inventory, notify stakeholders. No manual entry needed.</span></p>
         </div>
       </div>
       <div class="workflow-step reveal reveal-delay-3">
@@ -1993,9 +2043,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
         <div class="workflow-step-content">
-          <div class="workflow-step-label">Bước 3</div>
-          <h3>Giao hàng</h3>
-          <p>Chọn hãng vận chuyển, tạo vận đơn 1 click, theo dõi real-time. Cập nhật trạng thái tự động.</p>
+          <div class="workflow-step-label"><span data-lang="vi">Bước 3</span><span data-lang="en">Step 3</span></div>
+          <h3><span data-lang="vi">Giao hàng</span><span data-lang="en">Ship</span></h3>
+          <p><span data-lang="vi">Chọn hãng vận chuyển, tạo vận đơn 1 click, theo dõi real-time. Cập nhật trạng thái tự động.</span><span data-lang="en">Choose carrier, create shipment with 1 click, track in real-time. Status auto-updated.</span></p>
         </div>
       </div>
       <div class="workflow-step reveal reveal-delay-4">
@@ -2003,9 +2053,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="workflow-step-content">
-          <div class="workflow-step-label">Bước 4</div>
-          <h3>Hoàn thành + Đối soát</h3>
-          <p>Giao hàng thành công — hệ thống tự đối soát doanh thu, hoa hồng, ghi nhận vào báo cáo tài chính.</p>
+          <div class="workflow-step-label"><span data-lang="vi">Bước 4</span><span data-lang="en">Step 4</span></div>
+          <h3><span data-lang="vi">Hoàn thành + Đối soát</span><span data-lang="en">Complete + Reconcile</span></h3>
+          <p><span data-lang="vi">Giao hàng thành công — hệ thống tự đối soát doanh thu, hoa hồng, ghi nhận vào báo cáo tài chính.</span><span data-lang="en">Delivery successful — system auto-reconciles revenue, commissions, records in financial reports.</span></p>
         </div>
       </div>
     </div>
@@ -2016,45 +2066,45 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Thực tế triển khai</span>
-      <h2>Brand thời trang — 200 đơn/ngày, 3 kênh</h2>
-      <p class="section-subtitle">Từ 2 nhân viên kế toán sai sót 5–10% đến vận hành tự động 100%</p>
+      <span class="section-label"><span data-lang="vi">Thực tế triển khai</span><span data-lang="en">Real-world Deployment</span></span>
+      <h2><span data-lang="vi">Brand thời trang — 200 đơn/ngày, 3 kênh</span><span data-lang="en">Fashion brand — 200 orders/day, 3 channels</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Từ 2 nhân viên kế toán sai sót 5–10% đến vận hành tự động 100%</span><span data-lang="en">From 2 accounting staff with 5–10% error rate to 100% automated operations</span></p>
     </div>
 
     <div class="usecase-card reveal">
       <div class="usecase-header">
-        <h3>Brand thời trang nữ — Hà Nội</h3>
-        <p>Quy mô: 200 đơn/ngày — 3 kênh (website, reseller, đại sứ) — team 15 người</p>
+        <h3><span data-lang="vi">Brand thời trang nữ — Hà Nội</span><span data-lang="en">Women's fashion brand — Hanoi</span></h3>
+        <p><span data-lang="vi">Quy mô: 200 đơn/ngày — 3 kênh (website, reseller, đại sứ) — team 15 người</span><span data-lang="en">Scale: 200 orders/day — 3 channels (website, reseller, ambassador) — team of 15</span></p>
       </div>
       <div class="usecase-body">
         <div class="usecase-col col-before">
           <div class="usecase-col-label before">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-            Trước Diso
+            <span data-lang="vi">Trước Diso</span><span data-lang="en">Before Diso</span>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-red">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
-            <p>2 nhân viên kế toán làm đối soát thủ công mỗi tháng</p>
+            <p><span data-lang="vi">2 nhân viên kế toán làm đối soát thủ công mỗi tháng</span><span data-lang="en">2 accounting staff doing manual reconciliation every month</span></p>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-red">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
-            <p>Tỷ lệ sai sót 5–10% mỗi kỳ đối soát — tranh chấp hoa hồng thường xuyên</p>
+            <p><span data-lang="vi">Tỷ lệ sai sót 5–10% mỗi kỳ đối soát — tranh chấp hoa hồng thường xuyên</span><span data-lang="en">5–10% error rate per reconciliation period — frequent commission disputes</span></p>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-red">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
-            <p>4 cửa sổ vận chuyển mở song song — mỗi đơn mất 5–8 phút xử lý</p>
+            <p><span data-lang="vi">4 cửa sổ vận chuyển mở song song — mỗi đơn mất 5–8 phút xử lý</span><span data-lang="en">4 shipping windows open simultaneously — 5–8 minutes to process each order</span></p>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-red">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
-            <p>Không biết kênh nào hiệu quả nhất — ngân sách bị phân bổ sai</p>
+            <p><span data-lang="vi">Không biết kênh nào hiệu quả nhất — ngân sách bị phân bổ sai</span><span data-lang="en">No visibility into which channel performs best — budget misallocated</span></p>
           </div>
         </div>
         <div class="usecase-divider">
@@ -2065,50 +2115,50 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         <div class="usecase-col col-after">
           <div class="usecase-col-label after">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
-            Sau khi dùng Diso
+            <span data-lang="vi">Sau khi dùng Diso</span><span data-lang="en">After using Diso</span>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-green">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <p>Đối soát 4 loại chạy hoàn toàn tự động — không cần nhân viên kế toán xử lý</p>
+            <p><span data-lang="vi">Đối soát 4 loại chạy hoàn toàn tự động — không cần nhân viên kế toán xử lý</span><span data-lang="en">4 reconciliation types run fully automatically — no accounting staff needed</span></p>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-green">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <p>Tỷ lệ sai sót = 0% — hoa hồng được tính chính xác, xuất báo cáo 1 click</p>
+            <p><span data-lang="vi">Tỷ lệ sai sót = 0% — hoa hồng được tính chính xác, xuất báo cáo 1 click</span><span data-lang="en">Error rate = 0% — commissions calculated accurately, export reports with 1 click</span></p>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-green">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <p>1 click tạo vận đơn — xử lý 200 đơn trong vòng 30 phút buổi sáng</p>
+            <p><span data-lang="vi">1 click tạo vận đơn — xử lý 200 đơn trong vòng 30 phút buổi sáng</span><span data-lang="en">1 click to create shipment — process 200 orders in 30 minutes each morning</span></p>
           </div>
           <div class="usecase-item">
             <div class="usecase-item-dot dot-green">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <p>Analytics real-time — biết ngay kênh nào mang về doanh thu cao nhất</p>
+            <p><span data-lang="vi">Analytics real-time — biết ngay kênh nào mang về doanh thu cao nhất</span><span data-lang="en">Real-time analytics — instantly know which channel drives the most revenue</span></p>
           </div>
         </div>
       </div>
       <div class="usecase-result">
         <div class="usecase-result-item">
           <div class="usecase-result-num">0%</div>
-          <div class="usecase-result-label">Sai sót đối soát</div>
+          <div class="usecase-result-label"><span data-lang="vi">Sai sót đối soát</span><span data-lang="en">Reconciliation error rate</span></div>
         </div>
         <div class="usecase-result-item">
           <div class="usecase-result-num">100%</div>
-          <div class="usecase-result-label">Tự động hóa đối soát</div>
+          <div class="usecase-result-label"><span data-lang="vi">Tự động hóa đối soát</span><span data-lang="en">Reconciliation automated</span></div>
         </div>
         <div class="usecase-result-item">
-          <div class="usecase-result-num">30 phút</div>
-          <div class="usecase-result-label">Xử lý 200 đơn/ngày</div>
+          <div class="usecase-result-num"><span data-lang="vi">30 phút</span><span data-lang="en">30 min</span></div>
+          <div class="usecase-result-label"><span data-lang="vi">Xử lý 200 đơn/ngày</span><span data-lang="en">Process 200 orders/day</span></div>
         </div>
         <div class="usecase-result-item">
           <div class="usecase-result-num">2 NV</div>
-          <div class="usecase-result-label">Tiết kiệm nhân sự kế toán</div>
+          <div class="usecase-result-label"><span data-lang="vi">Tiết kiệm nhân sự kế toán</span><span data-lang="en">Accounting staff saved</span></div>
         </div>
       </div>
     </div>
@@ -2119,30 +2169,30 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Con số nổi bật</span>
-      <h2>Vận hành theo con số</h2>
+      <span class="section-label"><span data-lang="vi">Con số nổi bật</span><span data-lang="en">Key Numbers</span></span>
+      <h2><span data-lang="vi">Vận hành theo con số</span><span data-lang="en">Operate like an enterprise</span></h2>
     </div>
 
     <div class="numbers-grid">
       <div class="number-card reveal reveal-delay-1">
         <div class="num">4</div>
-        <div class="num-label">Loại đối soát</div>
-        <div class="num-desc">Đơn hàng, Affiliate, Reseller, Đại sứ — tự động 100%</div>
+        <div class="num-label"><span data-lang="vi">Loại đối soát</span><span data-lang="en">Reconciliation types</span></div>
+        <div class="num-desc"><span data-lang="vi">Đơn hàng, Affiliate, Reseller, Đại sứ — tự động 100%</span><span data-lang="en">Orders, Affiliate, Reseller, Ambassador — 100% automated</span></div>
       </div>
       <div class="number-card reveal reveal-delay-2">
         <div class="num">4</div>
-        <div class="num-label">Hãng vận chuyển</div>
-        <div class="num-desc">GHN, GHTK, Viettel Post, J&amp;T — tích hợp sẵn</div>
+        <div class="num-label"><span data-lang="vi">Hãng vận chuyển</span><span data-lang="en">Shipping carriers</span></div>
+        <div class="num-desc"><span data-lang="vi">GHN, GHTK, Viettel Post, J&amp;T — tích hợp sẵn</span><span data-lang="en">GHN, GHTK, Viettel Post, J&amp;T — pre-integrated</span></div>
       </div>
       <div class="number-card reveal reveal-delay-3">
         <div class="num">1</div>
-        <div class="num-label">Click tạo đơn</div>
-        <div class="num-desc">Từ xác nhận đến in vận đơn, chỉ 1 thao tác</div>
+        <div class="num-label"><span data-lang="vi">Click tạo đơn</span><span data-lang="en">Click to create order</span></div>
+        <div class="num-desc"><span data-lang="vi">Từ xác nhận đến in vận đơn, chỉ 1 thao tác</span><span data-lang="en">From confirmation to printing label, just 1 action</span></div>
       </div>
       <div class="number-card reveal reveal-delay-4">
         <div class="num">100%</div>
-        <div class="num-label">Tự động hóa</div>
-        <div class="num-desc">Không sai sót, không thủ công, không tranh chấp</div>
+        <div class="num-label"><span data-lang="vi">Tự động hóa</span><span data-lang="en">Automation</span></div>
+        <div class="num-desc"><span data-lang="vi">Không sai sót, không thủ công, không tranh chấp</span><span data-lang="en">No errors, no manual work, no disputes</span></div>
       </div>
     </div>
   </div>
@@ -2152,9 +2202,9 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="section" style="background: var(--bg-white);">
   <div class="container">
     <div class="section-header text-center reveal">
-      <span class="section-label">Tích hợp hệ sinh thái</span>
-      <h2>Backend Vận hành — trung tâm kết nối</h2>
-      <p class="section-subtitle">Nhận dữ liệu từ tất cả giải pháp, xử lý tập trung, đối soát thống nhất</p>
+      <span class="section-label"><span data-lang="vi">Tích hợp hệ sinh thái</span><span data-lang="en">Ecosystem Integration</span></span>
+      <h2><span data-lang="vi">Backend Vận hành — trung tâm kết nối</span><span data-lang="en">Operations Backend — the connection hub</span></h2>
+      <p class="section-subtitle"><span data-lang="vi">Nhận dữ liệu từ tất cả giải pháp, xử lý tập trung, đối soát thống nhất</span><span data-lang="en">Receive data from all solutions, centralized processing, unified reconciliation</span></p>
     </div>
 
     <div class="connections-diagram reveal">
@@ -2165,8 +2215,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="conn-text">
-            <strong>Website TMĐT</strong>
-            <span>Đơn hàng từ web &rarr; vào hệ thống ngay</span>
+            <strong><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce Website</span></strong>
+            <span><span data-lang="vi">Đơn hàng từ web &rarr; vào hệ thống ngay</span><span data-lang="en">Orders from web &rarr; into system instantly</span></span>
           </div>
           <div class="conn-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -2177,8 +2227,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="conn-text">
-            <strong>Giải pháp Affiliate</strong>
-            <span>Đơn qua affiliate link &rarr; ghi nhận tự động</span>
+            <strong><span data-lang="vi">Giải pháp Affiliate</span><span data-lang="en">Affiliate Solution</span></strong>
+            <span><span data-lang="vi">Đơn qua affiliate link &rarr; ghi nhận tự động</span><span data-lang="en">Orders via affiliate link &rarr; auto recorded</span></span>
           </div>
           <div class="conn-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -2192,7 +2242,7 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
           <div class="hub-card-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <div class="hub-card-label">Backend<br>Vận hành</div>
+          <div class="hub-card-label"><span data-lang="vi">Backend<br>Vận hành</span><span data-lang="en">Operations<br>Backend</span></div>
         </div>
       </div>
 
@@ -2206,8 +2256,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <div class="conn-text">
-            <strong>Giải pháp Reseller</strong>
-            <span>Đơn từ đại lý &rarr; đối soát chiết khấu</span>
+            <strong><span data-lang="vi">Giải pháp Reseller</span><span data-lang="en">Reseller Solution</span></strong>
+            <span><span data-lang="vi">Đơn từ đại lý &rarr; đối soát chiết khấu</span><span data-lang="en">Orders from dealers &rarr; discount reconciliation</span></span>
           </div>
         </div>
         <div class="conn-item">
@@ -2218,8 +2268,8 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
           <div class="conn-text">
-            <strong>Giải pháp Đại sứ</strong>
-            <span>Đơn từ đại sứ &rarr; hoa hồng chính xác</span>
+            <strong><span data-lang="vi">Giải pháp Đại sứ</span><span data-lang="en">Ambassador Solution</span></strong>
+            <span><span data-lang="vi">Đơn từ đại sứ &rarr; hoa hồng chính xác</span><span data-lang="en">Orders from ambassadors &rarr; accurate commissions</span></span>
           </div>
         </div>
       </div>
@@ -2231,19 +2281,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
 <section class="cta-section">
   <div class="container">
     <div class="cta-inner">
-      <span class="section-label" style="color: rgba(255,255,255,0.5);">Bắt đầu ngay</span>
-      <h2>Vận hành tự động từ ngày đầu tiên</h2>
-      <p>Demo miễn phí 30 phút — chúng tôi sẽ chạy thử đối soát thực tế với dữ liệu của bạn</p>
+      <span class="section-label" style="color: rgba(255,255,255,0.5);"><span data-lang="vi">Bắt đầu ngay</span><span data-lang="en">Get Started</span></span>
+      <h2><span data-lang="vi">Vận hành tự động từ ngày đầu tiên</span><span data-lang="en">Automated operations from day one</span></h2>
+      <p><span data-lang="vi">Demo miễn phí 30 phút — chúng tôi sẽ chạy thử đối soát thực tế với dữ liệu của bạn</span><span data-lang="en">Free 30-minute demo — we'll run a real reconciliation test with your data</span></p>
       <div class="cta-btn-row">
         <a href="https://calendar.app.google/2PrCTZy9JW2UKfsW7" target="_blank" rel="noopener nofollow" class="btn btn-green btn-lg">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Đặt lịch demo miễn phí
+          <span data-lang="vi">Đặt lịch demo miễn phí</span><span data-lang="en">Book a Free Demo</span>
         </a>
         <a href="../../#solution" class="btn btn-outline-white btn-lg">
-          Xem giải pháp khác
+          <span data-lang="vi">Xem giải pháp khác</span><span data-lang="en">Learn More</span>
         </a>
       </div>
-      <p class="cta-note">Không cần thẻ tín dụng &middot; Demo trực tiếp với chuyên gia &middot; 30 phút</p>
+      <p class="cta-note"><span data-lang="vi">Không cần thẻ tín dụng &middot; Demo trực tiếp với chuyên gia &middot; 30 phút</span><span data-lang="en">No credit card required &middot; Live demo with expert &middot; 30 minutes</span></p>
     </div>
   </div>
 </section>
@@ -2257,18 +2307,18 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
         Diso
       </a>
       <nav class="footer-links">
-        <a href="../../">Trang chủ</a>
-        <a href="../../#solution">Giải pháp</a>
-        <a href="../../comparison/">So sánh</a>
-        <a href="../ecommerce/">Website TMĐT</a>
+        <a href="../../"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
+        <a href="../../#solution"><span data-lang="vi">Giải pháp</span><span data-lang="en">Solution</span></a>
+        <a href="../../comparison/"><span data-lang="vi">So sánh</span><span data-lang="en">Compare</span></a>
+        <a href="../ecommerce/"><span data-lang="vi">Website TMĐT</span><span data-lang="en">E-commerce</span></a>
         <a href="../affiliate/">Affiliate</a>
         <a href="../reseller/">Reseller</a>
-        <a href="../ambassador/">Đại sứ</a>
+        <a href="../ambassador/"><span data-lang="vi">Đại sứ</span><span data-lang="en">Ambassador</span></a>
       </nav>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">&copy; 2026 Diso Commerce Suite. All rights reserved.</p>
-      <p class="footer-tagline">Vận hành thông minh — tăng trưởng bền vững</p>
+      <p class="footer-tagline"><span data-lang="vi">Vận hành thông minh — tăng trưởng bền vững</span><span data-lang="en">Smart operations — sustainable growth</span></p>
     </div>
   </div>
 </footer>
@@ -2305,6 +2355,19 @@ h3 { font-size: clamp(20px, 2.5vw, 24px); }
     });
   });
 })();
+
+// Language toggle
+var langToggle = document.getElementById('langToggle');
+var htmlEl = document.documentElement;
+var savedLang = localStorage.getItem('diso-lang') || 'vi';
+if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
+
+langToggle.addEventListener('click', function() {
+  var current = htmlEl.getAttribute('lang') || 'vi';
+  var next = current === 'vi' ? 'en' : 'vi';
+  htmlEl.setAttribute('lang', next);
+  localStorage.setItem('diso-lang', next);
+});
 
 // Reveal on scroll
 (function() {
