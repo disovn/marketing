@@ -1,0 +1,39 @@
+﻿Loại,Module,Hạng mục,Mô tả,Số chức năng,Phase,Ưu tiên,PM (người),PM (tháng),PM (VNĐ),BA (người),BA (tháng),BA (VNĐ),Design (người),Design (tháng),Design (VNĐ),BE (người),BE (tháng),BE (VNĐ),FE (người),FE (tháng),FE (VNĐ),QC (người),QC (tháng),QC (VNĐ),DevOps (người),DevOps (tháng),DevOps (VNĐ),Tổng (VNĐ)
+Core,M1 - Website TMĐT & Storefront,Core,"Website bán hàng white-label mobile-first: quản lý SP/SKU/biến thể, danh mục & bộ lọc, giỏ hàng, checkout flow, tài khoản KH, white-label branding, SEO built-in, responsive mobile, CMS trang tĩnh, mã giảm giá/voucher, flash sale, tìm kiếm full-text",12,Phase 1,,1,3,180000000,1,1.5,37500000,1,2,50000000,2,3,240000000,2,3,180000000,1,2,50000000,,,,737500000
+Option,M1 - Website TMĐT & Storefront,Zalo Mini App,Storefront trên Zalo — mua hàng trong app Zalo (70M+ users VN),1,Phase 5,MEDIUM,,,,,,,,,,1,2,80000000,1,2,60000000,1,1,25000000,,,,165000000
+Option,M1 - Website TMĐT & Storefront,PWA,"Progressive Web App — cài website như app trên điện thoại, push notification, thay thế mobile app",1,Phase 5,LOW,,,,,,,,,,,,,1,1.5,45000000,1,0.5,12500000,,,,57500000
+Core,M2 - Bán hàng Đa kênh,Core,"Đồng bộ Shopee + Lazada: SP/đơn/tồn kho 2 chiều, quản lý SP đa kênh (1 nơi push nhiều sàn), đồng bộ tồn kho real-time tránh oversell, đồng bộ đơn/giá, mapping danh mục, báo cáo đa kênh, xử lý đơn tập trung, quản lý trả hàng đa kênh",10,Phase 2,,1,2.5,150000000,1,1.5,37500000,,,,2,3,240000000,1,2,60000000,1,2,50000000,,,,537500000
+Option,M2 - Bán hàng Đa kênh,Pancake,Tích hợp Pancake — quản lý đơn hàng/chat/CRM đa kênh (tool phổ biến VN),1,Phase 2,HIGH,,,,,,,,,,1,1.5,60000000,1,1,30000000,1,0.5,12500000,,,,102500000
+Option,M2 - Bán hàng Đa kênh,TikTok Shop,Đồng bộ SP + đơn từ TikTok Shop (kênh đang tăng mạnh),1,Phase 3,HIGH,,,,,,,,,,1,2,80000000,1,1,30000000,1,1,25000000,,,,135000000
+Core,M3 - Thanh toán & COD,Core,"VNPay (ATM/Visa/QR), MoMo (31M+ users), COD thu hộ + đối soát, chuyển khoản ngân hàng, VietQR tự động, quản lý giao dịch, refund/hoàn tiền partial, payment webhook real-time, báo cáo thanh toán",10,Phase 1,,1,2,120000000,1,1,25000000,,,,2,3,240000000,1,1.5,45000000,1,2,50000000,,,,480000000
+Option,M3 - Thanh toán & COD,ZaloPay,Thanh toán qua ví ZaloPay — hệ sinh thái Zalo,1,Phase 5,MEDIUM,,,,,,,,,,1,1.5,60000000,,,,1,0.5,12500000,,,,72500000
+Option,M3 - Thanh toán & COD,BNPL,Mua trước trả sau — tích hợp Fundiin/Kredivo (thị trường BNPL tăng 36.5%/năm),1,Phase 5,LOW,,,,,,,,,,1,2,80000000,1,1,30000000,1,0.5,12500000,,,,122500000
+Core,M4 - Vận chuyển & Fulfillment,Core,"Tích hợp GHN + GHTK + Viettel Post: tạo vận đơn 1 click, so sánh phí ship auto, tracking real-time, in phiếu giao hàng, webhook trạng thái, xử lý hoàn hàng, hệ thống địa chỉ VN (Tỉnh→Quận→Phường)",10,Phase 1,,1,2,120000000,1,1,25000000,,,,2,2.5,200000000,1,1.5,45000000,1,1.5,37500000,,,,427500000
+Option,M4 - Vận chuyển & Fulfillment,J&T + Ninja Van,Thêm 2 hãng vận chuyển: J&T Express (phổ biến COD) + Ninja Van (ĐNA),2,Phase 5,MEDIUM,,,,,,,,,,1,2,80000000,,,,1,1,25000000,,,,105000000
+Core,M5 - Quản lý Đơn hàng & OMS,Core,"Dashboard đơn hàng tập trung, xử lý đơn (xác nhận/hủy/split/gộp), trạng thái real-time, tồn kho (nhập/xuất/cảnh báo), đối soát 4 loại (đơn hàng + affiliate + reseller + đại sứ), export Excel/PDF, phân quyền RBAC, xử lý đổi trả, audit log",12,Phase 2,,1,3,180000000,1,2,50000000,,,,2,3.5,280000000,2,3,180000000,1,2.5,62500000,,,,752500000
+Option,M5 - Quản lý Đơn hàng & OMS,MISA kế toán,Đồng bộ đơn hàng/doanh thu/công nợ sang MISA — phần mềm kế toán phổ biến nhất VN,1,Phase 2,HIGH,,,,1,1,25000000,,,,1,2,80000000,,,,1,1,25000000,,,,130000000
+Option,M5 - Quản lý Đơn hàng & OMS,E-Invoice,"Hóa đơn điện tử tự động — generate HĐĐT, submit GDT, tích hợp FPT.eInvoice/MISA (bắt buộc theo luật)",1,Phase 4,HIGH,,,,1,1,25000000,,,,1,2.5,100000000,1,1,30000000,1,1,25000000,,,,180000000
+Core,M6 - Affiliate Marketing,Core,"Quản lý campaign, link tracking riêng/affiliate, hoa hồng theo SP/tier/campaign, dashboard affiliate tự xem, duyệt affiliate (approve/reject/blacklist), mã giảm giá riêng, promotion tools (banner/landing page), chống gian lận (click ảo/IP/device fingerprint), đối soát & chi trả tuần/tháng, báo cáo ROI",12,Phase 3,,1,2.5,150000000,1,1.5,37500000,,,,2,3,240000000,1,2.5,75000000,1,2,50000000,,,,552500000
+Core,M7 - Reseller Network,Core,"Reseller storefront riêng (URL/branding), đăng ký & quản lý đội ngũ, hoa hồng theo doanh số, tier system (Bronze→Platinum auto-upgrade), mã giới thiệu referral, dashboard reseller, gamification (bảng xếp hạng + nhiệm vụ + đổi quà), đối soát & chi trả, báo cáo network/churn",12,Phase 3,,1,2.5,150000000,1,1.5,37500000,1,1.5,37500000,2,3,240000000,2,3,180000000,1,2,50000000,,,,695000000
+Core,M8 - Đại sứ Thương hiệu,Core,"Tạo campaign (brief/SP/hashtag/deadline), điều kiện tham gia, tuyển đại sứ, tích hợp 4 nền tảng (TikTok/YouTube/Facebook/Instagram), duyệt nội dung (submit→review→approve), analytics chi tiết (views/engagement), chống gian lận fake views/followers, thưởng theo thống kê + milestone, đối soát & chi trả, báo cáo campaign ROI",14,Phase 4,,1,3,180000000,1,1.5,37500000,,,,2,3.5,280000000,1,2.5,75000000,1,2,50000000,,,,622500000
+Core,M9 - CRM Loyalty & Chăm sóc KH,Core,"Database KH + phân nhóm (RFM segmentation), lịch sử tương tác, loyalty tích điểm + đổi thưởng + hạng thành viên (Member→Platinum), email marketing (abandoned cart/KM), SMS notification, voucher cá nhân hóa (sinh nhật/VIP), báo cáo CRM (CLV/churn rate)",10,Phase 4,,1,2.5,150000000,1,1.5,37500000,1,1,25000000,2,3,240000000,1,2.5,75000000,1,2,50000000,,,,577500000
+Option,M9 - CRM Loyalty & Chăm sóc KH,Zalo OA Full,Zalo Official Account: gửi thông báo + chatbot tự động trả lời + broadcast tin nhắn hàng loạt theo segment (70M+ users),3,Phase 4,HIGH,,,,1,1,25000000,,,,1,2.5,100000000,1,1.5,45000000,1,1,25000000,,,,195000000
+Core,M10 - Admin Analytics & Infra,Core,"Admin dashboard tổng quan, doanh thu real-time, báo cáo theo kênh, top products/margin, RBAC phân quyền chi tiết, audit log, cloud hosting (AWS/GCP) auto-scaling, CI/CD pipeline, monitoring & alerting, PostgreSQL + backup/replication, CDN & Redis cache, SSL & OWASP, API gateway (rate limiting/versioning), backup & disaster recovery",14,Phase 1-4,,1,2,120000000,,,,,,,1,3,120000000,1,2,60000000,1,1.5,37500000,1,12,480000000,817500000
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+TỔNG HỢP,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Tổng Core,,,,,,,,,,,,,,,,,,,,,,,,,,,6200000000
+,Tổng Options,,,,,,,,,,,,,,,,,,,,,,,,,,,1265000000
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+KỊCH BẢN,,Mô tả,,,,,,,,,,,,,,,,,,,,,,,,,,Tổng (VNĐ)
+KB1,,Core Only,,,,,,,,,,,,,,,,,,,,,,,,,,6200000000
+KB2,,Core + Options ưu tiên cao (Pancake + TikTok Shop + MISA + E-Invoice + Zalo OA),,,,,,,,,,,,,,,,,,,,,,,,,,6942500000
+KB3,,Full — Core + tất cả 10 Options (thêm Zalo Mini App / PWA / ZaloPay / BNPL / J&T+Ninja Van),,,,,,,,,,,,,,,,,,,,,,,,,,7465000000
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+PHASE,,Tên,Mô tả,,,,,,,,,,,,,,,,,,,,,,,,,Chi phí (VNĐ)
+Phase 1,,Nền tảng (Tháng 1-3),M1 Website + M3 Thanh toán + M4 Vận chuyển + M10 Infra bắt đầu → Website bán hàng LIVE,,,,,,,,,,,,,,,,,,,,,,,,,1765000000
+Phase 2,,Vận hành (Tháng 4-6),M5 OMS + M2 Omnichannel + Options Pancake/MISA → Shopee+Lazada đồng bộ / 1 dashboard quản lý,,,,,,,,,,,,,,,,,,,,,,,,,1642500000
+Phase 3,,Tăng trưởng (Tháng 7-9),M6 Affiliate + M7 Reseller + Option TikTok Shop → Kênh phân phối mở rộng / gamification,,,,,,,,,,,,,,,,,,,,,,,,,1502500000
+Phase 4,,Brand & CRM (Tháng 10-12),M8 Đại sứ + M9 CRM/Loyalty + Options Zalo OA/E-Invoice → Full Commerce Platform,,,,,,,,,,,,,,,,,,,,,,,,,1695000000
+Phase 5,,Mở rộng (Tháng 13-18),Các options còn lại: Zalo Mini App / PWA / ZaloPay / BNPL / J&T+Ninja Van + tối ưu/scale,,,,,,,,,,,,,,,,,,,,,,,,,860000000
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RATE,,,,,,,PM: 60tr/th,,BA: 25tr/th,,Design: 25tr/th,,BE: 40tr/th,,FE: 30tr/th,,QC: 25tr/th,,DevOps: 40tr/th,,,,,,,,,

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline Dự Án 2026 — Diso Internal</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600&subset=vietnamese&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1B365D;
+  --primary-light: #243f6b;
+  --secondary: #368CBF;
+  --secondary-light: #4da3d4;
+  --accent: #FF6F61;
+  --accent-hover: #ff5a4a;
+  --bg-white: #FFFFFF;
+  --bg-light: #F4F6F8;
+  --bg-dark: #0F1F33;
+  --text-dark: #263238;
+  --text-muted: #5A6B7B;
+  --text-light: #8A9AAA;
+  --border-light: #E2E8F0;
+  --green: #2D9C6F;
+  --green-light: #E8F5EE;
+  --yellow: #F5A623;
+  --yellow-light: #FFF8E8;
+  --red: #E53935;
+  --red-light: #FEECEC;
+  --blue: #368CBF;
+  --blue-light: #EBF5FB;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --font-heading: 'Be Vietnam Pro', sans-serif;
+  --font-body: 'Inter', 'Be Vietnam Pro', sans-serif;
+  --container: 1200px;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--text-dark); background: var(--bg-light); }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+/* ========================================
+   HEADER
+   ======================================== */
+.header {
+  background: var(--primary);
+  color: white;
+  padding: 32px 0;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.header h1 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+}
+.header .subtitle {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+.header-badge {
+  background: rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+}
+.header-badge strong { color: var(--accent); }
+
+/* ========================================
+   KPI CARDS
+   ======================================== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 24px auto 40px;
+  position: relative;
+  z-index: 2;
+}
+.kpi-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: var(--transition);
+}
+.kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.kpi-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.kpi-value {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.kpi-value.accent { color: var(--accent); }
+.kpi-value.green { color: var(--green); }
+.kpi-sub {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* ========================================
+   SECTION
+   ======================================== */
+.section { margin-bottom: 40px; }
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title .icon { font-size: 24px; }
+
+/* ========================================
+   PROJECT TABLE
+   ======================================== */
+.table-wrapper {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+table { width: 100%; border-collapse: collapse; min-width: 1000px; }
+thead { background: var(--primary); color: white; }
+th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+td {
+  padding: 14px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+tbody tr:hover { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: none; }
+
+.project-name {
+  font-weight: 600;
+  color: var(--primary);
+}
+.contact { color: var(--text-muted); }
+.amount {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.amount.total { color: var(--primary); font-size: 15px; }
+
+/* Probability badge */
+.prob-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.prob-100 { background: var(--green-light); color: var(--green); }
+.prob-75 { background: var(--blue-light); color: var(--blue); }
+.prob-50 { background: var(--yellow-light); color: var(--yellow); }
+.prob-25 { background: var(--red-light); color: var(--red); }
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.progress-fill.green { background: var(--green); }
+.progress-fill.blue { background: var(--blue); }
+.progress-fill.yellow { background: var(--yellow); }
+
+/* Status */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-active { background: var(--green-light); color: var(--green); }
+.status-pipeline { background: var(--blue-light); color: var(--blue); }
+.status-prospect { background: var(--yellow-light); color: var(--yellow); }
+.status-quote { background: #F3E8FF; color: #7C3AED; }
+
+/* Total row */
+.total-row { background: #f1f5f9 !important; }
+.total-row td { font-weight: 700; border-top: 2px solid var(--primary); }
+
+/* ========================================
+   CHART BAR (CSS-only)
+   ======================================== */
+.chart-section {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 32px;
+}
+.chart-bar-group { display: flex; flex-direction: column; gap: 16px; }
+.chart-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 120px;
+  align-items: center;
+  gap: 16px;
+}
+.chart-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: right;
+}
+.chart-bar-track {
+  height: 32px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+.chart-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  transition: width 0.8s ease;
+  min-width: 40px;
+}
+.chart-bar-fill.deal { background: linear-gradient(135deg, var(--secondary), var(--primary)); }
+.chart-bar-fill.weighted { background: linear-gradient(135deg, var(--green), #1a8a5a); }
+.chart-amount {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========================================
+   PIPELINE FUNNEL (CSS-only)
+   ======================================== */
+.funnel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.funnel-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  border-top: 4px solid;
+}
+.funnel-card.won { border-top-color: var(--green); }
+.funnel-card.likely { border-top-color: var(--blue); }
+.funnel-card.possible { border-top-color: var(--yellow); }
+.funnel-value {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  margin: 12px 0 4px;
+}
+.funnel-card.won .funnel-value { color: var(--green); }
+.funnel-card.likely .funnel-value { color: var(--blue); }
+.funnel-card.possible .funnel-value { color: var(--yellow); }
+.funnel-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+.funnel-detail {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+/* ========================================
+   PROJECT CARDS (detail)
+   ======================================== */
+.project-cards { display: flex; flex-direction: column; gap: 20px; }
+.project-card {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.project-card:hover { box-shadow: var(--shadow-md); }
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.project-card-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.project-card-body {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.detail-item label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+.detail-item .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.project-card-footer {
+  padding: 16px 24px;
+  background: #f8fafc;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 6px;
+}
+.tag-tech { background: #EDE7F6; color: #5E35B1; }
+.tag-product { background: #E3F2FD; color: #1565C0; }
+.tag-source { background: #FFF3E0; color: #E65100; }
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  color: var(--text-light);
+  font-size: 13px;
+}
+.footer strong { color: var(--text-muted); }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); margin-top: -24px; }
+  .kpi-value { font-size: 24px; }
+  .header h1 { font-size: 22px; }
+  .funnel-grid { grid-template-columns: 1fr; }
+  .chart-row { grid-template-columns: 1fr; gap: 4px; }
+  .chart-label { text-align: left; }
+}
+@media (max-width: 480px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+}
+
+/* Print styles */
+@media print {
+  body { background: white; }
+  .header { background: white; color: var(--primary); border-bottom: 3px solid var(--primary); }
+  .header-badge { border: 1px solid var(--border-light); }
+  .kpi-card, .table-wrapper, .chart-section, .funnel-card, .project-card { box-shadow: none; border: 1px solid var(--border-light); }
+  .project-card:hover, .kpi-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     HEADER
+     ======================================== -->
+<header class="header">
+  <div class="container header-inner">
+    <div>
+      <h1>Pipeline Dự Án 2026</h1>
+      <div class="subtitle">Báo cáo nội bộ — Hội đồng Quản trị</div>
+    </div>
+    <div class="header-badge">
+      Cập nhật: <strong>24/03/2026</strong>
+    </div>
+  </div>
+</header>
+
+<!-- ========================================
+     KPI SUMMARY
+     ======================================== -->
+<div class="container">
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Tổng Pipeline</div>
+      <div class="kpi-value">7,05 tỷ</div>
+      <div class="kpi-sub">5 dự án</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Dự báo Có trọng số</div>
+      <div class="kpi-value accent">5,04 tỷ</div>
+      <div class="kpi-sub">71.5% pipeline</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Đã Ký / Won</div>
+      <div class="kpi-value green">2,00 tỷ</div>
+      <div class="kpi-sub">1 dự án — 100%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Sale phụ trách</div>
+      <div class="kpi-value">Vĩnh</div>
+      <div class="kpi-sub">5/5 dự án</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================
+     PIPELINE BY PROBABILITY (FUNNEL)
+     ======================================== -->
+<div class="container section">
+  <div class="section-title"><span class="icon">&#9632;</span> Phân bổ Pipeline theo Xác suất</div>
+  <div class="funnel-grid">
+    <div class="funnel-card won">
+      <div class="funnel-label">Won — 100%</div>
+      <div class="funnel-value">2,00 tỷ</div>
+      <div class="funnel-detail">1 dự án: Techcombank</div>
+    </div>
+    <div class="funnel-card likely">
+      <div class="funnel-label">Likely — 75%</div>
+      <div class="funnel-value">2,05 tỷ</div>
+      <div class="funnel-detail">2 dự án: VCreator Global, Trường Nhân</div>
+    </div>
+    <div class="funnel-card possible">
+      <div class="funnel-label">Possible — 50%</div>
+      <div class="funnel-value">3,00 tỷ</div>
+      <div class="funnel-detail">2 dự án: AT Scan &amp; Go, Trường Sinh</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================
+     PROJECT TABLE
+     ======================================== -->
+<div class="container section">
+  <div class="section-title"><span class="icon">&#9633;</span> Chi tiết Dự án</div>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Dự án</th>
+          <th>Product Suite</th>
+          <th>Khách hàng</th>
+          <th>Sale</th>
+          <th style="text-align:right">Giá trị Deal</th>
+          <th>Xác suất</th>
+          <th style="text-align:right">Dự báo</th>
+          <th>Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="project-name">Techcombank</td>
+          <td><span class="tag tag-product">Ambassador Enterprise</span></td>
+          <td class="contact">AccessTrade</td>
+          <td>Vĩnh</td>
+          <td class="amount">2.000.000.000</td>
+          <td><span class="prob-badge prob-100">&#9679; 100%</span></td>
+          <td class="amount">2.000.000.000</td>
+          <td><span class="status-badge status-active">&#9679; Đã ký</span></td>
+        </tr>
+        <tr>
+          <td class="project-name">VCreator Global</td>
+          <td><span class="tag tag-product">Ambassador Enterprise</span></td>
+          <td class="contact">AccessTrade</td>
+          <td>Vĩnh</td>
+          <td class="amount">1.650.000.000</td>
+          <td><span class="prob-badge prob-75">&#9679; 75%</span></td>
+          <td class="amount">1.237.500.000</td>
+          <td><span class="status-badge status-pipeline">&#9679; Đang đàm phán</span></td>
+        </tr>
+        <tr>
+          <td class="project-name">AT Scan &amp; Go</td>
+          <td><span class="tag tag-product">Scan &amp; Go</span></td>
+          <td class="contact">AccessTrade</td>
+          <td>Vĩnh</td>
+          <td class="amount">2.000.000.000</td>
+          <td><span class="prob-badge prob-50">&#9679; 50%</span></td>
+          <td class="amount">1.000.000.000</td>
+          <td><span class="status-badge status-quote">&#9679; Báo giá</span></td>
+        </tr>
+        <tr>
+          <td class="project-name">Trường Nhân</td>
+          <td><span class="tag tag-product">Ecommerce Suite — Starter</span></td>
+          <td class="contact">Hạnh</td>
+          <td>Vĩnh</td>
+          <td class="amount">400.000.000</td>
+          <td><span class="prob-badge prob-75">&#9679; 75%</span></td>
+          <td class="amount">300.000.000</td>
+          <td><span class="status-badge status-pipeline">&#9679; Đang đàm phán</span></td>
+        </tr>
+        <tr>
+          <td class="project-name">Trường Sinh</td>
+          <td><span class="tag tag-product">Ecommerce Suite — Scale</span></td>
+          <td class="contact">Hạnh</td>
+          <td>Vĩnh</td>
+          <td class="amount">1.000.000.000</td>
+          <td><span class="prob-badge prob-50">&#9679; 50%</span></td>
+          <td class="amount">500.000.000</td>
+          <td><span class="status-badge status-prospect">&#9679; Tiềm năng</span></td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="4"><strong>TỔNG CỘNG</strong></td>
+          <td class="amount total">7.050.000.000</td>
+          <td></td>
+          <td class="amount total">5.037.500.000</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========================================
+     WEIGHTED FORECAST — Stacked Progress Bar
+     ======================================== -->
+<div class="container section">
+  <div class="section-title"><span class="icon">&#9644;</span> Dự báo Có trọng số</div>
+  <div class="chart-section">
+    <!-- Legend -->
+    <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:20px; font-size:13px;">
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:var(--green)"></span><span style="color:var(--text-muted)">Techcombank — 2,00 tỷ (39,7%)</span></span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:var(--secondary)"></span><span style="color:var(--text-muted)">VCreator Global — 1,24 tỷ (24,6%)</span></span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:var(--primary)"></span><span style="color:var(--text-muted)">AT Scan &amp; Go — 1,00 tỷ (19,9%)</span></span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:var(--yellow)"></span><span style="color:var(--text-muted)">Trường Sinh — 0,50 tỷ (9,9%)</span></span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:var(--accent)"></span><span style="color:var(--text-muted)">Trường Nhân — 0,30 tỷ (6,0%)</span></span>
+    </div>
+    <!-- Stacked bar: total weighted = 5.0375 tỷ = 100% -->
+    <div style="width:100%;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);overflow:hidden;display:flex">
+      <div style="width:39.7%;height:100%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white">2,00 tỷ</div>
+      <div style="width:24.6%;height:100%;background:var(--secondary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white">1,24 tỷ</div>
+      <div style="width:19.9%;height:100%;background:var(--primary);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white">1,00 tỷ</div>
+      <div style="width:9.9%;height:100%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white">0,50</div>
+      <div style="width:6.0%;height:100%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white">0,30</div>
+    </div>
+    <!-- Total -->
+    <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:baseline">
+      <span style="font-size:14px;color:var(--text-muted)">Tổng Weighted Forecast</span>
+      <span style="font-family:var(--font-heading);font-size:24px;font-weight:800;color:var(--primary)">5,04 tỷ</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="container">
+    <strong>Diso Commerce Suite</strong> — Tài liệu nội bộ, không phân phối bên ngoài.<br>
+    Cập nhật lần cuối: 24/03/2026
+  </div>
+</footer>
+
+</body>
+</html>
