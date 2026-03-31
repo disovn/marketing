@@ -129,33 +129,79 @@ Thay vì đầu tư build toàn bộ nền tảng ecommerce từ đầu, Diso s�
 
 ---
 
-## 4. TỔNG VỐN ĐẦU TƯ & PHÂN BỔ
+## 4. TỔNG VỐN ĐẦU TƯ & PHÂN BỔ — 2 OPTION
 
-### Tổng chi phí phát triển sản phẩm
+Diso có 2 chiến lược build product, khác nhau về chi phí, timeline, và rủi ro:
 
-| Hạng mục | Chi phí (VNĐ) |
-|----------|---------------|
-| **10 module Core** | 6.200.000.000 |
-| **Options ưu tiên cao** (Pancake, TikTok Shop, MISA, E-Invoice, Zalo OA) | 742.500.000 |
-| **Vận hành & marketing (12 tháng)** | ~1.500.000.000 |
-| **Dự phòng (15%)** | ~1.266.000.000 |
-| **TỔNG VỐN CẦN HUY ĐỘNG** | **~9.700.000.000 (~9.7 tỷ VNĐ)** |
+- **Option A — Tự build toàn bộ:** Build 10 module từ đầu, sở hữu 100% code ngay
+- **Option B — Vendor Partnership (Đề xuất):** Dùng nền tảng ecommerce có sẵn từ vendor, Diso chỉ build module lõi (Distribution Engine), tự sale & vận hành, đạt ~10 KH thì mua đứt source code
 
-### Phân bổ vốn
+### 4.1. Phân loại module: Vendor lo vs Diso tự build
 
-```
-┌──────────────────────────────────────────────────────┐
-│                 PHÂN BỔ VỐN ~9.7 TỶ                  │
-│                                                       │
-│  ██████████████████████████  Phát triển sản phẩm 72% │
-│  ██████████                  Vận hành & Marketing 15% │
-│  ████████                    Dự phòng 13%             │
-└──────────────────────────────────────────────────────┘
-```
+| Module | Chi phí tự build | Option A | Option B |
+|--------|-----------------|----------|----------|
+| M1. Website TMĐT | 737.500.000 | Tự build | **Vendor cung cấp** |
+| M2. Omnichannel | 537.500.000 | Tự build | **Vendor cung cấp** |
+| M3. Thanh toán | 480.000.000 | Tự build | **Vendor cung cấp** |
+| M4. Vận chuyển | 427.500.000 | Tự build | **Vendor cung cấp** |
+| M5. OMS & Đối soát | 752.500.000 | Tự build | **Vendor cơ bản** + Diso build đối soát 4 loại |
+| M6. Affiliate | 552.500.000 | Tự build | **Diso tự build (MOAT)** |
+| M7. Reseller | 695.000.000 | Tự build | **Diso tự build (MOAT)** |
+| M8. Ambassador | 622.500.000 | Tự build | **Diso tự build (đã có)** |
+| M9. CRM/Loyalty | 577.500.000 | Tự build | **Vendor cơ bản** + Diso customize |
+| M10. Admin/Infra | 817.500.000 | Tự build | **Diso tự build** (gọn hơn, tích hợp vendor) |
+
+> **Nguyên tắc Option B:** Website, thanh toán, vận chuyển, OMS cơ bản, omnichannel — ai cũng làm được, vendor đã có sẵn. Diso chỉ tự build những gì tạo **competitive advantage** (Distribution Engine + Đối soát + Admin).
+
+### 4.2. So sánh chi phí phát triển
+
+#### Chi phí vendor (Option B)
+
+| Hạng mục | Chi phí ước tính | Ghi chú |
+|----------|-----------------|---------|
+| **Phí sử dụng nền tảng vendor** | ~10-20 triệu/tháng | SaaS fee hoặc license fee, tùy vendor |
+| **Chi phí tích hợp vendor** (1 lần) | ~200-400 triệu | API integration, custom theme, data sync |
+| **Phí vendor per-tenant** (per KH) | ~1-3 triệu/tháng/KH | Tùy mô hình vendor: flat fee hoặc % GMV |
+| **Chi phí mua đứt source code** | ~500 triệu - 1.5 tỷ | Khi đạt ~10 KH, thương lượng mua source |
+
+> *Giá vendor thực tế phụ thuộc vào đối tác cụ thể. Các mức trên là ước tính conservative dựa trên thị trường VN (Medusa.js open-source miễn phí, vendor VN ~10-30tr/tháng, hoặc mua source từ agency ~500tr-1.5 tỷ).*
+
+#### So sánh tổng chi phí 2 Option
+
+| | **Option A — Tự build** | **Option B — Vendor (Đề xuất)** |
+|---|---|---|
+| **Module Diso tự build** | 10 module = 6.200.000.000 | 4 module lõi (M6+M7+M8+M10) + đối soát M5 + customize M9 ≈ **3.000.000.000** |
+| **Options ưu tiên cao** | 742.500.000 | ~400.000.000 (một số vendor đã có sẵn Pancake, TikTok Shop) |
+| **Chi phí vendor** | — | Tích hợp ~300tr + phí ~15tr/th × 12 tháng = **~480.000.000** |
+| **Mua source code** (tháng 12-18) | — | **~800.000.000** (budget dự kiến) |
+| **Vận hành & marketing (12 tháng)** | ~1.500.000.000 | **~1.200.000.000** (team nhỏ hơn) |
+| **Dự phòng (15%)** | ~1.266.000.000 | **~780.000.000** |
+| | | |
+| **TỔNG VỐN CẦN HUY ĐỘNG** | **~9.700.000.000** | **~6.000.000.000** |
+| **Tiết kiệm** | — | **~3.7 tỷ (38%)** |
+
+### 4.3. So sánh toàn diện 2 Option
+
+| Tiêu chí | **Option A — Tự build** | **Option B — Vendor (Đề xuất)** |
+|-----------|---|---|
+| **Tổng vốn** | ~9.7 tỷ | **~6 tỷ** |
+| **Thời gian ra sản phẩm ecommerce** | Tháng 4-6 (build xong Phase 1+2) | **Tháng 1-2** (vendor sẵn có, chỉ tích hợp) |
+| **Doanh thu đầu tiên** | Tháng 4-6 (Ambassador + Starter) | **Tháng 1** (Ambassador) + **Tháng 2-3** (Starter qua vendor) |
+| **Full platform** | Tháng 12 | **Tháng 9-10** |
+| **Sở hữu source code** | 100% từ ngày 1 | Mua đứt khi đạt ~10 KH (tháng 12-18) |
+| **Rủi ro phụ thuộc vendor** | Không | Có — giảm thiểu bằng hợp đồng + lộ trình mua source |
+| **Team size cần thiết** | 5→9→12→14 người | **3→6→9→11 người** |
+| **Chi phí nhân sự/tháng (trung bình)** | ~310 triệu | **~210 triệu** |
+| **Breakeven vận hành** | Tháng 13-15 | **Tháng 10-12** |
+| **Hoàn vốn đầu tư** | Tháng 23-24 | **Tháng 16-18** |
+| **Flexibility customize** | Cao — sửa bất kỳ gì | Hạn chế cho phần vendor (trước khi mua source) |
+| **Phù hợp khi** | Có đủ vốn, muốn kiểm soát 100% từ đầu | **Vốn hạn chế, cần revenue sớm, validate PMF nhanh** |
+
+> **Đề xuất: Option B** — Ra thị trường nhanh hơn, vốn thấp hơn, validate product-market fit sớm. Khi đạt 10 KH (chứng minh PMF), mua source code để tự chủ hoàn toàn. Rủi ro vendor được kiểm soát bằng hợp đồng có điều khoản mua source và SLA rõ ràng.
 
 ---
 
-## 5. LỘ TRÌNH TUYỂN DỤNG & XÂY DỰNG ĐỘI NGŨ
+## 5. LỘ TRÌNH XÂY DỰNG SẢN PHẨM & ĐỘI NGŨ
 
 ### Phase 0: Founding Team (Tháng 0 — trước khi code)
 
@@ -167,7 +213,11 @@ Thay vì đầu tư build toàn bộ nền tảng ecommerce từ đầu, Diso s�
 
 > Chi phí: Founder không lương hoặc lương tối thiểu giai đoạn đầu.
 
-### Phase 1: Core Team (Tháng 1-3) — Xây nền tảng
+---
+
+### OPTION A — Tự build toàn bộ
+
+#### Phase 1A (Tháng 1-3): Xây nền tảng Commerce
 
 | Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
 |--------|-----------|------|------------|-----------------|
@@ -177,15 +227,9 @@ Thay vì đầu tư build toàn bộ nền tảng ecommerce từ đầu, Diso s�
 | QC | 1 | 1 | 25.000.000 | 75.000.000 |
 | **Tổng** | **+5** | **5 người** | **195 triệu/tháng** | **585.000.000** |
 
-> *DevOps Phase 1 do 1 BE Senior kiêm nhiệm (setup CI/CD, infrastructure ban đầu). DevOps full-time tuyển từ Phase 2 khi hệ thống phức tạp hơn.*
+**Đầu ra:** Website TMĐT white-label LIVE, Thanh toán (VNPay+MoMo+COD), Vận chuyển (GHN+GHTK+VTP), CI/CD
 
-**Sản phẩm đầu ra Phase 1:**
-- Website TMĐT white-label LIVE
-- Thanh toán VNPay + MoMo + COD hoạt động
-- Vận chuyển GHN + GHTK + Viettel Post
-- CI/CD & infrastructure nền tảng
-
-### Phase 2: Mở rộng Team (Tháng 4-6) — Vận hành
+#### Phase 2A (Tháng 4-6): Vận hành + Ambassador bán được
 
 | Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
 |--------|-----------|------|------------|-----------------|
@@ -196,29 +240,21 @@ Thay vì đầu tư build toàn bộ nền tảng ecommerce từ đầu, Diso s�
 | Team cũ | — | 5 | 195.000.000 | 585.000.000 |
 | **Tổng** | **+4** | **9 người** | **295 triệu/tháng** | **885.000.000** |
 
-**Sản phẩm đầu ra Phase 2:**
-- OMS — quản lý đơn hàng tập trung, đối soát 4 loại
-- Omnichannel — Shopee + Lazada đồng bộ
-- Tích hợp Pancake + MISA kế toán
-- **→ Sẵn sàng onboard khách hàng đầu tiên (gói Starter)**
+**Đầu ra:** OMS + đối soát 4 loại, Omnichannel (Shopee+Lazada), Pancake+MISA → **Sẵn sàng bán gói Starter**
 
-### Phase 3: Growth Team (Tháng 7-9) — Tăng trưởng
+#### Phase 3A (Tháng 7-9): Distribution Engine
 
 | Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
 |--------|-----------|------|------------|-----------------|
 | BE Junior | +1 | 3 BE | 25.000.000 | 75.000.000 |
 | Sales/BD | +1 | 1 | 20.000.000 | 60.000.000 |
-| CS (Customer Success) | +1 | 1 | 15.000.000 | 45.000.000 |
+| CS | +1 | 1 | 15.000.000 | 45.000.000 |
 | Team cũ | — | 9 | 295.000.000 | 885.000.000 |
 | **Tổng** | **+3** | **12 người** | **355 triệu/tháng** | **1.065.000.000** |
 
-**Sản phẩm đầu ra Phase 3:**
-- Affiliate Marketing system
-- Reseller Network + Gamification
-- TikTok Shop integration
-- **→ Ra mắt gói Growth, bắt đầu có doanh thu định kỳ**
+**Đầu ra:** Affiliate Marketing, Reseller Network + Gamification, TikTok Shop → **Ra mắt gói Growth**
 
-### Phase 4: Full Team (Tháng 10-12) — Brand & CRM
+#### Phase 4A (Tháng 10-12): Full Platform
 
 | Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
 |--------|-----------|------|------------|-----------------|
@@ -227,33 +263,136 @@ Thay vì đầu tư build toàn bộ nền tảng ecommerce từ đầu, Diso s�
 | Team cũ | — | 12 | 355.000.000 | 1.065.000.000 |
 | **Tổng** | **+2** | **14 người** | **395 triệu/tháng** | **1.185.000.000** |
 
-**Sản phẩm đầu ra Phase 4:**
-- Ambassador program (đã proven với 11+ brands)
-- CRM + Loyalty + Zalo OA
-- E-Invoice tự động
-- **→ Full platform, ra mắt gói Ultimate**
-
-### Tổng quan đội ngũ theo thời gian
+**Đầu ra:** Ambassador program, CRM+Loyalty+Zalo OA, E-Invoice → **Full platform, gói Ultimate**
 
 ```
-Tháng:    1───3     4───6     7───9     10──12    13──18
-          │         │         │         │         │
-Headcount:│  5      │  9      │  12     │  14     │  14-16
-          │         │         │         │         │
-Chi phí/  │ 195tr   │ 295tr   │ 355tr   │ 395tr   │ 395-430tr
-tháng:    │         │         │         │         │
+Option A Timeline:
+Tháng:    1───3          4───6          7───9          10──12
+          │              │              │              │
+Team:     │  5 người     │  9 người     │  12 người    │  14 người
+          │  195tr/th    │  295tr/th    │  355tr/th    │  395tr/th
+          │              │              │              │
+Build:    │  Website     │  OMS         │  Affiliate   │  Ambassador
+          │  Thanh toán  │  Omnichannel │  Reseller    │  CRM/Loyalty
+          │  Vận chuyển  │              │              │
+          │              │              │              │
+Bán:      │  Ambassador  │  + Starter   │  + Growth    │  + Ultimate
+          │  Only        │              │              │
+```
 
-Tuyển:    PM        DevOps    BE Jr     Marketing  Tùy nhu cầu
-          2 BE Sr   BA        Sales     Sales
-          FE Sr     FE Jr     CS
-          QC        Design(PT)
+---
+
+### OPTION B — Vendor Partnership (Đề xuất)
+
+> **Nguyên tắc:** Vendor cung cấp tầng Commerce (Website, Thanh toán, Vận chuyển, OMS cơ bản, Omnichannel). Diso tập trung build Distribution Engine (MOAT) + tích hợp. Diso tự chủ toàn bộ sales & relationship với khách hàng.
+
+#### Phase 1B (Tháng 1-3): Tích hợp Vendor + Ambassador bán ngay
+
+| Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
+|--------|-----------|------|------------|-----------------|
+| PM | 1 | 1 | 60.000.000 | 180.000.000 |
+| BE Senior | 1 | 1 | 40.000.000 | 120.000.000 |
+| FE Senior | 1 | 1 | 30.000.000 | 90.000.000 |
+| **Tổng** | **+3** | **3 người** | **130 triệu/tháng** | **390.000.000** |
+
+**Chi phí vendor Phase 1:** Tích hợp ~200tr + phí ~15tr/tháng = **~245.000.000**
+
+**Đầu ra:**
+- Tích hợp nền tảng vendor (Website + Thanh toán + Vận chuyển sẵn có)
+- Productize Ambassador module (đã có code) → **BÁN NGAY**
+- Custom theme + white-label layer trên vendor
+- **→ Bán được gói Ambassador Only + Starter từ tháng 2-3**
+
+#### Phase 2B (Tháng 4-6): Distribution Engine core
+
+| Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
+|--------|-----------|------|------------|-----------------|
+| BE Senior | +1 | 2 BE | 40.000.000 | 120.000.000 |
+| QC | +1 | 1 | 25.000.000 | 75.000.000 |
+| Sales/BD | +1 | 1 | 20.000.000 | 60.000.000 |
+| Team cũ | — | 3 | 130.000.000 | 390.000.000 |
+| **Tổng** | **+3** | **6 người** | **215 triệu/tháng** | **645.000.000** |
+
+**Đầu ra:**
+- Affiliate Marketing system
+- Đối soát 4 loại + chống gian lận nâng cao
+- Tích hợp OMS vendor + custom đối soát Diso
+- **→ Ra mắt gói Growth**
+
+#### Phase 3B (Tháng 7-9): Reseller + Scale
+
+| Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
+|--------|-----------|------|------------|-----------------|
+| DevOps | +1 | 1 | 40.000.000 | 120.000.000 |
+| BE Junior | +1 | 3 BE | 25.000.000 | 75.000.000 |
+| CS | +1 | 1 | 15.000.000 | 45.000.000 |
+| Team cũ | — | 6 | 215.000.000 | 645.000.000 |
+| **Tổng** | **+3** | **9 người** | **295 triệu/tháng** | **885.000.000** |
+
+**Đầu ra:**
+- Reseller Network + Gamification
+- CRM/Loyalty (tích hợp vendor + customize)
+- TikTok Shop, Pancake integration
+- **→ Ra mắt gói Ultimate**
+
+#### Phase 4B (Tháng 10-12): Optimize + Chuẩn bị mua source
+
+| Vị trí | Tuyển mới | Tổng | Rate/tháng | Chi phí 3 tháng |
+|--------|-----------|------|------------|-----------------|
+| Marketing | +1 | 1 | 20.000.000 | 60.000.000 |
+| Sales/BD | +1 | 2 | 20.000.000 | 60.000.000 |
+| Team cũ | — | 9 | 295.000.000 | 885.000.000 |
+| **Tổng** | **+2** | **11 người** | **335 triệu/tháng** | **1.005.000.000** |
+
+**Đầu ra:**
+- Analytics & BI nâng cao, Zalo OA, E-Invoice
+- Performance optimization, security audit
+- **Đánh giá mốc ~10 KH → thương lượng mua source code từ vendor**
+
+#### Phase 5B (Tháng 12-18): Mua source + Tự chủ công nghệ
+
+| Hạng mục | Chi phí |
+|----------|---------|
+| Mua đứt source code từ vendor | ~500.000.000 - 1.500.000.000 |
+| Chuyển đổi & tích hợp source | ~200.000.000 (2-3 tháng effort team hiện tại) |
+
+**Đầu ra:** Tự chủ 100% công nghệ, không còn phụ thuộc vendor, margin tăng (bỏ phí vendor/KH)
+
+```
+Option B Timeline:
+Tháng:    1───3          4───6          7───9          10──12        12──18
+          │              │              │              │              │
+Team:     │  3 người     │  6 người     │  9 người     │  11 người   │  11 người
+          │  130tr/th    │  215tr/th    │  295tr/th    │  335tr/th   │  335tr/th
+          │              │              │              │              │
+Build:    │  Tích hợp    │  Affiliate   │  Reseller    │  Optimize   │  MUA SOURCE
+          │  vendor      │  Đối soát    │  CRM/Loyalty │  Zalo/BI    │  Tự chủ 100%
+          │  Ambassador  │  Chống GL    │  TikTok Shop │              │
+          │              │              │              │              │
+Bán:      │  Ambassador  │  + Growth    │  + Ultimate  │  Full       │  Full
+          │  + Starter   │              │              │  platform   │  (margin cao)
+```
+
+### Tổng quan so sánh đội ngũ theo thời gian
+
+```
+                Option A (tự build)              Option B (vendor)
+Tháng:    1──3    4──6    7──9   10─12     1──3    4──6    7──9   10─12
+          │       │       │      │         │       │       │      │
+Headcount:│  5    │  9    │ 12   │ 14      │  3    │  6    │  9   │ 11
+          │       │       │      │         │       │       │      │
+Chi phí/  │195tr  │295tr  │355tr │395tr    │130tr  │215tr  │295tr │335tr
+tháng:    │       │       │      │         │       │       │      │
+
+Tổng nhân sự 12 tháng:                    Tổng nhân sự 12 tháng:
+~3.720 triệu                              ~2.925 triệu (ít hơn ~800tr)
 ```
 
 ---
 
 ## 6. PHÂN TÍCH HOÀN VỐN (BREAK-EVEN ANALYSIS)
 
-### 6.1. Giả định mô hình (Assumptions)
+### 6.1. Giả định mô hình (Assumptions) — Áp dụng cho cả 2 Option
 
 | Thông số | Giá trị | Ghi chú |
 |----------|---------|---------|
@@ -261,94 +400,72 @@ Tuyển:    PM        DevOps    BE Jr     Marketing  Tùy nhu cầu
 | **CAC (Chi phí acquire 1 KH)** | ~30.000.000 VNĐ | Sales salary + marketing + demo + onboarding (~2 tháng effort) |
 | **Ramp-up MRR** | KH mới đạt full MRR sau tháng thứ 2 | Tháng 1 = setup + onboarding, tháng 2 = active |
 | **Mix gói mặc định** | 15% Amb Only, 35% Starter, 35% Growth, 15% Ultimate | Dựa trên phân bổ SME VN theo quy mô |
-| **Phí GD thực tế** | 60-70% ước tính (không phải KH nào cũng đạt GMV trung bình) | Conservative |
+| **Phí GD thực tế** | 60-70% ước tính | Conservative |
 | **Tăng giá** | Không tính (giữ giá cố định 24 tháng) | Upside tiềm năng |
+| **Phí vendor/KH (Option B)** | ~2 triệu/tháng/KH (trung bình) | Trừ vào margin, bỏ sau khi mua source |
 
 ### 6.2. Chi phí vận hành hàng tháng
 
-**Giai đoạn build (Tháng 1-6):**
+**Option A — Tự build:**
 
-| Hạng mục | T1-3 | T4-6 |
-|----------|------|------|
-| Nhân sự | 195.000.000 | 295.000.000 |
-| Cloud infrastructure | 10.000.000 | 15.000.000 |
-| Tools & licenses | 5.000.000 | 10.000.000 |
-| Office & misc | 10.000.000 | 10.000.000 |
-| **Tổng/tháng** | **220.000.000** | **330.000.000** |
+| Hạng mục | T1-3 | T4-6 | T7-12 | T13+ |
+|----------|------|------|-------|------|
+| Nhân sự | 195.000.000 | 295.000.000 | 355→395.000.000 | 395.000.000 |
+| Cloud infrastructure | 10.000.000 | 15.000.000 | 20.000.000 | 30.000.000 |
+| Tools & licenses | 5.000.000 | 10.000.000 | 10.000.000 | 10.000.000 |
+| Sales & marketing | — | — | 30.000.000 | 50.000.000 |
+| Office & misc | 10.000.000 | 10.000.000 | 15.000.000 | 15.000.000 |
+| **Tổng/tháng** | **220.000.000** | **330.000.000** | **430→450.000.000** | **500.000.000** |
 
-**Giai đoạn vận hành (Tháng 7+):**
+**Option B — Vendor:**
 
-| Hạng mục | T7-12 | T13+ |
-|----------|-------|------|
-| Nhân sự | 355.000.000 → 395.000.000 | 395.000.000 |
-| Cloud infrastructure | 20.000.000 | 30.000.000 |
-| Tools & licenses | 10.000.000 | 10.000.000 |
-| Sales & marketing | 30.000.000 | 50.000.000 |
-| Office & misc | 15.000.000 | 15.000.000 |
-| **Tổng/tháng** | **~430.000.000 → 450.000.000** | **~500.000.000** |
+| Hạng mục | T1-3 | T4-6 | T7-12 | T13+ |
+|----------|------|------|-------|------|
+| Nhân sự | 130.000.000 | 215.000.000 | 295→335.000.000 | 335.000.000 |
+| Phí vendor platform | 15.000.000 | 15.000.000 | 15.000.000 | 15.000.000 |
+| Phí vendor per-KH | — | ~6.000.000 | ~20.000.000 | ~40.000.000 |
+| Cloud infrastructure | 5.000.000 | 10.000.000 | 15.000.000 | 20.000.000 |
+| Tools & licenses | 5.000.000 | 5.000.000 | 10.000.000 | 10.000.000 |
+| Sales & marketing | — | 10.000.000 | 30.000.000 | 50.000.000 |
+| Office & misc | 10.000.000 | 10.000.000 | 15.000.000 | 15.000.000 |
+| **Tổng/tháng** | **165.000.000** | **271.000.000** | **400→440.000.000** | **485.000.000** |
 
-### 6.3. Unit Economics — Doanh thu & Giá trị mỗi khách hàng
+> *Option B: Phí vendor per-KH (~2tr/KH/tháng) tăng theo số KH. Sau khi mua source (tháng 12-18), phí vendor giảm về 0 → margin tăng đáng kể.*
 
-| Gói | Monthly fee | Setup fee | Phí GD (est.) | **MRR/KH** | **LTV 24 tháng** | **LTV/CAC** |
-|-----|-------------|-----------|---------------|------------|-----------------|-------------|
-| **Ambassador Only** | 15.000.000 | 80.000.000 | — | **15.000.000** | **410.000.000** | **13.7x** |
-| **Ecommerce Starter** | 10.000.000 | 50.000.000 | ~1.750.000 | **11.750.000** | **332.000.000** | **11.1x** |
-| **Ecommerce Growth** | 30.000.000 | 200.000.000 | ~5.250.000 | **35.250.000** | **1.046.000.000** | **34.9x** |
-| **Ecommerce Ultimate** | 50.000.000 | 400.000.000 | ~10.500.000 | **60.500.000** | **1.852.000.000** | **61.7x** |
+### 6.3. Unit Economics — So sánh margin 2 Option
 
-> **Công thức LTV:** Setup fee + (MRR × 24 tháng × retention rate)
-> *Retention rate = (1 - churn)^24. Với churn 5%/th năm 1, 3%/th năm 2: effective retention 24 tháng ≈ ~46%*
-> **Phí GD conservative:** Tính 70% GMV trung bình (Starter 350tr, Growth 1.75 tỷ, Ultimate 3.5 tỷ thực tế)
-> **CAC:** ~30tr/KH (bao gồm sales effort, marketing, onboarding)
-> **LTV/CAC > 3x** là benchmark tốt cho B2B SaaS → tất cả gói đều **rất tốt**
+| Gói | Monthly fee | Setup fee | Phí GD (est.) | **MRR/KH** | **Cost vendor/KH** | **Net MRR/KH (B)** |
+|-----|-------------|-----------|---------------|------------|--------------------|--------------------|
+| **Ambassador Only** | 15.000.000 | 80.000.000 | — | **15.000.000** | 0 (không dùng vendor) | **15.000.000** |
+| **Ecommerce Starter** | 10.000.000 | 50.000.000 | ~1.750.000 | **11.750.000** | ~2.000.000 | **9.750.000** |
+| **Ecommerce Growth** | 30.000.000 | 200.000.000 | ~5.250.000 | **35.250.000** | ~2.000.000 | **33.250.000** |
+| **Ecommerce Ultimate** | 50.000.000 | 400.000.000 | ~10.500.000 | **60.500.000** | ~3.000.000 | **57.500.000** |
 
-### 6.4. Kịch bản hoàn vốn — Có tính churn & CAC
+> **Option A:** MRR/KH = full margin (không có chi phí vendor)
+> **Option B:** Mất ~2-3tr/KH/tháng cho vendor fee, nhưng margin vẫn rất cao. Sau khi mua source → margin = Option A.
 
-#### Mục tiêu 1: Hòa vốn vận hành (Cover chi phí ~500 triệu/tháng sau tháng 13)
+| Gói | **LTV 24th (Option A)** | **LTV 24th (Option B)** | **LTV/CAC (A)** | **LTV/CAC (B)** |
+|-----|---|---|---|---|
+| **Ambassador Only** | **410.000.000** | **410.000.000** | **13.7x** | **13.7x** |
+| **Ecommerce Starter** | **332.000.000** | **310.000.000** | **11.1x** | **10.3x** |
+| **Ecommerce Growth** | **1.046.000.000** | **1.024.000.000** | **34.9x** | **34.1x** |
+| **Ecommerce Ultimate** | **1.852.000.000** | **1.819.000.000** | **61.7x** | **60.6x** |
 
-**Net MRR = Gross MRR - Churned MRR**
+> **LTV/CAC vẫn > 10x cho mọi gói ở cả 2 Option** — vendor fee ảnh hưởng rất nhỏ đến unit economics.
 
-| Kịch bản | Tổng KH active | Amb. | Starter | Growth | Ultimate | Gross MRR | Churn MRR (3%) | **Net MRR** | Trạng thái |
-|-----------|---------------|------|---------|--------|----------|-----------|----------------|-------------|------------|
-| **A — Ambassador lead** | 22 | 8 | 6 | 5 | 3 | 508.750.000 | -15.262.500 | **493.487.500** | ✅ Hòa vốn |
-| **B — Cân bằng** | 25 | 5 | 8 | 8 | 4 | 617.000.000 | -18.510.000 | **598.490.000** | ✅ Hòa vốn |
-| **C — Growth/Ult. lead** | 20 | 3 | 4 | 8 | 5 | 629.750.000 | -18.892.500 | **610.857.500** | ✅ Hòa vốn |
+### 6.4. Kịch bản hoàn vốn — So sánh 2 Option
 
-> **→ Cần khoảng 20-25 khách hàng active (sau churn) để hòa vốn vận hành.**
-> **→ Ambassador Only giúp có MRR sớm hơn 6-9 tháng so với chờ build full platform.**
+**Kịch bản trung bình: 5 KH mới/tháng, churn 5% Y1 → 3% Y2**
 
-#### Mục tiêu 2: Hoàn vốn đầu tư ban đầu (~9.7 tỷ)
-
-**Công thức:**
-```
-Lũy kế tháng N = Σ (Net MRR + Setup fee KH mới - Chi phí vận hành - CAC × KH mới)
-
-Trong đó:
-- Net MRR      = Gross MRR tháng trước + MRR KH mới - MRR KH churn
-- Setup fee    = Số KH mới × Avg setup fee (~130tr, theo mix gói)
-- Chi phí VH   = Theo bảng 6.2
-- CAC          = 30tr × số KH mới
-```
-
-| Kịch bản | KH mới/tháng | Churn/tháng | Thời gian hoàn vốn | KH active tại breakeven |
-|-----------|-------------|-------------|---------------------|------------------------|
-| **Bảo thủ** | 3-4 | 5% Y1, 3% Y2 | **Tháng 30-36** (2.5-3 năm) | ~50-65 KH active |
-| **Trung bình** | 5-7 | 5% Y1, 3% Y2 | **Tháng 22-26** (~2 năm) | ~65-85 KH active |
-| **Lạc quan** | 8-10 | 5% Y1, 3% Y2 | **Tháng 18-22** (~1.5 năm) | ~85-110 KH active |
-
-> **→ Hoàn vốn trong 2-3 năm. Với 920.000+ SMEs tại VN, chỉ cần ~0.01% = 92 KH.**
-
-### 6.5. Chi tiết kịch bản trung bình (Recommended)
-
-**Giả định:** 5 KH mới/tháng, churn 5% Y1 → 3% Y2, mix gói mặc định, CAC 30tr/KH
+#### Option A — Tự build (~9.7 tỷ)
 
 ```
          KH     KH      KH     GROSS    CHURN    NET      SETUP    CHI PHÍ    LỢI NHUẬN   LŨY KẾ
 THÁNG    MỚI    CHURN   ACTIVE MRR(tr)  MRR(tr)  MRR(tr)  FEE(tr)  VH(tr)     RÒNG(tr)    (triệu)
 ──────   ────   ─────   ────── ───────  ───────  ───────  ───────  ───────    ─────────   ────────
 T1-3     2(A)   0       2      30       0        30       160      220        -30/th      -660
-T4-6     3(A+S) 0       7      115      -6       109      290      330        -50→+70/th  -1.530
-T7-9     +4/th  -1/th   16     375      -19      356      520      430        -50→+50/th  -2.200
+T4-6     3(A+S) 0       7      115      -6       109      290      330        -50→+70     -1.530
+T7-9     +4/th  -1/th   16     375      -19      356      520      430        -50→+50     -2.200
 T10-12   +5/th  -1/th   28     640      -32      608      650      450        +150→+200   -1.600
 T13-15   +5/th  -1/th   40     920      -28      892      650      500        +400/th     +0
 T16-18   +6/th  -1/th   55     1.270    -38      1.232    780      500        +730→+800   +2.400
@@ -356,15 +473,37 @@ T19-22   +7/th  -2/th   73     1.700    -51      1.649    910      500        +1
 T23-24   +7/th  -2/th   83     1.950    -59      1.891    910      500        +1.400/th   +9.800
 ```
 
-> *T1-6: chủ yếu bán Ambassador Only + Starter pilot (sản phẩm đã có/đang build)*
-> *T7+: bắt đầu bán Growth khi OMS + Omnichannel + Affiliate hoàn thiện*
-> *T10+: Ultimate khi full platform ready*
+**→ Hòa vốn vận hành: Tháng 13-15 (~40 KH) | Hoàn vốn đầu tư: Tháng 23-24 (~83 KH)**
 
-**Tóm tắt:**
-- **Hòa vốn vận hành:** ~Tháng 13-15, tại ~35-40 KH active
-- **Hoàn vốn đầu tư:** ~Tháng 23-24, tại ~80-85 KH active
-- **ARR tại breakeven:** ~22-24 tỷ VNĐ/năm
-- **Net Revenue Retention (NRR):** ~95-97% sau năm 2 (churn thấp + upsell Starter → Growth)
+#### Option B — Vendor (~6 tỷ)
+
+```
+         KH     KH      KH     GROSS    VENDOR   NET      SETUP    CHI PHÍ    LỢI NHUẬN   LŨY KẾ
+THÁNG    MỚI    CHURN   ACTIVE MRR(tr)  FEE(tr)  MRR(tr)  FEE(tr)  VH(tr)     RÒNG(tr)    (triệu)
+──────   ────   ─────   ────── ───────  ───────  ───────  ───────  ───────    ─────────   ────────
+T1-3     3(A+S) 0       3      52       -2       50       210      165        +30/th      -285
+T4-6     +4/th  0       12     250      -14      236      520      271        +100→+200   +285
+T7-9     +5/th  -1/th   24     560      -34      526      650      420        +200→+300   +1.800
+T10-12   +5/th  -1/th   36     840      -54      786      650      440        +350→+400   +3.900
+T13-15   +5/th  -1/th   48     1.120    -48*     1.072    650      485        +550/th     +5.550  ← MUA SOURCE
+T16-18   +6/th  -1/th   63     1.500    0*       1.500    780      435        +1.100/th   +8.850
+```
+
+> *T13-15: Mua source ~800tr, phí vendor giảm dần về 0. T16+: margin tăng do không còn phí vendor.*
+
+**→ Hòa vốn vận hành: Tháng 4-6 (~12 KH) | Hoàn vốn đầu tư: Tháng 14-16 (~48 KH)**
+
+### 6.5. Tóm tắt so sánh breakeven
+
+| | **Option A — Tự build** | **Option B — Vendor** | **Chênh lệch** |
+|---|---|---|---|
+| **Vốn cần** | ~9.7 tỷ | ~6 tỷ | **Tiết kiệm 3.7 tỷ (38%)** |
+| **Doanh thu đầu tiên** | Tháng 4-6 | **Tháng 1-2** | **Sớm hơn 3-4 tháng** |
+| **Hòa vốn vận hành** | Tháng 13-15 (~40 KH) | **Tháng 4-6 (~12 KH)** | **Sớm hơn 9 tháng** |
+| **Hoàn vốn đầu tư** | Tháng 23-24 (~83 KH) | **Tháng 14-16 (~48 KH)** | **Sớm hơn 8-9 tháng** |
+| **ARR tại hoàn vốn** | ~22-24 tỷ/năm | ~14-16 tỷ/năm | Option B cần ít KH hơn |
+| **Margin sau mua source** | 100% từ đầu | 100% từ tháng 15-18 | Hội tụ sau khi mua source |
+| **NRR sau năm 2** | ~95-97% | ~95-97% | Tương đương |
 
 ---
 
@@ -400,35 +539,40 @@ T23-24   +7/th  -2/th   83     1.950    -59      1.891    910      500        +1
 ## 8. TÓM TẮT CHO NHÀ ĐẦU TƯ
 
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│                                                                  │
-│   VỐN CẦN HUY ĐỘNG:     ~9.7 tỷ VNĐ                            │
-│                                                                  │
-│   SẢN PHẨM:             10 module, nền tảng e-commerce trọn bộ  │
-│   MOAT:                 Distribution Engine (Affiliate +         │
-│                          Reseller + Ambassador + Chống gian lận) │
-│   THỊ TRƯỜNG:           920.000+ SMEs tại Việt Nam               │
-│   MÔ HÌNH DOANH THU:   SaaS (MRR) + setup fee + phí GD         │
-│                          + Vendor Partnership (dùng→mua source)  │
-│                                                                  │
-│   4 GÓI:  Ambassador Only 15tr | Starter 10tr | Growth 30tr     │
-│            Ultimate 50tr  (setup 50-400tr)                          │
-│   HÒA VỐN VẬN HÀNH:    ~35-40 KH active (tháng 13-15)           │
-│   HOÀN VỐN ĐẦU TƯ:     ~80-85 KH active (tháng 23-24)          │
-│   ARR MỤC TIÊU NĂM 2:  ~22-24 tỷ VNĐ                           │
-│   LTV/CAC:              11x - 62x (tùy gói)                     │
-│                                                                  │
-│   ĐỘI NGŨ:             6 → 9 → 12 → 14 người (12 tháng)        │
-│   DOANH THU SỚM:       Ambassador Only bán được từ tháng 1      │
-│   FULL PLATFORM:        Tháng 12                                 │
-│                                                                  │
-│   LỢI THẾ SẴN CÓ:      Ambassador proven (11+ brands)           │
-│                          Tech stack production-ready              │
-│                          Vendor partnership (dùng→mua source)     │
-│                                                                  │
-│   ASK:  ~9.7 tỷ VNĐ cho 12-18 tháng phát triển + go-to-market  │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                                                                        │
+│   SẢN PHẨM:        Nền tảng e-commerce + Distribution Engine (MOAT)   │
+│   THỊ TRƯỜNG:      920.000+ SMEs tại Việt Nam                         │
+│   MÔ HÌNH:         SaaS (MRR) + setup fee + phí giao dịch            │
+│   4 GÓI:           Ambassador 15tr | Starter 10tr | Growth 30tr      │
+│                     Ultimate 50tr  (setup 50-400tr)                   │
+│   LTV/CAC:         10x - 62x (tùy gói)                               │
+│                                                                        │
+│   ┌─────────────────────────┬──────────────────────────────┐          │
+│   │  OPTION A — Tự build    │  OPTION B — Vendor (Đề xuất) │          │
+│   ├─────────────────────────┼──────────────────────────────┤          │
+│   │  Vốn: ~9.7 tỷ VNĐ      │  Vốn: ~6 tỷ VNĐ             │          │
+│   │  Team: 5→9→12→14 người  │  Team: 3→6→9→11 người        │          │
+│   │  Revenue: tháng 4-6     │  Revenue: tháng 1-2           │          │
+│   │  Hòa vốn VH: T13-15    │  Hòa vốn VH: T4-6            │          │
+│   │  Hoàn vốn: T23-24      │  Hoàn vốn: T14-16             │          │
+│   │  Sở hữu 100%: ngay     │  Sở hữu 100%: T12-18         │          │
+│   │  Full platform: T12     │  Full platform: T9-10          │          │
+│   └─────────────────────────┴──────────────────────────────┘          │
+│                                                                        │
+│   LỢI THẾ SẴN CÓ:  Ambassador proven (11+ brands)                    │
+│                      Tech stack production-ready                       │
+│                      7 nền tảng social đã tích hợp                    │
+│                                                                        │
+│   OPTION B:  Vendor cung cấp tầng commerce → Diso tự sale             │
+│              → đạt 10 KH thì mua đứt source → tự chủ 100%            │
+│              → Tiết kiệm 38% vốn, revenue sớm hơn 3-4 tháng         │
+│              → Hoàn vốn sớm hơn 8-9 tháng                            │
+│                                                                        │
+│   ASK:  ~6 tỷ VNĐ (Option B) cho 12-18 tháng phát triển             │
+│         + go-to-market + mua source code                              │
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
