@@ -63,7 +63,7 @@ TẦNG CHĂM SÓC         │ CRM, Loyalty, Analytics, Admin & Infrastructure
 
 ### Lợi thế cạnh tranh khác
 
-- **Sở hữu 100%** — không vendor lock-in như SaaS (Haravan, Sapo)
+- **Lộ trình sở hữu 100%** — giai đoạn đầu dùng vendor, đạt ~10 KH thì mua đứt source → tự chủ hoàn toàn, không vendor lock-in
 - **Modular** — khách hàng mua từng phần hoặc trọn bộ
 - **Đặc thù VN** — COD (67% giao dịch), VietQR, Zalo ecosystem (70M+ users), MISA kế toán, E-Invoice
 - **Social proof** — Đã triển khai module Ambassador cho 11+ thương hiệu (TPBank, HDBank, VNG, Yody...)
@@ -92,30 +92,38 @@ TẦNG CHĂM SÓC         │ CRM, Loyalty, Analytics, Admin & Infrastructure
 
 ### 3.2. Chiến lược mở rộng thị trường — Vendor Partnership
 
-Ngoài bán trực tiếp, Diso mở thêm kênh **Vendor Partnership** để tối đa hóa tốc độ phủ thị trường:
+Thay vì đầu tư build toàn bộ nền tảng ecommerce từ đầu, Diso sử dụng **Vendor Partnership** — hợp tác với nhà cung cấp công nghệ ecommerce có sẵn để ra thị trường nhanh, tiết kiệm chi phí và thời gian phát triển:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                  MÔ HÌNH VENDOR PARTNERSHIP                   │
 │                                                               │
-│  Vendor (đối tác kỹ thuật)                                    │
-│  ├── Build & vận hành commerce platform (white-label)         │
-│  ├── Bán cho khách hàng cuối với giá X                        │
-│  └── Diso = nhà cung cấp nền tảng                            │
+│  VENDOR (nhà cung cấp công nghệ)                              │
+│  ├── Cung cấp nền tảng ecommerce có sẵn (SaaS/source code)   │
+│  └── Diso trả phí sử dụng nền tảng                           │
 │                                                               │
-│  Diso                                                         │
-│  ├── Cung cấp license platform cho vendor                     │
-│  ├── Vendor bán → Diso markup 20% (= giá gói Starter)        │
-│  ├── Khách hàng muốn thêm module → mua trực tiếp từ Diso     │
-│  └── Khi vendor đạt X khách hàng → option mua đứt license    │
+│  DISO (tự chủ sales & vận hành)                               │
+│  ├── Tích hợp nền tảng vendor + module riêng của Diso         │
+│  ├── Trực tiếp sales, onboarding & support khách hàng         │
+│  ├── Toàn quyền kiểm soát relationship với khách              │
+│  └── Khi đạt ~10 KH → mua đứt bộ source code từ vendor       │
 │                                                               │
-│  Lợi ích:                                                     │
-│  ├── Diso: mở rộng nhanh không cần tuyển sales, vendor lo     │
-│  │         implementation & support                            │
-│  ├── Vendor: có sản phẩm bán ngay, không cần build từ đầu    │
-│  └── Khách hàng: giá cạnh tranh, có đội ngũ support local    │
+│  KHÁCH HÀNG                                                   │
+│  ├── Giải pháp ecommerce trọn bộ từ Diso                     │
+│  └── Support trực tiếp từ Diso (không qua trung gian)         │
+│                                                               │
+│  LỘ TRÌNH:                                                    │
+│  Phase 1: Dùng nền tảng vendor → tập trung sales & thu KH    │
+│  Phase 2: Đạt ~10 KH → mua đứt source code                   │
+│  Phase 3: Tự chủ 100% công nghệ → margin cao hơn             │
 └──────────────────────────────────────────────────────────────┘
 ```
+
+**Lợi ích chiến lược:**
+- **Giảm chi phí & thời gian phát triển:** Không cần build nền tảng ecommerce từ đầu, tập trung nguồn lực vào module lõi (Distribution Engine)
+- **Ra thị trường nhanh:** Có sản phẩm bán ngay thay vì chờ 6-12 tháng phát triển
+- **Diso tự chủ sales:** Toàn quyền kiểm soát khách hàng, pricing, và relationship — vendor chỉ cung cấp công nghệ
+- **Lộ trình mua source:** Khi đạt ~10 khách hàng → mua đứt bộ source code → tự chủ 100% công nghệ, không còn phụ thuộc vendor
 
 > **Ghi chú:** Giá trên là giá đề xuất ban đầu, có thể điều chỉnh theo phản hồi thị trường.
 
@@ -385,7 +393,7 @@ T23-24   +7/th  -2/th   83     1.950    -59      1.891    910      500        +1
 - **Data moat:** Dữ liệu chống gian lận, influencer scoring cải thiện theo thời gian — không thể mua hay copy
 - **Đặc thù VN:** COD flow, Zalo ecosystem, MISA kế toán, E-Invoice — competitor quốc tế không có
 - **Switching cost:** Sau khi brand xây đội ngũ 100-1000 affiliate/reseller trên Diso → chuyển platform = mất toàn bộ network
-- **Vendor Partnership:** Mạng lưới vendor mở rộng → Diso phủ thị trường nhanh mà không tăng headcount sales
+- **Vendor Partnership:** Dùng nền tảng vendor có sẵn → ra thị trường nhanh, tập trung sales → đạt 10 KH thì mua đứt source → tự chủ 100%
 
 ---
 
@@ -401,7 +409,7 @@ T23-24   +7/th  -2/th   83     1.950    -59      1.891    910      500        +1
 │                          Reseller + Ambassador + Chống gian lận) │
 │   THỊ TRƯỜNG:           920.000+ SMEs tại Việt Nam               │
 │   MÔ HÌNH DOANH THU:   SaaS (MRR) + setup fee + phí GD         │
-│                          + Vendor Partnership (markup 20%)       │
+│                          + Vendor Partnership (dùng→mua source)  │
 │                                                                  │
 │   4 GÓI:  Ambassador Only 15tr | Starter 10tr | Growth 30tr     │
 │            Ultimate 50tr  (setup 50-400tr)                          │
@@ -416,7 +424,7 @@ T23-24   +7/th  -2/th   83     1.950    -59      1.891    910      500        +1
 │                                                                  │
 │   LỢI THẾ SẴN CÓ:      Ambassador proven (11+ brands)           │
 │                          Tech stack production-ready              │
-│                          Vendor partnership model                 │
+│                          Vendor partnership (dùng→mua source)     │
 │                                                                  │
 │   ASK:  ~9.7 tỷ VNĐ cho 12-18 tháng phát triển + go-to-market  │
 │                                                                  │
@@ -514,7 +522,7 @@ T23-24   +7/th  -2/th   83     1.950    -59      1.891    910      500        +1
 | **Zalo ecosystem** | Cơ bản | Cơ bản | Không | **Full** |
 | **Sở hữu data** | Hạn chế | Hạn chế | Hạn chế | **100%** |
 | **White-label** | Hạn chế | Hạn chế | Hạn chế | **Full** |
-| **Vendor Partnership** | Không | Không | Không | **Có (mở rộng qua đối tác)** |
+| **Vendor Partnership** | Không | Không | Không | **Có (dùng nền tảng vendor → mua source khi scale)** |
 
 > **Diso không cạnh tranh trực tiếp với Haravan/Sapo ở phân khúc giá rẻ.** Diso nhắm vào DN cần Distribution Engine — xây đội ngũ bán hàng bên ngoài (affiliate, reseller, ambassador), sở hữu data, và kiểm soát brand. Đây là phân khúc không ai phục vụ tại VN.
 
