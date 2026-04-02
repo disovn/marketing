@@ -34,7 +34,9 @@
 | | |
 |---|---|
 | **~20 tỷ/năm** | Tiết kiệm phí sàn khi chuyển 50% sang kênh riêng |
-| **150 triệu** | Setup trọn bộ (vs Misa 1-2 tỷ chỉ website) |
+| **~160 triệu setup full** | Trọn bộ 7 module (hoặc **80 triệu bắt đầu** với KB2 Phase 1) |
+| **7 module bật/tắt** | Từ 40 triệu pilot đến 160 triệu trọn bộ — KH chọn tùy nhu cầu |
+| **25–62 triệu/tháng** | Tùy scope module bật |
 | **2 tuần** | Go-live, có doanh số ngay tháng đầu |
 
 ---

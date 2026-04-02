@@ -18,13 +18,13 @@
 
 ### 3. "5% revenue share — nếu doanh thu cao thì phí rất lớn?"
 
-**Trả lời:** Đúng — nhưng nếu doanh thu cao thì Traphaco đang **tiết kiệm 20% phí sàn**. 5% revenue share << 20% phí Shopee. Và chúng tôi sẵn sàng thảo luận cap revenue share (ví dụ: cap 500 triệu/tháng). Revenue share đảm bảo Diso chỉ kiếm tiền khi Traphaco kiếm tiền — alignment of interest.
+**Trả lời:** Đúng — nhưng nếu doanh thu cao thì Traphaco đang **tiết kiệm 20% phí sàn**. 5% revenue share << 20% phí Shopee. Cụ thể: **5% kênh riêng** (module B/C) + **3-5% sàn** nếu bật module A (vận hành sàn). Hai khoản này tách biệt — bật module nào thì tính rev share module đó. Và chúng tôi sẵn sàng thảo luận cap revenue share (ví dụ: cap 500 triệu/tháng). Revenue share đảm bảo Diso chỉ kiếm tiền khi Traphaco kiếm tiền — alignment of interest.
 
 ---
 
 ### 4. "Nếu sau 6 tháng không có doanh số trên kênh riêng thì sao?"
 
-**Trả lời:** Revenue share = 0 vì không có doanh thu. Traphaco chỉ trả monthly fee (42 triệu/tháng). Nhưng scenario này rất khó xảy ra vì: (a) Traphaco đã có traffic + khách hàng trên Shopee — chỉ cần chuyển retention, (b) Phase 1 (30 ngày đầu) tập trung có doanh số trên sàn trước, (c) AT hỗ trợ network affiliate.
+**Trả lời:** Revenue share = 0 vì không có doanh thu. Traphaco chỉ trả monthly fee — **25-62 triệu/tháng tùy module bật** (ví dụ KB2 Phase 1 chỉ 35 triệu/tháng, chưa mở kênh riêng thì chưa tính rev share kênh riêng). Nhưng scenario này rất khó xảy ra vì: (a) Traphaco đã có traffic + khách hàng trên Shopee — chỉ cần chuyển retention, (b) Phase 1 (30 ngày đầu) tập trung có doanh số trên sàn trước, (c) AT hỗ trợ network affiliate.
 
 ---
 
@@ -64,15 +64,29 @@
 
 ### 10. "Cho chúng tôi thử 1 phần nhỏ trước được không?"
 
-**Trả lời:** Được — nhưng chúng tôi thu nhỏ **scale**, không cắt **module**. Nghĩa là: vẫn có website + Zalo + CRM + affiliate + reseller (5 nhà thuốc thay vì 200) — nhưng quy mô nhỏ hơn. Vì nếu chỉ làm website không có affiliate/CRM = giống Misa = website đẹp nhưng 0 đơn. MVP phải đủ bộ phận dù nhỏ — giống xe nhỏ nhưng đầy đủ bánh, vô lăng, động cơ.
+**Trả lời:** Có — đây chính xác là **KB4 (Pilot)**: chỉ 2 module nhỏ nhất, **40 triệu setup + 25 triệu/tháng + 3% DT sàn**. Bao gồm: Module A (vận hành sàn Shopee/TikTok) + Module E (Ambassador/KOL). Traphaco thấy kết quả sàn tăng trong 30 ngày → tự nhiên muốn bật thêm module. Rào cản cực thấp, không ép mua trọn bộ.
 
-**Gói thu nhỏ:** 80 triệu setup + 20 triệu/tháng + 5% rev share.
+Nếu muốn thêm 1 bước, **KB2 Phase 1** (80 triệu + 35 triệu/tháng) bổ sung thêm Module D (Affiliate + Đại lý nhà thuốc) — đội quân bán hàng mạnh hơn nhiều.
 
 ---
 
 ### 11. "Diso có vận hành sàn Shopee/TikTok cho Traphaco không?"
 
-**Trả lời:** Có. Diso không chỉ build kênh riêng — chúng tôi cũng vận hành sàn Shopee + TikTok cho Traphaco. Bao gồm: tối ưu listing, SEO sàn, chạy campaign/flash sale/voucher, quản lý đánh giá, báo cáo hiệu quả hàng tuần. Phí ops sàn 7 triệu/tháng đã bao gồm trong gói monthly 42 triệu. Mục tiêu: giữ + tăng doanh số trên sàn, đồng thời chuyển retention sang kênh riêng.
+**Trả lời:** Có. Diso không chỉ build kênh riêng — chúng tôi cũng vận hành sàn Shopee + TikTok cho Traphaco. Bao gồm: tối ưu listing, SEO sàn, chạy campaign/flash sale/voucher, quản lý đánh giá, báo cáo hiệu quả hàng tuần. Đây là **Module A — 20 triệu setup + 20 triệu/tháng + 3-5% DT sàn**. Mục tiêu: giữ + tăng doanh số trên sàn, đồng thời chuyển retention sang kênh riêng.
+
+---
+
+### 12. "Tại sao module hóa? Có bị đắt hơn gói trọn bộ không?"
+
+**Trả lời:** Module hóa = KH **chỉ trả cho cái mình cần**. Không ép mua trọn bộ. So sánh:
+
+- **Full 7 module:** 62 triệu/tháng — trọn bộ hệ sinh thái
+- **Thuê từng dịch vụ riêng lẻ:** Agency ops sàn 20-30 triệu + dev website 15 triệu + CRM 5 triệu + KOL platform 10-20 triệu + affiliate platform = **100-120 triệu/tháng** (và không liền mạch)
+- **Diso full module:** 62 triệu/tháng = **rẻ hơn ~50%, vận hành liền mạch**
+
+Nhưng nếu Traphaco chỉ cần 2 module trước: **bắt đầu 25 triệu/tháng rồi grow**. Mỗi tháng bật thêm module khi thấy nhu cầu — không phải trả 62 triệu ngay từ đầu.
+
+**Tóm lại:** Module hóa KHÔNG đắt hơn gói trọn bộ — so với thuê riêng lẻ thì rẻ hơn ~50%. Và KH linh hoạt chọn điểm bắt đầu phù hợp với ngân sách.
 
 ---
 

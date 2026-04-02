@@ -22,6 +22,7 @@
 - "Diso là đối tác công nghệ của AT. Chuyên thu nhỏ công thức này cho doanh nghiệp vừa"
 - "Đây là team đã build module Ambassador, Affiliate, Anti-fraud cho AT — đang chạy cho 11+ brands"
 - "Đội này cũng vận hành sàn Shopee/TikTok cho khách — không chỉ build kênh riêng"
+- "**Module hóa** — KH chọn bật/tắt từng phần, bắt đầu từ 40 triệu rồi grow. Không ép mua trọn bộ"
 - **→ Chuyển mic cho Vĩnh: "Vĩnh sẽ trình bày giải pháp cụ thể cho Traphaco"**
 
 ---
@@ -41,6 +42,7 @@
 
 ### Tạo urgency
 - "Mỗi tháng chờ, Traphaco mất thêm 2 tỷ cho phí sàn"
+- "**80 triệu bắt đầu Phase 1 — vận hành sàn + affiliate + KOL. Thấy kết quả trong 30 ngày.** Phase 2 mở kênh riêng khi sàn đã chạy tốt"
 - "Q3 là mùa cao điểm dược. Bắt đầu tháng 5 — hệ thống sẵn sàng cho chiến dịch Q3"
 - "Tôi đã giới thiệu giải pháp này vì tôi tin Traphaco là đối tác phù hợp nhất"
 
@@ -56,6 +58,7 @@
 - "Tôi đã làm cho [brand lớn], kết quả [con số]"
 - "AT sẽ đồng hành"
 - "Chi phí cực kỳ hợp lý — để Hải trình bày chi tiết"
+- "**Anh chọn module nào cũng được — 40 triệu pilot hoặc 160 triệu full. Quan trọng là bắt đầu.**"
 
 ---
 

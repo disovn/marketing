@@ -89,6 +89,8 @@
 **Key message:**
 > "Diso không bán website. Diso bán công thức thành công e-commerce — gồm 3C: Công nghệ + Cộng đồng + Chuyên gia. Tất cả trong 1 hệ thống, vận hành ngay ngày đầu tiên."
 
+> *Ghi chú:* **7 module bật/tắt — KH chọn tùy nhu cầu.** Không cần mua trọn bộ ngay — bắt đầu từ 2 module rồi mở thêm.
+
 ---
 
 ## SLIDE 5: TRAPHACO TRÊN SHOPEE → TRAPHACO TRÊN KÊNH RIÊNG
@@ -161,31 +163,48 @@
 
 ---
 
-## SLIDE 8: PLAYBOOK 90 NGÀY — Có Doanh Số Ngay Tháng Đầu
+## SLIDE 8: PLAYBOOK KB2 — SÀN TRƯỚC, KÊNH RIÊNG SAU
 
-**Tiêu đề:** 90 ngày từ ký hợp đồng → hệ sinh thái hoàn chỉnh
+**Tiêu đề:** Bắt đầu 80 triệu — thấy kết quả trong 30 ngày, mở kênh riêng sau
 
 **Người nói:** Vĩnh
 
-**Visual:** Timeline 3 phases
+**Visual:** 2 phases rõ ràng (recommend KB2)
 
 ```
-PHASE 1 (Ngày 1-30)          PHASE 2 (Ngày 30-60)         PHASE 3 (Ngày 60-90)
-"Có doanh số ngay"           "Mở kênh riêng"              "Hệ sinh thái"
-                                                           
-✓ Setup Shopee + TikTok      ✓ Launch Website TMĐT         ✓ CRM + Loyalty + MGM
-✓ Vận hành daily Shopee +    ✓ Launch Zalo Mini App         ✓ Đại lý nhà thuốc online
-  TikTok (campaign,           ✓ Đẩy retention sang          ✓ Ambassador KOL dược
-  flash sale)                   kênh riêng                 ✓ Data insight → tối ưu
-✓ Gọi đối tác content vào    ✓ Affiliate kênh riêng        
-✓ Chạy affiliate trên sàn                                  
-✓ Clone data sản phẩm                                      
-                                                           
-→ Traphaco thấy số ngay      → Bắt đầu tiết kiệm          → Hệ thống chạy tự động
+PHASE 1 (Tháng 1-3) — 80 triệu setup + 35 triệu/tháng
+"Sàn trước — có doanh số ngay"
+
+✓ Vận hành sàn Shopee + TikTok daily (campaign, flash sale, SEO sàn)
+✓ Affiliate + AccessTrade network — đội quân bán hàng
+✓ Ambassador/KOL — content compliance Bộ Y Tế
+✓ Clone data sản phẩm + review từ sàn
+
+→ Traphaco thấy số ngay trong 30 ngày đầu
+
+
+PHASE 2 (Tháng 4+) — +80 triệu setup + 27 triệu/tháng thêm
+"Kênh riêng — tiết kiệm phí sàn"
+
+✓ Launch Website TMĐT (kênh riêng, 0% phí sàn)
+✓ Launch Zalo Mini App (push notification, ZaloPay)
+✓ CRM + Loyalty + MGM — giữ khách, tăng CLV
+✓ QR xác thực hàng thật
+✓ Đẩy retention từ sàn sang kênh riêng
+
+→ Bắt đầu tiết kiệm 20% phí sàn — hệ thống tự động
 ```
+
+**So sánh nhanh:**
+
+| | Phase 1 (Sàn trước) | Phase 1 + 2 (Full) |
+|---|---|---|
+| Setup | **80 triệu** | 160 triệu |
+| Monthly | **35 triệu/tháng** | 62 triệu/tháng |
+| Rev share | 3-5% DT sàn | 5% KR + 3-5% sàn |
 
 **Key message:**
-> "Ngày 1 có doanh số — không phải chờ 6 tháng build. MVP đủ bộ phận, bán được hàng ngay."
+> "Không cần 160 triệu ngay. Bắt đầu 80 triệu — thấy kết quả trên sàn trong 30 ngày. Khi sàn chạy tốt, tự nhiên muốn mở kênh riêng để tiết kiệm 20% phí."
 
 ---
 
@@ -251,71 +270,97 @@ PHASE 1 (Ngày 1-30)          PHASE 2 (Ngày 30-60)         PHASE 3 (Ngày 60-90
 
 ---
 
-## SLIDE 12: CHI PHÍ — Rẻ Hơn Misa, Nhiều Hơn Misa
+## SLIDE 12: CHI PHÍ — 7 MODULE BẬT/TẮT, 4 KỊCH BẢN
 
-**Tiêu đề:** 150 triệu setup — bằng 1/10 giá Misa, nhưng được gấp 10 lần
+**Tiêu đề:** Chọn module phù hợp — từ 40 triệu pilot đến 160 triệu trọn bộ
 
 **Người nói:** Hải
 
-**Bảng báo giá:**
+**Bảng 7 module:**
 
-| Hạng mục | Chi phí |
-|----------|--------:|
-| **Phí khởi tạo** (trọn bộ hệ thống, bao gồm setup sàn Shopee/TikTok) | **150.000.000** |
-| **Phí vận hành hàng tháng** (SaaS + chuyên gia, bao gồm ops kênh riêng + ops sàn) | **42.000.000/tháng** |
-| **Revenue share** (chỉ kênh riêng, chỉ khi có số) | **5% doanh thu** |
-| Grace period | 2 tháng đầu không tính rev share |
+| Module | Bao gồm | Khởi tạo | Monthly |
+|--------|---------|----------:|--------:|
+| A. Vận hành sàn | Shopee + TikTok daily ops, SEO sàn, flash sale | 20 tr | 20 tr |
+| B. Website kênh riêng | Domain riêng, UI Shopee-style, payment, logistics | 30 tr | 15 tr |
+| C. Zalo Mini App | ZaloPay native, push notification, sync sản phẩm | 20 tr | 5 tr |
+| D. Affiliate + Đại lý NT | Tracking, anti-fraud, reseller storefront, AT network | 40 tr | 10 tr |
+| E. Ambassador/KOL | Campaign mgmt, content approval, ROI tracking | 20 tr | 5 tr |
+| F. CRM + Loyalty | Phân nhóm KH, loyalty program, MGM, Zalo push | 20 tr | 5 tr |
+| G. QR xác thực | QR hàng thật, GMP, tích hợp website + Zalo | 10 tr | 2 tr |
+| **Tổng full** | | **160 tr** | **62 tr/tháng** |
 
-**So sánh:**
+*Rev share: 5% kênh riêng (module B/C) + 3-5% sàn (module A, nếu bật)*
 
-| | Misa | Thuê riêng lẻ | **Diso** |
-|---|---|---|---|
-| Chi phí setup | 1-2 tỷ | 3-5 tỷ | **150 triệu** |
-| Bao gồm | Chỉ website | Website + team + agency riêng | **Trọn bộ mọi thứ** |
-| Bán được hàng? | Không | Tùy team | **Có — ngày đầu tiên** |
-| Vận hành | Không | Tự lo | **Diso lo** |
-| Ops sàn TMĐT | Không | Không | **Có — daily ops** |
-| Chi phí Year 1 | 1-2 tỷ (chỉ website) | 5+ tỷ | **~2.16 tỷ (tất cả)** |
+**4 kịch bản:**
+
+| | **KB1: Full** | **KB2: Sàn trước ★** | **KB3: KR only** | **KB4: Pilot** |
+|---|---|---|---|---|
+| Module | Tất cả 7 | A+D+E → B+C+F+G | B+C+D+F | A+E |
+| **Setup** | 160 tr | **80 tr → 160 tr** | 110 tr | 40 tr |
+| **Monthly** | 62 tr | **35 tr → 62 tr** | 35 tr | 25 tr |
+| Rev share | 5% KR + 3-5% sàn | 3-5% sàn → +5% KR | 5% KR | 3% sàn |
+| Phù hợp | All-in ngay | **Bắt đầu thông minh** | Tự ops sàn | Thử trước |
+
+*★ Recommend cho Traphaco*
+
+**So sánh với Misa — KB2 Phase 1:**
+
+| | Misa | **Diso KB2 Phase 1** |
+|---|---|---|
+| Chi phí bắt đầu | **1-2 tỷ** | **80 triệu** |
+| Bao gồm ops sàn? | Không | **Có — daily ops** |
+| Bán được hàng ngay? | Không | **Có — 30 ngày** |
+| Affiliate + KOL? | Không | **Có** |
 
 **Key message:**
-> "Cùng 2 tỷ: Misa chỉ có website đẹp, 0 đơn. Diso có website + sàn + affiliate + đại lý + vận hành + CRM — và bán được hàng."
+> "80 triệu bắt đầu — Misa 1-2 tỷ chỉ có website đẹp, 0 đơn. Diso 80 triệu có sàn chạy tốt, affiliate, KOL — doanh số trong 30 ngày."
 
 ---
 
-## SLIDE 13: ROI — Bài Toán Tiết Kiệm Cho Traphaco
+## SLIDE 13: ROI — Bài Toán KB2 Cho Traphaco
 
-**Tiêu đề:** Traphaco tiết kiệm bao nhiêu?
+**Tiêu đề:** KB2 — 80 triệu bắt đầu, thu về hàng tỷ
 
 **Người nói:** Hải
 
-**Bảng ROI (customize cho Traphaco):**
+**Bài toán KB2 theo 2 phases:**
 
 ```
-HIỆN TẠI:
-  Doanh thu sàn:           10 tỷ/tháng
-  Phí sàn (20%):           -2 tỷ/tháng
-  Phí affiliate sàn (10%): -1 tỷ/tháng
+PHASE 1 (Tháng 1-3) — Sàn tăng trưởng:
+  Chi phí Diso:    80 tr setup + 35 tr/tháng + 3-5% DT sàn
+  Mục tiêu:        Tăng DT sàn 20-30% nhờ ops tốt hơn
+  Kết quả ước:     Nếu sàn tăng từ 10 tỷ → 13 tỷ = +3 tỷ DT mới/tháng
   ──────────────────────────
-  Mất cho sàn:             ~3 tỷ/tháng = 36 tỷ/năm
+  Revenue mới:     +3 tỷ/tháng × 10 tháng = +30 tỷ/năm
+  Chi Diso:        80 tr + 35 tr × 12 = ~500 tr/năm
+  ROI Phase 1:     +30 tỷ / 500 tr = 60x
 
-SAU 6 THÁNG VỚI DISO (chuyển 50% sang kênh riêng):
-  DT kênh riêng:           5 tỷ/tháng (0% phí sàn)
-  DT sàn (giữ):            5 tỷ/tháng
-  Phí sàn (chỉ 5 tỷ):     -1 tỷ/tháng (giảm 50%)
-  Chi phí Diso:            -292 triệu/tháng (42tr + 5%×5tỷ)
+PHASE 2 (Tháng 4+) — Kênh riêng tiết kiệm phí sàn:
+  Setup thêm:      +80 tr (1 lần)
+  Monthly thêm:    +27 tr/tháng
+  Chuyển 50% sang kênh riêng (5 tỷ/tháng):
+    Tiết kiệm phí sàn 20%:   +1 tỷ/tháng
+    Tiết kiệm affiliate sàn:  +500 tr/tháng
+    Chi rev share 5% KR:      -250 tr/tháng
   ──────────────────────────
-  TIẾT KIỆM RÒNG:         ~1.7 tỷ/tháng = ~20 tỷ/năm
-  
-  CHI PHÍ DISO YEAR 1:    ~660 triệu (setup + monthly)
-  + Rev share:             ~1.5 tỷ (5% × 5tỷ × 10 tháng) ≈ estimate
-  TỔNG:                    ~2 tỷ
-  
-  ROI:                     TIẾT KIỆM 20 tỷ / CHI DISO 2 tỷ = 10x
-  * Chi phí Diso bao gồm cả ops sàn (Shopee/TikTok daily operations)
+  TIẾT KIỆM RÒNG:  ~1.25 tỷ/tháng = ~15 tỷ/năm
+
+CHI PHÍ DISO FULL YEAR 1 (KB2):
+  Setup:           160 tr (80 + 80)
+  Monthly:         ~35 tr × 3 + 62 tr × 9 = ~663 tr
+  Rev share:       ước ~600 tr
+  TỔNG CHI DISO:   ~1.4 tỷ
+
+THU VỀ (ước tính):
+  DT tăng Phase 1: ~3.4 tỷ (theo P&L nội bộ)
+  Tiết kiệm phí sàn Phase 2: ~7.5 tỷ
+  TỔNG:            ~10 tỷ / chi 1.4 tỷ = ROI ~7x
 ```
 
 **Key message (in đậm, font lớn):**
-> "Mỗi tháng chờ = 2 tỷ mất thêm cho phí sàn."
+> "Phase 1: sàn tăng, thấy kết quả trong 30 ngày. Phase 2: kênh riêng tiết kiệm 20% phí sàn. Chi phí Diso full Year 1 ~1.4 tỷ, thu về ~10 tỷ."
+
+> *Mỗi tháng chờ = 2 tỷ mất thêm cho phí sàn.*
 
 ---
 
