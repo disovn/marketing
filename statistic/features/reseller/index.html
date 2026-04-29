@@ -2313,7 +2313,11 @@ html[lang="en"] .feature-desc [data-lang="en"] { display: block; }
 // Language toggle
 var langToggle = document.getElementById('langToggle');
 var htmlEl = document.documentElement;
-var savedLang = localStorage.getItem('diso-lang') || 'vi';
+var savedLang = localStorage.getItem('diso-lang');
+if (!savedLang) {
+  var browserLang = (navigator.language || navigator.userLanguage || 'vi').toLowerCase();
+  savedLang = browserLang.indexOf('vi') === 0 ? 'vi' : 'en';
+}
 if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
 
 langToggle.addEventListener('click', function() {

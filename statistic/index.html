@@ -2543,10 +2543,14 @@ html[lang="en"] .comparison-message [data-lang="en"] { display: block; }
     navToggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Language toggle
+  // Language toggle (manual choice wins; otherwise auto-detect from browser)
   var langToggle = document.getElementById('langToggle');
   var htmlEl = document.documentElement;
-  var savedLang = localStorage.getItem('diso-lang') || 'vi';
+  var savedLang = localStorage.getItem('diso-lang');
+  if (!savedLang) {
+    var browserLang = (navigator.language || navigator.userLanguage || 'vi').toLowerCase();
+    savedLang = browserLang.indexOf('vi') === 0 ? 'vi' : 'en';
+  }
   if (savedLang === 'en') htmlEl.setAttribute('lang', 'en');
 
   langToggle.addEventListener('click', function() {
