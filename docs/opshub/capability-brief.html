@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>OpsHub — Operations Platform · Capability Brief</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm; }
+  @media print {
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  :root {
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --ink: #1a1a1a;
+    --muted: #5b5b5b;
+    --line: #e2e2e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Inter, Roboto, sans-serif;
+    color: var(--ink); line-height: 1.62; font-size: 13.5px; margin: 0; background: #fff;
+  }
+  .doc { max-width: 760px; margin: 0 auto; padding: 24px 8px; }
+
+  .cover { min-height: 90vh; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 4px; }
+  .cover-top { display: flex; align-items: center; gap: 14px; }
+  .logo-d { width: 44px; height: 44px; border-radius: 9px; background: var(--teal); color: #fff; font-weight: 800; font-size: 24px; display: flex; align-items: center; justify-content: center; }
+  .cover-mid { margin: 60px 0; }
+  .cover-kicker { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); font-weight: 700; margin-bottom: 18px; }
+  .cover-title { font-size: 44px; font-weight: 800; line-height: 1.06; letter-spacing: -1px; margin: 0 0 14px; }
+  .cover-sub { font-size: 18px; color: var(--muted); font-weight: 500; max-width: 500px; }
+  .cover-meta { border-top: 2px solid var(--teal); padding-top: 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); }
+  .cover-meta b { color: var(--ink); font-weight: 700; }
+
+  h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.4px; margin: 34px 0 8px; padding-bottom: 7px; border-bottom: 2px solid var(--teal); color: var(--teal-dark); }
+  h2 { font-size: 15px; font-weight: 700; margin: 20px 0 5px; color: var(--ink); }
+  p { margin: 6px 0; }
+  ul { margin: 6px 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  strong { font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+  th { background: #f0fdfa; color: var(--teal-dark); text-align: left; padding: 7px 9px; font-weight: 700; border: 1px solid var(--line); }
+  td { padding: 7px 9px; border: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .lead { background: #f0fdfa; border-left: 3px solid var(--teal); padding: 11px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 12.5px; }
+  .note { font-size: 11.5px; color: var(--muted); font-style: italic; border-left: 2px solid var(--line); padding-left: 11px; margin: 10px 0; }
+  .pillar { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin: 10px 0; }
+  .pillar-title { font-weight: 800; color: var(--teal-dark); font-size: 14px; margin-bottom: 6px; }
+  .footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+  .hint { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 12px; color: #92400e; }
+  .ways { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .way { background: #f0fdfa; border: 1px solid var(--teal); border-radius: 10px; padding: 14px 16px; }
+  .way-num { font-family: ui-monospace, monospace; font-size: 11px; color: var(--teal); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="hint no-print">
+    <strong>Cách xuất PDF:</strong> Mở file này bằng trình duyệt → Ctrl/Cmd + P → "Save as PDF" → khổ A4, bật "Background graphics". Khối vàng này không xuất hiện trong bản in.
+  </div>
+
+  <!-- ══ TRANG BÌA ══ -->
+  <section class="cover">
+    <div class="cover-top">
+      <div class="logo-d">D</div>
+      <span style="color:var(--muted);font-weight:600;font-size:15px;">DISO</span>
+    </div>
+    <div class="cover-mid">
+      <div class="cover-kicker">Capability Brief · Operations Platform</div>
+      <h1 class="cover-title" style="border:none;color:var(--ink);padding:0;margin-bottom:14px;">OpsHub</h1>
+      <p class="cover-sub">Nền tảng vận hành cho đội review nội dung quy mô lớn — điều phối nhân sự, tự động hoá, giám sát và cảnh báo sớm.</p>
+    </div>
+    <div class="cover-meta">
+      <span><b>Dành cho:</b> MCN / Agency quản lý creator</span>
+      <span><b>Từ:</b> DISO</span>
+      <span><b>Ngày:</b> 20/05/2026</span>
+    </div>
+  </section>
+
+  <div class="page-break"></div>
+
+  <h1>Mở đầu</h1>
+  <p>Kính gửi anh/chị,</p>
+  <p>
+    Khi một MCN hay agency phát triển, số lượng creator và nội dung cần kiểm duyệt tăng theo cấp số nhân — nhưng đội ngũ vận hành thì không thể tăng tương ứng. Đến một ngưỡng, mọi thứ bắt đầu vỡ: nội dung tồn đọng, chất lượng duyệt không đồng đều, không ai biết ca nào đang quá tải, và quản lý phải họp liên tục chỉ để nắm tình hình.
+  </p>
+  <p>
+    DISO đã đi qua đúng giai đoạn đó. <strong>OpsHub</strong> là hệ thống chúng tôi xây để tự cứu mình khi sản lượng review nhảy từ một nghìn lên gần ba mươi nghìn video một tháng. Tài liệu này giới thiệu OpsHub — và hai cách anh/chị có thể dùng nó.
+  </p>
+  <p style="margin-top:14px;">Trân trọng,<br><strong>DISO</strong></p>
+
+  <h1>1. OpsHub là gì</h1>
+  <p>
+    OpsHub <strong>không phải một công cụ duyệt video.</strong> Đó là một <strong>nền tảng vận hành</strong> — điều phối con người, quy trình, và tự động hoá để một đội nhỏ xử lý khối lượng công việc lớn mà vẫn giữ chất lượng.
+  </p>
+  <p>
+    Duyệt nội dung là use-case đầu tiên OpsHub giải — và đã chứng minh ở quy mô production. Nhưng phần lõi của nó là quản lý vận hành: chia việc, phân ca, giám sát, cảnh báo sớm, tự kiểm tra chất lượng.
+  </p>
+
+  <h1>2. Bài toán OpsHub giải</h1>
+  <p>Khi đội review còn nhỏ, Excel và Zalo là đủ. Nhưng khi quy mô tăng:</p>
+  <ul>
+    <li><strong>Khối lượng vượt sức người</strong> — số nội dung tăng nhanh hơn tốc độ tuyển và đào tạo.</li>
+    <li><strong>Chất lượng không đồng đều</strong> — mỗi người duyệt một kiểu, không có chuẩn chung.</li>
+    <li><strong>Vận hành trở nên "mù"</strong> — không biết ai quá tải, khâu nào tắc, bao nhiêu việc sắp trễ hạn.</li>
+    <li><strong>Quản lý phải họp liên tục</strong> — chỉ để nắm tình hình mà lẽ ra hệ thống nên tự hiển thị.</li>
+  </ul>
+
+  <div class="page-break"></div>
+  <h1>3. Năm trụ năng lực</h1>
+  <p>Mỗi năng lực dưới đây đang chạy thật trong production, không phải tính năng trên giấy.</p>
+
+  <div class="pillar">
+    <div class="pillar-title">Trụ 1 — Điều phối nhân sự: theo dự án và theo ca</div>
+    <ul>
+      <li><strong>Phân theo dự án / đối tác</strong> — mỗi nhân sự gán vào dự án cụ thể; chỉ thấy và nhận việc thuộc dự án mình phụ trách. Phân quyền theo vai trò.</li>
+      <li><strong>Phân ca làm việc</strong> — ca sáng / chiều / tối, khung giờ cấu hình được, điều chỉnh giờ linh hoạt, đánh dấu ca nghỉ.</li>
+      <li><strong>Giao việc tự động</strong> — hệ thống phân việc cho người ít tải nhất trong đúng dự án.</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-title">Trụ 2 — Tự động hoá việc lặp lại</div>
+    <ul>
+      <li>Pipeline 3 tầng: Auto (quy tắc) → AI (phân tích nội dung) → Người.</li>
+      <li>Việc nào máy làm được, máy làm trước. Người chỉ xử lý phần thực sự cần phán đoán.</li>
+      <li>Một nội dung chuẩn hoá thành nhiều bước kiểm nhỏ — phần lớn tự động, chỉ phần khó đẩy lên người.</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-title">Trụ 3 — Giám sát hiệu quả: realtime, theo ca, tổng thể</div>
+    <ul>
+      <li><strong>Realtime:</strong> việc đang chờ, đang xử lý, độ sâu hàng đợi.</li>
+      <li><strong>Theo ca:</strong> sản lượng, tốc độ, tỷ lệ đúng hạn, năng suất từng người — so sánh giữa các ca.</li>
+      <li><strong>Tổng thể:</strong> tỷ lệ tự động hoá, thời gian xử lý trung bình, bảng xếp hạng, xu hướng chất lượng.</li>
+      <li>Báo cáo sức khoẻ ca tự gửi định kỳ — quản lý không phải hỏi.</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-title">Trụ 4 — Cảnh báo sớm khi vận hành có vấn đề</div>
+    <ul>
+      <li><strong>Sắp / đã trễ hạn:</strong> tự phát hiện việc sắp vượt SLA, nâng ưu tiên, cảnh báo.</li>
+      <li><strong>Người làm bị treo:</strong> phát hiện việc bị giữ quá lâu không xử lý → tự trả về hàng đợi.</li>
+      <li><strong>Ca quá tải:</strong> tính hàng đợi có kịp giải phóng trong ca không; nếu không → cảnh báo sớm (Theo sát / Quá tải).</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-title">Trụ 5 — Tự kiểm tra chất lượng (Verdict Review)</div>
+    <ul>
+      <li>Nội dung rủi ro duyệt sai cao tự tạo task kiểm tra chéo, gửi người duyệt khác (không phải người đã duyệt).</li>
+      <li>Người kiểm tra xác nhận đồng ý / không đồng ý, ghi rõ lý do.</li>
+      <li><strong>Đo được chất lượng từng người duyệt</strong> — qua tỷ lệ bị kiểm tra chéo không đồng ý, quản lý biết ai làm tốt, ai cần kèm cặp, ai sai ở dạng lỗi nào (bỏ sót brand safety, sai nội dung, sai checklist...).</li>
+      <li>Kết quả tổng hợp để đánh giá cả AI lẫn người — cái nào chưa tốt mang ra cải tiến.</li>
+      <li>Toàn bộ có lưu vết kiểm tra (audit trail).</li>
+    </ul>
+  </div>
+
+  <div class="page-break"></div>
+  <h1>4. Bằng chứng — đang chạy production</h1>
+  <ul>
+    <li><strong>Nhân sự review:</strong> từ khoảng 10 người xuống còn 3 người.</li>
+    <li><strong>Sản lượng:</strong> từ 10.000 lên 50.000 video xử lý, không cần thêm người.</li>
+    <li><strong>Quy mô vận hành:</strong> một quản lý bán thời gian giám sát được đội chạy 3 ca, từ 8h sáng đến 21h tối — không cần họp hành nhiều.</li>
+    <li>OpsHub đang phục vụ nhiều dự án song song.</li>
+  </ul>
+  <div class="lead">
+    Con số quan trọng nhất không phải tốc độ AI — mà là việc <strong>chuẩn hoá toàn bộ quy trình và đưa lên hệ thống</strong>: tuyển người mới không phải đào tạo nhiều, chất lượng không phụ thuộc cá nhân, quản lý nhìn một chỗ là nắm toàn cục.
+  </div>
+
+  <h1>5. Hai cách dùng OpsHub</h1>
+  <div class="ways">
+    <div class="way">
+      <div class="way-num">CÁCH 1</div>
+      <strong>Dùng OpsHub cho đội vận hành của anh/chị</strong>
+      <p style="font-size:12px;margin-top:6px;">Đưa đội review hiện tại lên OpsHub: phân dự án, phân ca, tự động hoá phần lặp lại, giám sát và cảnh báo sớm. Phù hợp khi đang vận hành đội duyệt content và muốn tăng quy mô mà không tăng người.</p>
+    </div>
+    <div class="way">
+      <div class="way-num">CÁCH 2</div>
+      <strong>Xây hệ vận hành riêng theo tay nghề này</strong>
+      <p style="font-size:12px;margin-top:6px;">Nếu bài toán không phải duyệt content mà là loại vận hành khác (chăm sóc creator, xử lý đơn, kiểm duyệt hồ sơ...), DISO xây hệ thống riêng cho domain đó — dựa trên cùng tay nghề đã chứng minh ở OpsHub.</p>
+    </div>
+  </div>
+
+  <h1>6. Bước tiếp theo</h1>
+  <p>Nếu anh/chị thấy bài toán này quen thuộc, DISO sẵn sàng:</p>
+  <ul>
+    <li>Trình bày demo OpsHub trên dữ liệu thực</li>
+    <li>Cùng phân tích quy trình vận hành hiện tại của anh/chị để đánh giá mức phù hợp</li>
+  </ul>
+  <p>Liên hệ DISO để sắp xếp một buổi trao đổi.</p>
+
+  <div class="footer">
+    <span>DISO — OpsHub Capability Brief</span>
+    <span>20/05/2026</span>
+  </div>
+
+</div>
+</body>
+</html>

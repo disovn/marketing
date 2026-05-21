@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Creator Care OS — Bản Mô tả Giải pháp</title>
+<style>
+  /* ── In ấn: A4, lề chuẩn ───────────────────────────── */
+  @page { size: A4; margin: 20mm 18mm; }
+  @media print {
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  :root {
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --ink: #1a1a1a;
+    --muted: #5b5b5b;
+    --line: #e2e2e0;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Inter, Roboto, sans-serif;
+    color: var(--ink);
+    line-height: 1.62;
+    font-size: 13.5px;
+    margin: 0;
+    background: #fff;
+  }
+
+  .doc { max-width: 760px; margin: 0 auto; padding: 24px 8px; }
+
+  /* ── Trang bìa ─────────────────────────────────────── */
+  .cover {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 4px;
+  }
+  .cover-top { display: flex; align-items: center; gap: 14px; }
+  .logo-d {
+    width: 44px; height: 44px; border-radius: 9px;
+    background: var(--teal);
+    color: #fff; font-weight: 800; font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-x { color: var(--muted); font-size: 18px; }
+  .at-mark {
+    font-weight: 800; font-size: 17px; letter-spacing: -0.3px;
+    color: #f26a00;
+  }
+  .cover-mid { margin: 60px 0; }
+  .cover-kicker {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--teal); font-weight: 700; margin-bottom: 18px;
+  }
+  .cover-title {
+    font-size: 46px; font-weight: 800; line-height: 1.06;
+    letter-spacing: -1px; margin: 0 0 14px;
+  }
+  .cover-sub {
+    font-size: 18px; color: var(--muted); font-weight: 500;
+    max-width: 480px;
+  }
+  .cover-meta {
+    border-top: 2px solid var(--teal);
+    padding-top: 16px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-size: 12px; color: var(--muted);
+  }
+  .cover-meta b { color: var(--ink); font-weight: 700; }
+
+  /* ── Nội dung ──────────────────────────────────────── */
+  h1 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.4px;
+    margin: 34px 0 8px; padding-bottom: 7px;
+    border-bottom: 2px solid var(--teal);
+    color: var(--teal-dark);
+  }
+  h2 {
+    font-size: 15.5px; font-weight: 700; margin: 22px 0 6px;
+    color: var(--ink);
+  }
+  h3 {
+    font-size: 13.5px; font-weight: 700; margin: 16px 0 4px;
+    color: var(--teal-dark);
+  }
+  p { margin: 6px 0; }
+  ul { margin: 6px 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  strong { font-weight: 700; }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 12px 0;
+    font-size: 12px;
+  }
+  th {
+    background: #f0fdfa; color: var(--teal-dark);
+    text-align: left; padding: 7px 9px; font-weight: 700;
+    border: 1px solid var(--line);
+  }
+  td {
+    padding: 7px 9px; border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #fafafa; }
+
+  .lead {
+    background: #f0fdfa; border-left: 3px solid var(--teal);
+    padding: 11px 14px; margin: 12px 0; border-radius: 0 6px 6px 0;
+    font-size: 12.5px;
+  }
+  .note {
+    font-size: 11.5px; color: var(--muted); font-style: italic;
+    border-left: 2px solid var(--line); padding-left: 11px; margin: 10px 0;
+  }
+  .footer {
+    margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line);
+    font-size: 11px; color: var(--muted);
+    display: flex; justify-content: space-between;
+  }
+  .hint {
+    background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px;
+    padding: 12px 16px; margin: 16px 0; font-size: 12px; color: #92400e;
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- Hướng dẫn xuất PDF — không in -->
+  <div class="hint no-print">
+    <strong>Cách xuất PDF:</strong> Mở file này bằng trình duyệt → Ctrl/Cmd + P →
+    chọn "Save as PDF" → khổ A4, bật "Background graphics". Khối vàng này sẽ không xuất hiện trong bản in.
+  </div>
+
+  <!-- ══ TRANG BÌA ══ -->
+  <section class="cover">
+    <div class="cover-top">
+      <div class="logo-d">D</div>
+      <span class="logo-x">×</span>
+      <span class="at-mark">ACCESSTRADE</span>
+    </div>
+
+    <div class="cover-mid">
+      <div class="cover-kicker">Bản mô tả giải pháp · Đề xuất</div>
+      <h1 class="cover-title" style="border:none;color:var(--ink);padding:0;margin-bottom:14px;">
+        Creator Care OS
+      </h1>
+      <p class="cover-sub">
+        Hệ điều hành vận hành Creator cho AccessTrade — biến quy trình
+        chăm sóc KOC từ file Excel thành một hệ thống vận hành.
+      </p>
+    </div>
+
+    <div class="cover-meta">
+      <span><b>Gửi:</b> AccessTrade — đội ngũ Sản phẩm &amp; Kỹ thuật</span>
+      <span><b>Từ:</b> DISO</span>
+      <span><b>Ngày:</b> 16/05/2026</span>
+    </div>
+  </section>
+
+  <!-- ══ NỘI DUNG ══ -->
+  <div class="page-break"></div>
+
+  <h1>Lời ngỏ</h1>
+  <p>Kính gửi anh/chị,</p>
+  <p>
+    Sau buổi trao đổi vừa qua, DISO xin gửi anh/chị bản mô tả chi tiết giải pháp
+    <strong>Creator Care OS</strong> — hệ thống vận hành đội ngũ Creator mà chúng tôi
+    đề xuất xây dựng cho AccessTrade.
+  </p>
+  <p>
+    Đội ngũ Care của AccessTrade đang vận hành một quy trình chăm sóc creator rất bài
+    bản. Điều chúng tôi mong muốn là giúp quy trình đó chạy nhẹ nhàng hơn, ít rơi rớt
+    hơn, và không phụ thuộc vào trí nhớ của từng cá nhân — bằng một hệ thống được thiết
+    kế đúng theo cách AccessTrade đang làm việc.
+  </p>
+  <p>
+    Tài liệu này mô tả đầy đủ những gì AccessTrade sẽ nhận được. Đây chưa phải hợp đồng
+    và chưa bàn đến chi phí — chúng tôi mong anh/chị đọc, đối chiếu với nhu cầu thực tế
+    của đội Care, và cho chúng tôi biết phạm vi này đã đúng chưa. Phần cuối tài liệu có
+    một bảng ngắn để anh/chị tiện phản hồi từng điểm.
+  </p>
+  <p>
+    Khi phạm vi được hai bên thống nhất, DISO sẽ chuẩn bị đề xuất triển khai chi tiết
+    — lộ trình, mốc bàn giao và mô hình hợp tác.
+  </p>
+  <p style="margin-top:14px;">Trân trọng,<br><strong>DISO</strong></p>
+
+  <h1>1. Bài toán</h1>
+  <p>
+    AccessTrade vận hành chương trình Creator theo một quy trình 7 bước rõ ràng — từ
+    tìm kiếm creator đến chăm sóc, phân hạng và giữ chân. Quy trình này bài bản, nhưng
+    hiện được vận hành <strong>thủ công trên file Excel</strong>.
+  </p>
+  <p>Hệ quả thực tế đội Care đang gặp:</p>
+  <ul>
+    <li><strong>Không có trí nhớ vận hành</strong> — SLA của từng bước được ghi trong
+      file, nhưng không có gì tự đếm giờ. Không ai biết creator nào đang trễ hạn, ai
+      cần xử lý trước.</li>
+    <li><strong>Quan hệ với creator nằm trong từng cá nhân</strong> — lịch sử chăm sóc,
+      liên hệ, deal nằm trong điện thoại và trí nhớ của từng AM. Khi một AM nghỉ việc,
+      quan hệ với creator đi theo họ.</li>
+    <li><strong>Không có góc nhìn theo từng người phụ trách</strong> — mỗi Care phải tự
+      cắt view riêng của mình từ file chung.</li>
+  </ul>
+  <p>
+    Creator Care OS giải quyết đúng ba vấn đề này — bằng cách biến quy trình 7 bước
+    của AccessTrade thành một hệ thống vận hành.
+  </p>
+
+  <h1>2. Giải pháp — tổng quan</h1>
+  <p>
+    Creator Care OS là một <strong>Operation Portal</strong> dành cho đội ngũ vận hành
+    creator của AccessTrade (Care, AM, BD, Compliance).
+  </p>
+  <p>Nguyên tắc thiết kế:</p>
+  <ul>
+    <li><strong>Không thay thế gì creator đang dùng.</strong> Cổng dành cho creator giữ
+      nguyên. Hệ thống chỉ bổ sung một tầng vận hành cho đội ngũ phía sau.</li>
+    <li><strong>Ánh xạ đúng quy trình của AccessTrade.</strong> Mỗi nhóm chức năng tương
+      ứng một bước trong quy trình 7-process hiện có — không có quy trình mới phải học lại.</li>
+    <li><strong>Hai cổng, chung một nguồn dữ liệu</strong> — creator, campaign, content
+      được dùng chung, không phân mảnh.</li>
+  </ul>
+
+  <div class="page-break"></div>
+  <h1>3. AccessTrade nhận được gì — 8 nhóm năng lực</h1>
+  <p>
+    Creator Care OS gồm tám nhóm năng lực, mô tả dưới đây theo <strong>kết quả</strong>
+    đội Care nhận được trong công việc hằng ngày.
+  </p>
+
+  <h2>Nhóm nền tảng — Hồ sơ, Hàng đợi &amp; SLA</h2>
+  <p>Đây là lớp lõi mà cả hệ thống dựa trên.</p>
+  <ul>
+    <li><strong>Hồ sơ Creator 360</strong> — mỗi creator có một hồ sơ duy nhất: trạng
+      thái quan hệ, phân hạng, lịch sử campaign, dữ liệu hiệu suất, thông tin các kênh
+      social. Care không phải mở nhiều nơi để hiểu một creator.</li>
+    <li><strong>Hàng đợi theo từng Care</strong> — mỗi nhân sự mở hệ thống lên là thấy
+      ngay danh sách creator và công việc của riêng mình, không phải tự lọc.</li>
+    <li><strong>Đồng hồ SLA</strong> — hệ thống tự đếm ngược SLA của từng bước theo phân
+      hạng creator (ví dụ 8h cho VIP, 24h cho thường). Việc sắp trễ hạn được báo đỏ và
+      đẩy lên đầu hàng đợi.</li>
+    <li><strong>Két Quan hệ (Relationship Vault)</strong> — mọi tương tác với creator
+      được ghi vào hệ thống. Khi nhân sự thay đổi, creator được bàn giao và toàn bộ lịch
+      sử quan hệ đi theo creator, không đi theo người nghỉ.</li>
+  </ul>
+
+  <h2>Nhóm 1 — Tìm kiếm &amp; Sàng lọc Creator</h2>
+  <ul>
+    <li>Thu nhận creator lead từ nhiều nguồn, tự kiểm tra hồ sơ tối thiểu.</li>
+    <li>Gắn nền tảng và phân hạng sơ bộ (Thường / Tiềm năng / Ứng viên VIP / Rủi ro).</li>
+    <li>Chấm điểm creator theo độ phù hợp ngành, chất lượng nội dung, tệp khán giả, an toàn thương hiệu.</li>
+    <li>Tự động gắn cờ "Ứng viên VIP" theo tiêu chí AccessTrade đã định.</li>
+  </ul>
+
+  <h2>Nhóm 2 — Tiếp cận &amp; Mời tham gia</h2>
+  <ul>
+    <li>Soạn và lưu bộ thông điệp tiếp cận (quyền lợi, hoa hồng, lời mời).</li>
+    <li>Liên hệ creator qua nhiều kênh, ghi nhận đã liên hệ qua kênh nào.</li>
+    <li>Theo dõi trạng thái phản hồi của creator.</li>
+    <li>Tự nhắc lịch follow-up theo SLA.</li>
+  </ul>
+
+  <h2>Nhóm 3 — Duyệt &amp; Thiết lập nền tảng</h2>
+  <ul>
+    <li>Duyệt hồ sơ creator đăng ký.</li>
+    <li>Danh sách kiểm tra thiết lập tài khoản nền tảng (Shopee Affiliate / TikTok / TAP / Meta).</li>
+    <li>Quản lý thông tin thanh toán và thuế của creator.</li>
+    <li>Theo dõi việc creator gia nhập MCN/TAP, lưu thông tin định danh.</li>
+  </ul>
+
+  <h2>Nhóm 4 — Chiến lược Kênh</h2>
+  <ul>
+    <li>Ghi nhận và đánh giá kênh của creator.</li>
+    <li>Đặt mục tiêu theo từng nền tảng.</li>
+    <li>Gợi ý ngành hàng, sản phẩm, hướng nội dung phù hợp.</li>
+  </ul>
+
+  <h2>Nhóm 5 — Kích hoạt Campaign &amp; Nội dung</h2>
+  <ul>
+    <li>Thiết lập campaign / offer với hoa hồng, KPI, thời hạn.</li>
+    <li>Giao sản phẩm, deal, guideline cho creator.</li>
+    <li>Theo dõi việc gửi sản phẩm mẫu.</li>
+    <li>Theo dõi trạng thái nội dung creator đã đăng.</li>
+  </ul>
+
+  <h2>Nhóm 6 — Theo dõi Hiệu suất &amp; Chăm sóc</h2>
+  <ul>
+    <li>Tổng hợp dữ liệu hiệu suất từ các nền tảng (lượt xem, đơn hàng, doanh số, hoa hồng).</li>
+    <li>Phân loại hành động chăm sóc theo tình trạng creator.</li>
+    <li>Cảnh báo sớm khi creator không hoạt động, trễ hạn hoặc sai chính sách.</li>
+    <li>Bảng theo dõi KPI cho từng AM.</li>
+  </ul>
+
+  <h2>Nhóm 7 — Phân hạng &amp; Giữ chân</h2>
+  <ul>
+    <li>Đối soát hoa hồng và thưởng.</li>
+    <li>Xác nhận phân hạng VIP chính thức theo dữ liệu hiệu suất.</li>
+    <li>Lập kế hoạch giữ chân creator giá trị.</li>
+    <li>Rà soát phân hạng định kỳ.</li>
+  </ul>
+
+  <div class="page-break"></div>
+  <h1>4. Lộ trình — Creator Care OS trong bức tranh dài hạn</h1>
+  <p>
+    Creator Care OS không phải một dự án đơn lẻ. Đây là <strong>giai đoạn đầu của một
+    nền tảng vận hành Creator</strong> mà AccessTrade có thể mở rộng theo thời gian.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Giai đoạn</th><th>Nội dung</th><th>Trạng thái</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Giai đoạn 1<br>Operation Portal</strong></td>
+        <td>Hệ thống vận hành cho creator đăng ký: hồ sơ, hàng đợi, SLA, Két Quan hệ, quản lý campaign</td>
+        <td><strong>Phạm vi đề xuất lần này</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Giai đoạn 2<br>Sourcing &amp; Hiệu suất</strong></td>
+        <td>Tự động tìm kiếm creator từ social; bảng theo dõi hiệu suất &amp; KPI nâng cao</td>
+        <td>Đề xuất tiếp theo</td>
+      </tr>
+      <tr>
+        <td><strong>Giai đoạn 3<br>Mở rộng đa mảng</strong></td>
+        <td>Đưa cùng một nền tảng vận hành sang MCN Shopee, TAP, Booking</td>
+        <td>Tầm nhìn</td>
+      </tr>
+      <tr>
+        <td><strong>Giai đoạn 4<br>Lớp Thông minh Creator</strong></td>
+        <td>Một creator nhìn xuyên suốt mọi mảng; tín hiệu vận hành &amp; gợi ý tập trung</td>
+        <td>Tầm nhìn</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">
+    Cách đọc bảng này: Tài liệu hiện tại chỉ mô tả và đề xuất Giai đoạn 1. Các giai
+    đoạn sau được nêu ra để AccessTrade thấy hướng phát triển — chúng sẽ được bàn riêng
+    khi Giai đoạn 1 vận hành ổn định. DISO thiết kế kiến trúc Giai đoạn 1 theo nguyên
+    tắc "một creator — nhiều mảng" để các giai đoạn sau ghép vào thuận lợi.
+  </p>
+
+  <h1>5. Phạm vi — Trong và Ngoài</h1>
+  <p>Để hai bên hiểu nhất quán, dưới đây là ranh giới rõ ràng của <strong>Giai đoạn 1</strong>.</p>
+
+  <h3>Trong phạm vi Giai đoạn 1</h3>
+  <ul>
+    <li>Operation Portal đầy đủ cho đội Care: nhóm nền tảng + 7 nhóm năng lực ở mục 3,
+      ở mức vận hành cho creator đăng ký vào hệ thống.</li>
+    <li>Tích hợp dữ liệu hồ sơ creator từ hệ thống influence-meter (TikTok / YouTube /
+      Facebook / Instagram).</li>
+    <li>Quản trị campaign để hiển thị nội dung creator.</li>
+  </ul>
+
+  <h3>Ngoài phạm vi Giai đoạn 1 (thuộc giai đoạn sau)</h3>
+  <ul>
+    <li>Tự động tìm kiếm creator từ social (sourcing automation) — Giai đoạn 2.</li>
+    <li>Bảng theo dõi hiệu suất &amp; KPI nâng cao — Giai đoạn 2.</li>
+    <li>Mở rộng sang MCN Shopee / TAP / Booking — Giai đoạn 3.</li>
+    <li>Xây dựng lại luồng duyệt video — hệ thống sử dụng luồng duyệt hiện có, không xây mới.</li>
+  </ul>
+  <div class="lead">
+    Việc nêu rõ ranh giới này bảo vệ cả hai bên: AccessTrade biết chính xác sẽ nhận gì,
+    DISO cam kết đúng phần đã thống nhất. Mọi thay đổi phạm vi sẽ được hai bên trao đổi
+    và điều chỉnh đề xuất tương ứng.
+  </div>
+
+  <div class="page-break"></div>
+  <h1>6. Vì sao là DISO</h1>
+  <ul>
+    <li><strong>DISO đang vận hành công nghệ cho hệ thống creator hiện tại của
+      AccessTrade</strong> — hiểu sâu luồng creator, campaign, nội dung từ bên trong.</li>
+    <li><strong>Hạ tầng dữ liệu creator đã sẵn sàng</strong> — hệ thống influence-meter
+      đang chạy production (dashboard Techcombank, thu thập dữ liệu creator ổn định
+      hàng tháng). Creator đăng ký là tự có hồ sơ đầy đủ.</li>
+    <li><strong>DISO đã chứng minh năng lực biến vận hành thủ công thành hệ thống tự
+      động</strong> — qua hệ thống review nội dung OpsHub: giảm nhân sự thủ công và
+      tăng nhiều lần sản lượng xử lý mà không cần thêm người.</li>
+  </ul>
+  <p>
+    DISO xây dựng và vận hành hệ thống trong giai đoạn nghiệm thu, và bàn giao mã nguồn
+    cho AccessTrade khi kết thúc dự án.
+  </p>
+
+  <h1>7. Xác nhận phạm vi</h1>
+  <p>
+    Đề nghị AccessTrade rà soát và phản hồi các điểm sau. Phản hồi của AccessTrade là
+    cơ sở để DISO hoàn thiện đề xuất triển khai.
+  </p>
+  <table>
+    <thead>
+      <tr><th style="width:28px;">#</th><th>Nội dung cần xác nhận</th><th style="width:170px;">Phản hồi của AccessTrade</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>8 nhóm năng lực ở mục 3 có phản ánh đúng nhu cầu vận hành của đội Care không? Có nhóm nào thiếu / thừa?</td><td></td></tr>
+      <tr><td>2</td><td>Phân chia Trong / Ngoài phạm vi Giai đoạn 1 (mục 5) có hợp lý không?</td><td></td></tr>
+      <tr><td>3</td><td>"Két Quan hệ" — cơ chế chống mất quan hệ creator khi nhân sự thay đổi — có đúng là ưu tiên cao không?</td><td></td></tr>
+      <tr><td>4</td><td>Lộ trình 4 giai đoạn (mục 4) có khớp với định hướng dài hạn của AccessTrade không?</td><td></td></tr>
+      <tr><td>5</td><td>Có ràng buộc nào (thời điểm cần go-live, tích hợp hệ thống sẵn có) cần đưa vào ngay từ đầu?</td><td></td></tr>
+    </tbody>
+  </table>
+  <p>
+    Khi phạm vi được hai bên thống nhất, DISO sẽ gửi <strong>Đề xuất Triển khai</strong>
+    — gồm lộ trình theo mốc, mô hình hợp tác và phần thương mại.
+  </p>
+
+  <div class="footer">
+    <span>DISO × AccessTrade — Creator Care OS</span>
+    <span>Bản mô tả giải pháp · 16/05/2026</span>
+  </div>
+
+</div>
+</body>
+</html>
