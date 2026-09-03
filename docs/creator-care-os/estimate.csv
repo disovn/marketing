@@ -1,40 +1,77 @@
-Module,Chức năng chính,Sprint,Độ tin cậy,BE (h),FE (h),INT (h),QA (h),Tổng (h),Ghi chú
-M0 — Core & Nền tảng,Hạ tầng & Auth (CI/CD + RBAC + audit nền),Sprint 1,Cao,35,25,5,15,80,Project setup + 5 role
-M0 — Core & Nền tảng,Data model 3 lớp (Lifecycle/Campaign/Tier),Sprint 1,Cao,30,5,5,10,50,Schema + migration tooling
-M0 — Core & Nền tảng,Creator 360 Profile,Sprint 1,Cao,25,40,10,10,85,Trang hồ sơ hợp nhất
-M0 — Core & Nền tảng,Per-Care Queue,Sprint 1,Cao,15,25,5,5,50,My Creators / My Tasks
-M0 — Core & Nền tảng,SLA Timer Engine,Sprint 1,Cao,20,10,5,5,40,Cấu hình SLA theo tier + cảnh báo
-M0 — Core & Nền tảng,Relationship Vault,Sprint 1,Cao,15,15,5,5,40,Ghi tương tác + bàn giao owner
-M1 — Sourcing & Qualify,Lead Inbox,Sprint 1,Cao,18,15,5,7,45,Thu lead đa nguồn + dedup
-M1 — Sourcing & Qualify,Platform Tagging,Sprint 1,Cao,10,12,3,5,30,Gắn nền tảng + tier sơ bộ
-M1 — Sourcing & Qualify,Creator Scoring,Sprint 1,Cao,14,10,3,5,32,Chấm điểm + lý do
-M1 — Sourcing & Qualify,VIP Auto-flag,Sprint 1,Cao,8,8,4,3,23,Rẽ nhánh VIP Candidate tự động
-M1 — Sourcing & Qualify,Sourcing Automation,Sprint 2,Rough,70,50,50,25,195,Crawl social + sourcing inbox
-M2 — Outreach Console,Outreach Kit,Sprint 2,Rough,18,20,5,8,51,Soạn offer/USP/CTA + template
-M2 — Outreach Console,Multi-channel Contact,Sprint 2,Rough,25,20,30,10,85,Tích hợp Zalo/email
-M2 — Outreach Console,Response Tracking,Sprint 2,Rough,15,15,5,7,42,Trạng thái phản hồi
-M2 — Outreach Console,Follow-up Reminder,Sprint 2,Rough,17,15,5,5,42,Nhắc theo SLA
-M3 — Onboarding & Setup,Application Review,Sprint 1,Cao,15,15,5,7,42,Duyệt hồ sơ + lịch sử
-M3 — Onboarding & Setup,Platform Setup Checklist,Sprint 1,Cao,12,15,8,6,41,Checklist Shopee/TikTok/TAP/Meta
-M3 — Onboarding & Setup,Payout & Tax Profile,Sprint 1,Cao,16,13,7,7,43,CCCD/bank/thuế
-M3 — Onboarding & Setup,MCN/TAP Join Tracking,Sprint 1,Cao,12,12,5,5,34,3 cờ + mapping Publisher ID
-M5 — Campaign & Activation,Offer Setup,Sprint 1,Cao,20,18,5,8,51,Tạo campaign/TAP offer
-M5 — Campaign & Activation,Task Assignment,Sprint 1,Cao,15,15,5,6,41,Giao sản phẩm/deal/guideline
-M5 — Campaign & Activation,Sample Tracking,Sprint 1,Cao,10,12,3,5,30,Trạng thái sample
-M5 — Campaign & Activation,Content Tracking,Sprint 1,Cao,15,15,7,6,43,Hiển thị trạng thái — không build review
-M6 — Performance Dashboard,Multi-source Sync,Sprint 2,Rough,35,20,40,15,110,Gom data Shopee/TikTok/TAP/Meta
-M6 — Performance Dashboard,Care Action,Sprint 2,Rough,15,20,5,7,47,Phân loại hành động chăm
-M6 — Performance Dashboard,Early Warning,Sprint 2,Rough,15,15,5,5,40,Cảnh báo inactive/trễ/sai
-M6 — Performance Dashboard,Scale Decision,Sprint 2,Rough,10,12,5,3,30,Đề xuất Ads/GMV Max
-M6 — Performance Dashboard,AM KPI Dashboard,Sprint 2,Rough,15,28,5,5,53,KPI per AM + leaderboard
-M4 — Channel Strategy,Channel Audit,Sprint 2,Rough,15,20,8,7,50,Ghi nhận kênh creator
-M4 — Channel Strategy,Goal Setting,Sprint 2,Rough,15,18,7,7,47,Mục tiêu + kế hoạch 30 ngày VIP
-M4 — Channel Strategy,Product / Deal List,Sprint 2,Rough,15,17,5,6,43,Gợi ý ngành hàng + angle
-M7 — Tiering & Loyalty,Commission Confirm,Sprint 1,Cao,20,12,8,7,47,Đối soát hoa hồng/bonus
-M7 — Tiering & Loyalty,VIP Scoring,Sprint 1,Cao,25,23,7,8,63,Xác nhận tier chính thức
-M7 — Tiering & Loyalty,Loyalty Plan,Sprint 2,Rough,20,20,8,7,55,Kế hoạch giữ chân
-M7 — Tiering & Loyalty,Tier Review,Sprint 2,Rough,20,20,7,8,55,Review định kỳ tier
-TỔNG SPRINT 1,,,,330,305,105,135,875,Độ tin cậy cao ±20%
-TỔNG SPRINT 2,,,,320,310,190,125,945,Độ tin cậy rough ±40%
-TỔNG DỰ ÁN,,,,650,615,295,260,1820,Chưa cộng buffer rủi ro 15%
-TỔNG + BUFFER 15%,,,,,,,,2093,Con số đưa vào báo giá khởi tạo
+Cụm,#,Chức năng,Vai dùng,BE (h),FE (h),INT (h),QA (h),Tổng (h),Ghi chú
+🔵 NỀN TẢNG HẠ TẦNG,M0.1,Authentication + Session,Admin/mọi user,28,18,10,8,64,Login (email/pwd + SSO connect) + session/token + logout + đổi MK + reset MK
+🔵 NỀN TẢNG HẠ TẦNG,M0.2,Phân quyền chi tiết (RBAC),Admin,32,22,5,12,71,Permission matrix (6 vai × resource × action) + enforce mọi endpoint + UI quản lý user/role
+🔵 NỀN TẢNG HẠ TẦNG,M0.3,Audit log + monitoring,Admin/System,18,10,3,5,36,Audit log toàn hệ + viewer + alert lỗi cơ bản
+🔵 NỀN TẢNG HẠ TẦNG,M0.4,Notification system,System,20,10,5,7,42,Hệ chung in-app + email + Zalo OA hook - dùng bởi A7/B2/B5
+🔵 NỀN TẢNG HẠ TẦNG,M0.5,File/asset storage,System,12,5,5,4,26,S3/MinIO + signed URL + size limit + format check
+🔵 NỀN TẢNG HẠ TẦNG,M0.6,Tích hợp dịch vụ ngoài (AT lo hạ tầng),System,10,0,15,5,30,Hook code vào Email service + Backup tooling + Error tracking (Sentry) - hạ tầng AT cung cấp
+,,Tổng Cụm M0,,120,65,43,41,269,
+🟢 LÕI NGHIỆP VỤ,A1,Hồ sơ Creator 360,Care/Manager,30,45,5,12,92,Trang hợp nhất 6 khối + edit + audit thay đổi
+🟢 LÕI NGHIỆP VỤ,A2,Pool 2 chiều (vòng đời × giá trị),Manager,25,35,5,10,75,Bảng/lưới lọc đa điều kiện theo Lifecycle × Tier
+🟢 LÕI NGHIỆP VỤ,A3,Gán owner + chống mồ côi,Manager,18,18,5,7,48,Gán/bàn giao owner + auto detect creator mồ côi
+🟢 LÕI NGHIỆP VỤ,A4,Tiếp nhận đa cửa + tag/hạng + migration data cũ,Care,32,32,10,14,88,3 cửa (nhập tay/import/tự đăng ký) + dedup + tag + hạng + migration < 10K creator cũ
+🟢 LÕI NGHIỆP VỤ,A5,Két Quan hệ (Interaction Log),Care/Manager,25,30,5,10,70,Timeline + search + đính kèm + đi theo creator
+🟢 LÕI NGHIỆP VỤ,A6,Hàng đợi việc + CareTask,Care,30,40,5,12,87,My Tasks + My Creators + CRUD CareTask + auto-gen từ SLA
+🟢 LÕI NGHIỆP VỤ,A7,Đồng hồ SLA + UI cấu hình,Manager/Care/Admin,28,25,5,12,70,Config UI (event × tier × thời gian) + clock + cảnh báo (notification dùng M0.4)
+🟢 LÕI NGHIỆP VỤ,A8,Connector Ambassador (đồng bộ + auth credential),System,55,15,65,23,158,Auth credential mgmt + pull API + mapping + sync job + error handling
+,,Tổng Cụm A,,243,240,105,100,688,
+🟡 NÊN CÓ,B1,Outreach Kit (mẫu thông điệp),Care/Manager,15,18,3,6,42,CRUD template + variable substitution
+🟡 NÊN CÓ,B2,Theo dõi tiếp cận + nhắc follow-up,Care,18,20,5,7,50,Status phản hồi + auto-tạo CareTask follow-up từ SLA
+🟡 NÊN CÓ,B3,Duyệt hồ sơ creator,Care/Manager,15,18,3,6,42,Application status + lý do + lịch sử duyệt
+🟡 NÊN CÓ,B4,Checklist thiết lập nền tảng,Platform Ops,12,18,5,6,41,Checklist Shopee/TikTok/TAP/Meta + trạng thái Done/Pending
+🟡 NÊN CÓ,B5,Tích hợp Zalo OA (gửi + theo dõi message),Care,30,25,15,12,82,Zalo OA API + webhook nhận tin + UI chat + log vào Interaction (FR5)
+🟡 NÊN CÓ,B6,Email mẫu (làm nóng),Care,8,12,3,5,28,Soạn email từ template + gửi qua M0.6 + log thủ công
+,,Tổng Cụm B,,98,111,34,42,285,
+⚪ TÙY CHỌN,C1,Onboard hoàn tất (chuyển Ready),Care,8,10,2,4,24,Kiểm điều kiện B3-B4 + chuyển Lifecycle=Ready
+⚪ TÙY CHỌN,C2,Báo cáo sức khỏe pool (cơ bản),Manager,15,25,3,7,50,KPI cards: % có owner + retention + active rate + SLA compliance
+⚪ TÙY CHỌN,C3,Export dữ liệu (CSV),Manager/Admin,12,15,3,5,35,Export creator/CareTask/log ra CSV theo filter
+,,Tổng Cụm C,,35,50,8,16,109,
+,,,,,,,,,
+TỔNG CỘNG,,,,,,,,,
+,,Cụm M0 (nền tảng hạ tầng),,120,65,43,41,269,Bắt buộc
+,,Cụm A (lõi nghiệp vụ + connector Ambassador),,243,240,105,100,688,Bắt buộc
+,,Cụm B (nên có - gồm Zalo OA + email),,98,111,34,42,285,
+,,Cụm C (tùy chọn),,35,50,8,16,109,
+,,Tổng M0+A,,363,305,148,141,957,Tối thiểu (chỉ móng)
+,,Tổng M0+A+B,,461,416,182,183,1242,Đủ giải đau
+,,Tổng M0+A+B+C,,496,466,190,199,1351,Đầy đủ
+,,+ Buffer rủi ro 15%,,,,,,,1554,Con số đưa vào báo giá đầy đủ
+,,,,,,,,,
+TÍNH TIỀN (rate $/h: PM 20 - BE 16 - FE 15 - BA/QA 12),,,,,,,,,
+,,GIẢ ĐỊNH: INT tính rate BE - BA = 12% dev - PM = 18% dev,,,,,,,,
+,,,,,,,,,
+,,Phương án TỐI THIỂU (M0+A),,,,,,,,
+,,  Dev (BE+FE+INT+QA),,,,,,,$14,408,Trước cộng BA/PM
+,,  + BA (12% dev = 115h × $12),,,,,,,$1,380,
+,,  + PM (18% dev = 172h × $20),,,,,,,$3,448,
+,,  Tổng trước buffer,,,,,,,$19,236,
+,,  + Buffer 15%,,,,,,,~$22,121,~$22K
+,,,,,,,,,
+,,Phương án ĐỦ GIẢI ĐAU (M0+A+B),,,,,,,,
+,,  Dev (BE+FE+INT+QA),,,,,,,$18,689,
+,,  + BA (12% dev = 149h × $12),,,,,,,$1,790,
+,,  + PM (18% dev = 224h × $20),,,,,,,$4,471,
+,,  Tổng trước buffer,,,,,,,$24,950,
+,,  + Buffer 15%,,,,,,,~$28,693,~$29K
+,,,,,,,,,
+,,Phương án ĐẦY ĐỦ (M0+A+B+C),,,,,,,,
+,,  Dev (BE+FE+INT+QA),,,,,,,$20,318,
+,,  + BA (12% dev = 162h × $12),,,,,,,$1,945,
+,,  + PM (18% dev = 243h × $20),,,,,,,$4,866,
+,,  Tổng trước buffer,,,,,,,$27,129,
+,,  + Buffer 15%,,,,,,,~$31,198,~$31K
+,,,,,,,,,
+GHI CHÚ,,,,,,,,,
+,,BE = Backend (rate $16/h),,,,,,,,
+,,FE = Frontend (rate $15/h),,,,,,,,
+,,INT = Integration - tính rate BE,,,,,,,,
+,,QA = Testing (rate $12/h),,,,,,,,
+,,BA = Business Analyst (rate $12/h) - tính 12% tổng dev,,,,,,,,
+,,PM = Project Manager (rate $20/h) - tính 18% tổng dev,,,,,,,,
+,,Buffer 15% áp lên TOÀN BỘ (dev + BA + PM),,,,,,,,
+,,,,,,,,,
+GIẢ ĐỊNH CÒN LẠI (CẦN AT XÁC NHẬN),,,,,,,,,
+,,API Ambassador sẵn sàng - tài liệu + endpoint pull creator/kết quả,,,,,,,,Nếu khó: A8 có thể +30-50h
+,,Zalo OA - AT đã có OA chính chủ,,,,,,,,Nếu phải tạo + xác minh OA: +10-20h
+,,Cơ chế SSO của AT (OAuth2/SAML chuẩn),,,,,,,,Nếu đặc thù: M0.1 có thể +10-20h
+,,Hạ tầng (server/DB/email service/backup/Sentry): AT lo,,,,,,,,DISO chỉ tốn công init vào code (đã tính trong M0.6)

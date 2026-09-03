@@ -1,0 +1,122 @@
+Cụm,Mô tả cụm,Module,Mô tả chi tiết,BE (h),FE (h),QA (h),PM (h),BA (h),SA (h),DevOps (h),Tổng giờ,Tổng tiền (USD)
+M0,"🔵 Nền tảng hạ tầng — lõi của lõi.
+Mọi chức năng nghiệp vụ đều cắm vào đây.
+Không cắt được.",[Admin] Authentication + Session,"- Đăng nhập (email/password + SSO connect với hệ AT)
+- Quản lý session/token: issue, refresh, revoke
+- Đăng xuất / đổi mật khẩu / reset mật khẩu qua email
+- Bảo mật cơ bản: rate limit login, lock account khi sai nhiều",16,8,4,4,4,4,4,44,756
+M0,,[Admin] Phân quyền chi tiết (RBAC),"- Permission matrix: 6 vai (Care/Manager/Admin/Ops/Finance/System) × resource × action
+- Backend enforce ở mọi endpoint, không phụ thuộc client
+- UI quản lý: tạo/sửa user, gán vai, gán nhiều vai cho 1 user",16,12,4,4,4,4,4,48,820
+M0,,[Admin] Audit log + monitoring,"- Ghi vết mọi thay đổi quan trọng (ai/khi nào/làm gì/giá trị cũ-mới)
+- Viewer cho Admin xem audit log, lọc theo user/thời gian/loại sự kiện
+- Alert lỗi cơ bản qua kênh notification (M0.4)",8,4,4,4,2,4,4,30,508
+M0,,[System] Notification system,"- Hệ notification chung dùng bởi A7 (SLA cảnh báo), B2 (nhắc follow-up), B5 (Zalo OA)
+- Gồm: in-app + email + Zalo OA hook
+- Queue gửi, retry khi lỗi, log lịch sử gửi",12,4,4,4,2,4,4,34,584
+M0,,[System] File/asset storage,"- Tích hợp S3/MinIO
+- Cấp signed URL cho upload/download
+- Giới hạn dung lượng theo loại file (avatar, attachment, ảnh chat Zalo)
+- Kiểm tra định dạng cho phép
+- Dùng bởi A1 (avatar), A5 (đính kèm tương tác), B5 (ảnh chat)",8,4,4,4,2,4,4,30,508
+M0,,[System] Tích hợp dịch vụ hạ tầng,"Kết nối hệ thống với các dịch vụ hạ tầng do AccessTrade cung cấp:
+- Email service (SMTP/SendGrid)
+- Công cụ backup database tự động
+- Hệ thống theo dõi lỗi production (Sentry hoặc tương đương)
+
+Phạm vi gồm: cấu hình endpoint, kiểm thử tích hợp, tài liệu hóa quy trình cấu hình & thay credential.",12,0,4,4,2,4,8,34,584
+A,"🟢 Lõi nghiệp vụ.
+Không có thì không vận hành được công việc Care.
+Đã gồm connector Ambassador và một số chức năng nền (Onboard hoàn tất, Export).",[Care/Manager] Hồ sơ Creator 360,"Trang hợp nhất 1 creator gồm 6 khối:
+- Định danh: tên, liên hệ, mã định danh nội bộ
+- Kênh social đã gia nhập (danh sách Platform Publisher ID)
+- Trạng thái: Lifecycle + Tier + Owner
+- Lịch sử campaign tham gia
+- Hiệu suất tổng hợp
+- Lịch sử tương tác (link xuống A5)
+
+Cho phép sửa các field Care quản lý. Audit thay đổi.",36,32,16,12,8,8,4,116,1968
+A,,[Manager] Pool 2 chiều (vòng đời × giá trị),"- Bảng/lưới hiển thị mọi creator
+- Lọc đa điều kiện: Lifecycle × Tier × Owner × Platform × Last Contacted
+- Lọc giao điểm 2 trục (vd ""VIP Candidate đang ở Applied quá 48h"")
+- Sắp xếp, phân trang
+- Đếm số lượng theo nhóm để Manager nhìn ra trạng thái pool",28,24,12,12,8,8,4,96,1640
+A,,[Manager] Gán owner + chống mồ côi,"- Gán 1 Care làm owner cho creator
+- Bàn giao owner: thay đổi đi kèm lý do; lịch sử tương tác đi theo creator
+- Tự động phát hiện creator ""mồ côi"" (Tier giá trị nhưng chưa có Owner) → đẩy lên Manager
+- Báo cáo % creator giá trị có owner",20,16,8,8,4,4,2,62,1042
+A,,[Care] Tiếp nhận creator + tag/hạng sơ bộ + migration data cũ,"Tạo creator qua 3 cửa:
+- (A) Care nhập thủ công — form
+- (B) Import hàng loạt — upload Excel/CSV với parser linh hoạt + báo cáo nhập
+- (D) Creator tự đăng ký — cổng đăng ký công khai + Care duyệt vào
+
+Mỗi cửa có dedup theo định danh/handle/SĐT.
+Khi tạo: khai báo nguồn lead, gắn Priority Lead flag, gắn Platform Tag, gắn Tier sơ bộ thủ công.
+Hỗ trợ migration < 10K creator cũ từ dữ liệu hiện tại của AT.",36,28,16,12,8,8,4,112,1900
+A,,[Care/Manager] Két Quan hệ (Interaction Log),"- Mỗi lần liên hệ creator tạo 1 bản ghi: thời điểm, kênh, nội dung, đính kèm (qua M0.5), kết quả
+- Timeline trên hồ sơ creator
+- Tìm kiếm theo keyword/kênh/thời gian
+- Khi đổi Owner: lịch sử đi theo creator, không theo người
+- Bản ghi không xoá được; chỉnh sửa có vết audit",24,20,8,8,4,4,2,70,1186
+A,,[Care] Hàng đợi việc + CareTask,"- My Tasks: hàng đợi việc riêng của từng Care, sắp xếp theo ưu tiên (SLA + Tier)
+- My Creators: danh sách creator mình làm owner
+- CRUD CareTask: tạo việc chăm sóc (gọi/nhắc/follow-up/khác), gắn creator, có hạn, trạng thái
+- Auto-gen task từ SLA (A7) và từ B2 (nhắc follow-up)
+- Manager xem hàng đợi toàn đội",32,28,16,12,8,4,2,102,1736
+A,,[Manager/Care/Admin] Đồng hồ SLA + UI cấu hình,"- UI cấu hình SLA: bảng (loại sự kiện × Tier × thời gian) — Admin thay đổi liên tục được
+- 5 loại sự kiện GĐ1: Lead chờ tiếp cận, Đã Contacted chờ follow-up, Đã Applied chờ duyệt, Đã duyệt chờ onboard, CareTask chờ xử lý
+- Đồng hồ chạy tự động trên từng creator/CareTask
+- Cảnh báo: còn 20% thời gian → vàng; quá hạn → đỏ + đẩy lên đầu hàng đợi
+- Notification qua M0.4",28,20,8,8,4,4,2,74,1248
+A,,[System] Connector Ambassador,"- Quản lý credential (API key/OAuth token) an toàn
+- Pull creator từ Ambassador về pool
+- Pull kết quả creator (campaign tham gia, hiệu suất tổng hợp) về hồ sơ 360
+- Mapping Ambassador Publisher ID ↔ Internal Creator ID
+- Sync job định kỳ + manual trigger
+- Xử lý lỗi (retry, alert qua M0.3)
+- Ước lượng dựa trên giả định API Ambassador đã sẵn sàng theo chuẩn; nếu phạm vi API thay đổi sẽ rà soát lại",120,16,24,28,12,24,8,232,3964
+A,,[Care] Onboard hoàn tất (chuyển Ready),"- Khi creator đã: duyệt hồ sơ (B3) + thiết lập nền tảng xong (B4) → Care đánh dấu onboard hoàn tất
+- Hệ thống kiểm điều kiện đầy đủ
+- Gán owner nếu chưa
+- Gửi policy/guideline qua M0.4
+- Chuyển Lifecycle = Ready (sẵn sàng nhận việc)",12,8,4,4,4,2,2,36,604
+A,,[Manager/Admin] Export dữ liệu (CSV),"- Export creator list, CareTask list, Interaction log ra CSV theo filter hiện tại
+- Cho phép chọn cột muốn export
+- Job bất đồng bộ với job lớn (>5K dòng): tạo job → notification khi xong → download
+- Log lịch sử export (ai/khi nào/gì) trong audit",16,12,4,4,4,2,2,44,748
+B,"🟡 Nên có.
+Giải đau mạnh nhưng có thể hoãn vài tháng nếu cần.
+Gồm Zalo OA, email, và báo cáo sức khỏe pool.",[Care/Manager] Outreach Kit,"- CRUD mẫu thông điệp tiếp cận (quyền lợi, hoa hồng, sample, CTA)
+- Mẫu có biến thay thế (tên creator, nền tảng, ngành hàng)
+- Mẫu chung + mẫu cá nhân hoá cho VIP
+- Care chọn mẫu khi soạn tin trên hệ thống",24,20,12,12,8,4,2,82,1392
+B,,[Care] Theo dõi tiếp cận + nhắc follow-up,"- Ghi nhanh trạng thái phản hồi: Interested / No Response / Not Interested / Need More Info
+- Một thao tác ""Ghi liên hệ"" sinh đồng thời: update trạng thái + tạo bản ghi Interaction Log (Care nhập 1 lần)
+- Tự tạo CareTask follow-up theo SLA (vd thường 48h, VIP 24h)",28,24,12,12,8,4,2,90,1532
+B,,[Care/Manager] Duyệt hồ sơ creator,"- Sau khi creator tự đăng ký hoặc apply, hồ sơ vào hàng chờ duyệt
+- Care/Manager xét fit/brand safety/lịch sử → quyết định: Approved / Need More Info / Rejected, kèm lý do
+- Lifecycle chuyển Applied → Approved
+- Lịch sử duyệt được lưu lại",24,20,12,12,8,4,2,82,1392
+B,,[Platform Ops] Checklist thiết lập nền tảng,"- Danh sách kiểm thiết lập tài khoản: Shopee Affiliate, TikTok, TAP, Meta
+- Mỗi item có trạng thái Done/Pending, ghi chú lý do nếu Pending
+- Platform Setup = Done/Pending tổng hợp
+- Hỗ trợ checklist khác nhau theo loại creator nếu cần",24,20,12,12,8,4,2,82,1392
+B,,[Care] Tích hợp Zalo OA (gửi tin + theo dõi message),"- Tích hợp Zalo Official Account chính chủ của AT
+- Care gửi tin qua hệ thống (theo template Zalo cho phép) → message tới creator
+- Webhook nhận tin creator trả lời → hiển thị trên UI chat trong hệ thống
+- Mọi message (đi/đến) tự động log vào Interaction Log (A5)
+- Giới hạn: Zalo OA chỉ cho nhắn creator đã follow OA, tin theo template Zalo duyệt
+- Ước lượng dựa trên giả định Zalo OA của AccessTrade đã được kích hoạt sẵn",72,48,28,28,16,16,4,212,3608
+B,,[Care] Gửi email mẫu (giới thiệu / làm nóng quan hệ),"- Soạn email từ template để gửi creator (giới thiệu chương trình, làm nóng quan hệ)
+- Gửi qua Email service tại M0.6
+- Log lại đã gửi vào Interaction Log
+- Không sync inbox — chỉ outbound
+- Phù hợp cho mục đích giới thiệu & làm nóng quan hệ; kênh thảo luận chính là Zalo (B5)",16,12,8,8,4,2,2,52,872
+B,,[Manager] Báo cáo sức khỏe pool (cơ bản),"Dashboard KPI cho Manager:
+- % creator giá trị có owner (mục tiêu 100%)
+- Retention rate cơ bản
+- Active rate
+- SLA compliance
+- Độ phủ chăm sóc (creator nào lâu chưa tương tác)
+
+Lọc theo Care/khoảng thời gian/Tier. Cập nhật theo thời gian.",24,28,12,12,8,4,2,90,1530
